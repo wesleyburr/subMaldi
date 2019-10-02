@@ -42,6 +42,7 @@ Wesley Burr <wburr@trentu.ca>
 }
 \examples{
 ## Plotting using the sample dataset "Subtracted_Sample_01.rda"
+data("Subtracted_Sample_01")
 plotSpectrum(dat = test, spec = "Sample_01", 
              min_mz = 50, max_mz = 100, 
              x_ticks = 100, y_ticks = 25, 

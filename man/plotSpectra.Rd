@@ -51,13 +51,19 @@ Wesley Burr <wburr@trentu.ca>
 \examples{
 ## Plotting using the sample dataset "Subtracted_Sample_01.rda"
 ## Method = "overlay"
+data("Subtracted_Sample_01")
 plotSpectra(dat = test, spec1 = "Sample_01", 
-                        spec2 = "SubSamp_Avg", 
-                        method = "overlay")
+                        spec2 = "Samp_SubAvg", 
+                        method = "overlay",
+                        min_mz = 100,
+                        max_mz = 700,
+                        n_peaks = 10)
 
 ## Method = "stacked"
 plotSpectra(dat = test, spec1 = "Sample_01", 
-                        spec2 = "SubSamp_Avg", 
+                        spec2 = "Samp_SubAvg", 
+                        min_mz = 100,
+                        max_mz = 700,
                         method = "stacked", 
                         n_peaks = 10)
 }
