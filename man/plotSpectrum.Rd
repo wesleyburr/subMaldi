@@ -42,10 +42,10 @@ Wesley Burr <wburr@trentu.ca>
 }
 \examples{
 ## Plotting using the sample dataset "Subtracted_Sample_01.rda"
-plotSpectrum(dat = test, spec = "Sample_01", min_mz = 50, max_mz = 100, x_ticks = 100, y_ticks = 25, colour = "pink", n_peaks = 20)
-
-    }
-  }
+plotSpectrum(dat = test, spec = "Sample_01", 
+             min_mz = 50, max_mz = 100, 
+             x_ticks = 100, y_ticks = 25, 
+             colour = "pink", n_peaks = 20)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

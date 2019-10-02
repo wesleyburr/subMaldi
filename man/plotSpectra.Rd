@@ -51,13 +51,17 @@ Wesley Burr <wburr@trentu.ca>
 \examples{
 ## Plotting using the sample dataset "Subtracted_Sample_01.rda"
 ## Method = "overlay"
-plotSpectra(dat = test, spec1 = "Sample_01", spec2 = "SubSamp_Avg", method = "overlay")
+plotSpectra(dat = test, spec1 = "Sample_01", 
+                        spec2 = "SubSamp_Avg", 
+                        method = "overlay")
 
 ## Method = "stacked"
-plotSpectra(dat = test, spec1 = "Sample_01", spec2 = "SubSamp_Avg", method = "stacked", n_peaks = 10)
-
-  }
+plotSpectra(dat = test, spec1 = "Sample_01", 
+                        spec2 = "SubSamp_Avg", 
+                        method = "stacked", 
+                        n_peaks = 10)
 }
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
