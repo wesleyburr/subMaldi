@@ -65,6 +65,7 @@ mapSpectrum <- function(dat, massCol, intenseCol, dig = 4, thresh = 1e-4, spec_d
   # Sanity checks
   stopifnot( is.character(massCol), is.character(intenseCol),
              massCol %in% names(dat), intenseCol %in% names(dat) )
+  stopifnot(colName %in% names(spec_df))
 
   # Round m/z data from dat to match full_mz
   dat <- round(dat, digits = dig)

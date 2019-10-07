@@ -1,7 +1,7 @@
 Package: subMALDI
 Type: Package
 Title: Organization and Post-Processing of MALDI-MS Datasets
-Version: 0.1.0
+Version: 0.1-1
 Author: [aut, cre] Kristen Yeh, [aut] Wesley Burr
 Maintainer: Kristen Yeh <kristenyeh@trentu.ca>
 Description: Mapping of irregularly-spaced mass spectrometry data in an open format, with post-processing and visualization tools.

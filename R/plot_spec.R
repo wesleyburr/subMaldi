@@ -23,6 +23,7 @@ plotSpectrum <- function(dat,
                   n = 2 * round((max_mz - min_mz) / x_ticks)) 
 
   par(mar = c(4,4,1,1))
+  par(mfrow = c(1,1))
   plot(NA, NA,
        type = "l",
        xaxt = "n",
@@ -97,7 +98,10 @@ plotSpectra <- function(dat,
           ylab = ylbl,
           xlab = xlbl,
           xlim = c(min_mz, max_mz), 
-          ylim = c(min(dat[[spec]]), max(dat[[spec]])))
+          ylim = c(min(min(dat[[spec1]]), 
+                       min(dat[[spec2]])),
+                   max(max(dat[[spec1]]),
+                       max(dat[[spec2]]))))
      axis(side = 1, at = x_axe, labels = TRUE)
  
      # hack to fix grid
@@ -136,7 +140,10 @@ plotSpectra <- function(dat,
          ylab = ylbl,
          xlab = xlbl,
          xlim = c(min_mz, max_mz),
-         ylim = c(min(dat[[spec1]]), max(dat[[spec1]])))
+         ylim = c(min(min(dat[[spec1]]), 
+                       min(dat[[spec2]])),
+                   max(max(dat[[spec1]]),
+                       max(dat[[spec2]]))))
     axis(side = 1, at = x_axe, labels = FALSE)
 
     # hack to fix grid
@@ -167,7 +174,10 @@ plotSpectra <- function(dat,
          main = NA, 
          xlab = xlbl,
          xlim = c(min_mz, max_mz),
-         ylim = c(min(dat[[spec2]]), max(dat[[spec2]])))
+         ylim = c(min(min(dat[[spec1]]), 
+                       min(dat[[spec2]])),
+                   max(max(dat[[spec1]]),
+                       max(dat[[spec2]]))))
       axis(side = 1, at = x_axe, labels = TRUE)
       # hack to fix grid
       grid(nx = NA, ny = NULL, lty = "solid", col = "grey85")
@@ -189,6 +199,7 @@ plotSpectra <- function(dat,
              cex = 0.7, pos = 4, offset = 0)
       }
       # end of second spectrum
+      par(mfrow=c(1,1))
   }
 }
 
