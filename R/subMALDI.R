@@ -101,8 +101,11 @@ mapSpectrum <- function(dat, massCol, intenseCol, dig = 4, thresh = 1e-4, spec_d
   if(length(throw_away) > 0) {
     dat <- dat[-throw_away, ]
   } 
+
   # last minute sanity check
-  dat <- dat[unique(dat[[massCol]]), ]
+  if(length(which(duplicated(dat[[massCol]])) > 0)) {
+    dat <- dat[-which(duplicated(dat[[massCol]])), ]
+  }
 
   # Fill in the data frame with the rounded, unique data
   spec_df[spec_df$full_mz %in% dat[[massCol]], colName] <- dat[[intenseCol]]
