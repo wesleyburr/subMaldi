@@ -17,6 +17,11 @@ plotSpectrum <- function(dat,
   min_mz <- max(min_mz, min(dat$full_mz))
   max_mz <- min(max_mz, max(dat$full_mz))
 
+  stopifnot(max_mz - min_mz > 10)
+
+  # subset to the user-requested limits
+  dat <- dat[dat$full_mz >= min_mz & dat$full_mz <= max_mz, ]
+
   x_axe <- pretty(seq(min_mz, max_mz, by = x_ticks),
                   n = round((max_mz - min_mz) / x_ticks))
   v_lines <- pretty(seq(min_mz, max_mz, by = x_ticks),
@@ -79,6 +84,10 @@ plotSpectra <- function(dat,
   # user sets min/max: verify against data
   min_mz <- max(min_mz, min(dat$full_mz))
   max_mz <- min(max_mz, max(dat$full_mz))
+  stopifnot(max_mz - min_mz > 10)
+
+  # subset to the user-requested limits
+  dat <- dat[dat$full_mz >= min_mz & dat$full_mz <= max_mz, ]
 
   x_axe <- pretty(seq(min_mz, max_mz, by = x_ticks),
                   n = round((max_mz - min_mz) / x_ticks))
@@ -90,11 +99,11 @@ plotSpectra <- function(dat,
      rgb.val.o <- col2rgb(overlay_colour)
      o.col <- rgb(rgb.val.o[1], rgb.val.o[2], rgb.val.o[3],
                  max = 255,
-                 alpha = 70)
+                 alpha = 80)
      rgb.val.u <- col2rgb(colour)
      u.col <- rgb(rgb.val.u[1], rgb.val.u[2], rgb.val.u[3],
                  max = 255,
-                 alpha = 70)
+                 alpha = 80)
 
 
      plot(NA, NA,
