@@ -87,10 +87,15 @@ plotSpectra <- function(dat,
 
   if(method == "overlay") {
 
-     rgb.val <- col2rgb(overlay_colour)
-     o.col <- rgb(rgb.val[1], rgb.val[2], rgb.val[3],
+     rgb.val.o <- col2rgb(overlay_colour)
+     o.col <- rgb(rgb.val.o[1], rgb.val.o[2], rgb.val.o[3],
                  max = 255,
-                 alpha = 50)
+                 alpha = 70)
+     rgb.val.u <- col2rgb(colour)
+     u.col <- rgb(rgb.val.u[1], rgb.val.u[2], rgb.val.u[3],
+                 max = 255,
+                 alpha = 70)
+
 
      plot(NA, NA,
           type = "l",
@@ -109,7 +114,7 @@ plotSpectra <- function(dat,
      abline(v = v_lines, col = "grey85", lty = "solid")
      lines(x = dat$full_mz,
            y = dat[[spec1]],
-           col = colour)
+           col = u.col)
      lines(x = dat$full_mz,
            y = dat[[spec2]],
            col = o.col)
