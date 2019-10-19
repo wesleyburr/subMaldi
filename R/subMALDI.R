@@ -77,14 +77,13 @@ mapSpectrum <- function(dat, massCol, intenseCol, dig = 4, thresh = 1e-4, spec_d
   # Quantify the spaces between m/z values, make vector of all differences greater than threshold
   diffs <- mass[-1] - mass[-length(mass)]
   too_close <- which(diffs < thresh)
-
+  throw_away <- c()
 
   if(length(too_close) > 0) { # not only isolated peaks
     # fix the 'too close together' problem: identify local maximums
     dupes <- which(duplicated(mass))  # identifies the duplicates, but not
     # the points they're duplicates _of_
     if(length(dupes) > 0) { # found some ...
-      throw_away <- c()
       for(j in 1:length(dupes)) { # cycle through
         mz.val <- mass[dupes[j]]  # grab the mz that's duplicated
         all_dupes_tmp <- which(mass == mz.val)  # find all mz's that match
