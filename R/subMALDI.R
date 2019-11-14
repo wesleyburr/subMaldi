@@ -1,7 +1,3 @@
-#
-# subMALDI Script or should we call it... MALDIVar? or should that be our big metric?
-#
-
 #############################################################################
 #
 # IMPORT DATA INTO PAIRWISE DATA FRAME
@@ -21,6 +17,7 @@ readcsvSpec <- function(spec_file, massCol, intenseCol){
 }
 
 readcsvDir <- function(direct, massCol, intenseCol, output){
+  all_files <- list.files(path = direct, pattern = ".csv")
   for(j in 1:length(all_files)) {
     temp <- read.csv(  paste0(direct, all_files[ j ]) )
     mass <- select(temp, massCol)
