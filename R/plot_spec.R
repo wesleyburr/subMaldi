@@ -1,219 +1,254 @@
-#############################################################################
-#
-# PLOT A SINGLE SPECTRUm
-#
+# -----------------------------------------------------------------------
+# Last Updated: May 25, 2020
+# Author: Kristen Yeh
+# Title: subMALDI Plotting Functions
+# -----------------------------------------------------------------------
+
+
+
+# ------------------------
+# PLOT A SINGLE SPECTRUM
+# ------------------------
+
+
 plotSpectrum <- function(dat, 
-                         spec, 
-                         min_mz = 50.0, 
-                         max_mz = 1100.0, 
-                         x_ticks = 100, 
-                         y_ticks = 25,
-                         xlbl = expression(italic("m/z")), 
-                         ylbl = "Intensity", 
-                         colour = "black",
-                         n_peaks = 5) {
-  
-  # user sets min/max: verify against data
-  min_mz <- max(min_mz, min(dat$full_mz))
-  max_mz <- min(max_mz, max(dat$full_mz))
-
-  stopifnot(max_mz - min_mz > 10)
-
-  # subset to the user-requested limits
-  dat <- dat[dat$full_mz >= min_mz & dat$full_mz <= max_mz, ]
-
-  x_axe <- pretty(seq(min_mz, max_mz, by = x_ticks),
-                  n = round((max_mz - min_mz) / x_ticks))
-  v_lines <- pretty(seq(min_mz, max_mz, by = x_ticks),
-                  n = 2 * round((max_mz - min_mz) / x_ticks)) 
-
-  par(mar = c(4,4,1,1))
-  par(mfrow = c(1,1))
-  plot(NA, NA,
-       type = "l",
-       xaxt = "n",
-       ylab = ylbl,
-       xlab = xlbl,
-       xlim = c(min_mz, max_mz), 
-       ylim = c(min(dat[[spec]]), max(dat[[spec]])))
-  axis(side = 1, at = x_axe, labels = TRUE)
-
-  # hack to fix grid
-  grid(nx = NA, ny = NULL, lty = "solid", col = "grey85")
-  abline(v = v_lines, col = "grey85", lty = "solid")
-  lines(x = dat$full_mz,
-        y = dat[[spec]],
-        col = colour)
-
-  # crazy bit for labels
-  label_peaks <- find_top_peaks(x = dat$full_mz,
-                                y = dat[[spec]],
-                                n_peaks = n_peaks)
-  #label_peaks <- jitter(label_peaks$l, factor = 2)
-  # return from this will be the top n_peaks m/z values
-  for(j in 1:n_peaks) {
-    text(x = label_peaks$x[j] * (1 + rnorm(1, sd = 0.01)), 
-         y = label_peaks$y[j] * (1 + rnorm(1, sd = 0.01)),
-         label = label_peaks$l[j], 
-         cex = 0.7, pos = 4, offset = 0,
-         col = "black")
-  }
-}
-
-#############################################################################
-#
-# PLOT MULTIPLE SPECTRA
-#
-
-plotSpectra <- function(dat, 
-                        spec1, 
-                        spec2, 
-                        method,
-                        min_mz = 50, 
-                        max_mz = 1100, 
-                        x_ticks = 100, 
-                        y_ticks = 25,
-                        sub_ttl1 = "Original", 
-                        sub_ttl2 = "Subtracted", 
-                        xlbl = expression(italic("m/z")),
-                        ylbl = "Intensity", 
-                        colour = "black", 
-                        overlay_colour = "blue",
-                        n_peaks = 5) {
-
-  # user sets min/max: verify against data
-  min_mz <- max(min_mz, min(dat$full_mz))
-  max_mz <- min(max_mz, max(dat$full_mz))
-  stopifnot(max_mz - min_mz > 10)
-
-  # subset to the user-requested limits
-  dat <- dat[dat$full_mz >= min_mz & dat$full_mz <= max_mz, ]
-
-  x_axe <- pretty(seq(min_mz, max_mz, by = x_ticks),
-                  n = round((max_mz - min_mz) / x_ticks))
-  v_lines <- pretty(seq(min_mz, max_mz, by = x_ticks),
-                  n = 2 * round((max_mz - min_mz) / x_ticks)) 
-
-  if(method == "overlay") {
-
-     rgb.val.o <- col2rgb(overlay_colour)
-     o.col <- rgb(rgb.val.o[1], rgb.val.o[2], rgb.val.o[3],
-                 max = 255,
-                 alpha = 80)
-     rgb.val.u <- col2rgb(colour)
-     u.col <- rgb(rgb.val.u[1], rgb.val.u[2], rgb.val.u[3],
-                 max = 255,
-                 alpha = 80)
-
-
-     plot(NA, NA,
-          type = "l",
-          xaxt = "n",
-          ylab = ylbl,
-          xlab = xlbl,
-          xlim = c(min_mz, max_mz), 
-          ylim = c(min(min(dat[[spec1]]), 
-                       min(dat[[spec2]])),
-                   max(max(dat[[spec1]]),
-                       max(dat[[spec2]]))))
-     axis(side = 1, at = x_axe, labels = TRUE)
- 
-     # hack to fix grid
-     grid(nx = NA, ny = NULL, lty = "solid", col = "grey85")
-     abline(v = v_lines, col = "grey85", lty = "solid")
-     lines(x = dat$full_mz,
-           y = dat[[spec1]],
-           col = u.col)
-     lines(x = dat$full_mz,
-           y = dat[[spec2]],
-           col = o.col)
-     legend("topleft",
-            c(sub_ttl1, sub_ttl2),
-            fill =c(colour, overlay_colour))
- 
-     # crazy bit for labels
-     label_peaks <- find_top_peaks(x = dat$full_mz,
-                                   y = dat[[spec2]],
-                                   n_peaks = n_peaks)
-     # return from this will be the top n_peaks m/z values
-     for(j in 1:n_peaks) {
-       text(x = label_peaks$x[j] * (1 + rnorm(1, sd = 0.01)), 
-            y = label_peaks$y[j] * (1 + rnorm(1, sd = 0.01)),
-            label = label_peaks$l[j], 
-            cex = 0.7, pos = 4, offset = 0)
-     } 
-  } else {
-
-    # Spec 1
-    par(mfrow = c(2,1)) 
-    par(mar = c(1,4,1,1))
-    plot(NA, NA,
-         type = "l",
-         xaxt = "n",
-         main = NA, 
-         ylab = ylbl,
-         xlab = xlbl,
-         xlim = c(min_mz, max_mz),
-         ylim = c(min(min(dat[[spec1]]), 
-                       min(dat[[spec2]])),
-                   max(max(dat[[spec1]]),
-                       max(dat[[spec2]]))))
-    axis(side = 1, at = x_axe, labels = FALSE)
-
-    # hack to fix grid
-    grid(nx = NA, ny = NULL, lty = "solid", col = "grey85")
-    abline(v = v_lines, col = "grey85", lty = "solid")
-    lines(x = dat$full_mz,
-          y = dat[[spec1]],
-          col = colour)
-    legend(x = "topright", legend = sub_ttl1,
-           box.col = "black", bg = "white")
-    # crazy bit for labels
-    label_peaks <- find_top_peaks(x = dat$full_mz,
-                                  y = dat[[spec1]],
-                                  n_peaks = n_peaks)
-    # return from this will be the top n_peaks m/z values
-    for(j in 1:n_peaks) {
-      text(x = label_peaks$x[j] * (1 + rnorm(1, sd = 0.01)), 
-           y = label_peaks$y[j] * (1 + rnorm(1, sd = 0.01)),
-           label = label_peaks$l[j], 
-           cex = 0.7, pos = 4, offset = 0)
+                         mass_dat = full_mz,
+                         intensity_dat,
+                         colour = "slategrey",
+                         span = 5,
+                         thresh = 0.1,
+                         min_mz = 0,
+                         max_mz = 1000,
+                         lbls = FALSE,
+                         x_ticks = 100) {
+  ggplot(dat, aes(x = mass_dat, y = intensity_dat), group = 1) +
+    geom_line(col = colour) +
+    labs(x = expression(italic("m/z")), y = "Intensity") +
+    theme(axis.text.x = element_text(angle = 90),) +
+    scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+    scale_y_continuous(limits=c(0, max(intensity_dat))) +
+    theme_bw() + theme( panel.border = element_blank(),
+                        strip.background = element_blank(),
+                        strip.text.x = element_blank(),
+                        axis.line = element_line(colour = "grey85", 
+                                                 size = 0.5,)) +
+    if(lbls == TRUE){
+      stat_peaks(aes(x = mass_dat, y = intensity_dat, group = 1), 
+                 ignore_threshold = thresh, span = span, 
+                 geom = "text", check_overlap = TRUE, color = "black", cex = 3.0)
+    } else {  
+      stat_peaks(aes(x = mass_dat, y = intensity_dat, group = 1), 
+                 ignore_threshold = 100, span = span, 
+                 geom = "text", check_overlap = TRUE, color = "black", cex = 3.0)
     }
-    # end of first spectrum, start of second 
-    par(mar = c(4,4,1,1))
-    plot(NA, NA,
-         type = "l",
-         xaxt = "n",
-         ylab = ylbl,
-         main = NA, 
-         xlab = xlbl,
-         xlim = c(min_mz, max_mz),
-         ylim = c(min(min(dat[[spec1]]), 
-                       min(dat[[spec2]])),
-                   max(max(dat[[spec1]]),
-                       max(dat[[spec2]]))))
-      axis(side = 1, at = x_axe, labels = TRUE)
-      # hack to fix grid
-      grid(nx = NA, ny = NULL, lty = "solid", col = "grey85")
-      abline(v = v_lines, col = "grey85", lty = "solid")
-      lines(x = dat$full_mz,
-            y = dat[[spec2]],
-            col = overlay_colour)
-      legend(x = "topright", legend = sub_ttl2,
-             box.col = "black",bg = "white")
-      # crazy bit for labels
-      label_peaks <- find_top_peaks(x = dat$full_mz,
-                                    y = dat[[spec2]],
-                                    n_peaks = n_peaks)
-      # return from this will be the top n_peaks m/z values
-      for(j in 1:n_peaks) {
-        text(x = label_peaks$x[j] * (1 + rnorm(1, sd = 0.01)), 
-             y = label_peaks$y[j] * (1 + rnorm(1, sd = 0.01)),
-             label = label_peaks$l[j], 
-             cex = 0.7, pos = 4, offset = 0)
-      }
-      # end of second spectrum
-      par(mfrow=c(1,1))
+}
+
+
+# ---------------------
+# PLOT 1 to 4 SPECTRA
+# ---------------------
+
+
+plotSpectra <- function(dat, mass_dat,
+                        spec1, spec2,
+                        spec3 = NULL,
+                        spec4 = NULL,
+                        colour1 = wes_palette(n=1, name = "GrandBudapest2"),
+                        colour2 = wes_palette(n=1, name = "GrandBudapest1"),
+                        colour3 = wes_palette(n=1, name = "Moonrise1"),
+                        colour4 = wes_palette(n=1, name = "Moonrise3"),
+                        span = 5,
+                        thresh = 0.1,
+                        lbls = FALSE, 
+                        min_mz = 0,
+                        max_mz = 1000,
+                        x_ticks = 100,
+                        intensity_scale = "free_y"){
+  
+  if(is.null(spec4)) {
+    if(is.null(spec3)) {
+      # ensure spec1 and spec2 are columns in dat
+      stopifnot(is.character(spec1), is.character(spec2),
+                spec1 %in% names(dat), spec2 %in% names(dat))
+      
+      # reformat the data frame for easy faceting
+      sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                       all_of(spec1), all_of(spec2), factor_key= TRUE)
+      
+      # plot the sorted data
+      ggplot(sorted, aes(x = full_mz, y = Intensity, colour = Spectra)) +
+        geom_line() +
+        labs(x = expression(italic("m/z")), y = "Intensity") +
+        facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
+        scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+        theme_bw() + theme( panel.border = element_blank(),
+                            strip.background = element_blank(),
+                            strip.text.x = element_blank(),
+                            legend.position = "bottom",
+                            axis.line = element_line(colour = "grey85", 
+                                                     size = 0.5,)) +
+        scale_color_manual(values = c(colour1,colour2)) +
+        
+        if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                                     ignore_threshold = thresh, span = span, 
+                                     geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) } 
+      else { stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                        ignore_threshold = 100, span = span, 
+                        geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
+    } 
+    
+    else {
+      # spec3 is not null but spec4 is
+      stopifnot(is.character(spec1), is.character(spec2), is.character(spec3),
+                spec1 %in% names(dat), spec2 %in% names(dat), spec3 %in% names(dat))
+      
+      # reformat the data frame for easy faceting
+      sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                       all_of(spec1), all_of(spec2), all_of(spec3), factor_key= TRUE)
+      
+      # plot the sorted data
+      ggplot(sorted, aes(x = full_mz, y = Intensity, colour = Spectra)) +
+        geom_line() +
+        labs(x = expression(italic("m/z")), y = "Intensity") +
+        facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
+        scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+        theme_bw() + theme( panel.border = element_blank(),
+                            strip.background = element_blank(),
+                            strip.text.x = element_blank(),
+                            legend.position = "bottom",
+                            axis.line = element_line(colour = "grey85", 
+                                                     size = 0.5,)) +
+        scale_color_manual(values = c(colour1,colour2,colour3)) +
+        
+        if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                                     ignore_threshold = thresh, span = span, 
+                                     geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) } 
+      else {  stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                         ignore_threshold = 100, span = span, geom = "text", 
+                         check_overlap = TRUE, color = "black", cex = 3.0)  } 
+    }
+  } else {
+    # if spec4 is NOT null
+    stopifnot(is.character(spec1), is.character(spec2), is.character(spec3),
+              is.character(spec4), spec1 %in% names(dat), spec2 %in% names(dat), 
+              spec3 %in% names(dat), spec4 %in% names(dat))
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), all_of(spec3),
+                     all_of(spec4), factor_key= TRUE)
+    
+    # plot the sorted data
+    ggplot(sorted, aes(x = full_mz, y = Intensity, colour = Spectra)) +
+      geom_line() +
+      labs(x = expression(italic("m/z")), y = "Intensity") +
+      facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
+      scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      theme_bw() + theme( panel.border = element_blank(),
+                          strip.background = element_blank(),
+                          strip.text.x = element_blank(),
+                          legend.position = "bottom",
+                          axis.line = element_line(colour = "grey85", 
+                                                   size = 0.5,)) +
+      scale_color_manual(values = c(colour1,colour2,colour3,colour4)) +
+      
+      if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                                   ignore_threshold = thresh, span = span, 
+                                   geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
+    else { stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                      ignore_threshold = 100, span = span, 
+                      geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
   }
 }
 
+
+# ----------------------
+# PLOT 4 or 6 SPECTRA
+# ----------------------
+
+plotgridSpectra<- function(dat, mass_dat, 
+                           spec1, spec2,
+                           spec3, spec4,
+                           spec5 = NULL, spec6 = NULL,
+                           colour1 = wes_palette(n=1, name = "GrandBudapest2"),
+                           colour2 = wes_palette(n=1, name = "GrandBudapest1"),
+                           colour3 = wes_palette(n=1, name = "Moonrise1"),
+                           colour4 = wes_palette(n=1, name = "Moonrise3"),
+                           colour5 = wes_palette(n = 1, name = "IsleofDogs1"),
+                           colour6 = wes_palette(n = 1, name = "FantasticFox1"),
+                           span = 5,
+                           thresh = 0.1,
+                           lbls = FALSE, 
+                           min_mz = 0,
+                           max_mz = 1000,
+                           x_ticks = 100,
+                           intensity_scale = "free_y"){
+  
+  if(is.null(spec6)) {
+    
+    # make sure grabbing the right spec
+    stopifnot(is.character(spec1), is.character(spec2), is.character(spec3),
+              is.character(spec4), spec1 %in% names(dat), spec2 %in% names(dat), 
+              spec3 %in% names(dat), spec4 %in% names(dat))
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), 
+                     all_of(spec3), all_of(spec4), factor_key= TRUE)
+    
+    # plot the sorted data
+    ggplot(sorted, aes(x = full_mz, y = Intensity, colour = Spectra)) +
+      geom_line() +
+      labs(x = expression(italic("m/z")), y = "Intensity") +
+      facet_wrap(~Spectra, ncol = 2, scales = intensity_scale) +
+      scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      theme_bw() + theme( panel.border = element_blank(),
+                          strip.background = element_blank(),
+                          strip.text.x = element_blank(),
+                          legend.position = "bottom",
+                          axis.line = element_line(colour = "grey85", 
+                                                   size = 0.5,)) +
+      scale_color_manual(values = c(colour1,colour2,colour3,colour4)) +
+      if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                                   ignore_threshold = thresh, span = span, 
+                                   geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
+    else {  stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                       ignore_threshold = 100, span = span, 
+                       geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
+  } 
+  
+  else {
+    
+    # make sure grabbing the right spec
+    stopifnot(is.character(spec1), is.character(spec2), is.character(spec3),
+              is.character(spec4), spec1 %in% names(dat), spec2 %in% names(dat), 
+              spec3 %in% names(dat), spec4 %in% names(dat))
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), all_of(spec3), 
+                     all_of(spec4), all_of(spec5), all_of(spec6),
+                     factor_key= TRUE)
+    
+    # plot the sorted data
+    ggplot(sorted, aes(x = full_mz, y = Intensity, colour = Spectra)) +
+      geom_line() +
+      labs(x = expression(italic("m/z")), y = "Intensity") +
+      facet_wrap(~Spectra, ncol = 2, scales = intensity_scale) +
+      scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      theme_bw() + theme( panel.border = element_blank(),
+                          strip.background = element_blank(),
+                          strip.text.x = element_blank(),
+                          legend.position = "bottom",
+                          axis.line = element_line(colour = "grey85", 
+                                                   size = 0.5,)) +
+      scale_color_manual(values = c(colour1,colour2,colour3,colour4,colour5,colour6)) +
+      if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                                   ignore_threshold = thresh, span = span, 
+                                   geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
+    else {  stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                       ignore_threshold = 100, span = span, 
+                       geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }} 
+}
+
+# -----------------------------------------------------------------------

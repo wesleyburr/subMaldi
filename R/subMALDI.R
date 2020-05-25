@@ -1,8 +1,13 @@
-#############################################################################
-#
-# IMPORT DATA INTO PAIRWISE DATA FRAME
-#
+# -----------------------------------------------------------------------
+# Last Updated: May 25, 2020
+# Author: Kristen Yeh
+# Title: subMALDI Base Functions
+# -----------------------------------------------------------------------
 
+
+# --------------------------
+# IMPORT DATA TO DATA FRAME
+# --------------------------
 
 # Import .csv mass spectra files from a directory and export as .rda's for use in data frame
 # Basically just a quick and easy way to turn .csv files into individual data frames per spectrum
@@ -32,10 +37,14 @@ readcsvDir <- function(direct, massCol, intenseCol, output){
   }
 }
 
-#############################################################################
-#
+
+# -----------------------------------------------------------------------
+
+
+# ------------------------
 # MAKE EMPTY DATA FRAME
-#
+# ------------------------
+
 
 createSpecDF <- function(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4) {
   full_mz <- seq(min_mz, max_mz, by = res)
@@ -46,17 +55,12 @@ createSpecDF <- function(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4) {
 }
 
 
-#############################################################################
-#
-# ADJUST DATA TO MATCH full_mz + GET RID OF DUPLICATES
-#
+# -----------------------------------------------------------------------
 
-# aBN_A11 <- rm(aBN_A11.mz, aBN_A11.intense)
-# Load your pairwise dataframe .rda's from import
-# load("./Data/Objects/R Objects/Raw/August 1/aBN_A11.rda")
 
-# Get rid of duplicated values and pick max. intensity; round to 4 digits
-# Map to full_mz in spec_df
+# ---------------------------------
+# MAP SPECTRUM TO EMPTY DATA FRAME
+# ---------------------------------
 
 mapSpectrum <- function(dat, massCol, intenseCol, dig = 4, thresh = 1e-4, spec_df, colName) {
   # Sanity checks
@@ -109,10 +113,13 @@ mapSpectrum <- function(dat, massCol, intenseCol, dig = 4, thresh = 1e-4, spec_d
 
 }
 
-#############################################################################
-#
+
+# -----------------------------------------------------------------------
+
+
+# -----------------------------
 # SUBTRACT BLANKS FROM SAMPLES
-#
+# -----------------------------
 
 # Make sure you transform dat to have a Sub_Sample column for the subtracted spec.
 # spec.df <- transform(spec.df, Sub.C15 = 0)
@@ -143,10 +150,13 @@ subSpectra <- function(dat, Blank_Var, Sample, Sub_Sample, showNeg = FALSE){
   return(dat)
 }
 
-#############################################################################
-#
+
+# -----------------------------------------------------------------------
+
+
+# ----------------
 # AVERAGE SPECTRA
-#
+# ----------------
 
 # Average intensities across rows per sample
 # First user should organize standardized data frame so all samples are together
@@ -165,10 +175,13 @@ avgSpectra <- function(dat, method = "mean"){
 
 }
 
-#############################################################################
-#
-# REMOVE EMPTY ROWS TO REDUCE LOAD
-#
+
+# -----------------------------------------------------------------------
+
+
+# ------------------
+# REMOVE EMPTY ROWS
+# ------------------
 
 # Throw out every all-zero row to lessen the computational load and get rid of empty values
 # Wouldn't recommend using this unless you've already made a master frame with all of the samples you
