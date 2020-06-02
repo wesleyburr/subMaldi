@@ -24,14 +24,14 @@ plotSpectrum <- function(dat,
   ggplot(dat, aes(x = mass_dat, y = intensity_dat), group = 1) +
     geom_line(col = colour) +
     labs(x = expression(italic("m/z")), y = "Intensity") +
-    theme(axis.text.x = element_text(angle = 90),) +
+    theme(axis.text.x = element_text(angle = 90)) +
     scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
     scale_y_continuous(limits=c(0, max(intensity_dat))) +
     theme_bw() + theme( panel.border = element_blank(),
                         strip.background = element_blank(),
                         strip.text.x = element_blank(),
                         axis.line = element_line(colour = "grey85", 
-                                                 size = 0.5,)) +
+                                                 size = 0.5)) +
     if(lbls == TRUE){
       stat_peaks(aes(x = mass_dat, y = intensity_dat, group = 1), 
                  ignore_threshold = thresh, span = span, 
@@ -86,7 +86,7 @@ plotSpectra <- function(dat, mass_dat,
                             strip.text.x = element_blank(),
                             legend.position = "bottom",
                             axis.line = element_line(colour = "grey85", 
-                                                     size = 0.5,)) +
+                                                     size = 0.5)) +
         scale_color_manual(values = c(colour1,colour2)) +
         
         if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
@@ -117,7 +117,7 @@ plotSpectra <- function(dat, mass_dat,
                             strip.text.x = element_blank(),
                             legend.position = "bottom",
                             axis.line = element_line(colour = "grey85", 
-                                                     size = 0.5,)) +
+                                                     size = 0.5)) +
         scale_color_manual(values = c(colour1,colour2,colour3)) +
         
         if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
@@ -149,7 +149,7 @@ plotSpectra <- function(dat, mass_dat,
                           strip.text.x = element_blank(),
                           legend.position = "bottom",
                           axis.line = element_line(colour = "grey85", 
-                                                   size = 0.5,)) +
+                                                   size = 0.5)) +
       scale_color_manual(values = c(colour1,colour2,colour3,colour4)) +
       
       if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
@@ -241,7 +241,7 @@ plotgridSpectra<- function(dat, mass_dat,
                           strip.text.x = element_blank(),
                           legend.position = "bottom",
                           axis.line = element_line(colour = "grey85", 
-                                                   size = 0.5,)) +
+                                                   size = 0.5)) +
       scale_color_manual(values = c(colour1,colour2,colour3,colour4,colour5,colour6)) +
       if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
                                    ignore_threshold = thresh, span = span, 

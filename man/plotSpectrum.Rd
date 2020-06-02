@@ -8,20 +8,20 @@ Plot a Single Spectrum
 Plots a single spectrum from a mapped spectral data frame.
 }
 \usage{
-plotSpectrum(dat, spec, min_mz = 50, max_mz = 1100, x_ticks = 100, y_ticks = 25, xlbl = expression(italic("m/z")), ylbl = "Intensity", colour = "black", n_peaks = 5)
+plotSpectrum(dat, mass_dat = full_mz, intensity_dat, colour = "slategrey", span = 5, thresh = 0.1, min_mz = 0, max_mz = 1000, lbls = FALSE, x_ticks = 100)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{the mapped spectral data frame, containing \code{full_mz} in the first column.}
-  \item{spec}{a character string; the name of the column in \code{dat} containing the intensity data for the spectrum that is to be plotted.}
-  \item{min_mz}{single numeric value; minimum \emph{m/z} value of the observed range. Default = 50.}
-  \item{max_mz}{single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1100.}
-  \item{x_ticks}{single numeric value; the number of ticks and gridlines desired on the x-axis. Default = 100.}
-  \item{y_ticks}{single numeric value; the number of ticks and gridlines desired on the y-axis. Default = 25.}
-  \item{xlbl}{a character string; the label on the x-axis. Default = \emph{m/z}.}
-  \item{ylbl}{a character string; the label on the y-axis. Default = Intensity.}
-  \item{colour}{a character string; the name of the colour the spectrum should be plotted in. Default = "black".}
-  \item{n_peaks}{single numeric value; the number of most intense peaks that should be labelled. Peaks are found by \code{find_top_peaks}, from which labels are generated from.}
+  \item{mass_dat}{a character string; the name of the column in \code{dat} containing the \emph{m/z}data for the spectrum that is to be plotted. Default = full_mz}
+  \item{intensity_dat}{a character string; the name of the column in \code{dat} containing the intensity data for the spectrum that is to be plotted.}
+  \item{colour}{a character string; the name of the colour the spectrum should be plotted in. Default = "slategrey".}
+  \item{span}{single numeric value; the distance between peak maxima that are labelled if lbls = TRUE. Default = 5.}
+  \item{thresh}{single numeric value between 0 and 1; the intensity threshold of peaks in the plotted spectrum whih should be labelled. Default = 0.1.}
+  \item{min_mz}{single numeric value; minimum \emph{m/z} value of the observed range. Default = 0.}
+  \item{max_mz}{single numeric value; upper end of \emph{m/z} range to be observed in the plotted spectra. Default = 1000.}
+  \item{lbls}{logical; should labels indicating the \emph{m/z} of the most intense peaks be included in the plot? Default = FALSE. }
+  \item{x_ticks}{single numeric value; the increment between ticks on the x-axis. Default = 100.}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -41,12 +41,9 @@ Wesley Burr <wburr@trentu.ca>
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-## Plotting using the sample dataset "Subtracted_Sample_01.rda"
-data("Subtracted_Sample_01")
-plotSpectrum(dat = test, spec = "Sample_01", 
-             min_mz = 50, max_mz = 100, 
-             x_ticks = 100, y_ticks = 25, 
-             colour = "pink", n_peaks = 20)
+## Plotting using the sample dataset "Before1.rda"
+data("Before1")
+plotSpectrum(dat = Before1, mass_dat = "mass", intensity_dat = "Intensity")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
