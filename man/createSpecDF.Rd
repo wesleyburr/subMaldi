@@ -5,17 +5,17 @@
 Create Empty Spectral Data Frame
 }
 \description{
-Creates an empty data frame to be used for mapping spectral data to a vector of \emph{m/z} values. The vector of \emph{m/z} values is stored in the first column and can be called by "\code{full_mz}". The following columns can be customized by name to fit the samples you choose to fill them with, ex. "Blank" and "Sample".
+Creates an empty data frame to be used for mapping spectral data to a vector of \emph{m/z} values. The vector of \emph{m/z} values is stored in the first column and can be called by "\code{full_mz}".
 }
 \usage{
 createSpecDF(min_mz = 53.76, max_mz = 1100.00, res = 0.0001, dig = 4)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{min_mz}{single numeric value; minimum \emph{m/z} value of the observed range. Default = 53.76.}
-  \item{max_mz}{single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1100.}
-  \item{res}{resolution of peaks; a single numeric value indicating the step size from the minimum to maximum \emph{m/z} bin. Also known as bin width. Default = 0.0001.}
-  \item{dig}{number of decimal places to round the \emph{m/z} vector to; required for \emph{m/z} values to match full \emph{m/z} vector. Default = 4.}
+  \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 53.76.}
+  \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1100.}
+  \item{res}{The resolution of peaks; a single numeric value indicating the step size from the minimum to maximum \emph{m/z} bin. Also known as bin width. Default = 0.0001.}
+  \item{dig}{Number of decimal places to round the \emph{m/z} vector to; required for \emph{m/z} values to match full \emph{m/z} vector. Default = 4.}
 }
 
 \details{
@@ -25,13 +25,13 @@ createSpecDF(min_mz = 53.76, max_mz = 1100.00, res = 0.0001, dig = 4)
 Returns a data frame which can be used to map irregularly spaced spectral data to a set range of \emph{m/z} values, contained in the first column of the frame.
 }
 \references{
-%% ~put references to the literature/web site here ~
+https://github.com/wesleyburr/subMaldi
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 }
 \note{
-The data frame prepared by this function is also very useful for averaging or summing spectra. In this case, fill empty columns with spectral data and insert additoinal columns using \pkg{dplyr}'s \code{transform()}.
+}
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
