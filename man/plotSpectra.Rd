@@ -108,6 +108,7 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, colour1 = w
 \arguments{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{dat}{The name of the spectral data frame, containing the \emph{m/z}
 data in the first column.}
 
@@ -184,6 +185,9 @@ the most intense spectrum in the set.}
   \item{x_ticks}{Single numeric value; the space between ticks on x-axis.}
 =======
   \item{dat}{The name of the spectral data frame, containing \code{full_mz} in the first column.}
+=======
+  \item{dat}{The name of the spectral data frame, containing the \emph{m/z} data in the first column.}
+>>>>>>> 834ea85... Updated documentation - removed .tar.gz
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data.}
   \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the first spectrum that is to be plotted.}
   \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be plotted.}
@@ -198,8 +202,12 @@ the most intense spectrum in the set.}
   \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the \emph{m/z} value of each peak maxima within the indicated \code{span} will be included in the output plot. If \code{lbls = FALSE}, labels are not shown. Default = FALSE.}
   \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 0.}
   \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1000.}
+<<<<<<< HEAD
   \item{x_ticks}{Single numeric value; the number of ticks and gridlines desired on the x-axis. Default = 100.}
 >>>>>>> a54180f... Master data & updated documentation - removed .tar.gz
+=======
+  \item{x_ticks}{Single numeric value; the space between ticks on x-axis. Default = 100.}
+>>>>>>> 834ea85... Updated documentation - removed .tar.gz
   \item{intensity_scale}{A character string; the method that should be used for determining the y-axis scales for each spectrum. If \code{method = "free_y"}, each spectrum will be plotted with its own intensity scale. If \code{method = "fixed"}, each spectrum will be plotted with the y-axis of the most intense spectrum in the set.}
 }
 <<<<<<< HEAD
