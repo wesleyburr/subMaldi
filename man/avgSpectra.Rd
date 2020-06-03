@@ -37,6 +37,7 @@ avgSpectra(dat, method = "mean", spectra_cols)
 \arguments{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the
 first column.}
 
@@ -49,17 +50,34 @@ Methods include "sum" and "mean". Default = "mean."}
 \value{
 Returns a new column in the input data frame containing the
 averaged intensity data.
+=======
+  \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the first column.}
+  \item{method}{A character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+}
+\value{
+Returns a vector of intensity values that are printed to the "Average" column in the corresponding rows of the \code{full_mz} vector in the mapped spectral data frame.
+}
+\references{
+https://github.com/wesleyburr/subMaldi
+>>>>>>> db6ced3... Updated documentation
 }
 \description{
 Combines spectral replicates either by averaging (method = "mean") or
 summing (method = "sum") the intensity values across each row representing a
 mass-to-charge value in \code{full_mz}.
 }
+<<<<<<< HEAD
 \examples{
 =======
   \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the first column.}
   \item{method}{A character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
   \item{spectra_cols}{A character vector; the names of the column in \code{dat} containing the intensity data for the spectra-of-interest.}.}
+=======
+\note{
+>>>>>>> db6ced3... Updated documentation
 }
 =======
 \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the
@@ -88,12 +106,15 @@ mass-to-charge value in \code{full_mz}.
 ## Load sample datasets
 data("Before1")
 data("After1")
+<<<<<<< HEAD
 >>>>>>> 270485a... Updated documentation
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 
 ## Load sample dataset "Master.rda"
 data("Master")
+=======
+>>>>>>> db6ced3... Updated documentation
 
 ## Average blank spectrum 1 and 2 using the method "mean"
 ex <- avgSpectra(Master, method = "mean", spectra_cols = c("Blank1", "Blank2"))

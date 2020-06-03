@@ -22,6 +22,7 @@ readcsvDir(direct, massCol, intenseCol, output)
 \arguments{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \item{direct}{The path to the directory where the \code{.csv} files are
@@ -37,6 +38,8 @@ the \code{.csv} files.}
 \item{output}{The path to the directory where the exported \code{.rda}
 files containing the binary spectral data frames should go.}
 =======
+=======
+>>>>>>> db6ced3... Updated documentation
   \item{direct}{The path to the directory where the \code{.csv} files are held.}
   \item{massCol}{A character string; the name of the mass column in the \code{.csv} files.}
   \item{intenseCol}{A character string; the name of the intensity column in the \code{.csv} files.}
@@ -81,6 +84,9 @@ Wesley Burr <wburr@trentu.ca>
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> db6ced3... Updated documentation
 ## Read all .csv files from /MyFolder and export them as .rda's to /ExportFolder
 readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = "./ExportFolder/")
 
