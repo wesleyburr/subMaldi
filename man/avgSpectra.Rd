@@ -12,8 +12,8 @@ avgSpectra(dat, method)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{dat}{the mapped spectral data frame, containing \code{full_mz} in the first column.}
-  \item{method}{a character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
+  \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the first column.}
+  \item{method}{A character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -22,13 +22,12 @@ avgSpectra(dat, method)
 Returns a vector of intensity values that are printed to the "Average" column in the corresponding rows of the \code{full_mz} vector in the mapped spectral data frame.
 }
 \references{
-%% ~put references to the literature/web site here ~
+https://github.com/wesleyburr/subMaldi
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 }
 \note{
-Requires \code{dplyr}.
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
@@ -38,8 +37,8 @@ Requires \code{dplyr}.
 }
 \examples{
 ## Load sample datasets
-load(Blank_01.rda)
-load(Blank_02.rda)
+data("Before1")
+data("After1")
 
 ## Create empty spectral data frame to map to
 spec_df <- createSpecDF(min_mz = 100, max = 1000, res = 0.0001, dig = 4)
