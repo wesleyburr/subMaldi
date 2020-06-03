@@ -28,7 +28,7 @@ plotSpectrum(dat, mass_dat = full_mz, intensity_dat, colour = "slategrey", span 
 }
 \value{Returns a line plot of the input spectrum.}
 \references{
-%% ~put references to the literature/web site here ~
+https://github.com/wesleyburr/subMaldi
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>

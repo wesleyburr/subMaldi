@@ -35,8 +35,7 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, colour1 = w
 }
 \value{Returns a line plot of the input spectra.}
 \references{
-%% ~put references to the literature/web site here ~
-}
+https://github.com/wesleyburr/subMaldi}
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
