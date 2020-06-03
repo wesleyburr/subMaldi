@@ -99,9 +99,12 @@ the first column and can be called by "\code{full_mz}".
 =======
 \note{
 }
+<<<<<<< HEAD
 >>>>>>> db6ced3... Updated documentation
 }
 <<<<<<< HEAD
+=======
+>>>>>>> 834ea85... Updated documentation - removed .tar.gz
 
 <<<<<<< HEAD
 \seealso{
@@ -121,6 +124,7 @@ spec_df <- createSpecDF(min_mz = 500, max_mz = 2000, res = 0.001, dig = 3)
 ## Creating an empty spectrum with an m/z range of 100 to 1000, 
 # with a step size of 0.0001 and sample names
 spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -149,6 +153,8 @@ https://github.com/wesleyburr/subMaldi
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
+=======
+>>>>>>> 834ea85... Updated documentation - removed .tar.gz
 }
 \keyword{array}
 \keyword{methods}
