@@ -31,11 +31,14 @@ rmveEmpty(dat)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{dat}{The spectral data frame, containing \code{full_mz} in the first
 column, to be trimmed of all-zero rows.}
 =======
 =======
 >>>>>>> db6ced3... Updated documentation
+=======
+>>>>>>> 270485a... Updated documentation
   \item{dat}{The spectral data frame, containing \code{full_mz} in the first column, to be trimmed of all-zero rows.}
 }
 <<<<<<< HEAD
@@ -61,7 +64,10 @@ column, to be trimmed of all-zero rows.}
 =======
 \references{
 https://github.com/wesleyburr/subMaldi
+<<<<<<< HEAD
 >>>>>>> db6ced3... Updated documentation
+=======
+>>>>>>> 270485a... Updated documentation
 }
 \value{
 Returns the input data frame without its all-zero rows.
@@ -88,11 +94,15 @@ which is \code{full_mz}) equal 0 are removed from the data frame.
 }
 \note{
 <<<<<<< HEAD
+<<<<<<< HEAD
 Avoid truncating a dataframe until all samples to be compared have
 been mapped.
 =======
 Avoid truncating a dataframe until all samples to be compared have been mapped. 
 >>>>>>> db6ced3... Updated documentation
+=======
+Avoid truncating a dataframe until all samples to be compared have been mapped. 
+>>>>>>> 270485a... Updated documentation
 }
 \examples{
 
@@ -133,7 +143,12 @@ Avoid truncating a dataframe until all samples to be compared have
 been mapped.
 }
 \examples{
+<<<<<<< HEAD
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+## Load sample dataset "After2.rda"
+data("After2")
+>>>>>>> 270485a... Updated documentation
 
 ## Load sample dataset "Mastre.rda"
 data("Master")
@@ -144,6 +159,7 @@ spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
 
 ## Map binary spectral data to empty spectral data frame
 spec_df <- mapSpectrum(dat = After2, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 270485a... Updated documentation
 =======
@@ -159,6 +175,8 @@ data("Master")
 ## Select only the spectra "Before1" and "Before2"
 ex <- select(Master, "full_mz", "Before1", "Before2")
 >>>>>>> 6c09a20... Fixed documentation
+=======
+>>>>>>> 270485a... Updated documentation
 
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages

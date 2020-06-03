@@ -67,6 +67,7 @@ avgSpectra(dat, method = "mean", spectra_cols)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the
 first column.}
 
@@ -75,6 +76,13 @@ Methods include "sum" and "mean". Default = "mean."}
 
 \item{spectra_cols}{A character vector; the names of the column in
 \code{dat} containing the intensity data for the spectra-of-interest.}
+=======
+  \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the first column.}
+  \item{method}{A character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+>>>>>>> 270485a... Updated documentation
 }
 \value{
 Returns a new column in the input data frame containing the
@@ -98,6 +106,7 @@ Methods include "sum" and "mean". Default = "mean."}
 <<<<<<< HEAD
 \references{
 https://github.com/wesleyburr/subMaldi
+<<<<<<< HEAD
 >>>>>>> db6ced3... Updated documentation
 }
 <<<<<<< HEAD
@@ -105,6 +114,8 @@ https://github.com/wesleyburr/subMaldi
 \value{
 Returns a new column in the input data frame containing the
 averaged intensity data.
+=======
+>>>>>>> 270485a... Updated documentation
 }
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \description{
@@ -129,10 +140,13 @@ Wesley Burr <wburr@trentu.ca>
 =======
 \note{
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> db6ced3... Updated documentation
 =======
 %%  ~~further notes~~
 >>>>>>> 5800ee0... Updated avgSpectra
+=======
+>>>>>>> 270485a... Updated documentation
 }
 =======
 \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the
@@ -164,6 +178,7 @@ mass-to-charge value in \code{full_mz}.
 data("Before1")
 data("After1")
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 270485a... Updated documentation
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
@@ -172,6 +187,8 @@ data("After1")
 data("Master")
 =======
 >>>>>>> db6ced3... Updated documentation
+=======
+>>>>>>> 270485a... Updated documentation
 
 ## Average blank spectrum 1 and 2 using the method "mean"
 ex <- avgSpectra(Master, method = "mean", spectra_cols = c("Blank1", "Blank2"))
