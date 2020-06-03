@@ -12,10 +12,10 @@ subSpectra(dat, Blank_Var, Sample, Sub_Sample)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{dat}{the spectral data frame, containing \code{full_mz} in the first column and intensity data in the subsequent columns.}
-  \item{Blank_Var}{a character string; the name of the blank column that will be subtracted from the sample column.}
-  \item{Sample}{a character string; the name of the sample column that the blank data will be subtracted from.}
-  \item{Sub_Sample}{a character string; the name of the column to be filled with the subtracted spectrum.}
+  \item{dat}{The spectral data frame, containing \code{full_mz} in the first column and intensity data in the subsequent columns.}
+  \item{Blank_Var}{A character string; the name of the blank column that will be subtracted from the sample column.}
+  \item{Sample}{A character string; the name of the sample column that the blank data will be subtracted from.}
+  \item{Sub_Sample}{A character string; the name of the column to be filled with the subtracted spectrum.}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -24,7 +24,7 @@ subSpectra(dat, Blank_Var, Sample, Sub_Sample)
 Returns a vector of intensity values that are filled into the \code{Sub_Sample} column of the mapped data frame at the corresponding rows of \code{full_mz}.
 }
 \references{
-%% ~put references to the literature/web site here ~
+https://github.com/wesleyburr/subMaldi
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
@@ -40,24 +40,14 @@ Wesley Burr <wburr@trentu.ca>
 \code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
 }
 \examples{
-## Example data frames of mass and intensity data
-mass <- c(200, 400, 600, 800)
-Intensity <- c(30958223, 209348208391, 203948589, 90234032)
-samp1_spec <- data.frame(mass, Intensity)
+## Load sample datasets "Master.rda"
+data("Master")
 
-mass <- c(200, 250, 400, 450, 600, 650, 800, 850)
-Intensity <- c(349540386, 9685986, 9222222, 92034985, 309483458, 348534985, 29358425, 209358295)
-samp2_spec <- data.frame(mass, Intensity)
+## Make subtraction column for new data
+Master <- transform(Master, "Subtracted" = 0)
 
-## Create empty spectral data frame to map to
-spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
-
-## Map binary spectral data to empty spectral data frame
-spec_df <- mapSpectrum(dat = samp1_spec, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Samp1")
-spec_df <- mapSpectrum(dat = samp2_spec, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Samp2")
-
-## Subtract samp1 from samp2
-spec_df <- subSpectra(dat = spec_df, Blank_Var = "Samp1", Sample = "Samp2", Sub_Sample = "Sub_Samp2")
+## Subtract Blank1 from Before1
+Master <- subSpectra(dat = Master, Blank_Var = "Blank1", Sample = "Before1", Sub_Sample = "Subtracted")
 {
   }
 }
