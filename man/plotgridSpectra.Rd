@@ -1,14 +1,14 @@
-\name{plotSpectra}
-\alias{plotSpectra}
+\name{plotgridSpectra}
+\alias{plotgridSpectra}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Plot and Compare Multiple Spectra
+Plot and Compare Multiple Spectra in a Grid
 }
 \description{
-Plots multiple spectra on the same \emph{x}-axis scale for easier comparison. Allows for 2 to 4 spectra per plot, stacked on top of one another.
+Plots 4 or 6 spectra in a grid format.
 }
 \usage{
-plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, colour1 = wes_palette(n=1, name = "GrandBudapest2"), colour2 = wes_palette(n=1, name = "GrandBudapest1"), colour3 = wes_palette(n=1, name = "Moonrise1"), colour4 = wes_palette(n=1, name = "Moonrise3"), span = 5, thresh = 0.1, lbls = FALSE, min_mz = 0, max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
+plotgridSpectra(dat, mass_dat, spec1, spec2, spec3, spec4, spec5 = NULL, spec6 = NULL, colour1 = wes_palette(n = 1, name = "GrandBudapest2"), colour2 = wes_palette(n = 1, name = "GrandBudapest1"), colour3 = wes_palette(n = 1, name = "Moonrise1"), colour4 = wes_palette(n = 1, name = "Moonrise3"), colour5 = wes_palette(n = 1, name = "IsleofDogs1"), colour6 = wes_palette(n = 1, name = "FantasticFox1"), span = 5, thresh = 0.1, lbls = FALSE, min_mz = 0, max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -16,12 +16,16 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, colour1 = w
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data.}
   \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the first spectrum that is to be plotted.}
   \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be plotted.}
-  \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be plotted. Default = NULL.}
-  \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be plotted. Default = NULL.}
+  \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be plotted.}
+  \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be plotted.}
+  \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be plotted. Default = NULL.}
+  \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be plotted. Default = NULL.}
   \item{colour1}{A character string indicating the colour the first spectrum should be plotted in. Default = wes_palette(n=1, name = "GrandBudapest2").}
   \item{colour2}{A charater string indicating the colour of the second spectrum in the plot. Default = wes_palette(n=1, name = "GrandBudapest1").}
   \item{colour3}{A charater string indicating the colour of the third spectrum in the plot. Default = wes_palette(n=1, name = "Moonrise1").}
   \item{colour4}{A charater string indicating the colour of the fourth spectrum in the plot. Default = wes_palette(n=1, name = "Moonrise3").}
+  \item{colour5}{A character string indicating the colour of the fifth spectrum in the plot. Default = wes_palette(n = 1, name = "IsleofDogs1").}
+  \item{colour6}{A character string indicating the colour of the sixth spectrum in the plot. Default = wes_palette(n = 1, name = "FantasticFox1").}
   \item{span}{Single numeric value; the span of peak maximas in between each label. Default = 5 (ignores two peak maxima on either side of each label).}
   \item{thresh}{Single numeric value (0-100); the threshold of peak itensities which should be labelled. Default = 0.1.}
   \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the \emph{m/z} value of each peak maxima within the indicated \code{span} will be included in the output plot. If \code{lbls = FALSE}, labels are not shown. Default = FALSE.}
@@ -33,9 +37,11 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, colour1 = w
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{Returns a line plot of the input spectra.}
+\value{Returns a line plot of the input spectra arranged in two columns.
+}
 \references{
-https://github.com/wesleyburr/subMaldi}
+https://github.com/wesleyburr/subMaldi
+}
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
@@ -50,13 +56,16 @@ Wesley Burr <wburr@trentu.ca>
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-## Plotting using the sample dataset "Master.rda"
+## Load sample dataset "Master.rda"
 data("Master")
-plotSpectra(dat = Master, spec1 = "Blank1", 
-                        spec2 = "Blank2",
-                        intensity_scale = "free_y", lbls = TRUE)
-}
 
+## Plot four spectra
+plotgridSpectra(dat = grid_df, spec1 = "Before1", spec2 = "Before1", spec3 = "After1", spec4 = "After2", lbls = TRUE)
+
+## Plot six spectra
+plotgridSpectra(dat = grid_df, spec1 = "Blank1", spec2 = "Blank2", spec3 = "Before1", spec4 = "Before2", spec5 = "After1", spec6 = "After2", lbls = TRUE)
+
+}
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
