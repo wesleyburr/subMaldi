@@ -22,6 +22,7 @@ readcsvSpec(spec_file, massCol, intenseCol)
 \arguments{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \item{spec_file}{A character string; the file path to the \code{.csv}
@@ -37,6 +38,12 @@ the spectrum's \code{.csv} file.}
   \item{spec_file}{A character string; the file path to the \code{.csv} spectrum that is to be imported.}
   \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
   \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
+=======
+  \item{spec_file}{A character string; the file path to the \code{.csv} spectrum that is to be imported.}
+  \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
+  \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
+  \item{spec_name}{A character string; the name of the new, binary data frame containing imported the \emph{m/z} and intensity data.}
+>>>>>>> db6ced3... Updated documentation
 }
 <<<<<<< HEAD
 \details{
@@ -72,6 +79,21 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
+<<<<<<< HEAD
+=======
+\note{
+%%  ~~further notes~~
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+%% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+\examples{
+## Read the sample file "Blank1.csv"
+Blank1 <- readcsvSpec(spec_file = "/subMALDI/data/Blank.csv", massCol = "m.z", intenseCol = "I")
+>>>>>>> db6ced3... Updated documentation
 
 <<<<<<< HEAD
 <<<<<<< HEAD

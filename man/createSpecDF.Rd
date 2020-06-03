@@ -26,6 +26,7 @@ createSpecDF(min_mz = 53.76, max_mz = 1100, res = 1e-04, dig = 4)
 \arguments{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the
 observed range. Default = 53.76.}
 
@@ -36,6 +37,8 @@ in spectra. Default = 1100.}
 step size from the minimum to maximum \emph{m/z} bin. Also known as bin
 width. Default = 0.0001.}
 =======
+=======
+>>>>>>> db6ced3... Updated documentation
   \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 53.76.}
   \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1100.}
   \item{res}{The resolution of peaks; a single numeric value indicating the step size from the minimum to maximum \emph{m/z} bin. Also known as bin width. Default = 0.0001.}
@@ -56,6 +59,7 @@ Returns a data frame which can be used to map irregularly spaced
 spectral data to a set range of \emph{m/z} values, contained in the first
 column of the frame.
 }
+<<<<<<< HEAD
 \description{
 Creates an empty data frame to be used for mapping spectral data to a
 vector of \emph{m/z} values. The vector of \emph{m/z} values is stored in
@@ -77,16 +81,25 @@ width. Default = 0.0001.}
 required for \emph{m/z} values to match full \emph{m/z} vector. Default =
 4.}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+\references{
+https://github.com/wesleyburr/subMaldi
+>>>>>>> db6ced3... Updated documentation
 }
 \value{
 Returns a data frame which can be used to map irregularly spaced
 spectral data to a set range of \emph{m/z} values, contained in the first
 column of the frame.
 }
+<<<<<<< HEAD
 \description{
 Creates an empty data frame to be used for mapping spectral data to a
 vector of \emph{m/z} values. The vector of \emph{m/z} values is stored in
 the first column and can be called by "\code{full_mz}".
+=======
+\note{
+}
+>>>>>>> db6ced3... Updated documentation
 }
 <<<<<<< HEAD
 

@@ -16,6 +16,7 @@ Fills in the columns of the empty data frame created using \code{createSpecDF}. 
 \usage{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 \title{Map Spectrum to \emph{m/z} Vector}
 \usage{
@@ -36,10 +37,23 @@ mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 5e-5 spec_df, colName)
 =======
 mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
 >>>>>>> 6b09f74... Fixed documentation
+=======
+mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 5e-5 spec_df, colName)
+>>>>>>> db6ced3... Updated documentation
 }
 \arguments{
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+  \item{dat}{A pairwise data frame containing your spectral data. Should contain two columns: one for \emph{m/z} and one for intensity.}
+  \item{massCol}{A character string; the name of the \emph{m/z} column in \code{dat}.}
+  \item{intenseCol}{A character string; the name of the intensity column in \code{dat}.}
+  \item{dig}{Number of decimal places to round the \emph{m/z} data to; must match the same value used in \code{createSpecDF} in order for the columns to fill. Default = 4.}
+  \item{thresh}{Single numeric value; all \emph{m/z} values within \code{thresh} of each other are binned under that with the maximum intensity. Default = 5e-5.}
+  \item{spec_df}{An empty data frame created using \code{createSpecDF}.}
+  \item{colName}{A character string; the name of the column that should be filled with the spectral data.}
+>>>>>>> db6ced3... Updated documentation
 }
 \arguments{
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
@@ -93,7 +107,10 @@ of the mapped spectral data frame.
 <<<<<<< HEAD
 \references{
 https://github.com/wesleyburr/subMaldi
+<<<<<<< HEAD
 >>>>>>> 270485a... Updated documentation
+=======
+>>>>>>> db6ced3... Updated documentation
 }
 \description{
 Fills in the columns of the empty data frame created using
@@ -164,6 +181,7 @@ data("Before1")
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \examples{
+<<<<<<< HEAD
 
 ## Load sample dataset "Blank1.rda"
 data("lank1")
@@ -177,6 +195,18 @@ spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity",
             spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
 
 <<<<<<< HEAD
+=======
+## Load sample dataset "Before1.rda"
+data("Before1")
+
+## Create empty spectral data frame to map to
+spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
+
+## Map binary spectral data to empty spectral data frame
+spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
+{
+  }
+>>>>>>> db6ced3... Updated documentation
 }
 <<<<<<< HEAD
 % Add one or more standard keywords, see file 'KEYWORDS' in the

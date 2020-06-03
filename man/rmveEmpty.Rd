@@ -22,9 +22,12 @@ rmveEmpty(dat)
 \arguments{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{dat}{The spectral data frame, containing \code{full_mz} in the first
 column, to be trimmed of all-zero rows.}
 =======
+=======
+>>>>>>> db6ced3... Updated documentation
   \item{dat}{The spectral data frame, containing \code{full_mz} in the first column, to be trimmed of all-zero rows.}
 }
 <<<<<<< HEAD
@@ -39,9 +42,14 @@ column, to be trimmed of all-zero rows.}
 Returns the input data frame without its all-zero rows.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 \item{dat}{The spectral data frame, containing \code{full_mz} in the first
 column, to be trimmed of all-zero rows.}
+=======
+\references{
+https://github.com/wesleyburr/subMaldi
+>>>>>>> db6ced3... Updated documentation
 }
 \value{
 Returns the input data frame without its all-zero rows.
@@ -58,8 +66,12 @@ which is \code{full_mz}) equal 0 are removed from the data frame.
 <<<<<<< HEAD
 }
 \note{
+<<<<<<< HEAD
 Avoid truncating a dataframe until all samples to be compared have
 been mapped.
+=======
+Avoid truncating a dataframe until all samples to be compared have been mapped. 
+>>>>>>> db6ced3... Updated documentation
 }
 \examples{
 
@@ -82,6 +94,11 @@ Avoid truncating a dataframe until all samples to be compared have
 been mapped.
 }
 \examples{
+<<<<<<< HEAD
+=======
+## Load sample dataset "After2.rda"
+data("After2")
+>>>>>>> db6ced3... Updated documentation
 
 ## Load sample dataset "Mastre.rda"
 data("Master")
@@ -92,11 +109,14 @@ spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
 
 ## Map binary spectral data to empty spectral data frame
 spec_df <- mapSpectrum(dat = After2, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
+<<<<<<< HEAD
 >>>>>>> 270485a... Updated documentation
 =======
 ## Select only the spectra "Before1" and "Before2"
 ex <- select(Master, "full_mz", "Before1", "Before2")
 >>>>>>> 6b09f74... Fixed documentation
+=======
+>>>>>>> db6ced3... Updated documentation
 
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages
