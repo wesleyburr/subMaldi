@@ -35,6 +35,7 @@ createSpecDF(min_mz = 53.76, max_mz = 1100, res = 1e-04, dig = 4)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the
 observed range. Default = 53.76.}
 
@@ -47,6 +48,8 @@ width. Default = 0.0001.}
 =======
 =======
 >>>>>>> db6ced3... Updated documentation
+=======
+>>>>>>> 270485a... Updated documentation
   \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 53.76.}
   \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1100.}
   \item{res}{The resolution of peaks; a single numeric value indicating the step size from the minimum to maximum \emph{m/z} bin. Also known as bin width. Default = 0.0001.}
@@ -95,7 +98,10 @@ required for \emph{m/z} values to match full \emph{m/z} vector. Default =
 =======
 \references{
 https://github.com/wesleyburr/subMaldi
+<<<<<<< HEAD
 >>>>>>> db6ced3... Updated documentation
+=======
+>>>>>>> 270485a... Updated documentation
 }
 \value{
 Returns a data frame which can be used to map irregularly spaced
@@ -132,6 +138,10 @@ the first column and can be called by "\code{full_mz}".
 <<<<<<< HEAD
 =======
 \note{
+<<<<<<< HEAD
+=======
+}
+>>>>>>> 270485a... Updated documentation
 }
 <<<<<<< HEAD
 >>>>>>> db6ced3... Updated documentation
