@@ -171,6 +171,7 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{dat}{The name of the spectral data frame, containing the \emph{m/z}
 data in the first column.}
 
@@ -251,6 +252,9 @@ the most intense spectrum in the set.}
 =======
   \item{dat}{The name of the spectral data frame, containing the \emph{m/z} data in the first column.}
 >>>>>>> 834ea85... Updated documentation - removed .tar.gz
+=======
+  \item{dat}{The name of the spectral data frame, containing the \emph{m/z} data in the first column.}
+>>>>>>> 2a95699... Updated documentation
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data.}
   \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the first spectrum that is to be plotted.}
   \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be plotted.}
@@ -274,6 +278,7 @@ the most intense spectrum in the set.}
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   \item{x_ticks}{Single numeric value; the number of ticks and gridlines desired on the x-axis. Default = 100.}
 >>>>>>> a54180f... Master data & updated documentation - removed .tar.gz
 =======
@@ -292,6 +297,9 @@ the most intense spectrum in the set.}
   \item{max_I}{Single numeric value; upper end of the intensity range observed in spectra.}
   \item{x_ticks}{Single numeric value; the space between ticks on x-axis.}
 >>>>>>> 8de5648... Added custom intensity for plots
+=======
+  \item{x_ticks}{Single numeric value; the space between ticks on x-axis. Default = 100.}
+>>>>>>> 2a95699... Updated documentation
   \item{intensity_scale}{A character string; the method that should be used for determining the y-axis scales for each spectrum. If \code{method = "free_y"}, each spectrum will be plotted with its own intensity scale. If \code{method = "fixed"}, each spectrum will be plotted with the y-axis of the most intense spectrum in the set.}
 }
 <<<<<<< HEAD
