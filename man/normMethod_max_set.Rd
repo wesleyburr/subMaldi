@@ -5,7 +5,7 @@
 Normalization Method: Maximum Intensity of Set
 }
 \description{
-Normalizes the intensity data of spectra to a scale of 0,1, where 1 is the single most intense peak of the spectral set. Capable of normalizing 1-6 spectra at once.
+Called internally by \code{normSpectra}. Normalizes the intensity data of spectra to a scale of 0,1, where 1 is the single most intense peak of the spectral set. Capable of normalizing 1-6 spectra at once.
 }
 \usage{
 normMethod_max_set(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
@@ -41,14 +41,14 @@ Wesley Burr <wburr@trentu.ca>
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{normSpectra}}
 }
 \examples{
-## Load sample datasat "Master.rda"
-data("Master")
+## Load sample datasat "Master2.rda"
+data("Master2")
 
 ## Normalize the intensity data of two samples to the maximum of the blank
-normMethod_max_set(dat = Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Before1", spec3 = "Before2") 
+normMethod_max_set(dat = Master2, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Before1", spec3 = "Before2") 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
