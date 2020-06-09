@@ -47,7 +47,7 @@ Wesley Burr <wburr@trentu.ca>
 data("Master2")
 
 ## Normalize intensity data for three spectra
-normalized <- normMethod_max(dat = Master2, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Before1", spec3 = "After1")
+normSpectra(dat = Master2, mass_dat = "full_mz", method = "max", spec1 = "Blank1", spec2 = "Before1", spec3 = "After1")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
