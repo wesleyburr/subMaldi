@@ -10,14 +10,18 @@
 # -------------------------
 
 
-norm_custom <- function(y, custom_y){
+.norm_custom <- function(y, custom_y){
   return((y - min(y)) / (custom_y - min(y)))
 }
 
-normMethod_custom <- function(dat, mass_dat, norm_mz, spec1, 
+.normMethod_custom <- function(dat, mass_dat, norm_mz, spec1, 
                               spec2 = NULL, spec3 = NULL, 
                               spec4 = NULL, spec5 = NULL, 
                               spec6 = NULL){
+  if(is.null(norm_mz)){
+    stop('Please select a m/z value. norm_mz is NULL.')
+  } else{
+  
   if(is.null(spec6)){
   
   if(is.null(spec5)){
@@ -36,7 +40,7 @@ normMethod_custom <- function(dat, mass_dat, norm_mz, spec1,
           
           if(custom_int > 0){
             dat <- select(dat, all_of(mass_dat))
-            norm <- norm_custom(y = intense, custom_y = custom_int)
+            norm <- .norm_custom(y = intense, custom_y = custom_int)
             norm[norm > 1] <- 1 
             dat[spec1] <- norm
             return(dat)}
@@ -53,12 +57,12 @@ normMethod_custom <- function(dat, mass_dat, norm_mz, spec1,
     custom_int2 <- intense2[which(mass == norm_mz)]
     
     custom <- c(custom_int1,custom_int2)
-    if(any(custom == 0)){warning('The selected maximum intensity is 0 in some spectra.')}
+    if(any(custom == 0)){stop('The selected maximum intensity is 0 in some spectra.')}
     
     else{
     dat <- select(dat, all_of(mass_dat))
-    norm1 <- norm_custom(y = intense1, custom_y = custom_int1)
-    norm2 <- norm_custom(y = intense2, custom_y = custom_int2)
+    norm1 <- .norm_custom(y = intense1, custom_y = custom_int1)
+    norm2 <- .norm_custom(y = intense2, custom_y = custom_int2)
     
     norm1[norm1 > 1] <- 1 
     norm2[norm2 > 1] <- 1 
@@ -79,13 +83,13 @@ normMethod_custom <- function(dat, mass_dat, norm_mz, spec1,
     custom_int3 <- intense3[which(mass == norm_mz)]
     
     custom <- c(custom_int1,custom_int2, custom_int3)
-    if(any(custom == 0)){warning('The selected maximum intensity is 0 in some spectra.')}
+    if(any(custom == 0)){stop('The selected maximum intensity is 0 in some spectra.')}
     
     else{
       dat <- select(dat, all_of(mass_dat))
-      norm1 <- norm_custom(y = intense1, custom_y = custom_int1)
-      norm2 <- norm_custom(y = intense2, custom_y = custom_int2)
-      norm3 <- norm_custom(y = intense3, custom_y = custom_int3)
+      norm1 <- .norm_custom(y = intense1, custom_y = custom_int1)
+      norm2 <- .norm_custom(y = intense2, custom_y = custom_int2)
+      norm3 <- .norm_custom(y = intense3, custom_y = custom_int3)
       
       norm1[norm1 > 1] <- 1 
       norm2[norm2 > 1] <- 1 
@@ -110,14 +114,14 @@ normMethod_custom <- function(dat, mass_dat, norm_mz, spec1,
     custom_int4 <- intense4[which(mass == norm_mz)]
     
     custom <- c(custom_int1,custom_int2, custom_int3, custom_int4)
-    if(any(custom == 0)){warning('The selected maximum intensity is 0 in some spectra.')}
+    if(any(custom == 0)){stop('The selected maximum intensity is 0 in some spectra.')}
     
     else{
       dat <- select(dat, all_of(mass_dat))
-      norm1 <- norm_custom(y = intense1, custom_y = custom_int1)
-      norm2 <- norm_custom(y = intense2, custom_y = custom_int2)
-      norm3 <- norm_custom(y = intense3, custom_y = custom_int3)
-      norm4 <- norm_custom(y = intense4, custom_y = custom_int4)
+      norm1 <- .norm_custom(y = intense1, custom_y = custom_int1)
+      norm2 <- .norm_custom(y = intense2, custom_y = custom_int2)
+      norm3 <- .norm_custom(y = intense3, custom_y = custom_int3)
+      norm4 <- .norm_custom(y = intense4, custom_y = custom_int4)
       
       norm1[norm1 > 1] <- 1 
       norm2[norm2 > 1] <- 1 
@@ -146,15 +150,15 @@ normMethod_custom <- function(dat, mass_dat, norm_mz, spec1,
     custom_int5 <- intense5[which(mass == norm_mz)]
     
     custom <- c(custom_int1,custom_int2, custom_int3, custom_int4, custom_int5)
-    if(any(custom == 0)){warning('The selected maximum intensity is 0 in some spectra.')}
+    if(any(custom == 0)){stop('The selected maximum intensity is 0 in some spectra.')}
     
     else{
       dat <- select(dat, all_of(mass_dat))
-      norm1 <- norm_custom(y = intense1, custom_y = custom_int1)
-      norm2 <- norm_custom(y = intense2, custom_y = custom_int2)
-      norm3 <- norm_custom(y = intense3, custom_y = custom_int3)
-      norm4 <- norm_custom(y = intense4, custom_y = custom_int4)
-      norm5 <- norm_custom(y = intense5, custom_y = custom_int5)
+      norm1 <- .norm_custom(y = intense1, custom_y = custom_int1)
+      norm2 <- .norm_custom(y = intense2, custom_y = custom_int2)
+      norm3 <- .norm_custom(y = intense3, custom_y = custom_int3)
+      norm4 <- .norm_custom(y = intense4, custom_y = custom_int4)
+      norm5 <- .norm_custom(y = intense5, custom_y = custom_int5)
       
       norm1[norm1 > 1] <- 1 
       norm2[norm2 > 1] <- 1 
@@ -187,16 +191,16 @@ normMethod_custom <- function(dat, mass_dat, norm_mz, spec1,
       custom_int6 <- intense6[which(mass == norm_mz)]
       
       custom <- c(custom_int1,custom_int2, custom_int3, custom_int4, custom_int5, custom_int6)
-      if(any(custom == 0)){warning('The selected maximum intensity is 0 in some spectra.')}
+      if(any(custom == 0)){stop('The selected maximum intensity is 0 in some spectra.')}
       
       else{
         dat <- select(dat, all_of(mass_dat))
-        norm1 <- norm_custom(y = intense1, custom_y = custom_int1)
-        norm2 <- norm_custom(y = intense2, custom_y = custom_int2)
-        norm3 <- norm_custom(y = intense3, custom_y = custom_int3)
-        norm4 <- norm_custom(y = intense4, custom_y = custom_int4)
-        norm5 <- norm_custom(y = intense5, custom_y = custom_int5)
-        norm6 <- norm_custom(y = intense6, custom_y = custom_int6)
+        norm1 <- .norm_custom(y = intense1, custom_y = custom_int1)
+        norm2 <- .norm_custom(y = intense2, custom_y = custom_int2)
+        norm3 <- .norm_custom(y = intense3, custom_y = custom_int3)
+        norm4 <- .norm_custom(y = intense4, custom_y = custom_int4)
+        norm5 <- .norm_custom(y = intense5, custom_y = custom_int5)
+        norm6 <- .norm_custom(y = intense6, custom_y = custom_int6)
         
         norm1[norm1 > 1] <- 1 
         norm2[norm2 > 1] <- 1 
@@ -211,7 +215,7 @@ normMethod_custom <- function(dat, mass_dat, norm_mz, spec1,
         dat[spec5] <- norm5
         dat[spec6] <- norm6
         return(dat)}
-  }
+  }}
 }
 
 
