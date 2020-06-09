@@ -254,6 +254,10 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL,
     else if( method == "TIC"){
       .normMethod_TIC(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
                      spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) }
+    
+    else if(method == "RMS"){
+      .normMethod_RMS(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
+                      spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) }
   }
 >>>>>>> af5047e... TIC norm added- removed .tar.gz
 }  
