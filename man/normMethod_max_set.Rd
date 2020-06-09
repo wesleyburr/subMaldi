@@ -48,7 +48,7 @@ Wesley Burr <wburr@trentu.ca>
 data("Master2")
 
 ## Normalize the intensity data of two samples to the maximum of the blank
-normMethod_max_set(dat = Master2, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Before1", spec3 = "Before2") 
+normSpectra(dat = Master2, mass_dat = "full_mz", method = "max_set", spec1 = "Blank1", spec2 = "Before1", spec3 = "Before2") 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
