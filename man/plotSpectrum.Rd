@@ -8,7 +8,7 @@ Plot a Single Spectrum
 Plots a single spectrum from a mapped spectral data frame.
 }
 \usage{
-plotSpectrum(dat, mass_dat = full_mz, intensity_dat, colour = "slategrey", span = 5, thresh = 0.1, min_mz = 0, max_mz = 1000, lbls = FALSE, x_ticks = 100)
+plotSpectrum(dat, mass_dat = dat$full_mz, intensity_dat, colour = "slategrey", span = 5, thresh = 0.1, min_mz = 0, max_mz = 1000, lbls = FALSE, x_ticks = 100)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -43,7 +43,7 @@ Wesley Burr <wburr@trentu.ca>
 \examples{
 ## Plotting using the sample dataset "Before1.rda"
 data("Before1")
-plotSpectrum(dat = Before1, mass_dat = "mass", intensity_dat = "Intensity")
+plotSpectrum(dat = Before1, mass_dat = Before1$mass, intensity_dat = Before1$Intensity)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
