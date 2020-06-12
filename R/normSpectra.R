@@ -171,17 +171,28 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL,
                                                    spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) } 
   
     else if(method == "max_set"){ 
-       if(is.null(spec2)){ stop('Only one input spectrum. Please input a set of spectra (2 -6).') } 
+       if(is.null(spec2)){ stop('Only one spectrum input. Please enter two spectra for comparison.') } 
         else{ .normMethod_max_set(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
                                  spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) } }
     
     else if( method == "TIC"){
-      .normMethod_TIC(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
-                     spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) }
+      if(is.null(spec2)){ stop('Only one spectrum input. Please enter two spectra for comparison.') } 
+      else{ .normMethod_TIC(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
+                                spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) } }
     
     else if(method == "RMS"){
       .normMethod_RMS(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
                       spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) }
+    
+    else if(method == "rel_TIC"){
+      .normMethod_rel_TIC(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
+                      spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) }
+    
+    else if(method == "median"){
+      if(is.null(spec2)){ stop('Only one spectrum input. Please enter two spectra for comparison.') } 
+      else{ .normMethod_median(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
+                                spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) }
+    }
   }
 >>>>>>> f70720d... TIC norm added
 }  
