@@ -1,14 +1,14 @@
-\name{normMethod_TIC}
-\alias{normMethod_TIC}
+\name{normMethod_rel_TIC}
+\alias{normMethod_rel_TIC}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Normalize Peak Intensity by Total Ion Current
+Normalize Relative Peak Intensity by Total Ion Current
 }
 \description{
-Called internally by \code{normSpectra}. Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Capable of normalizing 1-6 spectra at once.
+Called internally by \code{normSpectra}. Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Once the TIC of each spectrum has been standardized, the intensity of each peak in all spectra are divided by the normalized TIC. The resulting spectra will have individual TICs of 1. Capable of normalizing 1-6 spectra at once.
 }
 \usage{
-normMethod_TIC(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+normMethod_rel_TIC(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -20,11 +20,11 @@ normMethod_TIC(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, s
   \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be normalized. Default = NULL.}
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be normalized. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be normalized. Default = NULL.}
-  }
+}
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{Returns a new data frame including the original \emph{m/z} data and normalized intensity data.
+\value{ Returns a new data frame including the original \emph{m/z} data and normalized intensity data.
 }
 \references{
 https://github.com/wesleyburr/subMaldi
@@ -34,20 +34,20 @@ Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
 \note{
-%%  ~~further notes~~
+\code{\link{normSpectra}}
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{normSpectra}}
+%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
 ## Load sample dataset "Master2.rda"
 data("Master2")
 
 # Normalize the TIC of "Before1" and "Before2"
-normSpectra(dat = Master2, mass_dat = "full_mz", method = "TIC", spec1 = "Before1", spec2 = "Before2") 
+normSpectra(dat = Master2, mass_dat = "full_mz", method = "rel_TIC", spec1 = "Before1", spec2 = "Before2") 
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
