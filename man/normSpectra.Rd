@@ -199,7 +199,7 @@ Normalize Spectral Data
 Normalize spectral data to a common scale using several different methods. Capable of normalizing 1-6 spectra at once.
 }
 \usage{
-normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, lower = NULL, upper = NULL, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -207,6 +207,8 @@ normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, spec1, spec2 = NULL, s
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data for the spectrum.}
   \item{method}{A character string; the normalization method that should be used to process the data. See details below for list of methods. Default = NULL.}
   \item{norm_mz}{Numeric. If \code{method = "custom"}, the \emph{m/z} peak to which the spectral intensity should be normalized to. Value should have the same number of decimal places as the \emph{m/z} data in \code{dat}.}
+  \item{lower}{Numeric. If \code{method = "stdev"}, the lower \emph{m/z} bound of the noise region of the spectrum.}
+  \item{upper}{Numeric. If \code{method = "stdev"}, the upper \emph{m/z} bound of the noise region of the spectrum.}
   \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the spectrum to be analyzed.}
   \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be normalized. Default = NULL.}
   \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be normalized. Default = NULL.}
@@ -221,6 +223,7 @@ normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, spec1, spec2 = NULL, s
   \item{TIC}{ Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. }
   \item{rel_TIC}{ Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Each peak intensity is then divided by the normalized peak intensity so that each spectrum in the dataset has a TIC of 1.}
   \item{median}{ Evaluates the median of each spectrum in a dataset after removing 0 values introduced by mapping. If the medians are not equal between spectra, a normalization factor is applied to the spectral intensities until all median intensities in the dataset are equal.}
+  \item{stdev}{ Evaluates the standard deviation of intensity values within the same noisy region (a region lacking peaks) of each spectrum. All intensities in each spectrum are then divided by the spectrum's standard deviation in the noise region. All output spectra should have a standard deviation of 1 in the selected region. }
 }
 \value{Returns a new data frame including the original \emph{m/z} data and normalized intensity data.
 }
