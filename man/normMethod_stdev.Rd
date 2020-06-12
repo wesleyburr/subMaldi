@@ -1,33 +1,35 @@
-\name{normMethod_TIC}
-\alias{normMethod_TIC}
+\name{normMethod_stdev}
+\alias{normMethod_stdev}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Normalize Peak Intensity by Total Ion Current
+Normalize Spectrum to Standard Deviation of Noise
 }
 \description{
-Called internally by \code{normSpectra}. Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Capable of normalizing 2-6 spectra at once.
+Called internally by \code{normSpectra()}.Evaluates the standard deviation of intensity values within the same noisy region (a region lacking peaks) of each spectrum. All intensities in each spectrum are then divided by the spectrum's standard deviation in the noise region. All output spectra should have a standard deviation of 1 in the selected region. Capable of normalizing 1-6 spectra at once.
 }
 \usage{
-normMethod_TIC(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+normMethod_stdev(dat, mass_dat, lower = 900, upper= 1100 , spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.}
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data for the spectrum.}
+  \item{lower}{Single numeric value; the lower \emph{m/z} bound of the noisy region in all spectra.}
+  \item{upper}{Single numeric value; the lower \emph{m/z} bound of the noisy region in all spectra.}
   \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the spectrum to be analyzed.}
   \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be normalized. Default = NULL.}
   \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be normalized. Default = NULL.}
   \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be normalized. Default = NULL.}
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be normalized. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be normalized. Default = NULL.}
-  }
+}
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{Returns a new data frame including the original \emph{m/z} data and normalized intensity data.
 }
 \references{
-https://github.com/wesleyburr/subMaldi
+https://github.com/wesleybur/subMaldi
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
@@ -40,15 +42,14 @@ Wesley Burr <wburr@trentu.ca>
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{normSpectra}}
+code{\link{normSpectra}}
 }
 \examples{
-## Load sample dataset "Master2.rda"
-data("Master2")
+## Load sample dataset "Master.rda"
+data("Master")
 
-# Normalize the TIC of "Before1" and "Before2"
-normSpectra(dat = Master2, mass_dat = "full_mz", method = "TIC", spec1 = "Before1", spec2 = "Before2") 
-
+## Normalize spectra "After1" and "After2" using the noisy region from m/z 900 to 1100
+normSpectra(Master, mass_dat = "full_mz", method = "stdev",lower = 900, upper = 1100, spec1 = "After1", spec2 = "After2")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
