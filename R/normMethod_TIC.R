@@ -26,8 +26,9 @@
   if(is.null(spec3)){
     
     if(is.null(spec2)){
+      
       # One spectrum
-      stop("Please enter two spectra for comparison.")}
+      stop("Only one spectrum input. Please enter two spectra for comparison.")}
     
     # ---------------------------------------------------------------------
     # Two spectra
