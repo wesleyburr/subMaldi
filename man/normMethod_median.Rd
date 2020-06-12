@@ -41,7 +41,7 @@ Wesley Burr <wburr@trentu.ca>
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
+\code{\link{normSpectra}}
 }
 \examples{
 ## Load sample dataset "Master2.rda"
