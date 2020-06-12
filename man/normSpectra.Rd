@@ -214,12 +214,13 @@ normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, spec1, spec2 = NULL, s
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be normalized. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be normalized. Default = NULL.}
 }
-\details{
-Valid methods for spectral normalization include:
-\item{max}{ Normalizes the intensity data of spectra to a scale of 0,1. }
-\item{max_set}{ Normalizes the intensity data of spectra to a scale of 0,1, where 1 is the single most intense peak of the spectral set.}
-\item{custom}{ Normalizes the intensity data of each input spectrum to the intensity of the selected \emph{m/z} peak. }
-\item{TIC}{ Normalizes the intensity of each peak by dividing the peak's intensity by the sum of all peak intensities in the input spectrum.}
+\details{Valid methods for spectral normalization include:
+  \item{max}{ Normalizes the intensity data of spectra to a scale of 0,1. }
+  \item{max_set}{ Normalizes the intensity data of spectra to a scale of 0,1, where 1 is the single most intense peak of the spectral set.}
+  \item{custom}{ Normalizes the intensity data of each input spectrum to the intensity of the selected \emph{m/z} peak. }
+  \item{TIC}{ Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. }
+  \item{rel_TIC}{ Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Each peak intensity is then divided by the normalized peak intensity so that each spectrum in the dataset has a TIC of 1.}
+  \item{median}{ Evaluates the median of each spectrum in a dataset after removing 0 values introduced by mapping. If the medians are not equal between spectra, a normalization factor is applied to the spectral intensities until all median intensities in the dataset are equal.}
 }
 \value{Returns a new data frame including the original \emph{m/z} data and normalized intensity data.
 }
@@ -240,7 +241,8 @@ Wesley Burr <wburr@trentu.ca>
 \code{\link{normMethod_custom}}, 
 \code{\link{normMethod_max}}, 
 \code{\link{normMethod_max_set}}, 
-\code{\link{normMethod_TIC}}
+\code{\link{normMethod_TIC}},
+\code{\link{normMethod_rel_TIC}}
 }
 \examples{
 >>>>>>> af5047e... TIC norm added- removed .tar.gz
