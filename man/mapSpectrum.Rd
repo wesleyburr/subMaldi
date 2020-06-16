@@ -8,7 +8,7 @@ Map Spectrum to \emph{m/z} Vector
 Fills in the columns of the empty data frame created using \code{createSpecDF}. Mass to charge values from pairwise spectral data are compared to the \code{full_mz} vector. All peaks within the \code{thresh} of one another are binned, and only the maximum intensity of that bin is filled into the mapped spectrum.
 }
 \usage{
-mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 5e-5 spec_df, colName)
+mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -43,16 +43,16 @@ Wesley Burr <wburr@trentu.ca>
 \code{\link{createSpecDF}}
 }
 \examples{
-## Load sample dataset "Before1.rda"
-data("Before1")
+## Load sample dataset "Blank1.rda"
+data("lank1")
 
 ## Create empty spectral data frame to map to
-spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
+spec_df <- createSpecDF(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4)
 
 ## Map binary spectral data to empty spectral data frame
-spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
-{
-  }
+spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", 
+            spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
