@@ -1,5 +1,5 @@
-\name{normMethod_median}
-\alias{normMethod_median}
+\name{.normMethod_median}
+\alias{.normMethod_median}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Normalize a Spectral Dataset to its Median Intensity
@@ -8,7 +8,8 @@ Normalize a Spectral Dataset to its Median Intensity
 Called internally by \code{normSpectra()}. Evaluates the median of each spectrum in a dataset after removing 0 values introduced by mapping. If the medians are not equal between spectra, a normalization factor is applied to the spectral intensities until all median intensities in the dataset are equal. Capable of normalizing 2-6 spectra at once.
 }
 \usage{
-normMethod_median(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+.normMethod_median(dat, mass_dat, spec1, spec2 = NULL, 
+                  spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -48,7 +49,8 @@ Wesley Burr <wburr@trentu.ca>
 data("Master2")
 
 ## Normalize spectra "Before1" and "Before2" to their median intensity
-normSpectra(dat = Master, mass_dat = "full_mz", method = "median", spec1 = "Before1", spec2 = "Before2")
+ex <- normSpectra(dat = Master, mass_dat = "full_mz", method = "median", 
+            spec1 = "Before1", spec2 = "Before2")
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
