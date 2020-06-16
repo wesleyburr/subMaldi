@@ -1,8 +1,12 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^.Rhistory$
+<<<<<<< HEAD
 ^subMALDI_1.0-0.tar.gz$
 ^paper.Rmd$
 ^paper.bib$
 ^doc$
 ^Meta$
+=======
+^subMALDI_0.1-2.tar.gz$
+>>>>>>> 6b09f74... Fixed documentation

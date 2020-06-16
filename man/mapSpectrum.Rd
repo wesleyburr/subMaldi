@@ -5,6 +5,7 @@
 \title{Map Spectrum to \emph{m/z} Vector}
 \usage{
 <<<<<<< HEAD
+<<<<<<< HEAD
 mapSpectrum(
   dat,
   massCol,
@@ -17,6 +18,9 @@ mapSpectrum(
 =======
 mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 5e-5 spec_df, colName)
 >>>>>>> 270485a... Updated documentation
+=======
+mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
+>>>>>>> 6b09f74... Fixed documentation
 }
 \arguments{
 <<<<<<< HEAD
@@ -98,6 +102,7 @@ https://github.com/wesleyburr/subMaldi
 \seealso{
 \code{\link{createSpecDF}}
 }
+<<<<<<< HEAD
 \author{
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
@@ -106,14 +111,19 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 =======
 ## Load sample dataset "Before1.rda"
 data("Before1")
+=======
+\examples{
+## Load sample dataset "Blank1.rda"
+data("lank1")
+>>>>>>> 6b09f74... Fixed documentation
 
 ## Create empty spectral data frame to map to
-spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
+spec_df <- createSpecDF(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4)
 
 ## Map binary spectral data to empty spectral data frame
-spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
-{
-  }
+spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", 
+            spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

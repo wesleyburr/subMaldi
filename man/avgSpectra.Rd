@@ -52,6 +52,7 @@ Kristen Yeh <kristenyeh@trentu.ca>
 \code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
 }
 \examples{
+<<<<<<< HEAD
 ## Load sample datasets
 data("Before1")
 data("After1")
@@ -73,6 +74,18 @@ https://github.com/wesleyburr/subMaldi
 \author{
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 Sophie Castel <sophie.castel@ontariotechu.net>
+=======
+## Load sample data "Master.rda"
+data("Master")
+
+## Select only the first two samples, "Blank1" and "Blank2"
+df <- select(Master, full_mz, Blank1, Blank2)
+
+## Average the two spectral replicates
+df <- avgSpectra(dat = df, method = "mean")
+{
+  }
+>>>>>>> 6b09f74... Fixed documentation
 }
 \keyword{manip}
 \keyword{methods}

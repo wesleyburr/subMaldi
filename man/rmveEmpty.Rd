@@ -58,19 +58,25 @@ Avoid truncating a dataframe until all samples to be compared have been mapped.
 \code{\link{createSpecDF}},\code{\link{mapSpectrum}}
 }
 \examples{
-## Load sample dataset "After2.rda"
-data("After2")
+## Load sample dataset "Mastre.rda"
+data("Master")
 
+<<<<<<< HEAD
 ## Create empty spectral data frame to map to
 spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
 
 ## Map binary spectral data to empty spectral data frame
 spec_df <- mapSpectrum(dat = After2, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
 >>>>>>> 270485a... Updated documentation
+=======
+## Select only the spectra "Before1" and "Before2"
+ex <- select(Master, "full_mz", "Before1", "Before2")
+>>>>>>> 6b09f74... Fixed documentation
 
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages
 ex <- rmveEmpty(dat = ex)
+<<<<<<< HEAD
 
 }
 \references{
@@ -84,3 +90,12 @@ Kristen Yeh <kristenyeh@trentu.ca>
 }
 \keyword{manip}
 \keyword{methods}
+=======
+{
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+>>>>>>> 6b09f74... Fixed documentation

@@ -58,8 +58,8 @@ Wesley Burr <wburr@trentu.ca>
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
-\examples{
 
+<<<<<<< HEAD
 ## Read all .csv files from /MyFolder and export them as .rda's to /ExportFolder
 readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = "./ExportFolder/")
 
@@ -67,3 +67,9 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 >>>>>>> 270485a... Updated documentation
 }
 \keyword{methods}
+=======
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+>>>>>>> 6b09f74... Fixed documentation
