@@ -8,7 +8,13 @@ Plot and Compare Multiple Spectra
 Plots multiple spectra on the same \emph{x}-axis scale for easier comparison. Allows for 2 to 4 spectra per plot, stacked on top of one another.
 }
 \usage{
-plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, colour1 = wes_palette(n=1, name = "GrandBudapest2"), colour2 = wes_palette(n=1, name = "GrandBudapest1"), colour3 = wes_palette(n=1, name = "Moonrise1"), colour4 = wes_palette(n=1, name = "Moonrise3"), span = 5, thresh = 0.1, lbls = FALSE, min_mz = 0, max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
+plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, 
+            colour1 = wes_palette(n=1, name = "GrandBudapest2"), 
+            colour2 = wes_palette(n=1, name = "GrandBudapest1"), 
+            colour3 = wes_palette(n=1, name = "Moonrise1"), 
+            colour4 = wes_palette(n=1, name = "Moonrise3"), 
+            span = 5, thresh = 0.1, lbls = FALSE, min_mz = 0, 
+            max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
