@@ -1,5 +1,5 @@
-\name{normMethod_rel_TIC}
-\alias{normMethod_rel_TIC}
+\name{.normMethod_rel_TIC}
+\alias{.normMethod_rel_TIC}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Normalize Relative Peak Intensity by Total Ion Current
@@ -8,7 +8,8 @@ Normalize Relative Peak Intensity by Total Ion Current
 Called internally by \code{normSpectra}. Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Once the TIC of each spectrum has been standardized, the intensity of each peak in all spectra are divided by the normalized TIC. The resulting spectra will have individual TICs of 1. Capable of normalizing 1-6 spectra at once.
 }
 \usage{
-normMethod_rel_TIC(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+.normMethod_rel_TIC(dat, mass_dat, spec1, spec2 = NULL, 
+                    spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -47,7 +48,8 @@ Wesley Burr <wburr@trentu.ca>
 data("Master2")
 
 # Normalize the TIC of "Before1" and "Before2"
-normSpectra(dat = Master2, mass_dat = "full_mz", method = "rel_TIC", spec1 = "Before1", spec2 = "Before2") 
+ex <- normSpectra(dat = Master2, mass_dat = "full_mz", 
+            method = "rel_TIC", spec1 = "Before1", spec2 = "Before2") 
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

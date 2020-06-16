@@ -42,7 +42,8 @@ Kristen Yeh <kristenyeh@trentu.ca>
 ## Creating an empty spectrum with an m/z range of 500 to 2000 m/z, with a step size of 0.001
 spec_df <- createSpecDF(min_mz = 500, max_mz = 2000, res = 0.001, dig = 3)
 
-## Creating an empty spectrum with an m/z range of 100 to 1000, with a step size of 0.0001 and sample names
+## Creating an empty spectrum with an m/z range of 100 to 1000, 
+# with a step size of 0.0001 and sample names
 spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

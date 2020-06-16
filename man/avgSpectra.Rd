@@ -36,19 +36,14 @@ Kristen Yeh <kristenyeh@trentu.ca>
 \code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
 }
 \examples{
-## Load sample datasets
-data("Before1")
-data("After1")
+## Load sample data "Master.rda"
+data("Master")
 
-## Create empty spectral data frame to map to
-spec_df <- createSpecDF(min_mz = 100, max = 1000, res = 0.0001, dig = 4)
-
-## Map binary spectral data to empty spectral data frame
-spec_df <- mapSpectrum(dat = Blank_01, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Blank1")
-spec_df <- mapSpectrum(dat = Blank_02, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Blank2")
+## Select only the first two samples, "Blank1" and "Blank2"
+df <- select(Master, full_mz, Blank1, Blank2)
 
 ## Average the two spectral replicates
-spec_df <- avgSpectra(dat = spec_df, method = "mean")
+df <- avgSpectra(dat = df, method = "mean")
 {
   }
 }
