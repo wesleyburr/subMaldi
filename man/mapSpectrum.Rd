@@ -23,6 +23,7 @@ Fills in the columns of the empty data frame created using \code{createSpecDF}. 
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 \title{Map Spectrum to \emph{m/z} Vector}
 \usage{
@@ -57,6 +58,9 @@ mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
 =======
 mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 5e-5 spec_df, colName)
 >>>>>>> 270485a... Updated documentation
+=======
+mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
+>>>>>>> 6b09f74... Fixed documentation
 }
 \arguments{
 <<<<<<< HEAD
@@ -244,6 +248,7 @@ data("Before1")
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 \examples{
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
@@ -277,11 +282,16 @@ spec_df <- createSpecDF(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4)
 =======
 ## Load sample dataset "Before1.rda"
 data("Before1")
+=======
+## Load sample dataset "Blank1.rda"
+data("lank1")
+>>>>>>> 6b09f74... Fixed documentation
 
 ## Create empty spectral data frame to map to
-spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
+spec_df <- createSpecDF(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4)
 
 ## Map binary spectral data to empty spectral data frame
+<<<<<<< HEAD
 >>>>>>> 270485a... Updated documentation
 spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
 {
@@ -292,6 +302,11 @@ spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity",
             spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
 
 >>>>>>> 6c09a20... Fixed documentation
+=======
+spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", 
+            spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
+
+>>>>>>> 6b09f74... Fixed documentation
 }
 <<<<<<< HEAD
 <<<<<<< HEAD

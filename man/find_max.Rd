@@ -151,7 +151,8 @@ Find Peak Maxima
 Analyzes spectral data and returns a list of the most intense peak in each spectrum, including the \emph{m/z} value associated with the peak. Able to determine the maxima of 1-6 spectra at once.
 }
 \usage{
-find_max(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+find_max(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, 
+          spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -193,7 +194,8 @@ data("Master")
 find_max(dat = Master, mass_dat = "full_mz", spec1 = "Blank1")
 
 ## Find maxima of four spectra
-find_max(dat = df, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Before1", spec3 = "After1", spec4 = "After2")
+find_max(dat = Master, mass_dat = "full_mz", spec1 = "Blank1", 
+          spec2 = "Before1", spec3 = "After1", spec4 = "After2")
 }
 >>>>>>> 2a95699... Updated documentation
 % Add one or more standard keywords, see file 'KEYWORDS' in the
