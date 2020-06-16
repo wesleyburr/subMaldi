@@ -81,6 +81,7 @@ Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
 
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -95,6 +96,12 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 }
 \keyword{methods}
 =======
+=======
+\seealso{
+%% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+
+>>>>>>> 6c09a20... Fixed documentation
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")

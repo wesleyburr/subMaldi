@@ -95,6 +95,7 @@ been mapped.
 }
 \examples{
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 ## Load sample dataset "After2.rda"
 data("After2")
@@ -117,10 +118,18 @@ ex <- select(Master, "full_mz", "Before1", "Before2")
 >>>>>>> 6b09f74... Fixed documentation
 =======
 >>>>>>> db6ced3... Updated documentation
+=======
+## Load sample dataset "Mastre.rda"
+data("Master")
+
+## Select only the spectra "Before1" and "Before2"
+ex <- select(Master, "full_mz", "Before1", "Before2")
+>>>>>>> 6c09a20... Fixed documentation
 
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages
 ex <- rmveEmpty(dat = ex)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -137,6 +146,8 @@ Kristen Yeh <kristenyeh@trentu.ca>
 \keyword{manip}
 \keyword{methods}
 =======
+=======
+>>>>>>> 6c09a20... Fixed documentation
 {
   }
 }
