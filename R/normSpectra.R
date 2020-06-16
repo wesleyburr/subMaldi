@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------
-# Last Updated: June 8, 2020
+# Last Updated: June 15, 2020
 # Author: Kristen Yeh
 # Title: subMALDI: Umbrella Normalization Function
 # -----------------------------------------------------------------------
@@ -48,6 +48,11 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL, upper = NU
     else if(method == "stdev"){
       .normMethod_stdev(dat = dat, mass_dat = mass_dat, lower = lower, upper = upper, spec1 = spec1, spec2 = spec2, 
                                  spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) }
+    
+    else if(method == "quantile"){
+      if(is.null(spec2)){ stop('Only one spectrum input. Please enter two spectra for comparison.') } 
+      else{ .normMethod_quantile(dat = dat, mass_dat = mass_dat, spec1 = spec1, spec2 = spec2, 
+                               spec3 = spec3, spec4 = spec4, spec5 = spec5, spec6 = spec6) } }
   }
 }  
 
