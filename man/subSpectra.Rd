@@ -34,6 +34,7 @@ of \code{full_mz}.
   \item{Blank_Var}{A character string; the name of the blank column that will be subtracted from the sample column.}
   \item{Sample}{A character string; the name of the sample column that the blank data will be subtracted from.}
   \item{Sub_Sample}{A character string; the name of the column to be filled with the subtracted spectrum.}
+  \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
@@ -75,6 +76,7 @@ Master <- transform(Master, "Subtracted" = 0)
 
 ## Subtract Blank1 from Before1
 <<<<<<< HEAD
+<<<<<<< HEAD
 Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
                       Sample = "Before1", Sub_Sample = "Subtracted")
 
@@ -93,6 +95,11 @@ https://github.com/wesleyburr/subMaldi
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+=======
+Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
+                      Sample = "Before1", Sub_Sample = "Subtracted")
+
+>>>>>>> 6b09f74... Fixed documentation
 }
 \keyword{manip}
 \keyword{methods}

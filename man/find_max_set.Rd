@@ -56,7 +56,8 @@ Find Most Intense Peak of a Set
 Analyzes spectral data and returns information about the most intense peak in all of the spectral set. Indicates the most intense spectrum, the \emph{m/z} value, and intesnity of the maximum. Allows for analysis of 2-6 spectra at once.
 }
 \usage{
-find_max_set(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+find_max_set(dat, mass_dat, spec1, spec2, spec3 = NULL, 
+              spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -98,7 +99,8 @@ data("Master")
 find_max_set(dat = Master, mass_dat = "full_mz", spec1 = "Before1", spec2 = "After1")
 
 ## Find the most intense peak of six spectra
-find_max_set(dat = df, mass_dat = "full_mz", spec1 = "After1", spec2 = "Blank2", spec3 = "Before1", spec4 = "Blank1", spec5 = "After2", spec6 = "Before2")
+find_max_set(dat = Master, mass_dat = "full_mz", spec1 = "After1", spec2 = "Blank2", 
+              spec3 = "Before1", spec4 = "Blank1", spec5 = "After2", spec6 = "Before2")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

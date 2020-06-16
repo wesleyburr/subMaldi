@@ -8,7 +8,15 @@ Plot and Compare Multiple Spectra in a Grid
 Plots 4 or 6 spectra in a grid format.
 }
 \usage{
-plotgridSpectra(dat, mass_dat, spec1, spec2, spec3, spec4, spec5 = NULL, spec6 = NULL, colour1 = wes_palette(n = 1, name = "GrandBudapest2"), colour2 = wes_palette(n = 1, name = "GrandBudapest1"), colour3 = wes_palette(n = 1, name = "Moonrise1"), colour4 = wes_palette(n = 1, name = "Moonrise3"), colour5 = wes_palette(n = 1, name = "IsleofDogs1"), colour6 = wes_palette(n = 1, name = "FantasticFox1"), span = 5, thresh = 0.1, lbls = FALSE, min_mz = 0, max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
+plotgridSpectra(dat, mass_dat, spec1, spec2, spec3, spec4, spec5 = NULL, spec6 = NULL,
+                colour1 = wes_palette(n = 1, name = "GrandBudapest2"), 
+                colour2 = wes_palette(n = 1, name = "GrandBudapest1"), 
+                colour3 = wes_palette(n = 1, name = "Moonrise1"), 
+                colour4 = wes_palette(n = 1, name = "Moonrise3"), 
+                colour5 = wes_palette(n = 1, name = "IsleofDogs1"), 
+                colour6 = wes_palette(n = 1, name = "FantasticFox1"), 
+                span = 5, thresh = 0.1, lbls = FALSE, min_mz = 0, max_mz = 1000, 
+                x_ticks = 100, intensity_scale = "free_y")
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -60,10 +68,13 @@ Wesley Burr <wburr@trentu.ca>
 data("Master")
 
 ## Plot four spectra
-plotgridSpectra(dat = grid_df, spec1 = "Before1", spec2 = "Before1", spec3 = "After1", spec4 = "After2", lbls = TRUE)
+plotgridSpectra(dat = Master, spec1 = "Before1", spec2 = "Before1", 
+                spec3 = "After1", spec4 = "After2", lbls = TRUE)
 
 ## Plot six spectra
-plotgridSpectra(dat = grid_df, spec1 = "Blank1", spec2 = "Blank2", spec3 = "Before1", spec4 = "Before2", spec5 = "After1", spec6 = "After2", lbls = TRUE)
+plotgridSpectra(dat = Master, spec1 = "Blank1", spec2 = "Blank2", 
+                spec3 = "Before1", spec4 = "Before2", spec5 = "After1", 
+                spec6 = "After2", lbls = TRUE)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
