@@ -36,18 +36,15 @@ Avoid truncating a dataframe until all samples to be compared have been mapped.
 \code{\link{createSpecDF}},\code{\link{mapSpectrum}}
 }
 \examples{
-## Load sample dataset "After2.rda"
-data("After2")
+## Load sample dataset "Mastre.rda"
+data("Master")
 
-## Create empty spectral data frame to map to
-spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
-
-## Map binary spectral data to empty spectral data frame
-spec_df <- mapSpectrum(dat = After2, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
+## Select only the spectra "Before1" and "Before2"
+ex <- select(Master, "full_mz", "Before1", "Before2")
 
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages
-spec_df <- rmveEmpty(dat = spec_df)
+ex <- rmveEmpty(dat = ex)
 {
   }
 }

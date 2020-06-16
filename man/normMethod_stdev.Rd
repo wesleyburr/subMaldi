@@ -1,5 +1,5 @@
-\name{normMethod_stdev}
-\alias{normMethod_stdev}
+\name{.normMethod_stdev}
+\alias{.normMethod_stdev}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Normalize Spectrum to Standard Deviation of Noise
@@ -8,7 +8,9 @@ Normalize Spectrum to Standard Deviation of Noise
 Called internally by \code{normSpectra()}.Evaluates the standard deviation of intensity values within the same noisy region (a region lacking peaks) of each spectrum. All intensities in each spectrum are then divided by the spectrum's standard deviation in the noise region. All output spectra should have a standard deviation of 1 in the selected region. Capable of normalizing 1-6 spectra at once.
 }
 \usage{
-normMethod_stdev(dat, mass_dat, lower = 900, upper= 1100 , spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+.normMethod_stdev(dat, mass_dat, lower = 900, upper= 1100 , 
+                  spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, 
+                  spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -48,8 +50,10 @@ code{\link{normSpectra}}
 ## Load sample dataset "Master.rda"
 data("Master")
 
-## Normalize spectra "After1" and "After2" using the noisy region from m/z 900 to 1100
-normSpectra(Master, mass_dat = "full_mz", method = "stdev",lower = 900, upper = 1100, spec1 = "After1", spec2 = "After2")
+## Normalize spectra "After1" and "After2" 
+# using the noisy region from m/z 900 to 1100
+ex <- normSpectra(Master, mass_dat = "full_mz", method = "stdev",
+            lower = 900, upper = 1100, spec1 = "After1", spec2 = "After2")
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.

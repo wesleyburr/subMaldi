@@ -8,7 +8,9 @@ Normalize Spectral Data
 Normalize spectral data to a common scale using several different methods. Capable of normalizing 1-6 spectra at once.
 }
 \usage{
-normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, lower = NULL, upper = NULL, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, 
+            upper = NULL, lower = NULL, spec1, spec2 = NULL, 
+            spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -55,27 +57,30 @@ Wesley Burr <wburr@trentu.ca>
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{normMethod_custom}}, 
-\code{\link{normMethod_max}}, 
-\code{\link{normMethod_max_set}}, 
-\code{\link{normMethod_TIC}},
-\code{\link{normMethod_rel_TIC}}
+\code{\link{.normMethod_custom}}, 
+\code{\link{.normMethod_max}}, 
+\code{\link{.normMethod_max_set}}, 
+\code{\link{.normMethod_TIC}},
+\code{\link{.normMethod_rel_TIC}},
+\code{\link{.normMethod_median}},
+\code{\link{.normMethod_stdev}},
+\code{\link{.normMethod_quantile}}
 }
 \examples{
 ## Load sample dataset "Master2.rda"
 data("Master2")
 
 ## Normalize spectrum "Before1" to its maximum intensity
-normSpectra(dat = Master2, mass_dat = "full_mz", method = "max", spec1 = "Before1")
+ex <- normSpectra(dat = Master2, mass_dat = "full_mz", 
+            method = "max", spec1 = "Before1")
 
-## Normalize the spectra "Before1" and "Before2" to the most intense spectra's maximum intensity
-normSpectra(dat = Master2, mass_dat = "full_mz", method = "max_set", spec1 = "Before1", spec2 = "Before2")
+## Normalize the spectra "Before1" and "Before2" to the TIC
+ex <- normSpectra(dat = Master2, mass_dat = "full_mz",
+            method = "TIC", spec1 = "Before1", spec2 = "Before2")
 
 ## Normalize spectrum "After1" to the intensity of the peak at m/z 253.22
-normSpectra(dat = Master2, mass_dat = "full_mz", method = "custom", norm_mz = 253.22, spec1 = "After1")
-
-## Normalize the spectrum "After2" to the TIC
-normSpectra(dat = Master2, mass_dat = "full_mz", method = "TIC", spec1 = "After2") 
+ex <- normSpectra(dat = Master2, mass_dat = "full_mz", 
+            method = "custom", norm_mz = 253.22, spec1 = "After1")
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
