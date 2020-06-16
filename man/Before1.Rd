@@ -15,8 +15,16 @@ Raw spectral data in binary dataframe. The first column contains the \emph{m/z} 
     \item{\code{Intensity}}{A numeric vector; the intensity data for the spectrum.}
   }
 }
+<<<<<<< HEAD
 \source{
 Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent fingerprints recovered from underneath bloodstains using Matrix-Assisted Laser Desportion/Ionization Fourier-Transform Ion Cyclotron Resonance Mass Spectrometry Imaging (MALDI FT-ICR MSI). Forensic Chemistry (2020). In press.
+=======
+\details{
+%%  ~~ If necessary, more details than the __description__ above ~~
+}
+\source{
+%%  ~~ reference to a publication or URL from which the data were obtained ~~
+>>>>>>> 3c63485... Added data documentation
 }
 \references{
 https://github.com/wesleyburr/subMaldi
