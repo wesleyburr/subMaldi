@@ -7,6 +7,7 @@ Master Data Frame (Low Resolution)
 \description{
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the baseline corrected (by linear interpolation) intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
 =======
 A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
@@ -14,6 +15,9 @@ A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSp
 =======
 A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the baseline corrected (by linear interpolation) intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
 >>>>>>> a20b013... Corrected master datasets & custom normalization
+=======
+A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
+>>>>>>> 27861a2... Added data documentation
 }
 \usage{data("Master2")}
 \format{
@@ -30,19 +34,25 @@ A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSp
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \source{
 Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent fingerprints recovered from underneath bloodstains using Matrix-Assisted Laser Desportion/Ionization Fourier-Transform Ion Cyclotron Resonance Mass Spectrometry Imaging (MALDI FT-ICR MSI). Forensic Chemistry (2020). In press.
 =======
+=======
+>>>>>>> 27861a2... Added data documentation
 \details{
 %%  ~~ If necessary, more details than the __description__ above ~~
 }
 \source{
 %%  ~~ reference to a publication or URL from which the data were obtained ~~
+<<<<<<< HEAD
 >>>>>>> 3c63485... Added data documentation
 =======
 \source{
 Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent fingerprints recovered from underneath bloodstains using Matrix-Assisted Laser Desportion/Ionization Fourier-Transform Ion Cyclotron Resonance Mass Spectrometry Imaging (MALDI FT-ICR MSI). Forensic Chemistry (2020). In press.
 >>>>>>> 5831098... Added pre-processing vignette
+=======
+>>>>>>> 27861a2... Added data documentation
 }
 \references{
 https://github.com/wesleyburr/subMaldi
