@@ -1,1 +1,2 @@
 exportPattern("^[[:alpha:]]+")
+import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr)
