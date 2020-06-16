@@ -103,6 +103,7 @@ mass-to-charge value in \code{full_mz}.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Load sample datasets
 data("Before1")
 data("After1")
@@ -144,6 +145,13 @@ ex <- avgSpectra(Master, method = "mean", spectra_cols = c("Blank1", "Blank2"))
 <<<<<<< HEAD
 <<<<<<< HEAD
 ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2")
+=======
+## Load sample data "Master.rda"
+data("Master")
+
+## Select only the first two samples, "Blank1" and "Blank2"
+df <- select(Master, full_mz, Blank1, Blank2)
+>>>>>>> 6c09a20... Fixed documentation
 
 <<<<<<< HEAD
 ## Average the two spectral replicates

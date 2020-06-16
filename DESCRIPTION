@@ -37,6 +37,7 @@ Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
 License: GPL (>= 3) + file LICENSE
 =======
 Maintainer: Kristen Yeh <kristenyeh@trentu.ca>
+<<<<<<< HEAD
 =======
 Maintainer: Wesley Burr <wesleyburr@trentu.ca>
 >>>>>>> b0a8fd5... Updated paper
@@ -67,6 +68,11 @@ Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
 >>>>>>> c823b44... Updated docs
 License: GPL (>= 3) + file LICENSE
 >>>>>>> 856f0f5... Added loess baseline correction
+=======
+Description: Mapping of irregularly-spaced mass spectrometry data in an open format, with processing and visualization tools.
+Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), wesanderson (>= 0.3.6), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
+License: GPL (>= 2) + file LICENSE
+>>>>>>> 6c09a20... Fixed documentation
 Encoding: UTF-8
 LazyData: true
 <<<<<<< HEAD

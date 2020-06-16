@@ -1,5 +1,5 @@
-\name{normMethod_RMS}
-\alias{normMethod_RMS}
+\name{.normMethod_RMS}
+\alias{.normMethod_RMS}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Normalize Spectral Intensity by Root Mean Square
@@ -8,7 +8,8 @@ Normalize Spectral Intensity by Root Mean Square
 Called internally by \code{normSpectra}. Normalizes the intensity data of each input spectrum by dividing each peak's intensity by RMS error. Capable of normalizing 6 spectra to the same \emph{m/z} value at once.
 }
 \usage{
-normMethod_RMS(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+.normMethod_RMS(dat, mass_dat, spec1, spec2 = NULL, 
+                spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -47,7 +48,7 @@ Wesley Burr <wburr@trentu.ca>
 data("Master2")
 
 ## Normalize spectrum "Before1" using the RMS method
-normSpectra(dat = Master2, mass_dat = "full_mz", method = "RMS", spec1 = "Before1")
+ex <- normSpectra(dat = Master2, mass_dat = "full_mz", method = "RMS", spec1 = "Before1")
 
 
 }
