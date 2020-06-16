@@ -55,6 +55,7 @@ the spectrum's \code{.csv} file.}
   \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
   \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
 <<<<<<< HEAD
+<<<<<<< HEAD
   \item{spec_name}{A character string; the name of the new, binary data frame containing imported the \emph{m/z} and intensity data.}
 >>>>>>> db6ced3... Updated documentation
 =======
@@ -65,6 +66,8 @@ the spectrum's \code{.csv} file.}
   \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
   \item{spec_name}{A character string; the name of the new, binary data frame containing imported the \emph{m/z} and intensity data.}
 >>>>>>> 270485a... Updated documentation
+=======
+>>>>>>> 6b09f74... Fixed documentation
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -121,6 +124,7 @@ Wesley Burr <wburr@trentu.ca>
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 \examples{
 ## Read the sample file "Blank1.csv"
 Blank1 <- readcsvSpec(spec_file = "/subMALDI/data/Blank.csv", massCol = "m.z", intenseCol = "I")
@@ -141,6 +145,9 @@ Blank1 <- readcsvSpec(spec_file = "/subMALDI/data/Blank.csv", massCol = "m.z", i
 >>>>>>> 2931ed6... Added pre-processing vignette
 
 >>>>>>> 6c09a20... Fixed documentation
+=======
+
+>>>>>>> 6b09f74... Fixed documentation
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")

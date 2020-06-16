@@ -33,6 +33,7 @@ Plots multiple spectra on the same \emph{x}-axis scale for easier comparison. Al
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 plotSpectra(
   dat,
   mass_dat,
@@ -166,6 +167,15 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL,
 >>>>>>> 105654b... Fixing package structure - removed .tar.gz
             x_ticks = 100, intensity_scale = "free_y")
 >>>>>>> 8de5648... Added custom intensity for plots
+=======
+plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, 
+            colour1 = wes_palette(n=1, name = "GrandBudapest2"), 
+            colour2 = wes_palette(n=1, name = "GrandBudapest1"), 
+            colour3 = wes_palette(n=1, name = "Moonrise1"), 
+            colour4 = wes_palette(n=1, name = "Moonrise3"), 
+            span = 5, thresh = 0.1, lbls = FALSE, min_mz = 0, 
+            max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
+>>>>>>> 6b09f74... Fixed documentation
 }
 \arguments{
 <<<<<<< HEAD

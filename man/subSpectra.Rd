@@ -57,12 +57,16 @@ output dataset.}
   \item{Sub_Sample}{A character string; the name of the column to be filled with the subtracted spectrum.}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> db6ced3... Updated documentation
 =======
   \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
 >>>>>>> 6c09a20... Fixed documentation
 =======
 >>>>>>> 270485a... Updated documentation
+=======
+  \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
+>>>>>>> 6b09f74... Fixed documentation
 }
 <<<<<<< HEAD
 \value{
@@ -198,6 +202,7 @@ data("Master")
 Master <- transform(Master, "Subtracted" = 0)
 
 ## Subtract Blank1 from Before1
+<<<<<<< HEAD
 >>>>>>> db6ced3... Updated documentation
 =======
 ## Load sample datasets "Master.rda"
@@ -274,6 +279,11 @@ https://github.com/wesleyburr/subMaldi
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+=======
+Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
+                      Sample = "Before1", Sub_Sample = "Subtracted")
+
+>>>>>>> 6b09f74... Fixed documentation
 }
 \keyword{manip}
 \keyword{methods}

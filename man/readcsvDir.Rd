@@ -126,6 +126,7 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 2931ed6... Added pre-processing vignette
 =======
@@ -138,6 +139,9 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 
 <<<<<<< HEAD
 >>>>>>> 6c09a20... Fixed documentation
+=======
+
+>>>>>>> 6b09f74... Fixed documentation
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")

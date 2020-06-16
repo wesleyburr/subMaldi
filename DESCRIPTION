@@ -100,6 +100,7 @@ License: GPL (>= 3) + file LICENSE
 >>>>>>> 856f0f5... Added loess baseline correction
 =======
 Description: Mapping of irregularly-spaced mass spectrometry data in an open format, with processing and visualization tools.
+<<<<<<< HEAD
 Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
 <<<<<<< HEAD
 Imports: signal (>= 0.7-6)
@@ -119,6 +120,10 @@ Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
 >>>>>>> 27b29da... Updated docs
 License: GPL (>= 3) + file LICENSE
 >>>>>>> e3eb9d6... Added loess baseline correction
+=======
+Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), wesanderson (>= 0.3.6), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
+License: GPL (>= 2) + file LICENSE
+>>>>>>> 6b09f74... Fixed documentation
 Encoding: UTF-8
 LazyData: true
 <<<<<<< HEAD

@@ -174,6 +174,7 @@ mass-to-charge value in \code{full_mz}.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Load sample datasets
 data("Before1")
 data("After1")
@@ -229,6 +230,13 @@ data("Master")
 ## Select only the first two samples, "Blank1" and "Blank2"
 df <- select(Master, full_mz, Blank1, Blank2)
 >>>>>>> 6c09a20... Fixed documentation
+=======
+## Load sample data "Master.rda"
+data("Master")
+
+## Select only the first two samples, "Blank1" and "Blank2"
+df <- select(Master, full_mz, Blank1, Blank2)
+>>>>>>> 6b09f74... Fixed documentation
 
 <<<<<<< HEAD
 ## Average the two spectral replicates
