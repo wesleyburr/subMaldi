@@ -154,31 +154,6 @@ subSpectra <- function(dat, Blank_Var, Sample, Sub_Sample, showNeg = FALSE){
 # -----------------------------------------------------------------------
 
 
-# ----------------
-# AVERAGE SPECTRA
-# ----------------
-
-# Average intensities across rows per sample
-# First user should organize standardized data frame so all samples are together
-# First column should always be full_mz, the rest should be spectra, each scan per column
-
-# Then average the spectra
-avgSpectra <- function(dat, method = "mean"){
-  if(method == "sum") {
-    dat <- transform(dat, Sum = apply(dat[, -1], 1, sum, na.rm = TRUE))
-  } else {
-    dat <- transform(dat, Average = apply(dat[, -1],1, mean, na.rm = TRUE))
-  }
-
-  # Want to make this like for every value of full_mz,average the values in all but the first column (full_mz)
-  return(dat)
-
-}
-
-
-# -----------------------------------------------------------------------
-
-
 # ------------------
 # REMOVE EMPTY ROWS
 # ------------------
