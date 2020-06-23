@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Average Spectral Replicates
@@ -51,12 +52,19 @@
 # Author: Kristen Yeh, Sophie Castel
 # Title: subMALDI: Average Spectral Replicates
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+# --------------------------------------------------------------------------------------------
+# Date: June 23, 2020
+# Author: Kristen Yeh
+# Title: subMALDI Average Spectra
+>>>>>>> 5800ee0... Updated avgSpectra
 # --------------------------------------------------------------------------------------------
 
 # Average intensities across rows per sample
 # First user should organize standardized data frame so all samples are together
 # First column should always be full_mz, the rest should be spectra, each scan per column
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -103,23 +111,37 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
   
   if(method == "sum"){
 <<<<<<< HEAD
+=======
+# UPDATE JUNE 2020:
+# Editing the function so that you select which spectra are averaged
+# New column is made in original df beside the selected spectra
+
+avgSpectra <- function(dat, method = "mean", spec1, spec2, 
+                       spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL){
+  
+  if(method == "sum"){
+>>>>>>> 5800ee0... Updated avgSpectra
     .avg_sum(dat = dat, spec1 = spec1, spec2 = spec2, spec3 = spec3, spec4 = spec4,
              spec5 = spec5, spec6 = spec6) } 
   else{
     .avg_mean(dat = dat, spec1 = spec1, spec2 = spec2, spec3 = spec3, spec4 = spec4,
              spec5 = spec5, spec6 = spec6) }
+<<<<<<< HEAD
 >>>>>>> 3f68890... Updated avgSpectra
 =======
     .avg_sum(dat = dat, spectra_cols) } 
   else if(method == "mean"){
     .avg_mean(dat = dat, spectra_cols) }
 >>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
+=======
+>>>>>>> 5800ee0... Updated avgSpectra
 }
 
 # --------------
 # METHOD = SUM
 # --------------
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .avg_sum <- function(dat, spectra_cols){
@@ -136,6 +158,8 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 }
 
 =======
+=======
+>>>>>>> 5800ee0... Updated avgSpectra
 
 .avg_sum <- function(dat, spec1, spec2, spec3 = NULL, spec4 = NULL,
                      spec5 = NULL, spec6 = NULL){
@@ -143,6 +167,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
   if(is.null(spec6)){
   
   if(is.null(spec5)){
+<<<<<<< HEAD
 =======
 .avg_sum <- function(dat, spectra_cols){
 >>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
@@ -164,10 +189,96 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 >>>>>>> 3f68890... Updated avgSpectra
 =======
 >>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
+=======
+  
+  if(is.null(spec4)){
+  
+  if(is.null(spec3)){
+  
+  if(is.null(spec2)){
+  
+  # One spectrum
+  stop("Only one spectrum input. Please enter two spectra for averaging.")}
+
+  # ---------------------------------------------------------------------
+  # Two spectra
+  else{
+    i1 <- dat[[spec1]]
+    i2 <- dat[[spec2]]
+    i <- data.frame(i1,i2)
+    i <- transform(i, avg = apply(i,1, sum, na.rm = TRUE))
+    
+    dat <- transform(dat, "Sum" = 0)
+    dat["Sum"] <- i$avg
+    return(dat) }}
+  
+  # ---------------------------------------------------------------------
+  # Three spectra
+  else{
+    i1 <- dat[[spec1]]
+    i2 <- dat[[spec2]]
+    i3 <- dat[[spec3]]
+    i <- data.frame(i1,i2,i3)
+    i <- transform(i, avg = apply(i,1, sum, na.rm = TRUE))
+    
+    dat <- transform(dat, "Sum" = 0)
+    dat["Sum"] <- i$avg
+    return(dat) }}
+  
+  # ---------------------------------------------------------------------
+  #Four spectra
+  else{
+    i1 <- dat[[spec1]]
+    i2 <- dat[[spec2]]
+    i3 <- dat[[spec3]]
+    i4 <- dat[[spec4]]
+    i <- data.frame(i1,i2,i3,i4)
+    i <- transform(i, avg = apply(i,1, sum, na.rm = TRUE))
+    
+    dat <- transform(dat, "Sum" = 0)
+    dat["Sum"] <- i$avg
+    return(dat) }}
+
+  # ---------------------------------------------------------------------
+  #Five spectra
+  else{
+    i1 <- dat[[spec1]]
+    i2 <- dat[[spec2]]
+    i3 <- dat[[spec3]]
+    i4 <- dat[[spec4]]
+    i5 <- dat[[spec5]]
+    i <- data.frame(i1,i2,i3,i4,i5)
+    i <- transform(i, avg = apply(i,1, sum, na.rm = TRUE))
+    
+    dat <- transform(dat, "Sum" = 0)
+    dat["Sum"] <- i$avg
+    return(dat) }}
+
+  # ---------------------------------------------------------------------
+  # Six spectra
+  else{
+    i1 <- dat[[spec1]]
+    i2 <- dat[[spec2]]
+    i3 <- dat[[spec3]]
+    i4 <- dat[[spec4]]
+    i5 <- dat[[spec5]]
+    i6 <- dat[[spec6]]
+    i <- data.frame(i1,i2,i3,i4,i5,i6)
+    i <- transform(i, avg = apply(i,1, sum, na.rm = TRUE))
+    
+    dat <- transform(dat, "Sum" = 0)
+    dat["Sum"] <- i$avg
+    return(dat)
+  }
+}
+
+
+>>>>>>> 5800ee0... Updated avgSpectra
 # --------------
 # METHOD = MEAN
 # --------------
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 .avg_mean <- function(dat, spectra_cols){
@@ -192,6 +303,78 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
   mz <- dat$full_mz
   
 <<<<<<< HEAD
+=======
+.avg_mean <- function(dat, spec1, spec2, spec3 = NULL, spec4 = NULL,
+                      spec5 = NULL, spec6 = NULL){
+  
+  if(is.null(spec6)){
+    
+    if(is.null(spec5)){
+      
+      if(is.null(spec4)){
+        
+        if(is.null(spec3)){
+          
+          if(is.null(spec2)){
+            
+            # One spectrum
+            stop("Only one spectrum input. Please enter two spectra for averaging.")}
+          
+          # ---------------------------------------------------------------------
+          # Two spectra
+          else{
+            i1 <- dat[[spec1]]
+            i2 <- dat[[spec2]]
+            i <- data.frame(i1,i2)
+            i <- transform(i, avg = apply(i,1, mean, na.rm = TRUE))
+            
+            dat <- transform(dat, "Average" = 0)
+            dat["Average"] <- i$avg
+            return(dat) }}
+        
+        # ---------------------------------------------------------------------
+        # Three spectra
+        else{
+          i1 <- dat[[spec1]]
+          i2 <- dat[[spec2]]
+          i3 <- dat[[spec3]]
+          i <- data.frame(i1,i2,i3)
+          i <- transform(i, avg = apply(i,1, mean, na.rm = TRUE))
+          
+          dat <- transform(dat, "Average" = 0)
+          dat["Average"] <- i$avg
+          return(dat) }}
+      
+      # ---------------------------------------------------------------------
+      #Four spectra
+      else{
+        i1 <- dat[[spec1]]
+        i2 <- dat[[spec2]]
+        i3 <- dat[[spec3]]
+        i4 <- dat[[spec4]]
+        i <- data.frame(i1,i2,i3,i4)
+        i <- transform(i, avg = apply(i,1, mean, na.rm = TRUE))
+        
+        dat <- transform(dat, "Average" = 0)
+        dat["Average"] <- i$avg
+        return(dat) }}
+    
+    # ---------------------------------------------------------------------
+    #Five spectra
+    else{
+      i1 <- dat[[spec1]]
+      i2 <- dat[[spec2]]
+      i3 <- dat[[spec3]]
+      i4 <- dat[[spec4]]
+      i5 <- dat[[spec5]]
+      i <- data.frame(i1,i2,i3,i4,i5)
+      i <- transform(i, avg = apply(i,1, mean, na.rm = TRUE))
+      
+      dat <- transform(dat, "Average" = 0)
+      dat["Average"] <- i$avg
+      return(dat) }}
+  
+>>>>>>> 5800ee0... Updated avgSpectra
   # ---------------------------------------------------------------------
   # Six spectra
   else{
@@ -227,6 +410,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 
 
 
+<<<<<<< HEAD
 >>>>>>> 3f68890... Updated avgSpectra
 =======
   spectra <- lapply(spectra_cols, function(x){dat[x]})
@@ -239,3 +423,5 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
   return(dat)
 }
 >>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
+=======
+>>>>>>> 5800ee0... Updated avgSpectra
