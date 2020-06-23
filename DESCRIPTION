@@ -130,6 +130,7 @@ LazyData: true
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
@@ -212,3 +213,9 @@ RoxygenNote: 7.1.1
 =======
 biocViews:
 >>>>>>> e99bf5d... Issue (JOSS 5): Added biocViews: as a field in DESCRIPTION to make dependencies searched in BioConductor database
+=======
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+>>>>>>> 3f68890... Updated avgSpectra
