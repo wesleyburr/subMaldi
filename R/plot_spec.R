@@ -12,7 +12,7 @@
 
 
 plotSpectrum <- function(dat, 
-                         mass_dat = full_mz,
+                         mass_dat,
                          intensity_dat,
                          colour = "slategrey",
                          span = 5,
