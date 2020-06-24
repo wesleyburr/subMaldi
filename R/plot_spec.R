@@ -21,12 +21,11 @@ plotSpectrum <- function(dat,
                          max_mz = 1000,
                          lbls = FALSE,
                          x_ticks = 100) {
-  ggplot(dat, aes(x = mass_dat, y = intensity_dat), group = 1) +
+  ggplot(dat, aes(mass_dat, intensity_dat), group = 1) +
     geom_line(col = colour) +
     labs(x = expression(italic("m/z")), y = "Intensity") +
     theme(axis.text.x = element_text(angle = 90)) +
-    scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
-    scale_y_continuous(limits=c(0, max(intensity_dat))) +
+    scale_x_continuous(limits = c(min_mz, max_mz), breaks = seq(min_mz, max_mz, by = x_ticks)) +
     theme_bw() + theme( panel.border = element_blank(),
                         strip.background = element_blank(),
                         strip.text.x = element_blank(),
@@ -38,7 +37,7 @@ plotSpectrum <- function(dat,
                  geom = "text", check_overlap = TRUE, color = "black", cex = 3.0)
     } else {  
       stat_peaks(aes(x = mass_dat, y = intensity_dat, group = 1), 
-                 ignore_threshold = 100, span = span, 
+                 ignore_threshold = 1000000, span = span, 
                  geom = "text", check_overlap = TRUE, color = "black", cex = 3.0)
     }
 }
@@ -80,7 +79,7 @@ plotSpectra <- function(dat, mass_dat,
         geom_line() +
         labs(x = expression(italic("m/z")), y = "Intensity") +
         facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
-        scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+        scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
         theme_bw() + theme( panel.border = element_blank(),
                             strip.background = element_blank(),
                             strip.text.x = element_blank(),
@@ -111,7 +110,7 @@ plotSpectra <- function(dat, mass_dat,
         geom_line() +
         labs(x = expression(italic("m/z")), y = "Intensity") +
         facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
-        scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+        scale_x_continuous(limits = c(min_mz, max_mz),breaks=seq(min_mz,max_mz,by = x_ticks)) +
         theme_bw() + theme( panel.border = element_blank(),
                             strip.background = element_blank(),
                             strip.text.x = element_blank(),
@@ -143,7 +142,7 @@ plotSpectra <- function(dat, mass_dat,
       geom_line() +
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
-      scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      scale_x_continuous(limits = c(min_mz, max_mz),breaks=seq(min_mz,max_mz,by = x_ticks)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
