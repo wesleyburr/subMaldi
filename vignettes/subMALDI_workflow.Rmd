@@ -20,6 +20,10 @@ knitr::opts_chunk$set(
 )
 ```
 
+^1^ Forensic Science Program, Trent University, Peterborough, ON, Canada
+
+^2^ Faculty of Science, Mathematics, Trent University, Peterborough, ON, Canada
+
 # Introduction
 
 In this vignette we demonstrate a processing workflow for irregularly-spaced mass spectrometry data using __*subMALDI*__. This package is freely available from [GitHub](https://github.com/wesleyburr/subMaldi) and was created using MALDI FT-ICR mass spectrometry data. 
