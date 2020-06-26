@@ -4,8 +4,11 @@
 \alias{mapSpectrum}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Map Spectrum to \emph{m/z} Vector}
 =======
+=======
+>>>>>>> 14c6370... Updated documentation
 \title{
 Map Spectrum to \emph{m/z} Vector
 }
@@ -164,6 +167,10 @@ spec_df <- createSpecDF(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4)
 spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", 
             spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
 
+<<<<<<< HEAD
+=======
+\section{Warning}{It is important that the values for \code{thresh} and \code{dig} are equal to that of \code{res} and \code{dig} used in \code{createSpecDF()}. Otherwise the data will fail to map.}
+>>>>>>> 14c6370... Updated documentation
 
 }
 \references{
@@ -224,6 +231,7 @@ spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity",
 >>>>>>> 6c09a20... Fixed documentation
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
@@ -249,3 +257,8 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 \keyword{array}
 \keyword{methods}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{ methods }
+\keyword{ array }
+>>>>>>> 14c6370... Updated documentation

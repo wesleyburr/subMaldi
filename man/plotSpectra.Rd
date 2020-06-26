@@ -5,8 +5,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Plot and Compare Spectra}
 =======
+=======
+>>>>>>> 14c6370... Updated documentation
 \title{
 Plot and Compare Multiple Spectra
 }
@@ -259,7 +262,10 @@ Wesley Burr <wburr@trentu.ca>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 14c6370... Updated documentation
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
@@ -408,8 +414,14 @@ plotSpectra(dat = Master, spec1 = "Blank1",
                         intensity_scale = "free_y", lbls = TRUE)
 }
 
+<<<<<<< HEAD
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
 >>>>>>> a54180f... Master data & updated documentation - removed .tar.gz
+=======
+
+\keyword{methods }
+\keyword{ aplot }
+>>>>>>> 14c6370... Updated documentation

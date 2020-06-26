@@ -4,8 +4,11 @@
 \alias{subSpectra}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Subtract Blank Peaks from Sample Spectra}
 =======
+=======
+>>>>>>> 14c6370... Updated documentation
 \title{
 Subtract Blank Peaks from Sample Spectra
 }
@@ -87,8 +90,11 @@ intensity of 0.
 =======
 =======
 
+<<<<<<< HEAD
 >>>>>>> 5831098... Added pre-processing vignette
 
+=======
+>>>>>>> 14c6370... Updated documentation
 \seealso{
 \code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
 >>>>>>> c6a3769... Updated documentation
@@ -204,6 +210,12 @@ Master <- subSpectra(dat = Master, Blank_Var = "Blank1",
 
 >>>>>>> 6c09a20... Fixed documentation
 }
+<<<<<<< HEAD
 \keyword{manip}
 \keyword{methods}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{ methods }
+\keyword{ manip }
+>>>>>>> 14c6370... Updated documentation

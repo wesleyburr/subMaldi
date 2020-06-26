@@ -4,8 +4,11 @@
 \alias{readcsvSpec}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Import a Single .csv Spectrum}
 =======
+=======
+>>>>>>> 14c6370... Updated documentation
 \title{
 Import a Single .csv Spectrum
 }
@@ -88,8 +91,6 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
@@ -99,6 +100,7 @@ Wesley Burr <wburr@trentu.ca>
 Blank1 <- readcsvSpec(spec_file = "/subMALDI/data/Blank.csv", massCol = "m.z", intenseCol = "I")
 >>>>>>> db6ced3... Updated documentation
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 270485a... Updated documentation
@@ -122,3 +124,7 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{methods}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{ methods }
+>>>>>>> 14c6370... Updated documentation
