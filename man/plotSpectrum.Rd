@@ -1,6 +1,5 @@
 \name{plotSpectrum}
 \alias{plotSpectrum}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Plot a Single Spectrum
 }
@@ -12,7 +11,6 @@ plotSpectrum(dat, mass_dat, intensity_dat, colour = "slategrey",
             span = 5, thresh = 0.1, min_mz = 0, max_mz = 1000, 
             lbls = FALSE, x_ticks = 100)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the first column.}
   \item{mass_dat}{The name of the column in \code{dat} containing the \emph{m/z}data for the spectrum that is to be plotted. Should be input as dat$mass_column. By default, the mass column in a mapped data frame is "full_mz". If our spectral data frame is called my_spec, then our input for mass_dat = my_spec$full_mz.}
@@ -49,7 +47,6 @@ data("Before1")
 plotSpectrum(dat = Before1, mass_dat = Before1$mass, 
               intensity_dat = Before1$Intensity)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+\keyword{ methods }
+\keyword{ aplot }
