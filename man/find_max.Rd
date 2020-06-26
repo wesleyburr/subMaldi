@@ -40,7 +40,6 @@ find_max(dat = Master, mass_dat = "full_mz", spectra_cols = c("Blank1", "Before1
 =======
 \name{find_max}
 \alias{find_max}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Find Peak Maxima
 }
@@ -51,7 +50,6 @@ Analyzes spectral data and returns a list of the most intense peak in each spect
 find_max(dat, mass_dat, spec1, spec2 = NULL, spec3 = NULL, 
           spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.}
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data for the spectrum.}
@@ -126,7 +124,6 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
@@ -142,6 +139,7 @@ find_max(dat = Master, mass_dat = "full_mz", spec1 = "Blank1")
 find_max(dat = Master, mass_dat = "full_mz", spec1 = "Blank1", 
           spec2 = "Before1", spec3 = "After1", spec4 = "After2")
 }
+<<<<<<< HEAD
 >>>>>>> 834ea85... Updated documentation - removed .tar.gz
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
@@ -167,3 +165,7 @@ Sophie Castel <sophie.castel@ontariotechu.net>
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
 >>>>>>> 834ea85... Updated documentation - removed .tar.gz
+=======
+
+\keyword{ methods }
+>>>>>>> 14c6370... Updated documentation

@@ -4,8 +4,11 @@
 \alias{readcsvDir}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Import .csv Spectra from a Directory}
 =======
+=======
+>>>>>>> 14c6370... Updated documentation
 \title{
 Import .csv Spectra from a Directory
 }
@@ -101,6 +104,7 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 
+<<<<<<< HEAD
 >>>>>>> 6c09a20... Fixed documentation
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
@@ -116,3 +120,7 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{methods}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{ methods }
+>>>>>>> 14c6370... Updated documentation

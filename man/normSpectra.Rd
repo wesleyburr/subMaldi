@@ -191,7 +191,6 @@ rearranged in their original order. } }
 =======
 \name{normSpectra}
 \alias{normSpectra}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Normalize Spectral Data
 }
@@ -203,7 +202,6 @@ normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL,
             upper = NULL, lower = NULL, spec1, spec2 = NULL, 
             spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.}
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data for the spectrum.}
@@ -245,8 +243,6 @@ Wesley Burr <wburr@trentu.ca>
     \item{quantile}{ Normalizes the distributions of the values in each spectrum in a set.  Sorts the intensity data of each spectrum and evaluates the average intensity for each rank. The intensity values are then replaces with the averaged intensities, rearranged in their original order. }
   }
 }
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{.normMethod_custom}}, 
 \code{\link{.normMethod_max}}, 
@@ -327,6 +323,7 @@ ex <- normSpectra(dat = Master2, mass_dat = "full_mz",
             method = "custom", norm_mz = 253.22, spec1 = "After1")
 
 }
+<<<<<<< HEAD
 >>>>>>> af5047e... TIC norm added- removed .tar.gz
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
@@ -354,3 +351,8 @@ Sophie Castel <sophie.castel@ontariotechu.net>
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
 >>>>>>> af5047e... TIC norm added- removed .tar.gz
+=======
+
+\keyword{ methods }
+\keyword{ manip }
+>>>>>>> 14c6370... Updated documentation

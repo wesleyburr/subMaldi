@@ -4,8 +4,11 @@
 \alias{rmveEmpty}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Remove Empty Rows}
 =======
+=======
+>>>>>>> 14c6370... Updated documentation
 \title{
 Remove Empty Rows
 }
@@ -75,6 +78,7 @@ Avoid truncating a dataframe until all samples to be compared have been mapped.
 }
 \examples{
 
+<<<<<<< HEAD
 ## Load sample dataset "Mastre.rda"
 data("Master")
 
@@ -92,6 +96,10 @@ Kristen Yeh <kristenyeh@trentu.ca>
 \note{
 Avoid truncating a dataframe until all samples to be compared have
 been mapped.
+=======
+\seealso{
+\code{\link{createSpecDF}},\code{\link{mapSpectrum}}
+>>>>>>> 14c6370... Updated documentation
 }
 \examples{
 <<<<<<< HEAD
@@ -129,6 +137,7 @@ ex <- select(Master, "full_mz", "Before1", "Before2")
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages
 ex <- rmveEmpty(dat = ex)
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -176,3 +185,9 @@ Kristen Yeh <kristenyeh@trentu.ca>
 \keyword{manip}
 \keyword{methods}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+
+}
+\keyword{ manip }
+\keyword{ methods }
+>>>>>>> 14c6370... Updated documentation
