@@ -48,7 +48,6 @@ Sophie Castel <sophie.castel@ontariotechu.net>
 =======
 \name{find_max_set}
 \alias{find_max_set}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Find Most Intense Peak of a Set
 }
@@ -59,7 +58,6 @@ Analyzes spectral data and returns information about the most intense peak in al
 find_max_set(dat, mass_dat, spec1, spec2, spec3 = NULL, 
               spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.}
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data for the spectrum.}
@@ -86,8 +84,6 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
@@ -102,8 +98,13 @@ find_max_set(dat = Master, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Aft
 find_max_set(dat = Master, mass_dat = "full_mz", spec1 = "After1", spec2 = "Blank2", 
               spec3 = "Before1", spec4 = "Blank1", spec5 = "After2", spec6 = "Before2")
 }
+<<<<<<< HEAD
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
 >>>>>>> 2a95699... Updated documentation
+=======
+
+\keyword{ methods }
+>>>>>>> c6a3769... Updated documentation

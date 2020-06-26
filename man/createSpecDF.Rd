@@ -3,9 +3,12 @@
 \name{createSpecDF}
 \alias{createSpecDF}
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Create Empty Spectral Data Frame}
 =======
 %- Also NEED an '\alias' for EACH other topic documented here.
+=======
+>>>>>>> c6a3769... Updated documentation
 \title{
 Create Empty Spectral Data Frame
 }
@@ -61,8 +64,6 @@ Kristen Yeh <kristenyeh@trentu.ca>
 \note{
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 >>>>>>> 270485a... Updated documentation
@@ -86,5 +87,11 @@ https://github.com/wesleyburr/subMaldi
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 }
+<<<<<<< HEAD
 \keyword{array}
 \keyword{methods}
+=======
+
+\keyword{ methods }
+\keyword{ array }
+>>>>>>> c6a3769... Updated documentation

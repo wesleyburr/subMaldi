@@ -2,7 +2,16 @@
 % Please edit documentation in R/plotSpectra.R
 \name{plotSpectra}
 \alias{plotSpectra}
+<<<<<<< HEAD
 \title{Plot and Compare Spectra}
+=======
+\title{
+Plot and Compare Multiple Spectra
+}
+\description{
+Plots multiple spectra on the same \emph{x}-axis scale for easier comparison. Allows for 2 to 4 spectra per plot, stacked on top of one another.
+}
+>>>>>>> c6a3769... Updated documentation
 \usage{
 <<<<<<< HEAD
 plotSpectra(
@@ -137,6 +146,12 @@ Wesley Burr <wburr@trentu.ca>
           }
 }
 
+<<<<<<< HEAD
+=======
+\seealso{
+%% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+>>>>>>> c6a3769... Updated documentation
 \examples{
 
 ## Plotting using the sample dataset "Master.rda"
@@ -145,6 +160,7 @@ plotSpectra(dat = Master, mass_dat = "full_mz",
             spectra_cols = c("Blank1", "Blank2"),
             intensity_scale = "free_y", lbls = TRUE, nrows = 2, x_ticks = 10)
 }
+<<<<<<< HEAD
 \references{
 https://github.com/wesleyburr/subMaldi
 }
@@ -153,3 +169,9 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca> Sophie Castel <
 }
 \keyword{aplot}
 \keyword{methods}
+=======
+
+
+\keyword{methods }
+\keyword{ aplot }
+>>>>>>> c6a3769... Updated documentation

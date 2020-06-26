@@ -2,7 +2,16 @@
 % Please edit documentation in R/subSpectra.R
 \name{subSpectra}
 \alias{subSpectra}
+<<<<<<< HEAD
 \title{Subtract Blank Peaks from Sample Spectra}
+=======
+\title{
+Subtract Blank Peaks from Sample Spectra
+}
+\description{
+This function takes the intensity values in the blank column of the mapped spectral data frame and subtracts them from the intensity values in the sample column. If the intensity value in the blank spectrum is greater than that in the sample spectrum, the intensity of the sample peak is given an intensity of 0.
+}
+>>>>>>> c6a3769... Updated documentation
 \usage{
 subSpectra(dat, Blank_Var, Sample, Sub_Sample, showNeg = FALSE)
 }
@@ -53,12 +62,18 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 >>>>>>> 270485a... Updated documentation
 }
+<<<<<<< HEAD
 \description{
 This function takes the intensity values in the blank column of the mapped
 spectral data frame and subtracts them from the intensity values in the
 sample column. If the intensity value in the blank spectrum is greater than
 that in the sample spectrum, the intensity of the sample peak is given an
 intensity of 0.
+=======
+
+\seealso{
+\code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
+>>>>>>> c6a3769... Updated documentation
 }
 \examples{
 <<<<<<< HEAD
@@ -101,5 +116,11 @@ Master <- subSpectra(dat = Master, Blank_Var = "Blank1",
 
 >>>>>>> 6b09f74... Fixed documentation
 }
+<<<<<<< HEAD
 \keyword{manip}
 \keyword{methods}
+=======
+
+\keyword{ methods }
+\keyword{ manip }
+>>>>>>> c6a3769... Updated documentation
