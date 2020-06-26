@@ -1,6 +1,5 @@
 \name{createSpecDF}
 \alias{createSpecDF}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Create Empty Spectral Data Frame
 }
@@ -10,7 +9,6 @@ Creates an empty data frame to be used for mapping spectral data to a vector of 
 \usage{
 createSpecDF(min_mz = 53.76, max_mz = 1100.00, res = 0.0001, dig = 4)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 53.76.}
   \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1100.}
@@ -33,8 +31,6 @@ Kristen Yeh <kristenyeh@trentu.ca>
 \note{
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
@@ -46,7 +42,6 @@ spec_df <- createSpecDF(min_mz = 500, max_mz = 2000, res = 0.001, dig = 3)
 # with a step size of 0.0001 and sample names
 spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+\keyword{ methods }
+\keyword{ array }
