@@ -6,10 +6,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Map Spectrum to \emph{m/z} Vector}
 =======
 =======
 >>>>>>> 14c6370... Updated documentation
+=======
+>>>>>>> c6a3769... Updated documentation
 \title{
 Map Spectrum to \emph{m/z} Vector
 }
@@ -85,6 +88,9 @@ mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
 >>>>>>> 270485a... Updated documentation
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c6a3769... Updated documentation
 \arguments{
 <<<<<<< HEAD
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
@@ -210,6 +216,7 @@ filled into the mapped spectrum.
 \section{Warning}{It is important that the values for \code{thresh} and \code{dig} are equal to that of \code{res} and \code{dig} used in \code{createSpecDF()}. Otherwise the data will fail to map.}
 >>>>>>> c6a3769... Updated documentation
 
+<<<<<<< HEAD
 ## Load sample dataset "Blank1.rda"
 data("lank1")
 
@@ -219,6 +226,9 @@ spec_df <- createSpecDF(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4)
 ## Map binary spectral data to empty spectral data frame
 spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", 
             spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
+=======
+\section{Warning}{It is important that the values for \code{thresh} and \code{dig} are equal to that of \code{res} and \code{dig} used in \code{createSpecDF()}. Otherwise the data will fail to map.}
+>>>>>>> c6a3769... Updated documentation
 
 <<<<<<< HEAD
 =======
@@ -310,6 +320,7 @@ spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity",
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
@@ -355,3 +366,8 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 \keyword{array}
 \keyword{methods}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{ methods }
+\keyword{ array }
+>>>>>>> c6a3769... Updated documentation

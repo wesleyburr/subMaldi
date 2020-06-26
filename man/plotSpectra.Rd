@@ -8,10 +8,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Plot and Compare Spectra}
 =======
 =======
 >>>>>>> 14c6370... Updated documentation
+=======
+>>>>>>> c6a3769... Updated documentation
 \title{
 Plot and Compare Multiple Spectra
 }
@@ -357,9 +360,12 @@ Wesley Burr <wburr@trentu.ca>
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 14c6370... Updated documentation
+=======
+>>>>>>> c6a3769... Updated documentation
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
@@ -578,6 +584,7 @@ plotSpectra(dat = Master, mass_dat = "full_mz",
 <<<<<<< HEAD
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
@@ -598,3 +605,8 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca> Sophie Castel <
 \keyword{aplot}
 \keyword{methods}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{methods }
+\keyword{ aplot }
+>>>>>>> c6a3769... Updated documentation

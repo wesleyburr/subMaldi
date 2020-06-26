@@ -6,10 +6,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Import a Single .csv Spectrum}
 =======
 =======
 >>>>>>> 14c6370... Updated documentation
+=======
+>>>>>>> c6a3769... Updated documentation
 \title{
 Import a Single .csv Spectrum
 }
@@ -144,6 +147,7 @@ Blank1 <- readcsvSpec(spec_file = "/subMALDI/data/Blank.csv", massCol = "m.z", i
 =======
 >>>>>>> 2931ed6... Added pre-processing vignette
 
+<<<<<<< HEAD
 >>>>>>> 6c09a20... Fixed documentation
 =======
 
@@ -171,3 +175,7 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{methods}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{ methods }
+>>>>>>> c6a3769... Updated documentation

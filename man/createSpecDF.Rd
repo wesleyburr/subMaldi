@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Create Empty Spectral Data Frame}
 =======
 %- Also NEED an '\alias' for EACH other topic documented here.
@@ -14,6 +15,8 @@
 >>>>>>> c6a3769... Updated documentation
 =======
 >>>>>>> 14c6370... Updated documentation
+=======
+>>>>>>> c6a3769... Updated documentation
 \title{
 Create Empty Spectral Data Frame
 }
@@ -155,8 +158,11 @@ the first column and can be called by "\code{full_mz}".
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 14c6370... Updated documentation
+=======
+>>>>>>> c6a3769... Updated documentation
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 >>>>>>> 270485a... Updated documentation
@@ -235,6 +241,12 @@ Kristen Yeh <kristenyeh@trentu.ca>
 =======
 >>>>>>> 2a95699... Updated documentation
 }
+<<<<<<< HEAD
 \keyword{array}
 \keyword{methods}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{ methods }
+\keyword{ array }
+>>>>>>> c6a3769... Updated documentation

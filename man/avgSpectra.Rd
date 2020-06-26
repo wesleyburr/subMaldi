@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Average Spectral Replicates}
 \usage{
 avgSpectra(dat, method = "mean", spectra_cols)
@@ -16,6 +17,8 @@ avgSpectra(dat, method = "mean", spectra_cols)
 >>>>>>> c6a3769... Updated documentation
 =======
 >>>>>>> 14c6370... Updated documentation
+=======
+>>>>>>> c6a3769... Updated documentation
 \title{
 Average Spectral Replicates
 }
@@ -47,6 +50,7 @@ Combines spectral replicates either by averaging (method = "mean") or summing (m
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 >>>>>>> 3f68890... Updated avgSpectra
 =======
@@ -69,6 +73,10 @@ avgSpectra(dat, method = "mean", spectra_cols)
 =======
 avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 >>>>>>> 3f68890... Updated avgSpectra
+=======
+avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL, 
+            spec4 = NULL, spec5 = NULL, spec6 = NULL)
+>>>>>>> c6a3769... Updated documentation
 }
 \arguments{
 <<<<<<< HEAD
@@ -195,6 +203,7 @@ Combines spectral replicates either by averaging (method = "mean") or
 summing (method = "sum") the intensity values across each row representing a
 mass-to-charge value in \code{full_mz}.
 }
+<<<<<<< HEAD
 \examples{
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -301,6 +310,8 @@ ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2")
 
 >>>>>>> 5800ee0... Updated avgSpectra
 =======
+=======
+>>>>>>> c6a3769... Updated documentation
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
@@ -312,6 +323,7 @@ data("Master")
 ex <- avgSpectra(Master, method = "mean", spec1 = "Blank1", spec2 = "Blank2")
 
 ## Average blank spectrum 1 and 2 using the method "sum"
+<<<<<<< HEAD
 ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2")
 
 >>>>>>> 3f68890... Updated avgSpectra
@@ -357,3 +369,9 @@ Sophie Castel <sophie.castel@ontariotechu.net>
 \keyword{manip}
 \keyword{methods}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2") 
+}
+\keyword{ manip }
+\keyword{ methods }
+>>>>>>> c6a3769... Updated documentation

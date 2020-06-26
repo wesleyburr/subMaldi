@@ -6,10 +6,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Import .csv Spectra from a Directory}
 =======
 =======
 >>>>>>> 14c6370... Updated documentation
+=======
+>>>>>>> c6a3769... Updated documentation
 \title{
 Import .csv Spectra from a Directory
 }
@@ -138,6 +141,7 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 >>>>>>> 270485a... Updated documentation
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6c09a20... Fixed documentation
 =======
 
@@ -165,3 +169,7 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{methods}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+
+\keyword{ methods }
+>>>>>>> c6a3769... Updated documentation
