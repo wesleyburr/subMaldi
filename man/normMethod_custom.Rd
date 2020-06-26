@@ -1,6 +1,5 @@
 \name{.normMethod_custom}
 \alias{.normMethod_custom}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Normalize Peak Intensity to Custom \emph{m/z}
 }
@@ -41,8 +40,6 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{normSpectra}}
 }
@@ -60,7 +57,5 @@ ex <- normSpectra(dat = Master2, mass_dat = "full_mz" ,method = "custom",
             spec4 = "Before2", spec5 = "After1", spec6 = "After2")
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ methods }
+\keyword{ manip }

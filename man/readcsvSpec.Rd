@@ -1,6 +1,5 @@
 \name{readcsvSpec}
 \alias{readcsvSpec}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Import a Single .csv Spectrum
 }
@@ -10,7 +9,6 @@ Imports a single spectrum in .csv format and turns it into a binary data frame c
 \usage{
 readcsvSpec(spec_file, massCol, intenseCol)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{spec_file}{A character string; the file path to the \code{.csv} spectrum that is to be imported.}
   \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
@@ -33,13 +31,9 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+\keyword{ methods }

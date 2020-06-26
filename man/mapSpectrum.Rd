@@ -1,6 +1,5 @@
 \name{mapSpectrum}
 \alias{mapSpectrum}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Map Spectrum to \emph{m/z} Vector
 }
@@ -10,7 +9,6 @@ Fills in the columns of the empty data frame created using \code{createSpecDF}. 
 \usage{
 mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{A pairwise data frame containing your spectral data. Should contain two columns: one for \emph{m/z} and one for intensity.}
   \item{massCol}{A character string; the name of the \emph{m/z} column in \code{dat}.}
@@ -37,7 +35,7 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+\section{Warning}{It is important that the values for \code{thresh} and \code{dig} are equal to that of \code{res} and \code{dig} used in \code{createSpecDF()}. Otherwise the data will fail to map.}
 
 \seealso{
 \code{\link{createSpecDF}}
@@ -54,7 +52,6 @@ spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity",
             spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+\keyword{ methods }
+\keyword{ array }
