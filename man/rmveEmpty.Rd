@@ -2,7 +2,16 @@
 % Please edit documentation in R/rmveEmpty.R
 \name{rmveEmpty}
 \alias{rmveEmpty}
+<<<<<<< HEAD
 \title{Remove Empty Rows}
+=======
+\title{
+Remove Empty Rows
+}
+\description{
+Data frames created using createSpecDF can have thousands to millions of rows, especially when dealing with high resolution mass spectrometry data. This can be quite taxing to the speed of executing certain functions, especially when it comes to visualizing data. This function removes empty rows to reduce the computational load and increase the ease of use of functions on the data frame. Any row where all elements (but the first, which is \code{full_mz}) equal 0 are removed from the data frame.
+}
+>>>>>>> c6a3769... Updated documentation
 \usage{
 rmveEmpty(dat)
 }
@@ -52,8 +61,6 @@ Kristen Yeh <kristenyeh@trentu.ca>
 Avoid truncating a dataframe until all samples to be compared have been mapped. 
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{createSpecDF}},\code{\link{mapSpectrum}}
 }
@@ -77,6 +84,7 @@ ex <- select(Master, "full_mz", "Before1", "Before2")
 # other functions and packages
 ex <- rmveEmpty(dat = ex)
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 }
 \references{
@@ -99,3 +107,9 @@ Kristen Yeh <kristenyeh@trentu.ca>
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
 >>>>>>> 6b09f74... Fixed documentation
+=======
+
+}
+\keyword{ manip }
+\keyword{ methods }
+>>>>>>> c6a3769... Updated documentation

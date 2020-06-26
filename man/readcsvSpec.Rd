@@ -2,7 +2,16 @@
 % Please edit documentation in R/readcsvSpec.R
 \name{readcsvSpec}
 \alias{readcsvSpec}
+<<<<<<< HEAD
 \title{Import a Single .csv Spectrum}
+=======
+\title{
+Import a Single .csv Spectrum
+}
+\description{
+Imports a single spectrum in .csv format and turns it into a binary data frame containing a "mass" and "Intensity" column.
+}
+>>>>>>> c6a3769... Updated documentation
 \usage{
 readcsvSpec(spec_file, massCol, intenseCol)
 }
@@ -48,12 +57,11 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 270485a... Updated documentation
 }
@@ -64,3 +72,7 @@ Wesley Burr <wburr@trentu.ca>
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
 >>>>>>> 6b09f74... Fixed documentation
+=======
+
+\keyword{ methods }
+>>>>>>> c6a3769... Updated documentation

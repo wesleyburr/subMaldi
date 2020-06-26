@@ -2,7 +2,16 @@
 % Please edit documentation in R/mapSpectrum.R
 \name{mapSpectrum}
 \alias{mapSpectrum}
+<<<<<<< HEAD
 \title{Map Spectrum to \emph{m/z} Vector}
+=======
+\title{
+Map Spectrum to \emph{m/z} Vector
+}
+\description{
+Fills in the columns of the empty data frame created using \code{createSpecDF}. Mass to charge values from pairwise spectral data are compared to the \code{full_mz} vector. All peaks within the \code{thresh} of one another are binned, and only the maximum intensity of that bin is filled into the mapped spectrum.
+}
+>>>>>>> c6a3769... Updated documentation
 \usage{
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -81,8 +90,12 @@ filled into the mapped spectrum.
 \code{createSpecDF()}. Otherwise the data will fail to map.
 }
 
+<<<<<<< HEAD
 \examples{
 <<<<<<< HEAD
+=======
+\section{Warning}{It is important that the values for \code{thresh} and \code{dig} are equal to that of \code{res} and \code{dig} used in \code{createSpecDF()}. Otherwise the data will fail to map.}
+>>>>>>> c6a3769... Updated documentation
 
 ## Load sample dataset "Blank1.rda"
 data("lank1")
@@ -125,8 +138,14 @@ spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity",
             spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
 
 }
+<<<<<<< HEAD
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
 >>>>>>> 270485a... Updated documentation
+=======
+
+\keyword{ methods }
+\keyword{ array }
+>>>>>>> c6a3769... Updated documentation

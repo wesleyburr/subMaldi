@@ -2,7 +2,16 @@
 % Please edit documentation in R/readcsvDir.R
 \name{readcsvDir}
 \alias{readcsvDir}
+<<<<<<< HEAD
 \title{Import .csv Spectra from a Directory}
+=======
+\title{
+Import .csv Spectra from a Directory
+}
+\description{
+Imports all \code{.csv} files in a directory, turns them into a binary data frame containing a "mass" and "Intensity" column, and outputs them as \code{.rda} files into an output directory. Allows for rapid import of many spectral datasets at once.
+}
+>>>>>>> c6a3769... Updated documentation
 \usage{
 readcsvDir(direct, massCol, intenseCol, output)
 }
@@ -60,6 +69,7 @@ Wesley Burr <wburr@trentu.ca>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## Read all .csv files from /MyFolder and export them as .rda's to /ExportFolder
 readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = "./ExportFolder/")
 
@@ -73,3 +83,7 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 \keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
 >>>>>>> 6b09f74... Fixed documentation
+=======
+
+\keyword{ methods }
+>>>>>>> c6a3769... Updated documentation
