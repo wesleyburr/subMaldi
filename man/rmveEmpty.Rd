@@ -1,6 +1,5 @@
 \name{rmveEmpty}
 \alias{rmveEmpty}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Remove Empty Rows
 }
@@ -10,7 +9,6 @@ Data frames created using createSpecDF can have thousands to millions of rows, e
 \usage{
 rmveEmpty(dat)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{The spectral data frame, containing \code{full_mz} in the first column, to be trimmed of all-zero rows.}
 }
@@ -30,8 +28,6 @@ Kristen Yeh <kristenyeh@trentu.ca>
 Avoid truncating a dataframe until all samples to be compared have been mapped. 
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{createSpecDF}},\code{\link{mapSpectrum}}
 }
@@ -45,10 +41,7 @@ ex <- select(Master, "full_mz", "Before1", "Before2")
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages
 ex <- rmveEmpty(dat = ex)
-{
-  }
+
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+\keyword{ manip }
+\keyword{ methods }

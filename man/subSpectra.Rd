@@ -1,6 +1,5 @@
 \name{subSpectra}
 \alias{subSpectra}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Subtract Blank Peaks from Sample Spectra
 }
@@ -10,7 +9,6 @@ This function takes the intensity values in the blank column of the mapped spect
 \usage{
 subSpectra(dat, Blank_Var, Sample, Sub_Sample, showNeg = FALSE)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{The spectral data frame, containing \code{full_mz} in the first column and intensity data in the subsequent columns.}
   \item{Blank_Var}{A character string; the name of the blank column that will be subtracted from the sample column.}
@@ -35,8 +33,6 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
 \seealso{
 \code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
 }
@@ -52,7 +48,6 @@ Master <- subSpectra(dat = Master, Blank_Var = "Blank1",
                       Sample = "Before1", Sub_Sample = "Subtracted")
 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+\keyword{ methods }
+\keyword{ manip }
