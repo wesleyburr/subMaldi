@@ -1,6 +1,5 @@
 \name{readcsvDir}
 \alias{readcsvDir}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Import .csv Spectra from a Directory
 }
@@ -10,7 +9,6 @@ Imports all \code{.csv} files in a directory, turns them into a binary data fram
 \usage{
 readcsvDir(direct, massCol, intenseCol, output)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{direct}{The path to the directory where the \code{.csv} files are held.}
   \item{massCol}{A character string; the name of the mass column in the \code{.csv} files.}
@@ -40,7 +38,5 @@ Wesley Burr <wburr@trentu.ca>
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+\keyword{ methods }
