@@ -1,6 +1,5 @@
 \name{.normMethod_max_set}
 \alias{.normMethod_max_set}
-%- Also NEED an '\alias' for EACH other topic documented here.
 \title{
 Normalization Method: Maximum Intensity of Set
 }
@@ -11,7 +10,6 @@ Called internally by \code{normSpectra}. Normalizes the intensity data of spectr
 .normMethod_max_set(dat, mass_dat, spec1, spec2, 
                     spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 }
-%- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.}
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data for the spectrum.}
@@ -39,7 +37,6 @@ Wesley Burr <wburr@trentu.ca>
 %%  ~~further notes~~
 }
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{normSpectra}}
@@ -52,7 +49,6 @@ data("Master2")
 ex <- normSpectra(dat = Master2, mass_dat = "full_mz", method = "max_set", 
             spec1 = "Blank1", spec2 = "Before1", spec3 = "Before2") 
 }
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+
+\keyword{ methods }
+\keyword{ manip }
