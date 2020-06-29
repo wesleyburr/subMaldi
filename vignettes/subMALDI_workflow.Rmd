@@ -458,6 +458,24 @@ plotSpectrum(dat = Master, mass_dat = Master$full_mz, intensity_dat = Master$Aft
              colour = "black", min_mz = 100, max_mz = 500)
 ```
 
+Not all spectral data has the same resolution. As such, the labels on each mass spectrum should accurately reflect the resolution of the raw data.
+
+By default, __*subMALDI*__ displays all labels in the format XXX.XXXX, as this is the resolution of most of the data included with the package. In this example, we will customize the resolution of our *m/z* labels to match a lower resolution data set.
+
+Here we load the low resolution spectral data set.
+
+```{r}
+data("Master2")
+```
+
+We will customize our label output using the argument \code{lbl.fmt}. The default value for this argument is "%3.4f". This means our output will have three digits on the left of the decimal point and four to the right. 
+
+Our low resolution data only has two decimal places, therefore our \code{lbl.fmt} argument will be "%3.2f".
+
+```{r  warning = FALSE, fig.width = 6, fig.height = 3, fig.align = "center"}
+plotSpectrum(Master2, mass_dat = Master2$full_mz, intensity_dat = Master2$Before1, lbls = TRUE, lbl.fmt = "%3.2f")
+```
+
 ## Plotting Multiple Spectra
 
 When plotting multiple spectra on the same *m/z* axis, `plotSpectra()` should be used. This function is capable of plotting 2-4 spectra on the same *m/z* axis, stacked on top of one another.
@@ -468,7 +486,6 @@ We will plot four spectra on the same axis below.
 plotSpectra(dat = Master, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2",
              spec3 = "After1", spec4 = "After2", lbls = TRUE, span = 15)
 ```
-
 
 ## Plotting a Grid of Spectra
 
@@ -487,8 +504,17 @@ The code below plots six spectra in a grid format.
 ```{r warning = FALSE, fig.width = 6, fig.height = 8, fig.align = "center"}
 plotgridSpectra(Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Blank2",
                 spec3 = "Before1", spec4 = "Before2", spec5 = "After1", spec6 = "After2", 
-                x_ticks = 500, lbls = TRUE, span = 11)
+                x_ticks = 500, max_mz = 500, lbls = TRUE, span = 11)
 ```
+
+We can also plot six spectra in three columns, as shown below.
+
+```{r warning = FALSE, fig.width = 6, fig.height = 4, fig.align = "center"}
+plotgridSpectra(Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Blank2",
+                spec3 = "Before1", spec4 = "Before2", spec5 = "After1", spec6 = "After2", 
+                x_ticks = 500, max_mz = 500, lbls = TRUE, columns = 3, span = 11)
+```
+
 
 ---
 
