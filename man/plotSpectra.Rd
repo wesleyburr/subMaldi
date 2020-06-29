@@ -114,7 +114,7 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL,
             colour2 = wes_palette(n=1, name = "GrandBudapest1"), 
             colour3 = wes_palette(n=1, name = "Moonrise1"), 
             colour4 = wes_palette(n=1, name = "Moonrise3"), 
-            span = 5, thresh = 0.1, lbls = FALSE, lbl.fmt = "%3.4f", min_mz = 0, 
+            span = 5, thresh = 0.1, lbls = FALSE, lbl.fmt = "\%3.4f", min_mz = 0, 
             max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
 >>>>>>> 6c09a20... Fixed documentation
 }
@@ -213,7 +213,7 @@ the most intense spectrum in the set.}
   \item{span}{Single numeric value; the span of peak maximas in between each label. Default = 5 (ignores two peak maxima on either side of each label).}
   \item{thresh}{Single numeric value (0-100); the threshold of peak itensities which should be labelled. Default = 0.1.}
   \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the \emph{m/z} value of each peak maxima within the indicated \code{span} will be included in the output plot. If \code{lbls = FALSE}, labels are not shown. Default = FALSE.}
-  \item{lbl.fmt}{Character string in the format "%a.bf", where \emph{a} is the number of figures displayed to the left of decimal places in labels, and \emph{b} is the number of figures displayed to the right of decimal places in labels.  Default = "%3.4f".}
+  \item{lbl.fmt}{Character string in the format "\%a.bf", where \emph{a} is the number of figures displayed to the left of decimal places in labels, and \emph{b} is the number of figures displayed to the right of decimal places in labels.  Default = "\%3.4f".}
   \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 0.}
   \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1000.}
 <<<<<<< HEAD
