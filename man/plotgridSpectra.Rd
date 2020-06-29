@@ -14,7 +14,8 @@ plotgridSpectra(dat, mass_dat, spec1, spec2, spec3, spec4, spec5 = NULL, spec6 =
                 colour4 = wes_palette(n = 1, name = "Moonrise3"), 
                 colour5 = wes_palette(n = 1, name = "IsleofDogs1"), 
                 colour6 = wes_palette(n = 1, name = "FantasticFox1"), 
-                span = 5, thresh = 0.1, lbls = FALSE, min_mz = 0, max_mz = 1000, 
+                span = 5, thresh = 0.1, lbls = FALSE, lbl.fmt = "%3.4f",
+                columns = 2, min_mz = 0, max_mz = 1000, 
                 x_ticks = 100, intensity_scale = "free_y")
 }
 \arguments{
@@ -35,6 +36,8 @@ plotgridSpectra(dat, mass_dat, spec1, spec2, spec3, spec4, spec5 = NULL, spec6 =
   \item{span}{Single numeric value; the span of peak maximas in between each label. Default = 5 (ignores two peak maxima on either side of each label).}
   \item{thresh}{Single numeric value (0-100); the threshold of peak itensities which should be labelled. Default = 0.1.}
   \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the \emph{m/z} value of each peak maxima within the indicated \code{span} will be included in the output plot. If \code{lbls = FALSE}, labels are not shown. Default = FALSE.}
+   \item{lbl.fmt}{Character string in the format "%a.bf", where \emph{a} is the number of figures displayed to the left of decimal places in labels, and \emph{b} is the number of figures displayed to the right of decimal places in labels.  Default = "%3.4f".}
+  \item{columns}{Single numeric value; either 2 or 3. The number of columns spectral plots should be displayed in. Default = 2.}
   \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 0.}
   \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1000.}
   \item{x_ticks}{Single numeric value; the space between ticks on x-axis. Default = 100.}
