@@ -20,6 +20,7 @@ plotSpectrum <- function(dat,
                          min_mz = 0,
                          max_mz = 1000,
                          lbls = FALSE,
+                         lbl.fmt = "%3.4f",
                          x_ticks = 100) {
   ggplot(dat, aes(mass_dat, intensity_dat), group = 1) +
     geom_line(col = colour) +
@@ -33,7 +34,7 @@ plotSpectrum <- function(dat,
                                                  size = 0.5)) +
     if(lbls == TRUE){
       stat_peaks(aes(x = mass_dat, y = intensity_dat, group = 1), 
-                 ignore_threshold = thresh, span = span, 
+                 ignore_threshold = thresh, x.label.fmt = lbl.fmt,  span = span, 
                  geom = "text", check_overlap = TRUE, color = "black", cex = 3.0)
     } else {  
       stat_peaks(aes(x = mass_dat, y = intensity_dat, group = 1), 
@@ -59,6 +60,7 @@ plotSpectra <- function(dat, mass_dat,
                         span = 5,
                         thresh = 0.1,
                         lbls = FALSE, 
+                        lbl.fmt = "%3.4f",
                         min_mz = 0,
                         max_mz = 1000,
                         x_ticks = 100,
@@ -89,7 +91,7 @@ plotSpectra <- function(dat, mass_dat,
         scale_color_manual(values = c(colour1,colour2)) +
         
         if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
-                                     ignore_threshold = thresh, span = span, 
+                                     ignore_threshold = thresh, span = span, x.label.fmt = lbl.fmt, 
                                      geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) } 
       else { stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
                         ignore_threshold = 100, span = span, 
@@ -120,7 +122,7 @@ plotSpectra <- function(dat, mass_dat,
         scale_color_manual(values = c(colour1,colour2,colour3)) +
         
         if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
-                                     ignore_threshold = thresh, span = span, 
+                                     ignore_threshold = thresh, span = span, x.label.fmt = lbl.fmt,
                                      geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) } 
       else {  stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
                          ignore_threshold = 100, span = span, geom = "text", 
@@ -152,7 +154,7 @@ plotSpectra <- function(dat, mass_dat,
       scale_color_manual(values = c(colour1,colour2,colour3,colour4)) +
       
       if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
-                                   ignore_threshold = thresh, span = span, 
+                                   ignore_threshold = thresh, span = span, x.label.fmt = lbl.fmt,
                                    geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
     else { stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
                       ignore_threshold = 100, span = span, 
@@ -178,6 +180,8 @@ plotgridSpectra<- function(dat, mass_dat,
                            span = 5,
                            thresh = 0.1,
                            lbls = FALSE, 
+                           lbl.fmt = "%3.4f", 
+                           columns = 2,
                            min_mz = 0,
                            max_mz = 1000,
                            x_ticks = 100,
@@ -209,19 +213,20 @@ plotgridSpectra<- function(dat, mass_dat,
                                                    size = 0.5,)) +
       scale_color_manual(values = c(colour1,colour2,colour3,colour4)) +
       if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
-                                   ignore_threshold = thresh, span = span, 
+                                   ignore_threshold = thresh, span = span, x.label.fmt = lbl.fmt,
                                    geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
     else {  stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
                        ignore_threshold = 100, span = span, 
                        geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
   } 
   
-  else {
+  else if(columns < 3){
     
     # make sure grabbing the right spec
     stopifnot(is.character(spec1), is.character(spec2), is.character(spec3),
-              is.character(spec4), spec1 %in% names(dat), spec2 %in% names(dat), 
-              spec3 %in% names(dat), spec4 %in% names(dat))
+              is.character(spec4), is.character(spec5), is.character(spec6),
+              spec1 %in% names(dat), spec2 %in% names(dat), spec3 %in% names(dat), 
+              spec4 %in% names(dat), spec5 %in% names(dat), spec6 %in% names(dat))
     
     # reformat the data frame for easy faceting
     sorted <- gather(dat, key = "Spectra", value = "Intensity", 
@@ -243,11 +248,46 @@ plotgridSpectra<- function(dat, mass_dat,
                                                    size = 0.5)) +
       scale_color_manual(values = c(colour1,colour2,colour3,colour4,colour5,colour6)) +
       if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
-                                   ignore_threshold = thresh, span = span, 
+                                   ignore_threshold = thresh, span = span, x.label.fmt = lbl.fmt,
                                    geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
     else {  stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
                        ignore_threshold = 100, span = span, 
                        geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }} 
-}
+  
+  # 3 columns
+  else {
+    
+    # make sure grabbing the right spec
+    stopifnot(is.character(spec1), is.character(spec2), is.character(spec3),
+              is.character(spec4), is.character(spec5), is.character(spec6),
+              spec1 %in% names(dat), spec2 %in% names(dat), spec3 %in% names(dat), 
+              spec4 %in% names(dat), spec5 %in% names(dat), spec6 %in% names(dat))
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), all_of(spec3), 
+                     all_of(spec4), all_of(spec5), all_of(spec6),
+                     factor_key= TRUE)
+    
+    # plot the sorted data
+    ggplot(sorted, aes(x = full_mz, y = Intensity, colour = Spectra)) +
+      geom_line() +
+      labs(x = expression(italic("m/z")), y = "Intensity") +
+      facet_wrap(~Spectra, ncol = 3, scales = intensity_scale) +
+      scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      theme_bw() + theme( panel.border = element_blank(),
+                          strip.background = element_blank(),
+                          strip.text.x = element_blank(),
+                          legend.position = "bottom",
+                          axis.line = element_line(colour = "grey85", 
+                                                   size = 0.5)) +
+      scale_color_manual(values = c(colour1,colour2,colour3,colour4,colour5,colour6)) +
+      if(lbls == TRUE){ stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                                   ignore_threshold = thresh, span = span, x.label.fmt = lbl.fmt,
+                                   geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
+    else {  stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
+                       ignore_threshold = 100, span = span, 
+                       geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }}
+  }
 
 # -----------------------------------------------------------------------
