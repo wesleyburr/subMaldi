@@ -204,7 +204,7 @@ plotgridSpectra<- function(dat, mass_dat,
       geom_line() +
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 2, scales = intensity_scale) +
-      scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -239,7 +239,7 @@ plotgridSpectra<- function(dat, mass_dat,
       geom_line() +
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 2, scales = intensity_scale) +
-      scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -274,7 +274,7 @@ plotgridSpectra<- function(dat, mass_dat,
       geom_line() +
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 3, scales = intensity_scale) +
-      scale_x_continuous(breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
