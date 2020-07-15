@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Smooth Noise in Spectrum
@@ -57,10 +58,13 @@
 # Author: Kristen Yeh
 # Title: subMALDI: Smooth Noise in Spectrum
 =======
+=======
+>>>>>>> c29c117... Added smoothing
 # ----------------------------------------------------------------------------
 # Last Updated: July 10, 2020
 # Author: Kristen Yeh
 # Title: subMALDI - Smoothing Parent Function
+<<<<<<< HEAD
 >>>>>>> e43371a... Added smoothing
 =======
 # ----------------------------------------------------------------------------
@@ -68,11 +72,14 @@
 # Author: Kristen Yeh
 # Title: subMALDI: Smooth Noise in Spectrum
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+>>>>>>> c29c117... Added smoothing
 # ----------------------------------------------------------------------------
 
 
 smoothSpectrum <- function(dat, mass_dat, intensity_dat, method = NULL, 
                            p = NULL, n = NULL, m = 0, ts = 1){
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -87,6 +94,9 @@ smoothSpectrum <- function(dat, mass_dat, intensity_dat, method = NULL,
 >>>>>>> 5831098... Added pre-processing vignette
   if(is.null(method)){ stop('Please select a valid smoothing method. 
 >>>>>>> 4bbf2ad... Baseline correction added
+=======
+  if(is.null(method)){ stop('Please select a valid normalization method. 
+>>>>>>> c29c117... Added smoothing
                             See ?smoothSpectrum for list of methods.') } 
   else { 
     if(method == "sgolay"){ .smooth_sg(dat = dat, mass_dat = mass_dat, 

@@ -3,6 +3,7 @@
 # Author: Kristen Yeh
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Title: subMALDI - Smoothing: Savitzky-Golay, Moving Average
 =======
 # Title: subMALDI - Smoothing: Savitzky-Golay, Kaiser Window, Moving Average
@@ -10,6 +11,9 @@
 =======
 # Title: subMALDI - Smoothing: Savitzky-Golay, Moving Average
 >>>>>>> 4bbf2ad... Baseline correction added
+=======
+# Title: subMALDI - Smoothing: Savitzky-Golay, Kaiser Window, Moving Average
+>>>>>>> c29c117... Added smoothing
 # ----------------------------------------------------------------------------
 
 
