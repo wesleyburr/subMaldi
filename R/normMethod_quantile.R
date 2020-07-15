@@ -40,7 +40,7 @@
     int <- select(dat, all_of(mass_dat), all_of(spec1), all_of(spec2))
     int <- gather(int, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), factor_key = TRUE)
-    int <- filter(int, Intensity != 0)
+    int <- dplyr::filter(int, Intensity != 0)
     int <- int %>% group_by(Spectra)  %>% mutate(id = row_number())
     ordr <- int[order(int$Intensity, decreasing = TRUE),]
     
@@ -84,7 +84,7 @@
     int <- select(dat, all_of(mass_dat), all_of(spec1), all_of(spec2), all_of(spec3))
     int <- gather(int, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), all_of(spec3), factor_key = TRUE)
-    int <- filter(int, Intensity != 0)
+    int <- dplyr::filter(int, Intensity != 0)
     int <- int %>% group_by(Spectra)  %>% mutate(id = row_number())
     ordr <- int[order(int$Intensity, decreasing = TRUE),]
     
@@ -154,7 +154,7 @@
     int <- gather(int, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), all_of(spec3),
                   all_of(spec4),factor_key = TRUE)
-    int <- filter(int, Intensity != 0)
+    int <- dplyr::filter(int, Intensity != 0)
     int <- int %>% group_by(Spectra)  %>% mutate(id = row_number())
     ordr <- int[order(int$Intensity, decreasing = TRUE),]
     
@@ -250,7 +250,7 @@
     int <- gather(int, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), all_of(spec3),
                   all_of(spec4), all_of(spec5), factor_key = TRUE)
-    int <- filter(int, Intensity != 0)
+    int <- dplyr::filter(int, Intensity != 0)
     int <- int %>% group_by(Spectra)  %>% mutate(id = row_number())
     ordr <- int[order(int$Intensity, decreasing = TRUE),]
     
@@ -376,7 +376,7 @@
     int <- gather(int, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), all_of(spec3),
                   all_of(spec4), all_of(spec5), all_of(spec6), factor_key = TRUE)
-    int <- filter(int, Intensity != 0)
+    int <- dplyr::filter(int, Intensity != 0)
     int <- int %>% group_by(Spectra)  %>% mutate(id = row_number())
     ordr <- int[order(int$Intensity, decreasing = TRUE),]
     
