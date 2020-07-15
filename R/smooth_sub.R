@@ -1,7 +1,11 @@
 # ----------------------------------------------------------------------------
 # Last Updated: July 8, 2020
 # Author: Kristen Yeh
+<<<<<<< HEAD
 # Title: subMALDI - Smoothing: Savitzky-Golay, Moving Average
+=======
+# Title: subMALDI - Smoothing: Savitzky-Golay, Kaiser Window, Moving Average
+>>>>>>> e43371a... Added smoothing
 # ----------------------------------------------------------------------------
 
 
