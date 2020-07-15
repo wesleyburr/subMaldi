@@ -22,6 +22,8 @@ plotSpectrum <- function(dat,
                          lbls = FALSE,
                          lbl.fmt = "%3.4f",
                          x_ticks = 100) {
+  options(warn=-1)
+  
   ggplot(dat, aes(mass_dat, intensity_dat), group = 1) +
     geom_line(col = colour) +
     labs(x = expression(italic("m/z")), y = "Intensity") +
@@ -65,6 +67,7 @@ plotSpectra <- function(dat, mass_dat,
                         max_mz = 1000,
                         x_ticks = 100,
                         intensity_scale = "free_y"){
+  options(warn=-1)
   
   if(is.null(spec4)) {
     if(is.null(spec3)) {
@@ -186,6 +189,7 @@ plotgridSpectra<- function(dat, mass_dat,
                            max_mz = 1000,
                            x_ticks = 100,
                            intensity_scale = "free_y"){
+  options(warn=-1)
   
   if(is.null(spec6)) {
     

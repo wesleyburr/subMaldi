@@ -122,6 +122,7 @@ License: GPL (>= 3) + file LICENSE
 >>>>>>> e3eb9d6... Added loess baseline correction
 =======
 Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), wesanderson (>= 0.3.6), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
+Imports: signal (>= 0.7-6)
 License: GPL (>= 2) + file LICENSE
 >>>>>>> 6b09f74... Fixed documentation
 Encoding: UTF-8
@@ -217,5 +218,9 @@ biocViews:
 Suggests: 
     knitr,
     rmarkdown
+<<<<<<< HEAD
 VignetteBuilder: knitr
 >>>>>>> 3f68890... Updated avgSpectra
+=======
+VignetteBuilder: rmarkdown
+>>>>>>> e43371a... Added smoothing
