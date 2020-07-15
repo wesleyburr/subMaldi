@@ -1,5 +1,6 @@
 exportPattern("^[[:alpha:]]+")
 <<<<<<< HEAD
+<<<<<<< HEAD
 import(ggplot2,ggpmisc,tidyr,dplyr, MassSpecWavelet)
 importFrom("stats", "median", "na.omit", "sd", "loess", "predict", "mad")
 importFrom("utils", "read.csv")
@@ -7,3 +8,8 @@ importFrom("signal", "interp1", "filter", "sgolay")
 =======
 import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr)
 >>>>>>> 6b09f74... Fixed documentation
+=======
+import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr,signal)
+importFrom("stats", "median", "na.omit", "sd")
+importFrom("utils", "read.csv")
+>>>>>>> e43371a... Added smoothing
