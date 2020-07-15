@@ -42,8 +42,8 @@ Wesley Burr <wburr@trentu.ca>
 \code{\link{normSpectra}}
 }
 \examples{
-## Load sample dataset "Master2.rda"
-data("Master2")
+## Load sample dataset "Master.rda"
+data("Master")
 
 ## Normalize spectra "Before1" and "Before2" to their median intensity
 ex <- normSpectra(dat = Master, mass_dat = "full_mz", method = "median", 

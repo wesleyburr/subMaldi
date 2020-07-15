@@ -1,6 +1,7 @@
 ---
 title: "subMALDI: Sample Workflow"
 author: Kristen Yeh^1^ and Wesley Burr ^2^
+date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -10,7 +11,7 @@ output:
 vignette: >
   %\VignetteIndexEntry{subMALDI: Sample Workflow}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+  \usepackage[utf8]{inputenc}
 ---
 
 ```{r, include = FALSE}
@@ -362,14 +363,14 @@ Once the spectra have been corrected to contain the same number of data points, 
 A sample median normalization is performed below.
 
 ```{r warning = FALSE, fig.show = "hold"}
-median_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "median", spec1 = "Before1",
-                         spec2 = "Before2")
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
+median_ex <- normSpectra(dat = norm_spec, mass_dat = "full_mz", method = "median", 
+                         spec1 = "Before1", spec2 = "Before2")
+
+plotSpectra(dat = norm_spec, mass_dat = "full_mz", spec1 = "Before1", 
             spec2 = "Before2", x_ticks = 250)
-plotSpectra(median_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2", 
-            x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(dat = median_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2",
+            x_ticks = 250, colour1 = "lightgreen", colour2 = "cornflowerblue")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
