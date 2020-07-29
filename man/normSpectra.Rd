@@ -9,13 +9,14 @@ Normalize spectral data to a common scale using several different methods. Capab
 \usage{
 normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, 
             upper = NULL, lower = NULL, spec1, spec2 = NULL, 
-            spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+            spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL,
+            showHI = FALSE)
 }
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.}
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data for the spectrum.}
   \item{method}{A character string; the normalization method that should be used to process the data. See 'Methods' below for list of methods. Default = NULL.}
-  \item{norm_mz}{Numeric. If \code{method = "custom"}, the \emph{m/z} peak to which the spectral intensity should be normalized to. Value should have the same number of decimal places as the \emph{m/z} data in \code{dat}.}
+  \item{norm_mz}{Numeric. If \code{method = "custom"}, the \emph{m/z} peak to which the spectral intensity should be normalized to. Value should have the same number of decimal places as the \emph{m/z} data in \code{dat}. If \code{method = "custom_imprecise", this value must be given as a character string of numbers.}}
   \item{lower}{Numeric. If \code{method = "stdev"}, the lower \emph{m/z} bound of the noise region of the spectrum.}
   \item{upper}{Numeric. If \code{method = "stdev"}, the upper \emph{m/z} bound of the noise region of the spectrum.}
   \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the spectrum to be analyzed.}
@@ -24,6 +25,7 @@ normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL,
   \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be normalized. Default = NULL.}
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be normalized. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be normalized. Default = NULL.}
+  \item{showHI}{Logical. To be used with \code{method = "custom"}. If \code{TRUE}, intensity values greater than \code{norm_mz} will be kept. If \code{FALSE}, any peaks with intensity greater than \code{norm_mz} will be truncated to the intensity of \code{norm_mz}. Default = FALSE.}
 }
 \details{
 }
@@ -45,6 +47,7 @@ Wesley Burr <wburr@trentu.ca>
     \item{max}{ Normalizes the intensity data of spectra to a scale of 0,1. }
     \item{max_set}{ Normalizes the intensity data of spectra to a scale of 0,1, where 1 is the single most intense peak of the spectral set.}
     \item{custom}{ Normalizes the intensity data of each input spectrum to the intensity of the selected \emph{m/z} peak. }
+    \item{custom_imprecise}{Normalizes the intensity data of each input spectrum to the intensity of the selected \emph{m/z} peak. Allows for less precise normalization; if data contains four decimal places, input \emph{m/z} values can be input to 2 or 3 decimal places.}
     \item{TIC}{ Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. }
     \item{rel_TIC}{ Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Each peak intensity is then divided by the normalized peak intensity so that each spectrum in the dataset has a TIC of 1.}
     \item{median}{ Evaluates the median of each spectrum in a dataset after removing 0 values introduced by mapping. If the medians are not equal between spectra, a normalization factor is applied to the spectral intensities until all median intensities in the dataset are equal.}
@@ -53,14 +56,14 @@ Wesley Burr <wburr@trentu.ca>
   }
 }
 \seealso{
-\code{\link{.normMethod_custom}}, 
-\code{\link{.normMethod_max}}, 
-\code{\link{.normMethod_max_set}}, 
-\code{\link{.normMethod_TIC}},
-\code{\link{.normMethod_rel_TIC}},
-\code{\link{.normMethod_median}},
-\code{\link{.normMethod_stdev}},
-\code{\link{.normMethod_quantile}}
+\code{\link{normMethod_custom}}, 
+\code{\link{normMethod_max}}, 
+\code{\link{normMethod_max_set}}, 
+\code{\link{normMethod_TIC}},
+\code{\link{normMethod_rel_TIC}},
+\code{\link{normMethod_median}},
+\code{\link{normMethod_stdev}},
+\code{\link{normMethod_quantile}}
 }
 \examples{
 ## Load sample dataset "Master2.rda"
