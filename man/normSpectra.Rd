@@ -9,7 +9,8 @@ Normalize spectral data to a common scale using several different methods. Capab
 \usage{
 normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, 
             upper = NULL, lower = NULL, spec1, spec2 = NULL, 
-            spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+            spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL,
+            showHI = FALSE)
 }
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.}
@@ -24,6 +25,7 @@ normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL,
   \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be normalized. Default = NULL.}
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be normalized. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be normalized. Default = NULL.}
+  \item{showHI}{Logical. To be used with \code{method = "custom"}. If \code{TRUE}, intensity values greater than \code{norm_mz} will be kept. If \code{FALSE}, any peaks with intensity greater than \code{norm_mz} will be truncated to the intensity of \code{norm_mz}. Default = FALSE.}
 }
 \details{
 }
@@ -53,14 +55,14 @@ Wesley Burr <wburr@trentu.ca>
   }
 }
 \seealso{
-\code{\link{.normMethod_custom}}, 
-\code{\link{.normMethod_max}}, 
-\code{\link{.normMethod_max_set}}, 
-\code{\link{.normMethod_TIC}},
-\code{\link{.normMethod_rel_TIC}},
-\code{\link{.normMethod_median}},
-\code{\link{.normMethod_stdev}},
-\code{\link{.normMethod_quantile}}
+\code{\link{normMethod_custom}}, 
+\code{\link{normMethod_max}}, 
+\code{\link{normMethod_max_set}}, 
+\code{\link{normMethod_TIC}},
+\code{\link{normMethod_rel_TIC}},
+\code{\link{normMethod_median}},
+\code{\link{normMethod_stdev}},
+\code{\link{normMethod_quantile}}
 }
 \examples{
 ## Load sample dataset "Master2.rda"

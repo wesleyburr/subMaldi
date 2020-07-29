@@ -8,7 +8,8 @@ Called internally by \code{normSpectra}. Normalizes the intensity data of each i
 }
 \usage{
 .normMethod_custom(dat, mass_dat, norm_mz, spec1, spec2 = NULL, 
-                    spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
+                    spec3 = NULL, spec4 = NULL, spec5 = NULL, 
+                    spec6 = NULL, showHI = FALSE)
 }
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.
@@ -23,6 +24,7 @@ Called internally by \code{normSpectra}. Normalizes the intensity data of each i
   \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be normalized. Default = NULL.}
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be normalized. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be normalized. Default = NULL.}
+  \item{showHI}{Logical. If \code{TRUE}, intensity values greater than \code{norm_mz} will be kept. If \code{FALSE}, any peaks with intensity greater than \code{norm_mz} will be truncated to the intensity of \code{norm_mz}. Default = FALSE.}
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
