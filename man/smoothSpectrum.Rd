@@ -59,7 +59,7 @@ moving average filter and the Savitzky-Golay filter (1).
 Smooth Noise in Spectrum
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Offers two different methods for smoothing noise in raw spectral data: a moving average filter and the Savitzky-Golay filter (1).
 }
 \usage{
 smoothSpectrum(dat, mass_dat, intensity_dat, method = NULL, 
@@ -82,6 +82,7 @@ smoothSpectrum(dat, mass_dat, intensity_dat, method = NULL,
 }
 \references{
 https://github.com/wesleyburr/subMaldi
+(1) A. Savitzky, M.J.E. Golay, Smoothing and differentiation of data by simplified least-squares procedures, Anal. Chem. 36 (8) (1964) 1627-1639.
 }
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>

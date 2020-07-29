@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##' Baseline Correction
 ##' 
 ##' Offers three different methods for baseline correction of raw spectral
@@ -67,6 +68,11 @@
 # ----------------------------------------------------------------------------
 # Last Updated: February 3, 2021
 # Author: Kristen Yeh, Sophie Castel
+=======
+# ----------------------------------------------------------------------------
+# Last Updated: July 29, 2020
+# Author: Kristen Yeh
+>>>>>>> 4bbf2ad... Baseline correction added
 # Title: subMALDI - Baseline Correction Parent Function
 # ----------------------------------------------------------------------------
 
@@ -74,6 +80,7 @@
 
 baselineCorr <- function(dat, mass_dat, intensity_dat, method = NULL, 
                            n = NULL){
+<<<<<<< HEAD
   
   if(is.null(method)){
     stop('Please select a valid baseline correction method. See ?baselineCorr for list of methods.')
@@ -98,6 +105,18 @@ baselineCorr <- function(dat, mass_dat, intensity_dat, method = NULL,
   }
   
   return(r)
+=======
+  if(is.null(method)){ stop('Please select a valid baseline correction method. 
+                            See ?baselineCorr for list of methods.') } 
+  else { 
+    if(method == "monotone_min"){ .base_mono(dat = dat, mass_dat = mass_dat, 
+                                       intensity_dat = intensity_dat) }
+    
+    else if(method == "linear"){ .base_linear(dat = dat, mass_dat = mass_dat, 
+                                             intensity_dat = intensity_dat,
+                                             n = n) } 
+  }
+>>>>>>> 4bbf2ad... Baseline correction added
 }
 
 

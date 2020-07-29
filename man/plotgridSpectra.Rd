@@ -16,7 +16,8 @@ plotgridSpectra(dat, mass_dat, spec1, spec2, spec3, spec4, spec5 = NULL, spec6 =
                 colour6 = wes_palette(n = 1, name = "FantasticFox1"), 
                 span = 5, thresh = 0.1, lbls = FALSE, lbl.fmt = "\%3.4f",
                 columns = 2, min_mz = 0, max_mz = 1000, 
-                x_ticks = 100, intensity_scale = "free_y")
+                min_I = 0, max_I = max(dat), x_ticks = 100, 
+                intensity_scale = "free_y")
 }
 \arguments{
   \item{dat}{The name of the spectral data frame, containing the \emph{m/z} data in the first column.}
@@ -40,6 +41,8 @@ plotgridSpectra(dat, mass_dat, spec1, spec2, spec3, spec4, spec5 = NULL, spec6 =
   \item{columns}{Single numeric value; either 2 or 3. The number of columns spectral plots should be displayed in. Default = 2.}
   \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 0.}
   \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1000.}
+  \item{min_I}{Single numeric value; minimum intensity value of the spectrum. Default = 0.}
+  \item{max_I}{Single numeric value; upper end of the intensity range observed in spectra.}
   \item{x_ticks}{Single numeric value; the space between ticks on x-axis. Default = 100.}
   \item{intensity_scale}{A character string; the method that should be used for determining the y-axis scales for each spectrum. If \code{method = "free_y"}, each spectrum will be plotted with its own intensity scale. If \code{method = "fixed"}, each spectrum will be plotted with the y-axis of the most intense spectrum in the set.}
 }
@@ -67,11 +70,13 @@ Wesley Burr <wburr@trentu.ca>
 data("Master")
 
 ## Plot four spectra
-plotgridSpectra(dat = Master, spec1 = "Before1", spec2 = "Before1", 
+plotgridSpectra(dat = Master, mass_dat = "full_mz",
+                spec1 = "Before1", spec2 = "Before1", 
                 spec3 = "After1", spec4 = "After2", lbls = TRUE)
 
 ## Plot six spectra
-plotgridSpectra(dat = Master, spec1 = "Blank1", spec2 = "Blank2", 
+plotgridSpectra(dat = Master, mass_dat = "full_mz",
+                spec1 = "Blank1", spec2 = "Blank2", 
                 spec3 = "Before1", spec4 = "Before2", spec5 = "After1", 
                 spec6 = "After2", lbls = TRUE)
 
