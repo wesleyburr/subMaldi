@@ -1,9 +1,8 @@
 # -----------------------------------------------------------------------
-# Last Updated: May 25, 2020
+# Last Updated: July 15, 2020
 # Author: Kristen Yeh
 # Title: subMALDI Plotting Functions
 # -----------------------------------------------------------------------
-
 
 
 # ------------------------
@@ -19,9 +18,18 @@ plotSpectrum <- function(dat,
                          thresh = 0.1,
                          min_mz = 0,
                          max_mz = 1000,
+                         min_I = 0,
+                         max_I = max(intensity_dat),
                          lbls = FALSE,
                          lbl.fmt = "%3.4f",
                          x_ticks = 100) {
+  
+  # Check that labels have less than or equal to decimal places as data
+  tst <- .test(mass_dat = mass_dat, lbl.fmt = lbl.fmt)
+  if(tst == TRUE){
+    stop('Label format indicates more decimal places than given in data.') }
+  else{
+  
   options(warn=-1)
   
   ggplot(dat, aes(mass_dat, intensity_dat), group = 1) +
@@ -29,6 +37,7 @@ plotSpectrum <- function(dat,
     labs(x = expression(italic("m/z")), y = "Intensity") +
     theme(axis.text.x = element_text(angle = 90)) +
     scale_x_continuous(limits = c(min_mz, max_mz), breaks = seq(min_mz, max_mz, by = x_ticks)) +
+    scale_y_continuous(limits = c(min_I, max_I)) +
     theme_bw() + theme( panel.border = element_blank(),
                         strip.background = element_blank(),
                         strip.text.x = element_blank(),
@@ -43,6 +52,7 @@ plotSpectrum <- function(dat,
                  ignore_threshold = 1000000, span = span, 
                  geom = "text", check_overlap = TRUE, color = "black", cex = 3.0)
     }
+  }
 }
 
 
@@ -65,8 +75,18 @@ plotSpectra <- function(dat, mass_dat,
                         lbl.fmt = "%3.4f",
                         min_mz = 0,
                         max_mz = 1000,
+                        min_I = 0,
+                        max_I = max(dat),
                         x_ticks = 100,
                         intensity_scale = "free_y"){
+  x <- dat[[mass_dat]]
+  
+  # Check that labels have less than or equal to decimal places as data
+  tst <- .test(mass_dat = x, lbl.fmt = lbl.fmt)
+  if(tst == TRUE){
+    stop('Label format indicates more decimal places than given in data.') }
+  else{
+  
   options(warn=-1)
   
   if(is.null(spec4)) {
@@ -85,6 +105,7 @@ plotSpectra <- function(dat, mass_dat,
         labs(x = expression(italic("m/z")), y = "Intensity") +
         facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
         scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
+        scale_y_continuous(limits = c(min_I, max_I)) +
         theme_bw() + theme( panel.border = element_blank(),
                             strip.background = element_blank(),
                             strip.text.x = element_blank(),
@@ -116,6 +137,7 @@ plotSpectra <- function(dat, mass_dat,
         labs(x = expression(italic("m/z")), y = "Intensity") +
         facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
         scale_x_continuous(limits = c(min_mz, max_mz),breaks=seq(min_mz,max_mz,by = x_ticks)) +
+        scale_y_continuous(limits = c(min_I, max_I)) +
         theme_bw() + theme( panel.border = element_blank(),
                             strip.background = element_blank(),
                             strip.text.x = element_blank(),
@@ -148,6 +170,7 @@ plotSpectra <- function(dat, mass_dat,
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
       scale_x_continuous(limits = c(min_mz, max_mz),breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      scale_y_continuous(limits = c(min_I, max_I)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -162,7 +185,8 @@ plotSpectra <- function(dat, mass_dat,
     else { stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
                       ignore_threshold = 100, span = span, 
                       geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
-  }
+    }
+  }  
 }
 
 
@@ -187,8 +211,19 @@ plotgridSpectra<- function(dat, mass_dat,
                            columns = 2,
                            min_mz = 0,
                            max_mz = 1000,
+                           min_I = 0,
+                           max_I = max(dat),
                            x_ticks = 100,
                            intensity_scale = "free_y"){
+  
+  x <- dat[[mass_dat]]
+  
+  # Check that labels have less than or equal to decimal places as data
+  tst <- .test(mass_dat = x, lbl.fmt = lbl.fmt)
+  if(tst == TRUE){
+    stop('Label format indicates more decimal places than given in data.') }
+  else{
+  
   options(warn=-1)
   
   if(is.null(spec6)) {
@@ -209,6 +244,7 @@ plotgridSpectra<- function(dat, mass_dat,
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 2, scales = intensity_scale) +
       scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      scale_y_continuous(limits = c(min_I, max_I)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -244,6 +280,7 @@ plotgridSpectra<- function(dat, mass_dat,
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 2, scales = intensity_scale) +
       scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      scale_y_continuous(limits = c(min_I, max_I)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -279,6 +316,7 @@ plotgridSpectra<- function(dat, mass_dat,
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 3, scales = intensity_scale) +
       scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
+      scale_y_continuous(limits = c(min_I, max_I)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -291,7 +329,10 @@ plotgridSpectra<- function(dat, mass_dat,
                                    geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
     else {  stat_peaks(aes(x = full_mz, y = Intensity, group = 1), 
                        ignore_threshold = 100, span = span, 
-                       geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }}
+                       geom = "text", check_overlap = TRUE, color = "black", cex = 3.0) }
+    }
   }
+}
+
 
 # -----------------------------------------------------------------------
