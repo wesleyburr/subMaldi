@@ -102,6 +102,7 @@ smoothSpectrum <- function(dat, mass_dat, intensity_dat, method = NULL,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   
   if(is.null(method)){ stop('Please select a valid smoothing method. 
 =======
@@ -125,6 +126,9 @@ smoothSpectrum <- function(dat, mass_dat, intensity_dat, method = NULL,
 =======
   if(is.null(method)){ stop('Please select a valid normalization method. 
 >>>>>>> e43371a... Added smoothing
+=======
+  if(is.null(method)){ stop('Please select a valid smoothing method. 
+>>>>>>> 4bbf2ad... Baseline correction added
                             See ?smoothSpectrum for list of methods.') } 
   else { 
     if(method == "sgolay"){ .smooth_sg(dat = dat, mass_dat = mass_dat, 

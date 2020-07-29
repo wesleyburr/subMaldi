@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Title: subMALDI - Smoothing: Savitzky-Golay, Moving Average
 =======
 # Title: subMALDI - Smoothing: Savitzky-Golay, Kaiser Window, Moving Average
@@ -22,6 +23,9 @@
 =======
 # Title: subMALDI - Smoothing: Savitzky-Golay, Kaiser Window, Moving Average
 >>>>>>> e43371a... Added smoothing
+=======
+# Title: subMALDI - Smoothing: Savitzky-Golay, Moving Average
+>>>>>>> 4bbf2ad... Baseline correction added
 # ----------------------------------------------------------------------------
 
 
