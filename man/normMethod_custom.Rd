@@ -9,7 +9,7 @@ Called internally by \code{normSpectra}. Normalizes the intensity data of each i
 \usage{
 .normMethod_custom(dat, mass_dat, norm_mz, spec1, spec2 = NULL, 
                     spec3 = NULL, spec4 = NULL, spec5 = NULL, 
-                    spec6 = NULL, showHI = FALSE)
+                    spec6 = NULL, showHI = FALSE)       
 }
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.
