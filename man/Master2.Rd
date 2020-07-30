@@ -5,7 +5,7 @@
 Master Data Frame (Low Resolution)
 }
 \description{
-A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
+A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the baseline corrected (by linear interpolation) intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
 }
 \usage{data("Master2")}
 \format{
