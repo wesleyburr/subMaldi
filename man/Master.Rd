@@ -10,6 +10,7 @@ Master Data Frame (High Resolution)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the baseline corrected (by linear interpolation) intensity data for 6 spectra, with \emph{m/z} data recorded up to 4 decimal places. 
 =======
 A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the intensity data for 6 spectra, with \emph{m/z} data recorded up to 4 decimal places. 
@@ -26,6 +27,9 @@ A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSp
 =======
 A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the intensity data for 6 spectra, with \emph{m/z} data recorded up to 4 decimal places. 
 >>>>>>> 3c63485... Added data documentation
+=======
+A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the baseline corrected (by linear interpolation) intensity data for 6 spectra, with \emph{m/z} data recorded up to 4 decimal places. 
+>>>>>>> a20b013... Corrected master datasets & custom normalization
 }
 \usage{data("Master")}
 \format{
