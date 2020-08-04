@@ -1,8 +1,13 @@
 Package: subMALDI
 Type: Package
 Title: Organization and Processing of MALDI-MS Datasets
+<<<<<<< HEAD
 Version: 1.0-0
 Date: August 27, 2020
+=======
+Version: 0.1-2
+Date: August 4, 2020
+>>>>>>> fae1515... Paper added
 Author: [aut, cre] Kristen Yeh, [aut] Wesley Burr
 <<<<<<< HEAD
 Maintainer: Wesley Burr <wesleyburr@trentu.ca>
