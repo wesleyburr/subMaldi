@@ -10,6 +10,11 @@ import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr)
 >>>>>>> 6b09f74... Fixed documentation
 =======
 import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr,signal)
+<<<<<<< HEAD
 importFrom("stats", "median", "na.omit", "sd")
 importFrom("utils", "read.csv")
 >>>>>>> e43371a... Added smoothing
+=======
+importFrom("stats", "median", "na.omit", "sd", "loess", "predict")
+importFrom("utils", "read.csv")
+>>>>>>> 856f0f5... Added loess baseline correction
