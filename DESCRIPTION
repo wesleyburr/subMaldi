@@ -8,7 +8,7 @@ Maintainer: Kristen Yeh <kristenyeh@trentu.ca>
 Description: Mapping of irregularly-spaced mass spectrometry data in an open format, with processing and visualization tools.
 Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), wesanderson (>= 0.3.6), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
 Imports: signal (>= 0.7-6)
-License: GPL (>= 2) + file LICENSE
+License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
