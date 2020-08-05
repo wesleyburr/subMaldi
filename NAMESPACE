@@ -1,4 +1,4 @@
 exportPattern("^[[:alpha:]]+")
 import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr,signal)
-importFrom("stats", "median", "na.omit", "sd")
+importFrom("stats", "median", "na.omit", "sd", "loess", "predict")
 importFrom("utils", "read.csv")
