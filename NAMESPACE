@@ -15,6 +15,7 @@ import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr)
 =======
 import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr,signal)
 <<<<<<< HEAD
+<<<<<<< HEAD
 importFrom("stats", "median", "na.omit", "sd")
 importFrom("utils", "read.csv")
 >>>>>>> e43371a... Added smoothing
@@ -39,3 +40,7 @@ import(ggplot2,wesanderson,ggpmisc,tidyr,dplyr,signal)
 importFrom("stats", "median", "na.omit", "sd")
 importFrom("utils", "read.csv")
 >>>>>>> c29c117... Added smoothing
+=======
+importFrom("stats", "median", "na.omit", "sd", "loess", "predict")
+importFrom("utils", "read.csv")
+>>>>>>> e3eb9d6... Added loess baseline correction
