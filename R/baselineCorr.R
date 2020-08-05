@@ -150,7 +150,9 @@ baselineCorr <- function(dat, mass_dat, intensity_dat, method = NULL,
     
     else if(method == "linear"){ .base_linear(dat = dat, mass_dat = mass_dat, 
                                              intensity_dat = intensity_dat,
-                                             n = n) } 
+                                             n = n) }
+    else if(method == "loess"){.base_loess(dat = dat, mass_dat = mass_dat,
+                                           intensity_dat = intensity_dat) }
   }
 >>>>>>> 8cb7c44... Baseline correction added
 }
