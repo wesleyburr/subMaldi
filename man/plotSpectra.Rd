@@ -178,12 +178,16 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL,
             colour4 = wes_palette(n=1, name = "Moonrise3"), 
             span = 5, thresh = 0.1, lbls = FALSE, lbl.fmt = "\%3.4f", min_mz = 0, 
 <<<<<<< HEAD
+<<<<<<< HEAD
             max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
 >>>>>>> 6b09f74... Fixed documentation
 =======
             max_mz = 1000, min_I = 0, max_I = max(dat), x_ticks = 100,   
             intensity_scale = "free_y")
 >>>>>>> 4bbf2ad... Baseline correction added
+=======
+            max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
+>>>>>>> eae6033... Fixed bug in plotting functions
 }
 \arguments{
 <<<<<<< HEAD
@@ -308,6 +312,7 @@ the most intense spectrum in the set.}
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   \item{x_ticks}{Single numeric value; the number of ticks and gridlines desired on the x-axis. Default = 100.}
 >>>>>>> a54180f... Master data & updated documentation - removed .tar.gz
 =======
@@ -317,6 +322,8 @@ the most intense spectrum in the set.}
 >>>>>>> 8cb7c44... Baseline correction added
 =======
 >>>>>>> f566d84... Fixed bug in plotting functions
+=======
+>>>>>>> eae6033... Fixed bug in plotting functions
   \item{x_ticks}{Single numeric value; the space between ticks on x-axis. Default = 100.}
 >>>>>>> 834ea85... Updated documentation - removed .tar.gz
 =======
