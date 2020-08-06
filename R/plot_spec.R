@@ -60,7 +60,6 @@ plotSpectrum <- function(dat,
 # PLOT 1 to 4 SPECTRA
 # ---------------------
 
-
 plotSpectra <- function(dat, mass_dat,
                         spec1, spec2,
                         spec3 = NULL,
@@ -75,8 +74,6 @@ plotSpectra <- function(dat, mass_dat,
                         lbl.fmt = "%3.4f",
                         min_mz = 0,
                         max_mz = 1000,
-                        min_I = 0,
-                        max_I = max(dat),
                         x_ticks = 100,
                         intensity_scale = "free_y"){
   x <- dat[[mass_dat]]
@@ -86,7 +83,7 @@ plotSpectra <- function(dat, mass_dat,
   if(tst == TRUE){
     stop('Label format indicates more decimal places than given in data.') }
   else{
-  
+    
   options(warn=-1)
   
   if(is.null(spec4)) {
@@ -94,6 +91,8 @@ plotSpectra <- function(dat, mass_dat,
       # ensure spec1 and spec2 are columns in dat
       stopifnot(is.character(spec1), is.character(spec2),
                 spec1 %in% names(dat), spec2 %in% names(dat))
+      
+      names(dat) <- c("full_mz", spec1, spec2)
       
       # reformat the data frame for easy faceting
       sorted <- gather(dat, key = "Spectra", value = "Intensity", 
@@ -104,8 +103,8 @@ plotSpectra <- function(dat, mass_dat,
         geom_line() +
         labs(x = expression(italic("m/z")), y = "Intensity") +
         facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
-        scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
-        scale_y_continuous(limits = c(min_I, max_I)) +
+        scale_x_continuous(limits = c(min_mz, max_mz), 
+                           breaks = seq(min_mz, max_mz, by = x_ticks)) +
         theme_bw() + theme( panel.border = element_blank(),
                             strip.background = element_blank(),
                             strip.text.x = element_blank(),
@@ -127,6 +126,8 @@ plotSpectra <- function(dat, mass_dat,
       stopifnot(is.character(spec1), is.character(spec2), is.character(spec3),
                 spec1 %in% names(dat), spec2 %in% names(dat), spec3 %in% names(dat))
       
+      names(dat) <- c("full_mz", spec1, spec2, spec3)
+      
       # reformat the data frame for easy faceting
       sorted <- gather(dat, key = "Spectra", value = "Intensity", 
                        all_of(spec1), all_of(spec2), all_of(spec3), factor_key= TRUE)
@@ -136,8 +137,8 @@ plotSpectra <- function(dat, mass_dat,
         geom_line() +
         labs(x = expression(italic("m/z")), y = "Intensity") +
         facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
-        scale_x_continuous(limits = c(min_mz, max_mz),breaks=seq(min_mz,max_mz,by = x_ticks)) +
-        scale_y_continuous(limits = c(min_I, max_I)) +
+        scale_x_continuous(limits = c(min_mz, max_mz),
+                           breaks = seq(min_mz, max_mz, by = x_ticks)) +
         theme_bw() + theme( panel.border = element_blank(),
                             strip.background = element_blank(),
                             strip.text.x = element_blank(),
@@ -159,6 +160,8 @@ plotSpectra <- function(dat, mass_dat,
               is.character(spec4), spec1 %in% names(dat), spec2 %in% names(dat), 
               spec3 %in% names(dat), spec4 %in% names(dat))
     
+    names(dat) <- c("full_mz", spec1, spec2, spec3, spec4)
+    
     # reformat the data frame for easy faceting
     sorted <- gather(dat, key = "Spectra", value = "Intensity", 
                      all_of(spec1), all_of(spec2), all_of(spec3),
@@ -169,8 +172,8 @@ plotSpectra <- function(dat, mass_dat,
       geom_line() +
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
-      scale_x_continuous(limits = c(min_mz, max_mz),breaks=seq(min_mz,max_mz,by = x_ticks)) +
-      scale_y_continuous(limits = c(min_I, max_I)) +
+      scale_x_continuous(limits = c(min_mz, max_mz),
+                         breaks = seq(min_mz, max_mz, by = x_ticks)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -211,8 +214,6 @@ plotgridSpectra<- function(dat, mass_dat,
                            columns = 2,
                            min_mz = 0,
                            max_mz = 1000,
-                           min_I = 0,
-                           max_I = max(dat),
                            x_ticks = 100,
                            intensity_scale = "free_y"){
   
@@ -233,6 +234,8 @@ plotgridSpectra<- function(dat, mass_dat,
               is.character(spec4), spec1 %in% names(dat), spec2 %in% names(dat), 
               spec3 %in% names(dat), spec4 %in% names(dat))
     
+    names(dat) <- c("full_mz", spec1, spec2, spec3, spec4)
+    
     # reformat the data frame for easy faceting
     sorted <- gather(dat, key = "Spectra", value = "Intensity", 
                      all_of(spec1), all_of(spec2), 
@@ -244,7 +247,6 @@ plotgridSpectra<- function(dat, mass_dat,
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 2, scales = intensity_scale) +
       scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
-      scale_y_continuous(limits = c(min_I, max_I)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -268,6 +270,8 @@ plotgridSpectra<- function(dat, mass_dat,
               spec1 %in% names(dat), spec2 %in% names(dat), spec3 %in% names(dat), 
               spec4 %in% names(dat), spec5 %in% names(dat), spec6 %in% names(dat))
     
+    names(dat) <- c("full_mz", spec1, spec2, spec3, spec4, spec5, spec6)
+    
     # reformat the data frame for easy faceting
     sorted <- gather(dat, key = "Spectra", value = "Intensity", 
                      all_of(spec1), all_of(spec2), all_of(spec3), 
@@ -280,7 +284,6 @@ plotgridSpectra<- function(dat, mass_dat,
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 2, scales = intensity_scale) +
       scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
-      scale_y_continuous(limits = c(min_I, max_I)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
@@ -303,6 +306,8 @@ plotgridSpectra<- function(dat, mass_dat,
               is.character(spec4), is.character(spec5), is.character(spec6),
               spec1 %in% names(dat), spec2 %in% names(dat), spec3 %in% names(dat), 
               spec4 %in% names(dat), spec5 %in% names(dat), spec6 %in% names(dat))
+   
+    names(dat) <- c("full_mz", spec1, spec2, spec3, spec4, spec5, spec6)
     
     # reformat the data frame for easy faceting
     sorted <- gather(dat, key = "Spectra", value = "Intensity", 
@@ -316,7 +321,6 @@ plotgridSpectra<- function(dat, mass_dat,
       labs(x = expression(italic("m/z")), y = "Intensity") +
       facet_wrap(~Spectra, ncol = 3, scales = intensity_scale) +
       scale_x_continuous(limits = c(min_mz, max_mz), breaks=seq(min_mz,max_mz,by = x_ticks)) +
-      scale_y_continuous(limits = c(min_I, max_I)) +
       theme_bw() + theme( panel.border = element_blank(),
                           strip.background = element_blank(),
                           strip.text.x = element_blank(),
