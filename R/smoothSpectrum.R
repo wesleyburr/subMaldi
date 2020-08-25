@@ -7,6 +7,7 @@
 
 smoothSpectrum <- function(dat, mass_dat, intensity_dat, method = NULL, 
                            p = NULL, n = NULL, m = 0, ts = 1){
+  
   if(is.null(method)){ stop('Please select a valid smoothing method. 
                             See ?smoothSpectrum for list of methods.') } 
   else { 
