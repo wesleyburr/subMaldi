@@ -34,6 +34,7 @@ column, to be trimmed of all-zero rows.}
   \item{dat}{The spectral data frame, containing \code{full_mz} in the first column, to be trimmed of all-zero rows.}
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 >>>>>>> 270485a... Updated documentation
@@ -41,6 +42,9 @@ column, to be trimmed of all-zero rows.}
 =======
 
 >>>>>>> 5831098... Added pre-processing vignette
+=======
+
+>>>>>>> 2931ed6... Added pre-processing vignette
 \value{
 Returns the input data frame without its all-zero rows.
 }

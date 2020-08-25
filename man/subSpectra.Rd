@@ -53,6 +53,7 @@ output dataset.}
   \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
 >>>>>>> 6c09a20... Fixed documentation
 }
+<<<<<<< HEAD
 \value{
 Returns a vector of intensity values that are filled into the
 \code{Sub_Sample} column of the mapped data frame at the corresponding rows
@@ -64,6 +65,8 @@ of \code{full_mz}.
   \item{Sub_Sample}{A character string; the name of the column to be filled with the subtracted spectrum.}
   \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
 }
+=======
+>>>>>>> 2931ed6... Added pre-processing vignette
 
 \value{
 Returns a vector of intensity values that are filled into the \code{Sub_Sample} column of the mapped data frame at the corresponding rows of \code{full_mz}.
@@ -75,6 +78,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 \note{
 %%  ~~further notes~~
@@ -89,6 +93,9 @@ that in the sample spectrum, the intensity of the sample peak is given an
 intensity of 0.
 =======
 =======
+=======
+
+>>>>>>> 2931ed6... Added pre-processing vignette
 
 <<<<<<< HEAD
 >>>>>>> 5831098... Added pre-processing vignette

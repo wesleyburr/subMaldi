@@ -61,9 +61,7 @@ find_max_set(dat, mass_dat, spec1, spec2, spec3 = NULL,
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be analyzed. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be analyzed. Default = NULL.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{Returns a data frame indidcating the peak maximum of the spectral set. The sample number, \emph{m/z} value, and intensity data are returned.
 >>>>>>> 834ea85... Updated documentation - removed .tar.gz
 }
@@ -122,13 +120,7 @@ find_max_set(dat = Master, mass_dat = "full_mz", spectra_cols = c("After1", "Bla
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 ## Load sample dataset "Master.rda"
 data("Master")

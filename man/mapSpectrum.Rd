@@ -62,6 +62,7 @@ mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
   \item{colName}{A character string; the name of the column that should be filled with the spectral data.}
 >>>>>>> db6ced3... Updated documentation
 }
+<<<<<<< HEAD
 \arguments{
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \item{dat}{A pairwise data frame containing your spectral data. Should
@@ -87,6 +88,9 @@ intensity. Default = 5e-5.}
 \item{colName}{A character string; the name of the column that should be
 filled with the spectral data.}
 }
+=======
+
+>>>>>>> 2931ed6... Added pre-processing vignette
 \value{
 Returns a vector that is used to fill in the \code{colName} column
 of the mapped spectral data frame.
@@ -140,12 +144,16 @@ filled into the mapped spectrum.
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 \section{Warning}{
  It is important that the values for \code{thresh} and
 \code{dig} are equal to that of \code{res} and \code{dig} used in
 \code{createSpecDF()}. Otherwise the data will fail to map.
 }
 =======
+=======
+
+>>>>>>> 2931ed6... Added pre-processing vignette
 
 <<<<<<< HEAD
 >>>>>>> 5831098... Added pre-processing vignette
