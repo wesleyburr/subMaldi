@@ -18,9 +18,7 @@ mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
   \item{spec_df}{An empty data frame created using \code{createSpecDF}.}
   \item{colName}{A character string; the name of the column that should be filled with the spectral data.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 Returns a vector that is used to fill in the \code{colName} column of the mapped spectral data frame.
 }
@@ -31,9 +29,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 \section{Warning}{It is important that the values for \code{thresh} and \code{dig} are equal to that of \code{res} and \code{dig} used in \code{createSpecDF()}. Otherwise the data will fail to map.}
 
