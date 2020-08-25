@@ -15,12 +15,7 @@ Raw spectral data in binary dataframe. The first column contains the \emph{m/z} 
     \item{\code{Intensity}}{A numeric vector; the intensity data for the spectrum.}
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
-}
+
 \references{
 https://github.com/wesleyburr/subMaldi
 }

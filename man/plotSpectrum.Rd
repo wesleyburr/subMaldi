@@ -7,7 +7,7 @@ Plot a Single Spectrum
 Plots a single spectrum from a mapped spectral data frame.
 }
 \usage{
-plotSpectrum(dat, mass_dat, intensity_dat, colour = "slategrey", 
+plotSpectrum(dat, mass_dat, intensity_dat, colour = "black", 
             span = 5, thresh = 0.1, min_mz = 0, max_mz = 1000, 
             min_I = 0, max_I = max(intensity_dat), lbls = FALSE, 
             lbl.fmt = "\%3.4f", x_ticks = 100)
@@ -27,9 +27,6 @@ plotSpectrum(dat, mass_dat, intensity_dat, colour = "slategrey",
    \item{lbl.fmt}{Character string in the format "\%a.bf", where \emph{a} is the number of figures displayed to the left of decimal places in labels, and \emph{b} is the number of figures displayed to the right of decimal places in labels.  Default = "\%3.4f". }
   \item{x_ticks}{Single numeric value; the increment between ticks on the x-axis. Default = 100.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{Returns a line plot of the input spectrum.}
 \references{
 https://github.com/wesleyburr/subMaldi
@@ -38,12 +35,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 ## Plotting using the sample dataset "Before1.rda"
 data("Before1")
