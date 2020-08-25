@@ -20,9 +20,7 @@ avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL,
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be averaged. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be averaged. Default = NULL.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 Returns a new column in the input data frame containing the averaged intensity data.
 }
@@ -33,12 +31,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 ## Load sample dataset "Master.rda"
 data("Master")
