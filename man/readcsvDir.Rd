@@ -15,9 +15,7 @@ readcsvDir(direct, massCol, intenseCol, output)
   \item{intenseCol}{A character string; the name of the intensity column in the \code{.csv} files.}
   \item{output}{The path to the directory where the exported \code{.rda} files containing the binary spectral data frames should go.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 Returns a directory of \code{.rda} files containing binary spectral data frames into the \code{output} file path.
 }
@@ -28,15 +26,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 
 
 \keyword{ methods }

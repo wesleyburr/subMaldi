@@ -16,9 +16,7 @@ subSpectra(dat, Blank_Var, Sample, Sub_Sample, showNeg = FALSE)
   \item{Sub_Sample}{A character string; the name of the column to be filled with the subtracted spectrum.}
   \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 Returns a vector of intensity values that are filled into the \code{Sub_Sample} column of the mapped data frame at the corresponding rows of \code{full_mz}.
 }
@@ -29,9 +27,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 \seealso{
 \code{\link{createSpecDF}}, \code{\link{mapSpectrum}}

@@ -12,9 +12,7 @@ rmveEmpty(dat)
 \arguments{
   \item{dat}{The spectral data frame, containing \code{full_mz} in the first column, to be trimmed of all-zero rows.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 Returns the input data frame without its all-zero rows.
 }

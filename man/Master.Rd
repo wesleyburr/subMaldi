@@ -20,9 +20,7 @@ A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSp
     \item{\code{After2}}{A numeric vector; the intensity data for the sixth spectrum in the dataset. Spectrum obtained after chemical intervention.}
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
+
 \source{
 
 }

@@ -14,9 +14,7 @@ readcsvSpec(spec_file, massCol, intenseCol)
   \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
   \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 Returns a binary data frame containing the imported data in a \emph{m/z} column denoted "mass", and an intensity column denoted "Intensity".
 }
@@ -26,13 +24,6 @@ https://github.com/wesleyburr/subMaldi
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
-}
-\note{
-%%  ~~further notes~~
-}
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 
 
