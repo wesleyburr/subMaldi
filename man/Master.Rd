@@ -65,8 +65,12 @@ Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent f
 
 >>>>>>> 2931ed6... Added pre-processing vignette
 \source{
+<<<<<<< HEAD
 
 >>>>>>> 27861a2... Added data documentation
+=======
+Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent fingerprints recovered from underneath bloodstains using Matrix-Assisted Laser Desportion/Ionization Fourier-Transform Ion Cyclotron Resonance Mass Spectrometry Imaging (MALDI FT-ICR MSI). Forensic Chemistry (2020). In press.
+>>>>>>> 7c9257a... Added pre-processing vignette
 }
 \references{
 https://github.com/wesleyburr/subMaldi
