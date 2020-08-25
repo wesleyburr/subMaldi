@@ -317,8 +317,6 @@ normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL,
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be normalized. Default = NULL.}
   \item{showHI}{Logical. To be used with \code{method = "custom"}. If \code{TRUE}, intensity values greater than \code{norm_mz} will be kept. If \code{FALSE}, any peaks with intensity greater than \code{norm_mz} will be truncated to the intensity of \code{norm_mz}. Default = FALSE.}
 }
-\details{
-}
 \value{Returns a new data frame including the original \emph{m/z} data and normalized intensity data.
 }
 \references{
@@ -328,9 +326,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
+
 
 \section{Methods}{
   \describe{
@@ -344,16 +340,6 @@ Wesley Burr <wburr@trentu.ca>
     \item{stdev}{ Evaluates the standard deviation of intensity values within the same noisy region (a region lacking peaks) of each spectrum. All intensities in each spectrum are then divided by the spectrum's standard deviation in the noise region. All output spectra should have a standard deviation of 1 in the selected region. }
     \item{quantile}{ Normalizes the distributions of the values in each spectrum in a set.  Sorts the intensity data of each spectrum and evaluates the average intensity for each rank. The intensity values are then replaces with the averaged intensities, rearranged in their original order. }
   }
-}
-\seealso{
-\code{\link{normMethod_custom}}, 
-\code{\link{normMethod_max}}, 
-\code{\link{normMethod_max_set}}, 
-\code{\link{normMethod_TIC}},
-\code{\link{normMethod_rel_TIC}},
-\code{\link{normMethod_median}},
-\code{\link{normMethod_stdev}},
-\code{\link{normMethod_quantile}}
 }
 \examples{
 >>>>>>> f70720d... TIC norm added

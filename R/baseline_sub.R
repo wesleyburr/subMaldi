@@ -135,6 +135,7 @@
         out$baseline[which(out$baseline < 0)] <- 0
       }
     }
+    out$baseline[is.na(out$baseline)] <- 0
     return(out)
   }
 }

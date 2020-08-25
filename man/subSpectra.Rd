@@ -72,6 +72,7 @@ output dataset.}
 >>>>>>> 6b09f74... Fixed documentation
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 \value{
 Returns a vector of intensity values that are filled into the
 \code{Sub_Sample} column of the mapped data frame at the corresponding rows
@@ -85,6 +86,8 @@ of \code{full_mz}.
 }
 =======
 >>>>>>> 2931ed6... Added pre-processing vignette
+=======
+>>>>>>> 5831098... Added pre-processing vignette
 
 \value{
 Returns a vector of intensity values that are filled into the \code{Sub_Sample} column of the mapped data frame at the corresponding rows of \code{full_mz}.
@@ -96,6 +99,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 \note{
@@ -117,6 +121,9 @@ intensity of 0.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+>>>>>>> 5831098... Added pre-processing vignette
+=======
+
 >>>>>>> 5831098... Added pre-processing vignette
 
 =======

@@ -62,6 +62,7 @@ width. Default = 0.0001.}
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{dig}{Number of decimal places to round the \emph{m/z} vector to;
 required for \emph{m/z} values to match full \emph{m/z} vector. Default =
 4.}
@@ -70,6 +71,8 @@ required for \emph{m/z} values to match full \emph{m/z} vector. Default =
 >>>>>>> 5831098... Added pre-processing vignette
 =======
 >>>>>>> 2931ed6... Added pre-processing vignette
+=======
+>>>>>>> 5831098... Added pre-processing vignette
 \value{
 <<<<<<< HEAD
 Returns a data frame which can be used to map irregularly spaced
@@ -111,6 +114,7 @@ Returns a data frame which can be used to map irregularly spaced
 spectral data to a set range of \emph{m/z} values, contained in the first
 column of the frame.
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -179,6 +183,10 @@ the first column and can be called by "\code{full_mz}".
 =======
 }
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+
+
+>>>>>>> 5831098... Added pre-processing vignette
 \examples{
 
 ## Creating an empty spectrum with an m/z range of 500 to 2000 m/z, with a step size of 0.001

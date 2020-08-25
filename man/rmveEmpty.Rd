@@ -46,6 +46,7 @@ column, to be trimmed of all-zero rows.}
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 >>>>>>> 270485a... Updated documentation
@@ -56,6 +57,9 @@ column, to be trimmed of all-zero rows.}
 =======
 
 >>>>>>> 2931ed6... Added pre-processing vignette
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 \value{
 Returns the input data frame without its all-zero rows.
 }
