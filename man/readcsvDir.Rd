@@ -34,10 +34,14 @@ files containing the binary spectral data frames should go.}
   \item{intenseCol}{A character string; the name of the intensity column in the \code{.csv} files.}
   \item{output}{The path to the directory where the exported \code{.rda} files containing the binary spectral data frames should go.}
 }
+<<<<<<< HEAD
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 >>>>>>> 270485a... Updated documentation
 }
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 \value{
 Returns a directory of \code{.rda} files containing binary spectral
 data frames into the \code{output} file path.
@@ -58,15 +62,7 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 
 <<<<<<< HEAD
 <<<<<<< HEAD

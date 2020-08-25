@@ -6,8 +6,12 @@ Version: 1.0-0
 Date: August 27, 2020
 =======
 Version: 0.1-2
+<<<<<<< HEAD
 Date: August 4, 2020
 >>>>>>> fae1515... Paper added
+=======
+Date: August 18, 2020
+>>>>>>> 5831098... Added pre-processing vignette
 Author: [aut, cre] Kristen Yeh, [aut] Wesley Burr
 <<<<<<< HEAD
 Maintainer: Wesley Burr <wesleyburr@trentu.ca>
@@ -22,7 +26,7 @@ License: GPL (>= 3) + file LICENSE
 =======
 Maintainer: Kristen Yeh <kristenyeh@trentu.ca>
 Description: Mapping of irregularly-spaced mass spectrometry data in an open format, with processing and visualization tools.
-Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), wesanderson (>= 0.3.6), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
+Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
 Imports: signal (>= 0.7-6)
 <<<<<<< HEAD
 License: GPL (>= 2) + file LICENSE
@@ -40,10 +44,15 @@ biocViews:
 =======
 Suggests: 
     knitr,
+<<<<<<< HEAD
     rmarkdown
 <<<<<<< HEAD
 VignetteBuilder: knitr
 >>>>>>> 3f68890... Updated avgSpectra
 =======
+=======
+    rmarkdown,
+    MassSpecWavelet
+>>>>>>> 5831098... Added pre-processing vignette
 VignetteBuilder: rmarkdown
 >>>>>>> e43371a... Added smoothing

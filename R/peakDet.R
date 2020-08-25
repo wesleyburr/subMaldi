@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ##' Peak Detection
 ##' 
 ##' Two methods for peak detection in baseline corrected spectral data. Methods
@@ -63,6 +64,12 @@
 # Last Updated: August 25, 2020
 # Author: Kristen Yeh
 # Title: subMALDI: Peak Detection 
+=======
+# ----------------------------------------------------------------------------
+# Last Updated: August 25, 2020
+# Author: Kristen Yeh
+# Title: subMALDI - Peak Detection Parent Function
+>>>>>>> 5831098... Added pre-processing vignette
 # ----------------------------------------------------------------------------
 
 

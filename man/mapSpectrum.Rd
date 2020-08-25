@@ -67,9 +67,7 @@ of the mapped spectral data frame.
   \item{spec_df}{An empty data frame created using \code{createSpecDF}.}
   \item{colName}{A character string; the name of the column that should be filled with the spectral data.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 Returns a vector that is used to fill in the \code{colName} column of the mapped spectral data frame.
 }
@@ -84,11 +82,15 @@ compared to the \code{full_mz} vector. All peaks within the \code{thresh}
 of one another are binned, and only the maximum intensity of that bin is
 filled into the mapped spectrum.
 }
+<<<<<<< HEAD
 \section{Warning}{
  It is important that the values for \code{thresh} and
 \code{dig} are equal to that of \code{res} and \code{dig} used in
 \code{createSpecDF()}. Otherwise the data will fail to map.
 }
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 
 <<<<<<< HEAD
 \examples{
