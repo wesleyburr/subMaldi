@@ -102,10 +102,14 @@ Methods include "sum" and "mean". Default = "mean."}
   \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be averaged. Default = NULL.}
   \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be averaged. Default = NULL.}
 }
+<<<<<<< HEAD
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 >>>>>>> 270485a... Updated documentation
 }
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 \value{
 <<<<<<< HEAD
 Returns a new column in the input data frame containing the
@@ -159,6 +163,7 @@ Wesley Burr <wburr@trentu.ca>
 =======
 >>>>>>> 3f68890... Updated avgSpectra
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 \examples{
@@ -315,6 +320,9 @@ ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2")
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 \examples{
 ## Load sample dataset "Master.rda"
 data("Master")

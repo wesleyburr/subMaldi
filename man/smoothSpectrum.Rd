@@ -199,9 +199,7 @@ smoothSpectrum(dat, mass_dat, intensity_dat, method = NULL,
   \item{m}{Single numeric value. If \code{method = "sgolay"}, returns the m-th derivative of the filter coefficients. Default = 0.}
   \item{ts}{Single numeric value. If \code{method = "sgolay"}, the time scaling factor. Default = 1.}
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{Returns a new data frame containing the smoothed spectral data.
 }
 \references{
@@ -212,12 +210,7 @@ https://github.com/wesleyburr/subMaldi
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
-\note{
-%%  ~~further notes~~
-}
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 >>>>>>> e43371a... Added smoothing
 ## Load sample dataset "Before1.rda"

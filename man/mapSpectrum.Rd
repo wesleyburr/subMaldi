@@ -135,6 +135,7 @@ of the mapped spectral data frame.
   \item{spec_df}{An empty data frame created using \code{createSpecDF}.}
   \item{colName}{A character string; the name of the column that should be filled with the spectral data.}
 }
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 
@@ -148,6 +149,9 @@ of the mapped spectral data frame.
 \item{colName}{A character string; the name of the column that should be
 filled with the spectral data.}
 }
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 \value{
 Returns a vector that is used to fill in the \code{colName} column
 of the mapped spectral data frame.
@@ -178,6 +182,7 @@ compared to the \code{full_mz} vector. All peaks within the \code{thresh}
 of one another are binned, and only the maximum intensity of that bin is
 filled into the mapped spectrum.
 }
+<<<<<<< HEAD
 \section{Warning}{
  It is important that the values for \code{thresh} and
 \code{dig} are equal to that of \code{res} and \code{dig} used in
@@ -205,6 +210,9 @@ filled into the mapped spectrum.
 
 <<<<<<< HEAD
 >>>>>>> 2931ed6... Added pre-processing vignette
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 
 <<<<<<< HEAD
 >>>>>>> 5831098... Added pre-processing vignette

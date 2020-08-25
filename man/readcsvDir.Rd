@@ -64,6 +64,7 @@ files containing the binary spectral data frames should go.}
 }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 >>>>>>> 270485a... Updated documentation
@@ -85,6 +86,9 @@ files containing the binary spectral data frames should go.}
 >>>>>>> 2931ed6... Added pre-processing vignette
 =======
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 \value{
 Returns a directory of \code{.rda} files containing binary spectral
 data frames into the \code{output} file path.
@@ -108,6 +112,7 @@ Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -152,6 +157,8 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 \keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
 >>>>>>> 6b09f74... Fixed documentation
 =======
+=======
+>>>>>>> 5831098... Added pre-processing vignette
 
 \keyword{ methods }
 >>>>>>> c6a3769... Updated documentation
