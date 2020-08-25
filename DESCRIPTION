@@ -2,16 +2,17 @@ Package: subMALDI
 Type: Package
 Title: Organization and Processing of MALDI-MS Datasets
 Version: 0.1-2
-Date: August 4, 2020
+Date: August 18, 2020
 Author: [aut, cre] Kristen Yeh, [aut] Wesley Burr
 Maintainer: Kristen Yeh <kristenyeh@trentu.ca>
 Description: Mapping of irregularly-spaced mass spectrometry data in an open format, with processing and visualization tools.
-Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), wesanderson (>= 0.3.6), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
+Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
 Imports: signal (>= 0.7-6)
 License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    MassSpecWavelet
 VignetteBuilder: rmarkdown
