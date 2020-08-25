@@ -49,6 +49,7 @@ files containing the binary spectral data frames should go.}
   \item{output}{The path to the directory where the exported \code{.rda} files containing the binary spectral data frames should go.}
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 >>>>>>> 270485a... Updated documentation
@@ -62,6 +63,9 @@ files containing the binary spectral data frames should go.}
 files containing the binary spectral data frames should go.}
 }
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+
+>>>>>>> 2931ed6... Added pre-processing vignette
 \value{
 Returns a directory of \code{.rda} files containing binary spectral
 data frames into the \code{output} file path.
@@ -85,6 +89,7 @@ Wesley Burr <wburr@trentu.ca>
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -103,6 +108,8 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
+=======
+>>>>>>> 2931ed6... Added pre-processing vignette
 
 <<<<<<< HEAD
 >>>>>>> 6c09a20... Fixed documentation

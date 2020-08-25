@@ -110,10 +110,8 @@ plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, colour1 = w
 >>>>>>> a54180f... Master data & updated documentation - removed .tar.gz
 =======
 plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, 
-            colour1 = wes_palette(n=1, name = "GrandBudapest2"), 
-            colour2 = wes_palette(n=1, name = "GrandBudapest1"), 
-            colour3 = wes_palette(n=1, name = "Moonrise1"), 
-            colour4 = wes_palette(n=1, name = "Moonrise3"), 
+            colour1 = "steelblue1", colour2 = "lightpink1",
+            colour3 = "seagreen3", colour4 = "mediumpurple1",
             span = 5, thresh = 0.1, lbls = FALSE, lbl.fmt = "\%3.4f", min_mz = 0, 
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -215,10 +213,10 @@ the most intense spectrum in the set.}
   \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be plotted.}
   \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be plotted. Default = NULL.}
   \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be plotted. Default = NULL.}
-  \item{colour1}{A character string indicating the colour the first spectrum should be plotted in. Default = wes_palette(n=1, name = "GrandBudapest2").}
-  \item{colour2}{A charater string indicating the colour of the second spectrum in the plot. Default = wes_palette(n=1, name = "GrandBudapest1").}
-  \item{colour3}{A charater string indicating the colour of the third spectrum in the plot. Default = wes_palette(n=1, name = "Moonrise1").}
-  \item{colour4}{A charater string indicating the colour of the fourth spectrum in the plot. Default = wes_palette(n=1, name = "Moonrise3").}
+  \item{colour1}{A character string indicating the colour the first spectrum should be plotted in.}
+  \item{colour2}{A charater string indicating the colour of the second spectrum in the plot.}
+  \item{colour3}{A charater string indicating the colour of the third spectrum in the plot.}
+  \item{colour4}{A charater string indicating the colour of the fourth spectrum in the plot.}
   \item{span}{Single numeric value; the span of peak maximas in between each label. Default = 5 (ignores two peak maxima on either side of each label).}
   \item{thresh}{Single numeric value (0-100); the threshold of peak itensities which should be labelled. Default = 0.1.}
   \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the \emph{m/z} value of each peak maxima within the indicated \code{span} will be included in the output plot. If \code{lbls = FALSE}, labels are not shown. Default = FALSE.}
@@ -242,6 +240,7 @@ the most intense spectrum in the set.}
   \item{intensity_scale}{A character string; the method that should be used for determining the y-axis scales for each spectrum. If \code{method = "free_y"}, each spectrum will be plotted with its own intensity scale. If \code{method = "fixed"}, each spectrum will be plotted with the y-axis of the most intense spectrum in the set.}
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 >>>>>>> 2a95699... Updated documentation
@@ -256,6 +255,9 @@ Plot single or multiple spectra. For multiple spectra, a grid layout can be call
 =======
 
 >>>>>>> 5831098... Added pre-processing vignette
+=======
+
+>>>>>>> 2931ed6... Added pre-processing vignette
 \value{Returns a line plot of the input spectra.}
 \references{
 https://github.com/wesleyburr/subMaldi}
@@ -264,6 +266,7 @@ Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 >>>>>>> 270485a... Updated documentation
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 \section{RColorBrewer Palettes}{
  
@@ -379,6 +382,9 @@ Plot single or multiple spectra. For multiple spectra, a grid layout can be call
 }
 
 >>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
+=======
+
+>>>>>>> 2931ed6... Added pre-processing vignette
 \examples{
 <<<<<<< HEAD
 

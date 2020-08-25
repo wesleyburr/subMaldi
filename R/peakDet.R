@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Peak Detection
@@ -69,10 +70,13 @@
 # Author: Kristen Yeh
 # Title: subMALDI: Peak Detection 
 =======
+=======
+>>>>>>> 2931ed6... Added pre-processing vignette
 # ----------------------------------------------------------------------------
 # Last Updated: August 25, 2020
 # Author: Kristen Yeh
 # Title: subMALDI - Peak Detection Parent Function
+<<<<<<< HEAD
 >>>>>>> 5831098... Added pre-processing vignette
 =======
 # ----------------------------------------------------------------------------
@@ -80,6 +84,8 @@
 # Author: Kristen Yeh
 # Title: subMALDI: Peak Detection 
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+>>>>>>> 2931ed6... Added pre-processing vignette
 # ----------------------------------------------------------------------------
 
 

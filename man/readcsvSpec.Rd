@@ -52,6 +52,7 @@ the spectrum's \code{.csv} file.}
 >>>>>>> 6c09a20... Fixed documentation
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 >>>>>>> 270485a... Updated documentation
@@ -65,6 +66,9 @@ the spectrum's \code{.csv} file.}
 the spectrum's \code{.csv} file.}
 }
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+
+>>>>>>> 2931ed6... Added pre-processing vignette
 \value{
 Returns a binary data frame containing the imported data in a
 \emph{m/z} column denoted "mass", and an intensity column denoted
@@ -85,6 +89,7 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 \note{
@@ -108,6 +113,8 @@ Blank1 <- readcsvSpec(spec_file = "/subMALDI/data/Blank.csv", massCol = "m.z", i
 \keyword{methods}
 =======
 =======
+=======
+>>>>>>> 2931ed6... Added pre-processing vignette
 
 >>>>>>> 6c09a20... Fixed documentation
 % Add one or more standard keywords, see file 'KEYWORDS' in the
