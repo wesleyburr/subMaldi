@@ -29,6 +29,7 @@ A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSp
   }
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 \source{
 Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent fingerprints recovered from underneath bloodstains using Matrix-Assisted Laser Desportion/Ionization Fourier-Transform Ion Cyclotron Resonance Mass Spectrometry Imaging (MALDI FT-ICR MSI). Forensic Chemistry (2020). In press.
 =======
@@ -38,6 +39,10 @@ Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent f
 \source{
 %%  ~~ reference to a publication or URL from which the data were obtained ~~
 >>>>>>> 3c63485... Added data documentation
+=======
+\source{
+Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent fingerprints recovered from underneath bloodstains using Matrix-Assisted Laser Desportion/Ionization Fourier-Transform Ion Cyclotron Resonance Mass Spectrometry Imaging (MALDI FT-ICR MSI). Forensic Chemistry (2020). In press.
+>>>>>>> 5831098... Added pre-processing vignette
 }
 \references{
 https://github.com/wesleyburr/subMaldi

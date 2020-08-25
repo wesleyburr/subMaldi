@@ -38,10 +38,13 @@ width. Default = 0.0001.}
 }
 >>>>>>> 270485a... Updated documentation
 
+<<<<<<< HEAD
 \item{dig}{Number of decimal places to round the \emph{m/z} vector to;
 required for \emph{m/z} values to match full \emph{m/z} vector. Default =
 4.}
 }
+=======
+>>>>>>> 5831098... Added pre-processing vignette
 \value{
 <<<<<<< HEAD
 Returns a data frame which can be used to map irregularly spaced
@@ -61,13 +64,15 @@ https://github.com/wesleyburr/subMaldi
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 }
-\note{
-}
 
+<<<<<<< HEAD
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 >>>>>>> 270485a... Updated documentation
 }
+=======
+
+>>>>>>> 5831098... Added pre-processing vignette
 \examples{
 
 ## Creating an empty spectrum with an m/z range of 500 to 2000 m/z, with a step size of 0.001
