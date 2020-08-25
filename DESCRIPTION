@@ -234,6 +234,7 @@ biocViews:
 Suggests: 
     knitr,
 <<<<<<< HEAD
+<<<<<<< HEAD
     rmarkdown
 <<<<<<< HEAD
 VignetteBuilder: knitr
@@ -243,5 +244,8 @@ VignetteBuilder: knitr
     rmarkdown,
     MassSpecWavelet
 >>>>>>> 5831098... Added pre-processing vignette
+=======
+    rmarkdown
+>>>>>>> 8ba5f95... Added pre-processing vignette
 VignetteBuilder: rmarkdown
 >>>>>>> e43371a... Added smoothing

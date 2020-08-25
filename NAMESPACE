@@ -74,7 +74,6 @@ importFrom("utils", "read.csv")
 =======
 import(ggplot2,ggpmisc,tidyr,dplyr)
 importFrom("stats", "median", "na.omit", "sd", "loess", "predict", "mad")
-importFrom("tidyselect", "all_of")
 importFrom("utils", "read.csv")
 importFrom("signal", "interp1", "filter", "sgolay")
 >>>>>>> 5831098... Added pre-processing vignette
