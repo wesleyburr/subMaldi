@@ -26,7 +26,7 @@ plotSpectrum <- function(dat,
   
   # If lbls = TRUE
   if(lbls == TRUE){
-    tst <- .test_lbl(mass_dat = mass_dat, lbl.fmt = lbl.fmt)
+    tst <- .test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
     # Check that labels have less than or equal to decimal places as data
     if(tst == TRUE){
       stop('Label format indicates more decimal places than given in data.') }
@@ -469,7 +469,7 @@ plotgridSpectra<- function(dat, mass_dat,
   } else{
     # If lbls = TRUE
     if(lbls == TRUE & is.null(max_I)){
-      tst <- .test_lbl(mass_dat = mass_dat, lbl.fmt = lbl.fmt)
+      tst <- .test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
       # Check that labels have <= decimal places as data
       if(tst == TRUE){
         stop('Label format indicates more decimal places 
