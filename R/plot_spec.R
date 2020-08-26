@@ -23,6 +23,7 @@ plotSpectrum <- function(dat,
                          lbls = FALSE,
                          lbl.fmt = "%3.4f",
                          x_ticks = 500) {
+  mass <- mass_dat
   
   # If lbls = TRUE
   if(lbls == TRUE){
