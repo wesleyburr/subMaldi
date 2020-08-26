@@ -6,7 +6,7 @@
 
 
 # Check that labels have less than or equal to decimal places as data
-.decimalplaces <- function(x) {
+.deci <- function(x) {
   if ((x %% 1) != 0) {
     nchar(strsplit(sub('0+$', '', as.character(x)), ".", fixed=TRUE)[[1]][[2]])
   } else {
@@ -15,7 +15,7 @@
 }
 
 # will go inside plot func
-.test <- function(mass_dat, lbl.fmt){
+.test_lbl <- function(mass_dat, lbl.fmt){
   x <- mass_dat
   dp <- c()
   out <- c()
@@ -24,7 +24,7 @@
   lbl.dec <- as.numeric(gsub("[a-zA-Z ]", "", lbl.dec))
   
   for(i in 1:length(x)){
-  dp[i] <- .decimalplaces(x[i])
+    dp[i] <- .deci(x[i])
   }
   
   dp <- max(dp)
@@ -32,6 +32,5 @@
   return(out)
 }
 
-  
   
  # -----------------------------------------------------------------------
