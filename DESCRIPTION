@@ -3,6 +3,7 @@ Type: Package
 Title: Organization and Processing of MALDI-MS Datasets
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Version: 1.0-0
 Date: August 27, 2020
 =======
@@ -16,6 +17,10 @@ Version: 1.0.0
 >>>>>>> c823b44... Updated docs
 Date: August 18, 2020
 >>>>>>> 5831098... Added pre-processing vignette
+=======
+Version: 1.0-0
+Date: August 27, 2020
+>>>>>>> 43266a0... Updated version
 Author: [aut, cre] Kristen Yeh, [aut] Wesley Burr
 <<<<<<< HEAD
 Maintainer: Wesley Burr <wesleyburr@trentu.ca>
