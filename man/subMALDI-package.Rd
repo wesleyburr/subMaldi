@@ -23,6 +23,7 @@ Authors:
   \item Wesley Burr (\href{https://orcid.org/0000-0002-2058-1899}{ORCID})
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ae90a09... Updated documentation to reflect recent changes.
   \item Sophie Castel (\href{https://orcid.org/0000-0001-9086-0917}{ORCID})
@@ -38,3 +39,8 @@ Authors:
 >>>>>>> 6beabca... Create subMALDI-package help file
 =======
 >>>>>>> fcce516... Fixed typo in package.Rd, recompile
+=======
+}
+
+\keyword{internal}
+>>>>>>> 32ef4a8... Create subMALDI-package help file
