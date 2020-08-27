@@ -112,6 +112,7 @@ Description: Mapping of irregularly-spaced mass spectrometry data in an open for
 <<<<<<< HEAD
 Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
 <<<<<<< HEAD
+<<<<<<< HEAD
 Imports: signal (>= 0.7-6)
 <<<<<<< HEAD
 License: GPL (>= 2) + file LICENSE
@@ -139,6 +140,9 @@ Imports: signal (>= 0.7-6)
 License: GPL (>= 2) + file LICENSE
 >>>>>>> 6b09f74... Fixed documentation
 =======
+=======
+Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.54.0)
+>>>>>>> de15a92... Fixed packaged structure
 License: GPL (>= 3) + file LICENSE
 >>>>>>> 856f0f5... Added loess baseline correction
 Encoding: UTF-8
@@ -246,10 +250,14 @@ VignetteBuilder: knitr
 >>>>>>> 5831098... Added pre-processing vignette
 =======
     rmarkdown
+<<<<<<< HEAD
 >>>>>>> 8ba5f95... Added pre-processing vignette
 VignetteBuilder: rmarkdown
 <<<<<<< HEAD
 >>>>>>> e43371a... Added smoothing
 =======
+=======
+VignetteBuilder: knitr
+>>>>>>> de15a92... Fixed packaged structure
 RoxygenNote: 7.1.1
 >>>>>>> 3c0f9e7... Fixing package structure

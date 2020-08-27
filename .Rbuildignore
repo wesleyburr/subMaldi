@@ -56,4 +56,9 @@
 =======
 ^paper.Rmd$
 ^paper.bib$
+<<<<<<< HEAD
 >>>>>>> 3c0f9e7... Fixing package structure
+=======
+^doc$
+^Meta$
+>>>>>>> de15a92... Fixed packaged structure
