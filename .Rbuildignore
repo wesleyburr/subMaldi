@@ -35,4 +35,9 @@
 =======
 ^paper.Rmd$
 ^paper.bib$
+<<<<<<< HEAD
 >>>>>>> 105654b... Fixing package structure - removed .tar.gz
+=======
+^doc$
+^Meta$
+>>>>>>> fb110b9... Fixed packaged structure - removed .tar.gz
