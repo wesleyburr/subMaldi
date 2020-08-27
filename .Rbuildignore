@@ -9,4 +9,9 @@
 ^Meta$
 =======
 ^subMALDI_0.1-2.tar.gz$
+<<<<<<< HEAD
 >>>>>>> 6b09f74... Fixed documentation
+=======
+^paper.Rmd$
+^paper.bib$
+>>>>>>> 3c0f9e7... Fixing package structure
