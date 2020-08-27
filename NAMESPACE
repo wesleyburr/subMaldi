@@ -10,6 +10,7 @@ exportPattern("^[[:alpha:]]+")
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import(ggplot2,ggpmisc,tidyr,dplyr, MassSpecWavelet)
 importFrom("stats", "median", "na.omit", "sd", "loess", "predict", "mad")
 importFrom("utils", "read.csv")
@@ -73,6 +74,9 @@ importFrom("utils", "read.csv")
 >>>>>>> 856f0f5... Added loess baseline correction
 =======
 import(ggplot2,ggpmisc,tidyr,dplyr)
+=======
+import(ggplot2,ggpmisc,tidyr,dplyr, MassSpecWavelet)
+>>>>>>> de15a92... Fixed packaged structure
 importFrom("stats", "median", "na.omit", "sd", "loess", "predict", "mad")
 importFrom("utils", "read.csv")
 importFrom("signal", "interp1", "filter", "sgolay")
