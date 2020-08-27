@@ -28,6 +28,10 @@ Authors:
 
 =======
 }
+}
 
+<<<<<<< HEAD
 \keyword{internal}
 >>>>>>> 6beabca... Create subMALDI-package help file
+=======
+>>>>>>> fcce516... Fixed typo in package.Rd, recompile
