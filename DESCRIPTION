@@ -15,3 +15,4 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: rmarkdown
+RoxygenNote: 7.1.1
