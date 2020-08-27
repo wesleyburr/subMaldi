@@ -23,6 +23,7 @@ Date: August 27, 2020
 >>>>>>> 43266a0... Updated version
 Author: [aut, cre] Kristen Yeh, [aut] Wesley Burr
 <<<<<<< HEAD
+<<<<<<< HEAD
 Maintainer: Wesley Burr <wesleyburr@trentu.ca>
 Description: subMALDI is an open framework tool that permits organization, 
     pre-processing (smoothing, baseline correction, peak detection), and normalization 
@@ -34,6 +35,9 @@ Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
 License: GPL (>= 3) + file LICENSE
 =======
 Maintainer: Kristen Yeh <kristenyeh@trentu.ca>
+=======
+Maintainer: Wesley Burr <wesleyburr@trentu.ca>
+>>>>>>> b0a8fd5... Updated paper
 Description: subMALDI is an open framework tool that permits organization, 
     pre-processing (smoothing, baseline correction, peak detection), and normalization 
     of spectral data sets. As a result of the package's open framework, subMALDI data 
