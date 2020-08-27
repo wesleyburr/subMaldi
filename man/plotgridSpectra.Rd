@@ -11,7 +11,7 @@ plotgridSpectra(dat, mass_dat, spec1, spec2, spec3, spec4, spec5 = NULL,
                 spec6 = NULL, colour1 = "steelblue1", colour2 = "lightpink1",
                 colour3 = "coral", colour4 = "goldenrod1", colour5 = "gold",
                 colour6 = "seagreen3", span = 5, thresh = 0.1, lbls = FALSE, 
-                lbl.fmt = "\%3.4f", columns = 2, min_mz = 0, max_mz = 1000,
+                lbl.fmt = "\%3.4f", columns = 2, min_mz = 0, max_mz = 10000,
                 min_I = 0, max_I = NULL, x_ticks = 500, intensity_scale = "free_y")
 }
 \arguments{
