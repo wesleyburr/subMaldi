@@ -15,6 +15,7 @@
 >>>>>>> 6c09a20... Fixed documentation
 ^subMALDI_0.1-2.tar.gz$
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6b09f74... Fixed documentation
 =======
 =======
@@ -31,3 +32,7 @@
 ^doc$
 ^Meta$
 >>>>>>> de15a92... Fixed packaged structure
+=======
+^paper.Rmd$
+^paper.bib$
+>>>>>>> 105654b... Fixing package structure - removed .tar.gz
