@@ -2,6 +2,7 @@ Package: subMALDI
 Type: Package
 Title: Organization and Processing of MALDI-MS Datasets
 <<<<<<< HEAD
+<<<<<<< HEAD
 Version: 1.0-0
 Date: August 27, 2020
 =======
@@ -10,6 +11,9 @@ Version: 0.1-2
 Date: August 4, 2020
 >>>>>>> fae1515... Paper added
 =======
+=======
+Version: 1.0.0
+>>>>>>> c823b44... Updated docs
 Date: August 18, 2020
 >>>>>>> 5831098... Added pre-processing vignette
 Author: [aut, cre] Kristen Yeh, [aut] Wesley Burr
@@ -25,8 +29,13 @@ Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
 License: GPL (>= 3) + file LICENSE
 =======
 Maintainer: Kristen Yeh <kristenyeh@trentu.ca>
-Description: Mapping of irregularly-spaced mass spectrometry data in an open format, with processing and visualization tools.
+Description: subMALDI is an open framework tool that permits organization, 
+    pre-processing (smoothing, baseline correction, peak detection), and normalization 
+    of spectral data sets. As a result of the package's open framework, subMALDI data 
+    sets are compatible with functions from a wide variety of other R packages, and 
+    user-defined functions are easier to implement and test.
 Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
+<<<<<<< HEAD
 <<<<<<< HEAD
 Imports: signal (>= 0.7-6)
 <<<<<<< HEAD
@@ -36,6 +45,9 @@ License: GPL (>= 2) + file LICENSE
 =======
 Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.54.0)
 >>>>>>> de15a92... Fixed packaged structure
+=======
+Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
+>>>>>>> c823b44... Updated docs
 License: GPL (>= 3) + file LICENSE
 >>>>>>> 856f0f5... Added loess baseline correction
 Encoding: UTF-8
