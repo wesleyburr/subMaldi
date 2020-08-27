@@ -1,20 +1,18 @@
 ---
-title: "Pre-Processing with subMALDI"
+title: "Processing with subMALDI"
 author: Kristen Yeh^1^ and Wesley Burr ^2^
 output: 
   rmarkdown::html_vignette:
     toc: true
     toc_depth: 1
-    df_print: kable
     number_sections: true
 vignette: >
-  %\VignetteIndexEntry{Pre-Processing with subMALDI}
+  %\VignetteIndexEntry{Processing with subMALDI}
   %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
+  %\VignetteEncoding{UTF-8}
 ---
 
-
-```{r setup, include = FALSE}
+```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -30,7 +28,7 @@ knitr::opts_chunk$set(
 
 In this vignette we demonstrate a pre-processing workflow for smoothing, baseline correction, and peak detection of raw, irregularly-spaced mass spectrometry data using `subMALDI`. This package is freely available from [GitHub](https://github.com/wesleyburr/subMaldi) and was created using MALDI FT-ICR mass spectrometry data. 
 
-It is recommended that users first read through the *"`subMALDI`: Sample Workflow"* vignette before proceeding with pre-processing functions. This will assist users in understanding the basic functions included in `subMALDI`, including import, plotting, and mapping functions for comparison of multiple spectra.
+It is recommended that users first read through the *"`subMALDI` Workflow"* vignette before proceeding with pre-processing functions. This will assist users in understanding the basic functions included in `subMALDI`, including import, plotting, and mapping functions for comparison of multiple spectra.
 
 ## Loading Sample Data
 
@@ -121,7 +119,7 @@ mov_avg <- smoothSpectrum(dat = bsline, mass_dat = bsline$mass, intensity_dat = 
 ```
 
 
-We'll now compare our smoothed version of `bsline` to the raw spectrum by mapping the raw and smoothed intensities to a spectral data frame called `test`. The code that follows is explained in depth in the vignette *"`subMALDI`: Sample Workflow".*
+We'll now compare our smoothed version of `bsline` to the raw spectrum by mapping the raw and smoothed intensities to a spectral data frame called `test`. The code that follows is explained in depth in the vignette *"`subMALDI` Workflow".*
 
 Once our raw and smoothed spectra have been mapped to the data frame, we can remove *m/z* rows that do not correspond to any intensities in either spectra with `rmveEmpty()`.
 
@@ -462,7 +460,7 @@ We can see that the algorithm has successfully corrected the irregular baseline 
 
 # Conclusion
 
-After users have completed the pre-processing pipeline on all individual raw spectra, they can now proceed with mapping spectral replicates to a single spectral data frame, as is demonstrated in the *"`subMALDI`: Sample Workflow"* vignette. These replicates can then be normalized, averaged, subtracted, and plotted using `subMALDI`'s suite of functions, or further processed or analyzed using other compatible R pacakges!
+After users have completed the pre-processing pipeline on all individual raw spectra, they can now proceed with mapping spectral replicates to a single spectral data frame, as is demonstrated in the *"`subMALDI` Workflow"* vignette. These replicates can then be normalized, averaged, subtracted, and plotted using `subMALDI`'s suite of functions, or further processed or analyzed using other compatible R pacakges!
 
 ---
 
