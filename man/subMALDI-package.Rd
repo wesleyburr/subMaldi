@@ -22,5 +22,5 @@ Authors:
   \item Kristen Yeh (\href{https://orcid.org/0000-0002-3411-6816}{ORCID})
   \item Wesley Burr (\href{https://orcid.org/0000-0002-2058-1899}{ORCID})
 }
+}
 
-\keyword{internal}
