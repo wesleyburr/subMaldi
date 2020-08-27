@@ -1,7 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^.Rhistory$
-^subMALDI_1.0.0.tar.gz$
+^subMALDI_1.0-0.tar.gz$
 ^paper.Rmd$
 ^paper.bib$
 ^doc$
