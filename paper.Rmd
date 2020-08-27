@@ -9,13 +9,13 @@ authors:
     orcid: 0000-0002-3411-6816
     affiliation: 1
   - name: Naomi L. Stock
-    orcid: 0000
+    orcid: 0000-0002-3472-9284
     affiliation: 2
   - name: Theresa Stotesbury
-    orcid: 0000
+    orcid: 0000-0001-6452-4389
     affiliation: 3
   - name: Wesley Burr
-    orcid: 0000
+    orcid: 0000-0002-2058-1899
     affiliation: 4
 affiliations:
   - name: Forensic Science Program, Trent University
