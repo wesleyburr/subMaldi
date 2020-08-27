@@ -41,6 +41,10 @@ Authors:
 >>>>>>> fcce516... Fixed typo in package.Rd, recompile
 =======
 }
+}
 
+<<<<<<< HEAD
 \keyword{internal}
 >>>>>>> 32ef4a8... Create subMALDI-package help file
+=======
+>>>>>>> a234c6e... Fixed typo in package.Rd, recompile
