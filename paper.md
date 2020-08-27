@@ -80,6 +80,7 @@ output: pdf_document
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 # Summary
 
@@ -391,6 +392,8 @@ supported by two NSERC Undergraduate Student Research Awards (USRA),
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+=======
+>>>>>>> 34910f2... Updated paper
 
 # Summary
 
