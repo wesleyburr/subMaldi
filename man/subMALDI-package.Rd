@@ -25,6 +25,7 @@ Authors:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ae90a09... Updated documentation to reflect recent changes.
 =======
@@ -51,3 +52,8 @@ Authors:
 >>>>>>> 32ef4a8... Create subMALDI-package help file
 =======
 >>>>>>> a234c6e... Fixed typo in package.Rd, recompile
+=======
+}
+
+\keyword{internal}
+>>>>>>> 6beabca... Create subMALDI-package help file
