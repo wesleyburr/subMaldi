@@ -59,6 +59,7 @@ Author: [aut, cre] Kristen Yeh, [aut] Wesley Burr
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Maintainer: Wesley Burr <wesleyburr@trentu.ca>
 Description: subMALDI is an open framework tool that permits organization, 
     pre-processing (smoothing, baseline correction, peak detection), and normalization 
@@ -85,6 +86,9 @@ Maintainer: Wesley Burr <wesleyburr@trentu.ca>
 >>>>>>> 9743919... Updated paper
 =======
 >>>>>>> c823b44... Updated docs
+=======
+Maintainer: Wesley Burr <wesleyburr@trentu.ca>
+>>>>>>> b0a8fd5... Updated paper
 Description: subMALDI is an open framework tool that permits organization, 
     pre-processing (smoothing, baseline correction, peak detection), and normalization 
     of spectral data sets. As a result of the package's open framework, subMALDI data 
