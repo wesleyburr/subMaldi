@@ -9,6 +9,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ^subMALDI_1.0-0.tar.gz$
 ^paper.Rmd$
 ^paper.bib$
@@ -58,6 +59,9 @@
 =======
 ^subMALDI_1.0.0.tar.gz$
 >>>>>>> 18741fa... Updated build version
+=======
+^subMALDI_1.0-0.tar.gz$
+>>>>>>> 4734bec... Updated version
 ^paper.Rmd$
 ^paper.bib$
 <<<<<<< HEAD
