@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ^subMALDI_1.0-0.tar.gz$
 ^paper.Rmd$
 ^paper.bib$
@@ -33,6 +34,9 @@
 ^Meta$
 >>>>>>> de15a92... Fixed packaged structure
 =======
+=======
+^subMALDI_1.0.0.tar.gz$
+>>>>>>> 1818f52... Updated build version
 ^paper.Rmd$
 ^paper.bib$
 <<<<<<< HEAD
