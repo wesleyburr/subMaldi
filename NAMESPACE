@@ -1,5 +1,5 @@
 exportPattern("^[[:alpha:]]+")
-import(ggplot2,ggpmisc,tidyr,dplyr)
+import(ggplot2,ggpmisc,tidyr,dplyr, MassSpecWavelet)
 importFrom("stats", "median", "na.omit", "sd", "loess", "predict", "mad")
 importFrom("utils", "read.csv")
 importFrom("signal", "interp1", "filter", "sgolay")
