@@ -1,5 +1,5 @@
 ---
-title: "subMALDI: Sample Workflow"
+title: "subMALDI Workflow"
 author: Kristen Yeh^1^ and Wesley Burr^2^
 output: 
   rmarkdown::html_vignette:
@@ -8,7 +8,7 @@ output:
     df_print: kable
     number_sections: true
 vignette: >
-  %\VignetteIndexEntry{subMALDI: Sample Workflow}
+  %\VignetteIndexEntry{subMALDI Workflow}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
