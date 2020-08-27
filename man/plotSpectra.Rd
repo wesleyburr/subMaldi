@@ -14,7 +14,7 @@ plotSpectra(dat, mass_dat, spec1, spec2 = NULL,
             colour4 = "goldenrod1", colour5 = "gold", 
             colour6 = "seagreen3", span = 5, thresh = 0.1,
             lbls = FALSE, lbl.fmt = "\%3.4f", min_mz = 0, 
-            max_mz = 1000, min_I = 0, max_I = NULL, 
+            max_mz = 10000, min_I = 0, max_I = NULL, 
             x_ticks = 100, intensity_scale = "free_y")
 }
 \arguments{
