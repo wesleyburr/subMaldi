@@ -248,4 +248,8 @@ VignetteBuilder: knitr
     rmarkdown
 >>>>>>> 8ba5f95... Added pre-processing vignette
 VignetteBuilder: rmarkdown
+<<<<<<< HEAD
 >>>>>>> e43371a... Added smoothing
+=======
+RoxygenNote: 7.1.1
+>>>>>>> 3c0f9e7... Fixing package structure
