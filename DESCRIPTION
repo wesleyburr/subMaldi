@@ -6,6 +6,7 @@ Title: Organization and Processing of MALDI-MS Datasets
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Version: 1.0-0
 Date: August 27, 2020
 =======
@@ -24,6 +25,9 @@ Version: 1.0.0
 =======
 Version: 1.0.0
 >>>>>>> 27b29da... Updated docs
+=======
+Version: 1.0.0
+>>>>>>> c823b44... Updated docs
 Date: August 18, 2020
 >>>>>>> 5831098... Added pre-processing vignette
 =======
@@ -65,6 +69,7 @@ License: GPL (>= 3) + file LICENSE
 Maintainer: Kristen Yeh <kristenyeh@trentu.ca>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Maintainer: Wesley Burr <wesleyburr@trentu.ca>
 >>>>>>> b0a8fd5... Updated paper
@@ -73,11 +78,14 @@ Maintainer: Wesley Burr <wesleyburr@trentu.ca>
 =======
 Maintainer: Wesley Burr <wesleyburr@trentu.ca>
 >>>>>>> 9743919... Updated paper
+=======
+>>>>>>> c823b44... Updated docs
 Description: subMALDI is an open framework tool that permits organization, 
     pre-processing (smoothing, baseline correction, peak detection), and normalization 
     of spectral data sets. As a result of the package's open framework, subMALDI data 
     sets are compatible with functions from a wide variety of other R packages, and 
     user-defined functions are easier to implement and test.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -143,6 +151,10 @@ License: GPL (>= 2) + file LICENSE
 =======
 Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.54.0)
 >>>>>>> de15a92... Fixed packaged structure
+=======
+Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
+Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
+>>>>>>> c823b44... Updated docs
 License: GPL (>= 3) + file LICENSE
 >>>>>>> 856f0f5... Added loess baseline correction
 Encoding: UTF-8
