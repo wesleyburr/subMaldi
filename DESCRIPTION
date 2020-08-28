@@ -71,6 +71,7 @@ Suggests:
     knitr,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     rmarkdown
 <<<<<<< HEAD
 VignetteBuilder: knitr
@@ -89,6 +90,10 @@ VignetteBuilder: rmarkdown
 >>>>>>> e43371a... Added smoothing
 =======
 =======
+=======
+    rmarkdown,
+    testthat
+>>>>>>> 40a45a4... Added tests
 VignetteBuilder: knitr
 >>>>>>> de15a92... Fixed packaged structure
 RoxygenNote: 7.1.1
