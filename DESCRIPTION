@@ -164,6 +164,7 @@ Suggests:
     knitr,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     rmarkdown
 <<<<<<< HEAD
 VignetteBuilder: knitr
@@ -182,6 +183,10 @@ VignetteBuilder: rmarkdown
 >>>>>>> c29c117... Added smoothing
 =======
 =======
+=======
+    rmarkdown,
+    testthat
+>>>>>>> e688bd6... Added tests
 VignetteBuilder: knitr
 >>>>>>> fb110b9... Fixed packaged structure - removed .tar.gz
 RoxygenNote: 7.1.1
