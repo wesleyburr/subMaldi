@@ -62,6 +62,7 @@ License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 LazyData: true
 <<<<<<< HEAD
+<<<<<<< HEAD
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
@@ -94,6 +95,9 @@ VignetteBuilder: rmarkdown
     rmarkdown,
     testthat
 >>>>>>> 40a45a4... Added tests
+=======
+Suggests: knitr, rmarkdown, testthat
+>>>>>>> 558f3f0... Update DESCRIPTION
 VignetteBuilder: knitr
 >>>>>>> de15a92... Fixed packaged structure
 RoxygenNote: 7.1.1
