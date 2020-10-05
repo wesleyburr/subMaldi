@@ -116,6 +116,7 @@ LazyData: true
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
@@ -187,6 +188,9 @@ VignetteBuilder: rmarkdown
     rmarkdown,
     testthat
 >>>>>>> e688bd6... Added tests
+=======
+Suggests: knitr, rmarkdown, testthat
+>>>>>>> e0c10d1... Update DESCRIPTION
 VignetteBuilder: knitr
 >>>>>>> fb110b9... Fixed packaged structure - removed .tar.gz
 RoxygenNote: 7.1.1
