@@ -5,6 +5,7 @@
 Meta
 .Rproj.user
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 doc
 =======
@@ -19,3 +20,5 @@ doc
 >>>>>>> 677a60e... And turned off gitignore
 Meta
 >>>>>>> 76c4f8b... Added rendered docs
+=======
+>>>>>>> 09e8909... cleaning up project files
