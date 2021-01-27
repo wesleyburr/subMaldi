@@ -1,159 +1,48 @@
 # -----------------------------------------------------------------------
-# Last Updated: June 1, 2020
-# Author: Kristen Yeh
+# Last Updated: January 27, 2021
+# Author: Kristen Yeh, Sophie Castel
 # Title: subMALDI: Normalization Method - Maximum Intensity
 # -----------------------------------------------------------------------
-
 
 # -----------------------
 # NORMALIZATION FUNCTION
 # -----------------------
-
 
 # Function rescales intensity to 0,1
 .normalize <- function(x) {
   return((x - min(x)) / (max(x) - min(x)))
 }
 
-
 # ------------------------------
 # METHOD: MAX. OF EACH SPECTRUM
 # ------------------------------
 
-
-.normMethod_max <- function(dat, mass_dat, spec1, spec2 = NULL, 
-                           spec3 = NULL, spec4 = NULL, spec5 = NULL, 
-                           spec6 = NULL){
+.normMethod_max <- function(dat, mass_dat, spectra_cols){
   
-  if(is.null(spec6)){
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
   
-  if(is.null(spec5)){
-  
-  if(is.null(spec4)){
-  
-  if(is.null(spec3)){
-  
-  if(is.null(spec2)){
-    
-  # Single spectrum
-  mass <- dat[[mass_dat]]
-  intense <- dat[[spec1]]
-  
-  max_Intensity <- max(intense)
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
   
   
-  dat <- select(dat, all_of(mass_dat))
-  dat <- transform(dat, "Normalized" = 0)
-  dat["Normalized"] <- .normalize(intense)
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  i_n <- apply(i, 2, FUN = .normalize)
+  dat <- cbind(mz, i_n)
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
   return(dat)
-  }
-  
-  # Two spectra
-  else{
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize(intense1)
-    dat[spec2] <- .normalize(intense2)
-    return(dat)
-  }}
-  
-  # Three spectra
-  else{
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    intense3 <- dat[[spec3]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    max_Intensity3 <- max(intense3)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize(intense1)
-    dat[spec2] <- .normalize(intense2)
-    dat[spec3] <- .normalize(intense3)
-    return(dat)
-  }}
-  
-  # Four spectra
-  else{
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    intense3 <- dat[[spec3]]
-    intense4 <- dat[[spec4]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    max_Intensity3 <- max(intense3)
-    max_Intensity4 <- max(intense4)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize(intense1)
-    dat[spec2] <- .normalize(intense2)
-    dat[spec3] <- .normalize(intense3)
-    dat[spec4] <- .normalize(intense4)
-    return(dat)
-  }}
-  
-  # Five spectra
-  else{
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    intense3 <- dat[[spec3]]
-    intense4 <- dat[[spec4]]
-    intense5 <- dat[[spec5]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    max_Intensity3 <- max(intense3)
-    max_Intensity4 <- max(intense4)
-    max_Intensity5 <- max(intense5)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize(intense1)
-    dat[spec2] <- .normalize(intense2)
-    dat[spec3] <- .normalize(intense3)
-    dat[spec4] <- .normalize(intense4)
-    dat[spec5] <- .normalize(intense5)
-    return(dat)
-  }}
-  
-  # Six spectra
-  else{
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    intense3 <- dat[[spec3]]
-    intense4 <- dat[[spec4]]
-    intense5 <- dat[[spec5]]
-    intense6 <- dat[[spec6]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    max_Intensity3 <- max(intense3)
-    max_Intensity4 <- max(intense4)
-    max_Intensity5 <- max(intense5)
-    max_Intensity6 <- max(intense6)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize(intense1)
-    dat[spec2] <- .normalize(intense2)
-    dat[spec3] <- .normalize(intense3)
-    dat[spec4] <- .normalize(intense4)
-    dat[spec5] <- .normalize(intense5)
-    dat[spec6] <- .normalize(intense6)
-    return(dat)
-  }
 }
-
 
 # ---------------------
 # METHOD: MAX. OF SET
@@ -164,228 +53,35 @@
   return((y - min(y)) / (max_y - min(y)))
 }
 
-.normMethod_max_set <- function(dat, mass_dat, spec1, spec2, 
-                           spec3 = NULL, spec4 = NULL, spec5 = NULL, 
-                           spec6 = NULL){
+.normMethod_max_set <- function(dat, mass_dat, spectra_cols){
   
-  if(is.null(spec6)){
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
   
-  if(is.null(spec5)){
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
   
-  if(is.null(spec4)){
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra.")
+  }
   
-  if(is.null(spec3)){
-  # Two spectra
-  sorted <- gather(dat, key = "Spectra", value = "Intensity", 
-                   all_of(spec1), all_of(spec2), factor_key= TRUE)
   
-  intense <- sorted$Intensity
-  max_int <- max(intense)
+  mz <- dat[[mass_dat]]
   
-  mass <- dat[[mass_dat]]
-  intense1 <- dat[[spec1]]
-  intense2 <- dat[[spec2]]
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
   
-  max_Intensity1 <- max(intense1)
-  max_Intensity2 <- max(intense2)
+  which_max <- which(i == max(i), arr.ind = TRUE)
+  max_i <- i[which_max[1], which_max[2]]
   
-  dat <- select(dat, all_of(mass_dat))
-  dat[spec1] <- .normalize_set(y = intense1, max_y = max_int)
-  dat[spec2] <- .normalize_set(y = intense2, max_y = max_int)
+  i_n <- apply(i, 2, FUN = function(x) {.normalize_set(y = x, max_y = max_i)} )
+  dat <- cbind(mz, i_n)
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
   return(dat)
-  }
-  
-  # Three spectra
-  else{
-    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
-                     all_of(spec1), all_of(spec2), all_of(spec3),
-                     factor_key= TRUE)
-    
-    intense <- sorted$Intensity
-    max_int <- max(intense)
-    
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    intense3 <- dat[[spec3]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    max_Intensity3 <- max(intense3)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize_set(y = intense1, max_y = max_int)
-    dat[spec2] <- .normalize_set(y = intense2, max_y = max_int)
-    dat[spec3] <- .normalize_set(y = intense3, max_y = max_int)
-    return(dat)
-  }}
-  
-  # Four spectra
-  else{
-    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
-                     all_of(spec1), all_of(spec2), all_of(spec3),
-                     all_of(spec4), factor_key= TRUE)
-    
-    intense <- sorted$Intensity
-    max_int <- max(intense)
-    
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    intense3 <- dat[[spec3]]
-    intense4 <- dat[[spec4]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    max_Intensity3 <- max(intense3)
-    max_Intensity4 <- max(intense4)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize_set(y = intense1, max_y = max_int)
-    dat[spec2] <- .normalize_set(y = intense2, max_y = max_int)
-    dat[spec3] <- .normalize_set(y = intense3, max_y = max_int)
-    dat[spec4] <- .normalize_set(y = intense4, max_y = max_int)
-    return(dat)
-  }}
-  
-  # Five spectra
-  else{
-    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
-                     all_of(spec1), all_of(spec2), all_of(spec3),
-                     all_of(spec4),all_of(spec5), factor_key= TRUE)
-    
-    intense <- sorted$Intensity
-    max_int <- max(intense)
-    
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    intense3 <- dat[[spec3]]
-    intense4 <- dat[[spec4]]
-    intense5 <- dat[[spec5]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    max_Intensity3 <- max(intense3)
-    max_Intensity4 <- max(intense4)
-    max_Intensity5 <- max(intense5)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize_set(y = intense1, max_y = max_int)
-    dat[spec2] <- .normalize_set(y = intense2, max_y = max_int)
-    dat[spec3] <- .normalize_set(y = intense3, max_y = max_int)
-    dat[spec4] <- .normalize_set(y = intense4, max_y = max_int)
-    dat[spec5] <- .normalize_set(y = intense5, max_y = max_int)
-    return(dat)
-  }}
-  
-  # Six spectra
-  else{
-    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
-                     all_of(spec1), all_of(spec2), all_of(spec3),
-                     all_of(spec4),all_of(spec5), all_of(spec6),
-                     factor_key= TRUE)
-    
-    intense <- sorted$Intensity
-    max_int <- max(intense)
-    
-    mass <- dat[[mass_dat]]
-    intense1 <- dat[[spec1]]
-    intense2 <- dat[[spec2]]
-    intense3 <- dat[[spec3]]
-    intense4 <- dat[[spec4]]
-    intense5 <- dat[[spec5]]
-    intense6 <- dat[[spec6]]
-    
-    max_Intensity1 <- max(intense1)
-    max_Intensity2 <- max(intense2)
-    max_Intensity3 <- max(intense3)
-    max_Intensity4 <- max(intense4)
-    max_Intensity5 <- max(intense5)
-    max_Intensity6 <- max(intense6)
-    
-    dat <- select(dat, all_of(mass_dat))
-    dat[spec1] <- .normalize_set(y = intense1, max_y = max_int)
-    dat[spec2] <- .normalize_set(y = intense2, max_y = max_int)
-    dat[spec3] <- .normalize_set(y = intense3, max_y = max_int)
-    dat[spec4] <- .normalize_set(y = intense4, max_y = max_int)
-    dat[spec5] <- .normalize_set(y = intense5, max_y = max_int)
-    dat[spec6] <- .normalize_set(y = intense6, max_y = max_int)
-    return(dat)
-  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
