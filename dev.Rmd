@@ -11,6 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 #########################################################################
@@ -23,6 +24,9 @@ knitr::opts_chunk$set(echo = TRUE)
 >>>>>>> f435d1f... Updated issue log
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+## JOSS 11
+>>>>>>> 46dcb76... Updated issue log
 
 ```{r}
 # loading uncompressed data files
@@ -60,6 +64,7 @@ save(Master2, file = "/home/sophie/subMaldi/data/compressed/Master2.rda", compre
 
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -117,6 +122,14 @@ Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for M
 =======
 ## avgSpectra.R (done)
 >>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
+=======
+## JOSS 5 
+Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
+
+## JOSS 12 - fix redundancies in code.. this is a doozie
+
+# avgSpectra.R
+>>>>>>> 46dcb76... Updated issue log
 
 ```{r}
 avgSpectra <- function(dat, method = "mean", spectra_cols){
@@ -177,6 +190,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## find_max.R (done)
 =======
 # find_max.R
@@ -187,6 +201,9 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 =======
 ## find_max.R (done)
 >>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
+=======
+# find_max.R
+>>>>>>> 46dcb76... Updated issue log
 
 ```{r}
 # -----------------
@@ -250,6 +267,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 }
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -527,6 +545,19 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 =======
 ## norm_max.R (done)
 >>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
+=======
+# normMethod_custimp.R
+
+```{r}
+```
+
+# normMethod_custom.R
+
+```{r}
+```
+
+# normMethod_max.R
+>>>>>>> 46dcb76... Updated issue log
 
 ```{r}
 # -----------------------
@@ -544,6 +575,7 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 norm_max <- function(dat, mass_dat, spectra_cols){
 =======
 .normMethod_max <- function(dat, mass_dat, spectra_cols){
@@ -551,6 +583,9 @@ norm_max <- function(dat, mass_dat, spectra_cols){
 =======
 norm_max <- function(dat, mass_dat, spectra_cols){
 >>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
+=======
+.normMethod_max <- function(dat, mass_dat, spectra_cols){
+>>>>>>> 46dcb76... Updated issue log
 
   # ---------------------
   # LOGICAL CHECKS
@@ -624,6 +659,7 @@ norm_max <- function(dat, mass_dat, spectra_cols){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## norm_median.R (done)
 =======
 # normMethod_median.R
@@ -634,6 +670,9 @@ norm_max <- function(dat, mass_dat, spectra_cols){
 =======
 ## norm_median.R (done)
 >>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
+=======
+# normMethod_median.R
+>>>>>>> 46dcb76... Updated issue log
 
 ```{r}
 
@@ -643,6 +682,7 @@ norm_max <- function(dat, mass_dat, spectra_cols){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 norm_med<- function(dat, mass_dat, spectra_cols){
 =======
 .normMethod_med<- function(dat, mass_dat, spectra_cols){
@@ -650,6 +690,9 @@ norm_med<- function(dat, mass_dat, spectra_cols){
 =======
 norm_med<- function(dat, mass_dat, spectra_cols){
 >>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
+=======
+.normMethod_med<- function(dat, mass_dat, spectra_cols){
+>>>>>>> 46dcb76... Updated issue log
 
   # ---------------------
   # LOGICAL CHECKS
@@ -705,6 +748,7 @@ norm_med<- function(dat, mass_dat, spectra_cols){
 }
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1974,5 +2018,28 @@ library(testthat)
 ```{r}
 
 ```
+=======
+# normMethod_quantile.R
+
+```{r}
+```
+
+# normMethod_RMS.R
+
+```{r}
+```
+
+# normMethod_stdev.R
+
+```{r}
+```
+
+# normMethod_TIC.R
+
+```{r}
+```
+
+
+>>>>>>> 46dcb76... Updated issue log
 
 
