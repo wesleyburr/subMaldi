@@ -43,6 +43,7 @@
 # Last Updated: January 27, 2021
 # Author: Kristen Yeh, Sophie Castel
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Title: subMALDI: Find Peak Maxima
 # -----------------------------------------------------------------------
 
@@ -126,6 +127,47 @@ find_max <- function (dat, mass_dat, spectra_cols){
 =======
 >>>>>>> 29ad768... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
 
+=======
+# Title: subMALDI Peak Maximum Functions
+# -----------------------------------------------------------------------
+
+# -----------------
+# FIND PEAK MAXIMA
+# -----------------
+
+# Find peak maximum and associated m/z of spectra
+find_max <- function (dat, mass_dat, spectra_cols){
+  
+  # --------------
+  # LOGICAL CHECKS
+  # --------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
+  
+  
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  rownames(i) <- mz
+  
+  max_i <- apply(i, 2, max)
+  which_max <- apply(i, 2, which.max)
+  max_mz <- mz[which_max]
+  
+  max_spec <- cbind(max_i, max_mz)
+  colnames(max_spec) <- c("Intensity (Max)", "Mass")
+  
+  return(max_spec)
+}
+
+>>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
 # -----------------------------------------------------------------------
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -156,6 +198,7 @@ find_max <- function (dat, mass_dat, spectra_cols){
 # ------------------------
 
 find_max_set <- function(dat, mass_dat, spectra_cols){
+<<<<<<< HEAD
 <<<<<<< HEAD
   
   # --------------
@@ -206,6 +249,8 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
   
 >>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
 =======
+=======
+>>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
   
   # --------------
   # LOGICAL CHECKS
@@ -234,7 +279,10 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
   
   return(max_spec)
   
+<<<<<<< HEAD
 >>>>>>> 29ad768... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
+=======
+>>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
 }
 
 # -----------------------------------------------------------------------
