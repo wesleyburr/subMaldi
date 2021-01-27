@@ -13,6 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
@@ -33,6 +34,9 @@ knitr::opts_chunk$set(echo = TRUE)
 >>>>>>> 46dcb76... Updated issue log
 =======
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+## JOSS 11
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 # loading uncompressed data files
@@ -70,6 +74,7 @@ save(Master2, file = "/home/sophie/subMaldi/data/compressed/Master2.rda", compre
 
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -163,6 +168,14 @@ Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for M
 =======
 ## avgSpectra.R (done)
 >>>>>>> 3753a1b... JOSS 10 (Issue): Fixed formatting of test files
+=======
+## JOSS 5 
+Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
+
+## JOSS 12 - fix redundancies in code.. this is a doozie
+
+# avgSpectra.R
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 avgSpectra <- function(dat, method = "mean", spectra_cols){
@@ -226,6 +239,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## find_max.R (done)
 =======
 # find_max.R
@@ -245,6 +259,9 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 =======
 ## find_max.R (done)
 >>>>>>> 3753a1b... JOSS 10 (Issue): Fixed formatting of test files
+=======
+# find_max.R
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 # -----------------
@@ -308,6 +325,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 }
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -460,6 +478,19 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 # METHOD: CUSTOM M/Z VALUE, NOT PRECISE
 # --------------------------------------
 =======
+=======
+# normMethod_custimp.R
+
+```{r}
+```
+
+# normMethod_custom.R
+
+```{r}
+```
+
+# normMethod_max.R
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 # -----------------------
@@ -475,11 +506,16 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 # METHOD: MAX. OF EACH SPECTRUM
 # ------------------------------
 
+<<<<<<< HEAD
 norm_max <- function(dat, mass_dat, spectra_cols){
 >>>>>>> 3753a1b... JOSS 10 (Issue): Fixed formatting of test files
 
 norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
+=======
+.normMethod_max <- function(dat, mass_dat, spectra_cols){
+
+>>>>>>> f435d1f... Updated issue log
   # ---------------------
   # LOGICAL CHECKS
   # ---------------------
@@ -491,13 +527,17 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
     all(spectra_cols %in% colnames(dat))
   )
   
+<<<<<<< HEAD
   if(is.null(norm_mz)){
     stop('Please select a m/z value. norm_mz is NULL.')
   }   
+=======
+>>>>>>> f435d1f... Updated issue log
   
   
   mz <- dat[[mass_dat]]
   
+<<<<<<< HEAD
   logic_i <- which(startsWith(as.character(mz), as.character(norm_mz)))
   
   if(length(logic_i) == 0){
@@ -528,10 +568,18 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   }
   
   dat <- data.frame(mz, i_norm)
+=======
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  i_n <- apply(i, 2, FUN = .normalize)
+  dat <- cbind(mz, i_n)
+>>>>>>> f435d1f... Updated issue log
   colnames(dat) <- c("full_mz", spectra_cols)
   
   return(dat)
 }
+<<<<<<< HEAD
 
 ```
 
@@ -548,17 +596,35 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 }
 
 .normMethod_custom <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
+=======
+  
+# ---------------------
+# METHOD: MAX. OF SET
+# ---------------------
+
+# Normalization function specific to custom max_y
+.normalize_set <- function(y, max_y){
+  return((y - min(y)) / (max_y - min(y)))
+}
+
+.normMethod_max_set <- function(dat, mass_dat, spectra_cols){
+>>>>>>> f435d1f... Updated issue log
   
   # ---------------------
   # LOGICAL CHECKS
   # ---------------------
+<<<<<<< HEAD
     
+=======
+  
+>>>>>>> f435d1f... Updated issue log
   stopifnot(
     is.character(mass_dat),
     is.character(spectra_cols),
     mass_dat %in% colnames(dat),
     all(spectra_cols %in% colnames(dat))
   )
+<<<<<<< HEAD
     
 
     
@@ -567,10 +633,19 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   } 
   
     
+=======
+
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra.")
+  }
+  
+  
+>>>>>>> f435d1f... Updated issue log
   mz <- dat[[mass_dat]]
   
   spectra <- lapply(spectra_cols, function(x){dat[x]})
   i <- do.call(what = data.frame, args = c(spectra))
+<<<<<<< HEAD
     
   i_cust <- as.numeric(i[which(mz == norm_mz),])
   
@@ -595,10 +670,22 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
     
   return(dat)
     
+=======
+  
+  which_max <- which(i == max(i), arr.ind = TRUE)
+  max_i <- i[which_max[1], which_max[2]]
+  
+  i_n <- apply(i, 2, FUN = function(x) {.normalize_set(y = x, max_y = max_i)} )
+  dat <- cbind(mz, i_n)
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
+  return(dat)
+>>>>>>> f435d1f... Updated issue log
 }
 
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -628,13 +715,24 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 .normMethod_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
 =======
+=======
+# normMethod_median.R
+
+```{r}
+
+>>>>>>> f435d1f... Updated issue log
 # ---------------
 # METHOD: MEDIAN
 # ---------------
 
+<<<<<<< HEAD
 norm_med<- function(dat, mass_dat, spectra_cols){
 
 >>>>>>> 3753a1b... JOSS 10 (Issue): Fixed formatting of test files
+=======
+.normMethod_med<- function(dat, mass_dat, spectra_cols){
+
+>>>>>>> f435d1f... Updated issue log
   # ---------------------
   # LOGICAL CHECKS
   # ---------------------
@@ -645,14 +743,22 @@ norm_med<- function(dat, mass_dat, spectra_cols){
     mass_dat %in% colnames(dat),
     all(spectra_cols %in% colnames(dat))
   )
+<<<<<<< HEAD
   
   if(is.null(norm_mz)){
     stop('Please select a m/z value. norm_mz is NULL.')
   }   
+=======
+
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra.")
+  }
+>>>>>>> f435d1f... Updated issue log
   
   
   mz <- dat[[mass_dat]]
   
+<<<<<<< HEAD
   logic_i <- which(startsWith(as.character(mz), as.character(norm_mz)))
   
   if(length(logic_i) == 0){
@@ -2867,5 +2973,64 @@ library(testthat)
 ```{r}
 
 ```
+=======
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  i[i == 0 ] <- NA
+  
+  i_med <- apply(i,2, FUN = median, na.rm = TRUE)
+  max_med <- max(i_med)
+  
+  for(j in 1:length(spectra_cols)){
+    
+    # multiplicative factors
+    factors <- c()
+    
+      if(i_med[j] == max_med){
+        
+        other <- i_med[-j]
+        other_index <- which(i_med %in% other)
+          
+        factors <- rep(1,length(spectra_cols))
+        
+        factors[other_index] = i_med[j]/i_med[other_index]
+        
+      }
+    }
+    
+  #i_mult <- i*factors
+  
+  i_mult <- t(t(i)*factors)
+  
+  dat <- cbind(mz, i_mult)
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
+  return(dat)
+  
+}
+```
+
+# normMethod_quantile.R
+
+```{r}
+```
+
+# normMethod_RMS.R
+
+```{r}
+```
+
+# normMethod_stdev.R
+
+```{r}
+```
+
+# normMethod_TIC.R
+
+```{r}
+```
+
+
+>>>>>>> f435d1f... Updated issue log
 
 
