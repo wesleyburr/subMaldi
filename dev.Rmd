@@ -9,10 +9,14 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<<<<<<< HEAD
 #########################################################################
 
 
 ## JOSS 11 (Closed)
+=======
+## JOSS 11
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 # loading uncompressed data files
@@ -50,6 +54,7 @@ save(Master2, file = "/home/sophie/subMaldi/data/compressed/Master2.rda", compre
 
 ```
 
+<<<<<<< HEAD
 
 #########################################################################
 
@@ -71,6 +76,14 @@ Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for M
 ## JOSS 12 - generalize and fix redundancies in code (Closed)
 
 ## avgSpectra.R (done)
+=======
+## JOSS 5 
+Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
+
+## JOSS 12 - fix redundancies in code.. this is a doozie
+
+# avgSpectra.R
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 avgSpectra <- function(dat, method = "mean", spectra_cols){
@@ -128,7 +141,11 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 
 ```
 
+<<<<<<< HEAD
 ## find_max.R (done)
+=======
+# find_max.R
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 # -----------------
@@ -192,6 +209,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 }
 ```
 
+<<<<<<< HEAD
 ## norm_custimp.R (done)
 
 ```{r}
@@ -321,6 +339,19 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 ```
 
 ## norm_max.R (done)
+=======
+# normMethod_custimp.R
+
+```{r}
+```
+
+# normMethod_custom.R
+
+```{r}
+```
+
+# normMethod_max.R
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 # -----------------------
@@ -336,7 +367,11 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 # METHOD: MAX. OF EACH SPECTRUM
 # ------------------------------
 
+<<<<<<< HEAD
 norm_max <- function(dat, mass_dat, spectra_cols){
+=======
+.normMethod_max <- function(dat, mass_dat, spectra_cols){
+>>>>>>> f435d1f... Updated issue log
 
   # ---------------------
   # LOGICAL CHECKS
@@ -407,7 +442,11 @@ norm_max <- function(dat, mass_dat, spectra_cols){
 
 ```
 
+<<<<<<< HEAD
 ## norm_median.R (done)
+=======
+# normMethod_median.R
+>>>>>>> f435d1f... Updated issue log
 
 ```{r}
 
@@ -415,7 +454,11 @@ norm_max <- function(dat, mass_dat, spectra_cols){
 # METHOD: MEDIAN
 # ---------------
 
+<<<<<<< HEAD
 norm_med<- function(dat, mass_dat, spectra_cols){
+=======
+.normMethod_med<- function(dat, mass_dat, spectra_cols){
+>>>>>>> f435d1f... Updated issue log
 
   # ---------------------
   # LOGICAL CHECKS
@@ -471,6 +514,7 @@ norm_med<- function(dat, mass_dat, spectra_cols){
 }
 ```
 
+<<<<<<< HEAD
 ## norm_quantile.R (done)
 
 ```{r}
@@ -1096,5 +1140,28 @@ library(testthat)
 ```{r}
 
 ```
+=======
+# normMethod_quantile.R
+
+```{r}
+```
+
+# normMethod_RMS.R
+
+```{r}
+```
+
+# normMethod_stdev.R
+
+```{r}
+```
+
+# normMethod_TIC.R
+
+```{r}
+```
+
+
+>>>>>>> f435d1f... Updated issue log
 
 
