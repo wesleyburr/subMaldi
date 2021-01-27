@@ -194,4 +194,8 @@ Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 >>>>>>> fb110b9... Fixed packaged structure - removed .tar.gz
 RoxygenNote: 7.1.1
+<<<<<<< HEAD
 >>>>>>> 105654b... Fixing package structure - removed .tar.gz
+=======
+biocViews:
+>>>>>>> e99bf5d... Issue (JOSS 5): Added biocViews: as a field in DESCRIPTION to make dependencies searched in BioConductor database
