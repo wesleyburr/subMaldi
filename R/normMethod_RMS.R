@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------
-# Last Updated: June 9, 2020
-# Author: Kristen Yeh
+# Last Updated: January 28, 2021
+# Author: Kristen Yeh, Sophie Castel
 # Title: subMALDI: Normalization Method - RMS
 # -----------------------------------------------------------------------
 
