@@ -41,7 +41,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
   spectra <- lapply(spectra_cols, function(x){dat[x]})
   i <- do.call(what = data.frame, args = c(spectra))
   
-  dat <- cbind(mz, dat, Sum = apply(i, 1, sum, na.rm = TRUE))
+  dat <- data.frame(cbind(mz, dat, Sum = apply(i, 1, sum, na.rm = TRUE)))
   
   return(dat)
 }
@@ -57,7 +57,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
   spectra <- lapply(spectra_cols, function(x){dat[x]})
   i <- do.call(what = data.frame, args = c(spectra))
   
-  dat <- cbind(mz, dat, Average = apply(i, 1, mean, na.rm = TRUE))
+  dat <- data.frame(mz, dat, Average = apply(i, 1, mean, na.rm = TRUE))
   
   return(dat)
 }
