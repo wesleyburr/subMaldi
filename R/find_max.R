@@ -64,7 +64,7 @@ find_max <- function (dat, mass_dat, spectra_cols){
   which_max <- apply(i, 2, which.max)
   max_mz <- mz[which_max]
   
-  max_spec <- cbind(max_i, max_mz)
+  max_spec <- data.frame(cbind(max_i, max_mz))
   colnames(max_spec) <- c("Intensity (Max)", "Mass")
   
   return(max_spec)
