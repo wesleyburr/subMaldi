@@ -54,7 +54,7 @@
     
     i_mult <- t(t(i)*factors)
     
-    dat <- cbind(mz, i_mult)
+    dat <- data.frame(mz, i_mult)
     colnames(dat) <- c("full_mz", spectra_cols)
     
     return(dat)

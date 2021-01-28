@@ -101,10 +101,14 @@ find_max <- function (dat, mass_dat, spectra_cols){
   max_mz <- mz[which_max]
   
 <<<<<<< HEAD
+<<<<<<< HEAD
   max_spec <- data.frame(cbind(max_i, max_mz))
 =======
   max_spec <- cbind(max_i, max_mz)
 >>>>>>> 29ad768... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
+=======
+  max_spec <- data.frame(cbind(max_i, max_mz))
+>>>>>>> f78c2c2... JOSS 12 (Issue):  Generalized functions for any number of spectra; removed redundancies
   colnames(max_spec) <- c("Intensity (Max)", "Mass")
   
   return(max_spec)
