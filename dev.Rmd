@@ -126,10 +126,14 @@ Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for M
 ## JOSS 5 
 Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
 
-## JOSS 12 - fix redundancies in code.. this is a doozie
+## JOSS 12 - generalize and fix redundancies in code
 
+<<<<<<< HEAD
 # avgSpectra.R
 >>>>>>> 46dcb76... Updated issue log
+=======
+# avgSpectra.R (done)
+>>>>>>> 1b35d86... Updated issue log
 
 ```{r}
 avgSpectra <- function(dat, method = "mean", spectra_cols){
@@ -191,6 +195,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## find_max.R (done)
 =======
 # find_max.R
@@ -204,6 +209,9 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 =======
 # find_max.R
 >>>>>>> 46dcb76... Updated issue log
+=======
+# find_max.R (done)
+>>>>>>> 1b35d86... Updated issue log
 
 ```{r}
 # -----------------
@@ -556,8 +564,12 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 ```{r}
 ```
 
+<<<<<<< HEAD
 # normMethod_max.R
 >>>>>>> 46dcb76... Updated issue log
+=======
+# normMethod_max.R (done)
+>>>>>>> 1b35d86... Updated issue log
 
 ```{r}
 # -----------------------
@@ -660,6 +672,7 @@ norm_max <- function(dat, mass_dat, spectra_cols){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## norm_median.R (done)
 =======
 # normMethod_median.R
@@ -673,6 +686,9 @@ norm_max <- function(dat, mass_dat, spectra_cols){
 =======
 # normMethod_median.R
 >>>>>>> 46dcb76... Updated issue log
+=======
+# normMethod_median.R (done)
+>>>>>>> 1b35d86... Updated issue log
 
 ```{r}
 
@@ -748,6 +764,7 @@ norm_med<- function(dat, mass_dat, spectra_cols){
 }
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -2020,26 +2037,329 @@ library(testthat)
 ```
 =======
 # normMethod_quantile.R
+=======
+# normMethod_quantile.R (done)
+>>>>>>> 1b35d86... Updated issue log
 
 ```{r}
+# --------------------------------------------------------------------------------------------
+# Date: January 28, 2021
+# Author: Kristen Yeh, Sophie Castel
+# Title: Normalization Method - Quantile
+# --------------------------------------------------------------------------------------------
+
+
+# Quantile normalization consists of two steps:
+    # 1. Create a mapping between ranks and values. For rank 1, find the n values,
+       # one per spectrum, that are the smallest value on the spectrum, and save their
+       # averages. Similarly for rank 2 and the second smallest values, and on up to
+       # the n largest values, one per spectrum.
+    # 2. For each spectrum, replace the actual values with these averages.
+
+# Basically, index each intensity value in each spectrum then sort
+# by intensity (value). Probably need 2 truncate. Average spectrum for the sorted spectra
+# is calculated. The averages are then inserted into the sorted spectra.
+# The spectra are then reverted to their unsorted order using the index.
+
+
+.nMethod_quantile <- function(dat, mass_dat, spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+  )    
+  
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra for comparison.")
+    }
+ 
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  i <- data.frame(mz, i)
+  colnames(i) <- c("full_mz", spectra_cols)
+  
+  i_melt <- melt(i, id.vars = "full_mz")
+  colnames(i_melt) <- c("full_mz","Spectrum","Intensity")
+  
+  i_melt <- dplyr::filter(i_melt, Intensity != 0)
+  
+  i_melt <- i_melt %>% group_by(Spectrum)  %>% mutate(id = row_number())
+  ordr <- i_melt[order(i_melt$Intensity, decreasing = TRUE),]
+  
+  r <- rep(NA, length(spectra_cols))
+  
+  for(j in 1:length(spectra_cols)){
+    r[j] <- max(as.numeric(i_melt$id[which(i_melt$Spectrum == spectra_cols[j])]))
+  }
+  
+  r_min <- min(r)
+  
+  logic <-which(r == r_min)
+  
+  trunc <- ordr[(which(ordr$id <= r[logic])),]
+  
+  i_trunc <- data.frame(matrix(ncol = length(unique(trunc$Spectrum)), nrow = max(trunc$id)))
+  
+  for(j in 1:length(unique(trunc$Spectrum))){
+    
+    i_trunc[j] <- trunc$Intensity[which(trunc$Spectrum == spectra_cols[j])]
+    colnames(i_trunc)[j] <- spectra_cols[j]
+    
+  }
+  
+  i_trunc <- data.frame(i_trunc, avg = apply(i_trunc, 1, FUN = mean, na.rm = TRUE))
+  
+  for(j in 1:length(unique(trunc$Spectrum))){
+    trunc$Intensity[which(trunc$Spectrum == colnames(i_trunc)[j])] <- i_trunc$avg
+  }
+  
+  dat <- trunc[order(trunc[mass_dat], decreasing = FALSE), ] %>% spread(Spectrum, Intensity)
+  
+  dat[is.na(dat)] <- 0
+  dat <- dat[-2]
+  return(as.data.frame(dat))
+}
+
 ```
 
-# normMethod_RMS.R
+# normMethod_RMS.R (done)
 
 ```{r}
+
+# -------------------------
+# METHOD: ROOT MEAN SQUARE
+# -------------------------
+
+.RMS <- function(y, n){
+  right <- 1 / (n - 1)
+  left <- sum(y^2)
+  prod <- prod(left, right)
+  sqrt(prod)
+}
+  
+.norm_RMS <- function(y, RMS){
+  return(y/RMS) # single value
+}
+
+.nMethod_RMS <- function(dat, mass_dat, spectra_cols){
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  n <- nrow(dat)
+  
+  rms <- apply(i, 2, FUN = function(x) { .RMS(y = x, n = n)})
+  
+  i_rms <- t(t(i)*rms^-1)  # i / rms matrix multiplication
+  
+  dat <- data.frame(mz, i_rms)
+  
+  colnames(dat) <- c("full_mz", spectra_cols)
+
+  return(dat)
+  
+}
+
 ```
 
-# normMethod_stdev.R
+# normMethod_stdev.R (done)
 
 ```{r}
+# ------------------------------------
+# METHOD: STANDARD DEVIATION OF NOISE
+# ------------------------------------
+
+# Find a region of the spectrum with only noise and minimal peaks
+# (Should be same region for all spectra)
+# Evaluate standard deviation of intensity in that region for each spec
+# Divide intensity of EACH PEAK IN SPEC by its st. dev.
+
+
+.normMethod_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+  )
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  noise <- i[which(mz > lower & upper > mz),]
+  noise[noise == 0] <- NA
+  
+  std_dev <- apply(noise, 2, FUN = sd, na.rm = TRUE)
+  
+  i_sd <- t(t(i)*std_dev^-1) # i / st_dev matrix multiplication
+      
+  dat <- data.frame(mz, i_sd)
+  
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
+  return(dat)
+}
+
 ```
 
-# normMethod_TIC.R
+# normMethod_TIC.R (done)
 
 ```{r}
+# ----------------------
+# METHOD: NORMALIZE TIC
+# ----------------------
+
+# This method evaluates the sum of all intensities of each spectrum in a set.
+# If the sum is not equivalent between spectra, multiplies the spectra by
+# normalization factor.
+
+
+.normMethod_TIC <- function(dat, mass_dat, spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+  )    
+  
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra for comparison.")
+    }
+  
+  
+    mz <- dat[[mass_dat]]
+    
+    spectra <- lapply(spectra_cols, function(x){dat[x]})
+    i <- do.call(what = data.frame, args = c(spectra))
+
+    i_sum <- apply(i, 2, FUN = sum)
+  
+    max_sum <- max(i_sum)
+    
+    for(j in 1:length(spectra_cols)){
+      
+      if(i_sum[j] == max_sum){
+      
+        other <- i_sum[-j]
+        other_index <- which(i_sum %in% other)
+        
+        factors <- rep(1,length(spectra_cols))
+        
+        factors[other_index] = i_sum[j]/i_sum[other_index]
+        
+      }
+    }
+    
+    i_mult <- t(t(i)*factors)
+    
+    dat <- data.frame(mz, i_mult)
+    colnames(dat) <- c("full_mz", spectra_cols)
+    
+    return(dat)
+    
+  }
+
 ```
 
+# normMethod_rel_TIC (done)
 
+<<<<<<< HEAD
 >>>>>>> 46dcb76... Updated issue log
+=======
+```{r}
+# ---------------------
+# METHOD: RELATIVE TIC
+# ---------------------
+
+# This method evaluates the sum of all intensities of each spectrum in a set.
+# If the sum is not equivalent between spectra, multiplies the spectra by
+# normalization factor.
+# Each peak in each spectrum is then divided by the normalized TIC.
+
+# Divide intensity of each peak in spectrum by sum of all intensities
+.norm_TIC <- function(y, all_y){
+  return(y/all_y) # single value
+}
+
+.normMethod_rel_TIC <- function(dat, mass_dat, spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+  )    
+  
+  
+  mz <- dat[[mass_dat]]
+    
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+
+  i_sum <- apply(i, 2, FUN = sum)
+  
+  max_sum <- max(i_sum)
+  
+  for(j in 1:length(spectra_cols)){
+      
+    if(i_sum[j] == max_sum){
+      
+      other <- i_sum[-j]
+      other_index <- which(i_sum %in% other)
+        
+      factors <- rep(1,length(spectra_cols))
+        
+      factors[other_index] = i_sum[j]/i_sum[other_index]
+        
+      }
+    }
+  
+    i_mult <- t(t(i)*factors)
+    
+    i_rel_TIC<- t(t(i_mult)*max_sum^-1) # i_mult / max_sum matrix multiplication
+    
+    dat <- data.frame(mz, i_rel_TIC)
+    colnames(dat) <- c("full_mz", spectra_cols)
+    
+    return(dat)
+}
+
+```
+>>>>>>> 1b35d86... Updated issue log
 
 
