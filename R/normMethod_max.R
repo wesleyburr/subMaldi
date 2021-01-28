@@ -38,7 +38,7 @@
   i <- do.call(what = data.frame, args = c(spectra))
   
   i_n <- apply(i, 2, FUN = .normalize)
-  dat <- cbind(mz, i_n)
+  dat <- data.frame(cbind(mz, i_n))
   colnames(dat) <- c("full_mz", spectra_cols)
   
   return(dat)
@@ -80,7 +80,7 @@
   max_i <- i[which_max[1], which_max[2]]
   
   i_n <- apply(i, 2, FUN = function(x) {.normalize_set(y = x, max_y = max_i)} )
-  dat <- cbind(mz, i_n)
+  dat <- data.frame(mz, i_n)
   colnames(dat) <- c("full_mz", spectra_cols)
   
   return(dat)
