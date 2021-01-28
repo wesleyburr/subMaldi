@@ -30,6 +30,7 @@ Description: subMALDI is an open framework tool that permits organization,
     of spectral data sets. As a result of the package's open framework, subMALDI data 
     sets are compatible with functions from a wide variety of other R packages, and 
     user-defined functions are easier to implement and test.
+<<<<<<< HEAD
 Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3), reshape2 (>= 1.4.4), RColorBrewer (>= 1.1-2)
 Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
 License: GPL (>= 3) + file LICENSE
@@ -55,6 +56,9 @@ License: GPL (>= 2) + file LICENSE
 Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.54.0)
 >>>>>>> de15a92... Fixed packaged structure
 =======
+=======
+Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3), reshape2 (>= 1.4.4)
+>>>>>>> 5914622... added reshape2 dependency
 Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
 >>>>>>> c823b44... Updated docs
 License: GPL (>= 3) + file LICENSE
