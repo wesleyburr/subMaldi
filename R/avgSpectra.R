@@ -256,8 +256,12 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
   spectra <- lapply(spectra_cols, function(x){dat[x]})
   i <- do.call(what = data.frame, args = c(spectra))
   
+<<<<<<< HEAD
   dat <- cbind(mz, dat, Sum = apply(i, 1, sum, na.rm = TRUE))
 =======
+>>>>>>> bede9d4... JOSS 12 (Issue):  Generalized functions for any number of spectra; removed redundancies
+=======
+  dat <- data.frame(cbind(mz, dat, Sum = apply(i, 1, sum, na.rm = TRUE)))
 >>>>>>> bede9d4... JOSS 12 (Issue):  Generalized functions for any number of spectra; removed redundancies
   
   return(dat)
@@ -409,6 +413,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
   spectra <- lapply(spectra_cols, function(x){dat[x]})
   i <- do.call(what = data.frame, args = c(spectra))
   
+<<<<<<< HEAD
   dat <- cbind(mz, dat, Average = apply(i, 1, mean, na.rm = TRUE))
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -423,6 +428,9 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 =======
 >>>>>>> 5800ee0... Updated avgSpectra
 =======
+=======
+  dat <- data.frame(mz, dat, Average = apply(i, 1, mean, na.rm = TRUE))
+>>>>>>> bede9d4... JOSS 12 (Issue):  Generalized functions for any number of spectra; removed redundancies
   
   return(dat)
 }
