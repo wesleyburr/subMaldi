@@ -46,7 +46,7 @@
   logic <- i_cust == 0 
   
   if(any(logic)){
-    stop(c("The selected maximum intensity is 0 in spectra labeled: ", paste0(colnames(i[logic]), sep = " ")))
+    stop(c("The selected maximum intensity is 0 in spectra labeled: ", paste0(colnames(i)[logic], sep = " ")))
   }
   
   i_norm <- t(t( i - min(i) )* ( i_cust - min(i) )^-1) # (i-min(i))/(i_cust-min(i)) Matrix multiplication
