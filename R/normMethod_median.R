@@ -37,9 +37,6 @@
     
     for(j in 1:length(spectra_cols)){
       
-      # multiplicative factors
-      factors <- c()
-      
       if(i_med[j] == max_med){
         
         other <- i_med[-j]
