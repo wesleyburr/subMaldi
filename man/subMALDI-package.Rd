@@ -24,8 +24,11 @@ Authors:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ae90a09... Updated documentation to reflect recent changes.
+=======
+>>>>>>> 4faa2ce... Updated documentation to reflect recent changes.
   \item Sophie Castel (\href{https://orcid.org/0000-0001-9086-0917}{ORCID})
 }
 }

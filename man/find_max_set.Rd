@@ -45,7 +45,7 @@ find_max_set(dat = Master, mass_dat = "full_mz", spectra_cols = c("After1", "Bla
 Find Most Intense Peak of a Set
 }
 \description{
-Analyzes spectral data and returns information about the most intense peak in all of the spectral set. Indicates the most intense spectrum, the \emph{m/z} value, and intesnity of the maximum. Allows for analysis of 2-6 spectra at once.
+Analyzes spectral data and returns information about the most intense peak in all of the spectral set. Indicates the most intense spectrum, the \emph{m/z} value, and intesnity of the maximum. Userust specify at least two spectra. 
 }
 \usage{
 find_max_set(dat, mass_dat, spec1, spec2, spec3 = NULL, 
@@ -54,12 +54,7 @@ find_max_set(dat, mass_dat, spec1, spec2, spec3 = NULL,
 \arguments{
   \item{dat}{The name of the spectral data frame, containing \code{m/z} data in the first column and spectral intensity data in subsequent columns.}
   \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data for the spectrum.}
-  \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the first spectrum to be analyzed.}
-  \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be analyzed.}
-  \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be analyzed. Default = NULL.}
-  \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be analyzed. Default = NULL.}
-  \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be analyzed. Default = NULL.}
-  \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be analyzed. Default = NULL.}
+  \item{spectra_cols}{A character vector; the names of the column in \code{dat} containing the intensity data for the spectra-of-interest.}
 }
 
 \value{Returns a data frame indidcating the peak maximum of the spectral set. The sample number, \emph{m/z} value, and intensity data are returned.
@@ -119,18 +114,16 @@ find_max_set(dat = Master, mass_dat = "full_mz", spectra_cols = c("After1", "Bla
 =======
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
+Sophie Castel <sophie.castel@ontariotechu.net>
 }
 
 \examples{
 ## Load sample dataset "Master.rda"
 data("Master")
 
-## Find the most intense peak of two spectra
-find_max_set(dat = Master, mass_dat = "full_mz", spec1 = "Before1", spec2 = "After1")
-
 ## Find the most intense peak of six spectra
-find_max_set(dat = Master, mass_dat = "full_mz", spec1 = "After1", spec2 = "Blank2", 
-              spec3 = "Before1", spec4 = "Blank1", spec5 = "After2", spec6 = "Before2")
+find_max_set(dat = Master, mass_dat = "full_mz", spectra_cols = c("After1", "Blank2", 
+            "Before1", "Blank1", "After2", "Before2")
 }
 <<<<<<< HEAD
 >>>>>>> 834ea85... Updated documentation - removed .tar.gz
