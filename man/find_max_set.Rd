@@ -4,7 +4,7 @@
 Find Most Intense Peak of a Set
 }
 \description{
-Analyzes spectral data and returns information about the most intense peak in all of the spectral set. Indicates the most intense spectrum, the \emph{m/z} value, and intesnity of the maximum. Userust specify at least two spectra. 
+Analyzes spectral data and returns information about the most intense peak in all of the spectral set. Indicates the most intense spectrum, the \emph{m/z} value, and intesnity of the maximum. User must specify at least two spectra. 
 }
 \usage{
 find_max_set(dat, mass_dat, spec1, spec2, spec3 = NULL, 
