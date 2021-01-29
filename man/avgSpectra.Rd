@@ -15,9 +15,10 @@ avgSpectra(dat, method = "mean", spectra_cols)
 Average Spectral Replicates
 }
 \description{
-Combines spectral replicates either by averaging (method = "mean") or summing (method = "sum) the intensity values across each row representing a mass-to-charge value in \code{full_mz}. Capable of averaging 1-6 spectra at once.
+Combines spectral replicates either by averaging (method = "mean") or summing (method = "sum) the intensity values across each row representing a mass-to-charge value in \code{full_mz}. 
 }
 \usage{
+<<<<<<< HEAD
 <<<<<<< HEAD
 avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL)
 >>>>>>> 3f68890... Updated avgSpectra
@@ -25,6 +26,9 @@ avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL, spec4 = NULL, spec5
 avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL, 
             spec4 = NULL, spec5 = NULL, spec6 = NULL)
 >>>>>>> c6a3769... Updated documentation
+=======
+avgSpectra(dat, method = "mean", spectra_cols)
+>>>>>>> ae90a09... Updated documentation to reflect recent changes.
 }
 \arguments{
 <<<<<<< HEAD
@@ -50,12 +54,7 @@ mass-to-charge value in \code{full_mz}.
 =======
   \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the first column.}
   \item{method}{A character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
-  \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the first spectrum to be averaged.}
-  \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be averaged. Default = NULL.}
-  \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be averaged. Default = NULL.}
-  \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be averaged. Default = NULL.}
-  \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be averaged. Default = NULL.}
-  \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be averaged. Default = NULL.}
+  \item{spectra_cols}{A character vector; the names of the column in \code{dat} containing the intensity data for the spectra-of-interest.}.}
 }
 
 \value{
@@ -67,6 +66,7 @@ https://github.com/wesleyburr/subMaldi
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
+Sophie Castel <sophie.castel@ontariotechu.net> 
 }
 
 \examples{
@@ -101,9 +101,10 @@ Sophie Castel <sophie.castel@ontariotechu.net>
 data("Master")
 
 ## Average blank spectrum 1 and 2 using the method "mean"
-ex <- avgSpectra(Master, method = "mean", spec1 = "Blank1", spec2 = "Blank2")
+ex <- avgSpectra(Master, method = "mean", spectra_cols = c("Blank1", "Blank2"))
 
 ## Average blank spectrum 1 and 2 using the method "sum"
+<<<<<<< HEAD
 <<<<<<< HEAD
 ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2")
 
@@ -124,6 +125,9 @@ df <- avgSpectra(dat = df, method = "mean")
 >>>>>>> 3f68890... Updated avgSpectra
 =======
 ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2") 
+=======
+ex <- avgSpectra(Master, method = "sum", spectra_cols = c("Blank1", "Blank2"))
+>>>>>>> ae90a09... Updated documentation to reflect recent changes.
 }
 \keyword{ manip }
 \keyword{ methods }
