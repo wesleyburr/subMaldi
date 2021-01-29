@@ -18,7 +18,7 @@
 # The spectra are then reverted to their unsorted order using the index.
 
 
-.nMethod_quantile <- function(dat, mass_dat, spectra_cols){
+.normMethod_quantile <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -34,7 +34,7 @@
   )    
   
   if(length(spectra_cols) < 2){
-    stop("Only one spectrum input. Please enter two spectra for comparison.")
+    stop("Only one spectrum input. Please enter two spectra.")
   }
   
   mz <- dat[[mass_dat]]

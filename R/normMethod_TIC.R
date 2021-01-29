@@ -29,7 +29,7 @@
   )    
   
   if(length(spectra_cols) < 2){
-    stop("Only one spectrum input. Please enter two spectra for comparison.")
+    stop("Only one spectrum input. Please enter at least two spectra.")
   }
   
   
