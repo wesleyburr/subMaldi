@@ -26,6 +26,7 @@ Average Spectral Replicates
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Combines spectral replicates either by averaging (method = "mean") or summing (method = "sum) the intensity values across each row representing a mass-to-charge value in \code{full_mz}. 
 =======
 Combines spectral replicates either by averaging (method = "mean") or summing (method = "sum) the intensity values across each row representing a mass-to-charge value in \code{full_mz}. Capable of averaging 1-6 spectra at once.
@@ -36,6 +37,9 @@ Combines spectral replicates either by averaging (method = "mean") or summing (m
 =======
 Combines spectral replicates either by averaging (method = "mean") or summing (method = "sum) the intensity values across each row representing a mass-to-charge value in \code{full_mz}. Capable of averaging 1-6 spectra at once.
 >>>>>>> 3f68890... Updated avgSpectra
+=======
+Combines spectral replicates either by averaging (method = "mean") or summing (method = "sum) the intensity values across each row representing a mass-to-charge value in \code{full_mz}. 
+>>>>>>> ae90a09... Updated documentation to reflect recent changes.
 }
 =======
 \title{Average Spectral Replicates}
@@ -44,6 +48,7 @@ Combines spectral replicates either by averaging (method = "mean") or summing (m
 \title{Average Spectral Replicates}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \usage{
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +82,9 @@ avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL, spec4 = NULL, spec5
 avgSpectra(dat, method = "mean", spec1, spec2, spec3 = NULL, 
             spec4 = NULL, spec5 = NULL, spec6 = NULL)
 >>>>>>> c6a3769... Updated documentation
+=======
+avgSpectra(dat, method = "mean", spectra_cols)
+>>>>>>> ae90a09... Updated documentation to reflect recent changes.
 }
 \arguments{
 <<<<<<< HEAD
@@ -95,12 +103,7 @@ Methods include "sum" and "mean". Default = "mean."}
 =======
   \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the first column.}
   \item{method}{A character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
-  \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the first spectrum to be averaged.}
-  \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be averaged. Default = NULL.}
-  \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be averaged. Default = NULL.}
-  \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be averaged. Default = NULL.}
-  \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be averaged. Default = NULL.}
-  \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be averaged. Default = NULL.}
+  \item{spectra_cols}{A character vector; the names of the column in \code{dat} containing the intensity data for the spectra-of-interest.}.}
 }
 <<<<<<< HEAD
 \details{
@@ -157,6 +160,7 @@ mass-to-charge value in \code{full_mz}.
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 5800ee0... Updated avgSpectra
@@ -319,6 +323,9 @@ ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2")
 >>>>>>> c6a3769... Updated documentation
 \seealso{
 %% ~~objects to See Also as \code{\link{help}}, ~~~
+=======
+Sophie Castel <sophie.castel@ontariotechu.net> 
+>>>>>>> ae90a09... Updated documentation to reflect recent changes.
 }
 =======
 
@@ -328,9 +335,10 @@ ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2")
 data("Master")
 
 ## Average blank spectrum 1 and 2 using the method "mean"
-ex <- avgSpectra(Master, method = "mean", spec1 = "Blank1", spec2 = "Blank2")
+ex <- avgSpectra(Master, method = "mean", spectra_cols = c("Blank1", "Blank2"))
 
 ## Average blank spectrum 1 and 2 using the method "sum"
+<<<<<<< HEAD
 <<<<<<< HEAD
 ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2")
 
@@ -379,6 +387,9 @@ Sophie Castel <sophie.castel@ontariotechu.net>
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 =======
 ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2") 
+=======
+ex <- avgSpectra(Master, method = "sum", spectra_cols = c("Blank1", "Blank2"))
+>>>>>>> ae90a09... Updated documentation to reflect recent changes.
 }
 \keyword{ manip }
 \keyword{ methods }
