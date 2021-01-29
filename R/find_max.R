@@ -60,6 +60,10 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
     all(spectra_cols %in% colnames(dat))
   )
   
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra.")
+  }
+  
   
   mz <- dat[[mass_dat]]
   
