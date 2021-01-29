@@ -112,6 +112,10 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
   )
 >>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
   
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra.")
+  }
+  
   
   mz <- dat[[mass_dat]]
   
