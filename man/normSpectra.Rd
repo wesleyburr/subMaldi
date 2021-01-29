@@ -4,12 +4,11 @@
 Normalize Spectral Data
 }
 \description{
-Normalize spectral data to a common scale using several different methods. Capable of normalizing 1-6 spectra at once.
+Normalize spectral data to a common scale using several different methods.
 }
 \usage{
 normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL, 
-            upper = NULL, lower = NULL, spec1, spec2 = NULL, 
-            spec3 = NULL, spec4 = NULL, spec5 = NULL, spec6 = NULL,
+            upper = NULL, lower = NULL, spectra_cols,
             showHI = FALSE)
 }
 \arguments{
@@ -19,12 +18,7 @@ normSpectra(dat, mass_dat, method = NULL, norm_mz = NULL,
   \item{norm_mz}{Numeric. If \code{method = "custom"}, the \emph{m/z} peak to which the spectral intensity should be normalized to. Value should have the same number of decimal places as the \emph{m/z} data in \code{dat}. If \code{method = "custom_imprecise", this value must be given as a character string of numbers.}}
   \item{lower}{Numeric. If \code{method = "stdev"}, the lower \emph{m/z} bound of the noise region of the spectrum.}
   \item{upper}{Numeric. If \code{method = "stdev"}, the upper \emph{m/z} bound of the noise region of the spectrum.}
-  \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the spectrum to be analyzed.}
-  \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be normalized. Default = NULL.}
-  \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be normalized. Default = NULL.}
-  \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be normalized. Default = NULL.}
-  \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be normalized. Default = NULL.}
-  \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be normalized. Default = NULL.}
+  \item{spectra_cols}{A character vector; the names of the column in \code{dat} containing the intensity data for the spectra-of-interest.}
   \item{showHI}{Logical. To be used with \code{method = "custom"}. If \code{TRUE}, intensity values greater than \code{norm_mz} will be kept. If \code{FALSE}, any peaks with intensity greater than \code{norm_mz} will be truncated to the intensity of \code{norm_mz}. Default = FALSE.}
 }
 \value{Returns a new data frame including the original \emph{m/z} data and normalized intensity data.
@@ -35,6 +29,7 @@ https://github.com/wesleyburr/subMaldi
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
 Wesley Burr <wburr@trentu.ca>
+Sophie Castel <sophie.castel@ontariotechu.net>
 }
 
 
@@ -58,15 +53,15 @@ data("Master2")
 
 ## Normalize spectrum "Before1" to its maximum intensity
 ex <- normSpectra(dat = Master2, mass_dat = "full_mz", 
-            method = "max", spec1 = "Before1")
+            method = "max", spectra_cols = "Before1")
 
 ## Normalize the spectra "Before1" and "Before2" to the TIC
 ex <- normSpectra(dat = Master2, mass_dat = "full_mz",
-            method = "TIC", spec1 = "Before1", spec2 = "Before2")
+            method = "TIC", spectra_cols = c("Before1", "Before2")
 
 ## Normalize spectrum "After1" to the intensity of the peak at m/z 253.22
 ex <- normSpectra(dat = Master2, mass_dat = "full_mz", 
-            method = "custom", norm_mz = 253.22, spec1 = "After1")
+            method = "custom", norm_mz = 253.22, spectra_cols = "After1")
 
 }
 
