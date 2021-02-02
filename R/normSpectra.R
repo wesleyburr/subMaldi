@@ -1,8 +1,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 ##' Normalize Spectral Data
 ##' 
 ##' Normalize spectral data to a common scale using several different methods.
@@ -85,6 +88,7 @@
 ##' 
 ##' 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # -----------------------------------------------------------------------
 # Last Updated: January 28, 2021
@@ -222,17 +226,13 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL, upper = NU
   return(r)
 >>>>>>> 7fb0bb9... Fixed object return bug
 =======
+=======
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 # -----------------------------------------------------------------------
 # Last Updated: January 28, 2021
 # Author: Kristen Yeh, Sophie Castel
-# Title: subMALDI: Umbrella Normalization Function
+# Title: subMALDI: Normalize Spectral Data
 # -----------------------------------------------------------------------
-
-
-# ------------
-# normSpectra
-# ------------
-
 
 normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL, upper = NULL, lower = NULL,
                         spectra_cols = NULL, showHI = FALSE){
@@ -298,6 +298,7 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL, upper = NU
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # -----------------------------------------------------------------------
 =======
 >>>>>>> f70720d... TIC norm added
@@ -306,4 +307,7 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL, upper = NU
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
 >>>>>>> af5047e... TIC norm added- removed .tar.gz
+=======
+# -----------------------------------------------------------------------
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 

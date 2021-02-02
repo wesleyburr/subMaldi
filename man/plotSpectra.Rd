@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Plot and Compare Spectra}
 =======
 =======
@@ -42,11 +43,17 @@ plotSpectra(
 =======
 \title{Plot and Compare Spectra}
 >>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+\title{Plot and Compare Multiple Spectra}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \usage{
 plotSpectra(
   dat,
   mass_dat,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
   spec1,
   spec2 = NULL,
   spec3 = NULL,
@@ -59,6 +66,7 @@ plotSpectra(
   colour4 = "goldenrod1",
   colour5 = "gold",
   colour6 = "seagreen3",
+<<<<<<< HEAD
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
   spectra_cols,
@@ -69,11 +77,14 @@ plotSpectra(
   palette = "Set2",
   colours = brewer.pal(length(spectra_cols), palette),
 >>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
+=======
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
   span = 5,
   thresh = 0.1,
   lbls = FALSE,
   lbl.fmt = "\%3.4f",
   min_mz = 0,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
   max_mz = max(dat[[mass_dat]]),
@@ -354,6 +365,63 @@ label. Default = 5 (ignores two peak maxima on either side of each label).}
 
 \item{thresh}{Single numeric value (0-100); the threshold of peak
 intensities which should be labeled.}
+=======
+  max_mz = 10000,
+  min_I = 0,
+  max_I = NULL,
+  x_ticks = 100,
+  intensity_scale = "free_y"
+)
+}
+\arguments{
+\item{dat}{The name of the spectral data frame, containing the \emph{m/z}
+data in the first column.}
+
+\item{mass_dat}{A character string; the name of the column in \code{dat}
+containing the \emph{m/z} data.}
+
+\item{spec1}{A character string; the name of the column in \code{dat}
+containing the intensity data for the first spectrum that is to be plotted.}
+
+\item{spec2}{A character string; the name of the column in \code{dat}
+containing the intensity data for the second spectrum to be plotted.}
+
+\item{spec3}{A character string; the name of the column in \code{dat}
+containing the intensity data for the third spectrum to be plotted.}
+
+\item{spec4}{A character string; the name of the column in \code{dat}
+containing the intensity data for the fourth spectrum to be plotted.}
+
+\item{spec5}{A character string; the name of the column in \code{dat}
+containing the intensity data for the fifth spectrum to be plotted.}
+
+\item{spec6}{A character string; the name of the column in \code{dat}
+containing the intensity data for the sixth spectrum to be plotted.}
+
+\item{colour1}{A character string indicating the colour the first spectrum
+should be plotted in.}
+
+\item{colour2}{A charater string indicating the colour of the second
+spectrum in the plot.}
+
+\item{colour3}{A charater string indicating the colour of the third
+spectrum in the plot.}
+
+\item{colour4}{A charater string indicating the colour of the fourth
+spectrum in the plot.}
+
+\item{colour5}{A charater string indicating the colour of the fifth
+spectrum in the plot.}
+
+\item{colour6}{A charater string indicating the colour of the sixth
+spectrum in the plot.}
+
+\item{span}{Single numeric value; the span of peak maximas in between each
+label. Default = 5 (ignores two peak maxima on either side of each label).}
+
+\item{thresh}{Single numeric value (0-100); the threshold of peak
+itensities which should be labelled.}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 
 \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the
 \emph{m/z} value of each peak maxima within the indicated \code{span} will
@@ -377,9 +445,13 @@ range.}
 \item{max_I}{Single numeric value; upper end of the intensity range
 observed in spectra.}
 
+<<<<<<< HEAD
 \item{x_ticks}{Single numeric value; the number of ticks on the x-axis.}
 
 \item{nrows}{Single integer value; the number of rows in plot arrangement.}
+=======
+\item{x_ticks}{Single numeric value; the space between ticks on x-axis.}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 
 \item{intensity_scale}{A character string; the method that should be used
 for determining the y-axis scales for each spectrum. If \code{method =
@@ -391,6 +463,7 @@ the most intense spectrum in the set.}
 Returns a line plot of the input spectra.
 }
 \description{
+<<<<<<< HEAD
 Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
 }
 <<<<<<< HEAD
@@ -460,12 +533,21 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca> Sophie Castel <
 \keyword{methods}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
+=======
+Plots multiple spectra on the same \emph{x}-axis scale for easier
+comparison. Allows for 2 to 6 spectra per plot, stacked on top of one
+another.
+}
+\examples{
+
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 ## Plotting using the sample dataset "Master.rda"
 data("Master")
 plotSpectra(dat = Master, mass_dat = "full_mz",
             spec1 = "Blank1", spec2 = "Blank2",
             intensity_scale = "free_y", lbls = TRUE)
 }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 % Add one or more standard keywords, see file 'KEYWORDS' in the
@@ -478,3 +560,13 @@ plotSpectra(dat = Master, mass_dat = "full_mz",
 \keyword{methods }
 \keyword{ aplot }
 >>>>>>> 14c6370... Updated documentation
+=======
+\references{
+https://github.com/wesleyburr/subMaldi
+}
+\author{
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+}
+\keyword{aplot}
+\keyword{methods}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
