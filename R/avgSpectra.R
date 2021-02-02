@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Average Spectral Replicates
 ##' 
 ##' Combines spectral replicates either by averaging (method = "mean") or
@@ -31,6 +34,7 @@
 ##' 
 
 
+<<<<<<< HEAD
 # --------------------------------------------------------------------------------------------
 # Date: January 27, 2021
 # Author: Kristen Yeh, Sophie Castel
@@ -41,6 +45,12 @@
 # Author: Kristen Yeh, Sophie Castel
 # Title: subMALDI Average Spectra
 >>>>>>> 3f68890... Updated avgSpectra
+=======
+# --------------------------------------------------------------------------------------------
+# Date: January 27, 2021
+# Author: Kristen Yeh, Sophie Castel
+# Title: subMALDI: Average Spectral Replicates
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 # --------------------------------------------------------------------------------------------
 
 # Average intensities across rows per sample

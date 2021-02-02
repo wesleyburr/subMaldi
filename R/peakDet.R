@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Peak Detection
 ##' 
 ##' Two methods for peak detection in baseline corrected spectral data. Methods
@@ -60,6 +63,7 @@
 ##'
 
 
+<<<<<<< HEAD
 # ----------------------------------------------------------------------------
 # Last Updated: August 25, 2020
 # Author: Kristen Yeh
@@ -70,6 +74,12 @@
 # Author: Kristen Yeh
 # Title: subMALDI - Peak Detection Parent Function
 >>>>>>> 5831098... Added pre-processing vignette
+=======
+# ----------------------------------------------------------------------------
+# Last Updated: August 25, 2020
+# Author: Kristen Yeh
+# Title: subMALDI: Peak Detection 
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 # ----------------------------------------------------------------------------
 
 
