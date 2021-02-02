@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Remove Empty Rows}
 =======
 =======
@@ -19,10 +20,14 @@ Data frames created using createSpecDF can have thousands to millions of rows, e
 =======
 \title{Remove Empty Rows}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+\title{Remove Empty Rows}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \usage{
 rmveEmpty(dat)
 }
 \arguments{
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,6 +67,14 @@ https://github.com/wesleyburr/subMaldi
 Returns the input data frame without its all-zero rows.
 }
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+\item{dat}{The spectral data frame, containing \code{full_mz} in the first
+column, to be trimmed of all-zero rows.}
+}
+\value{
+Returns the input data frame without its all-zero rows.
+}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \description{
 Data frames created using createSpecDF can have thousands to millions of
 rows, especially when dealing with high resolution mass spectrometry data.
@@ -70,6 +83,7 @@ especially when it comes to visualizing data. This function removes empty
 rows to reduce the computational load and increase the ease of use of
 functions on the data frame. Any row where all elements (but the first,
 which is \code{full_mz}) equal 0 are removed from the data frame.
+<<<<<<< HEAD
 <<<<<<< HEAD
 }
 \note{
@@ -112,6 +126,14 @@ been mapped.
 ## Load sample dataset "After2.rda"
 data("After2")
 >>>>>>> db6ced3... Updated documentation
+=======
+}
+\note{
+Avoid truncating a dataframe until all samples to be compared have
+been mapped.
+}
+\examples{
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 
 ## Load sample dataset "Mastre.rda"
 data("Master")
@@ -192,6 +214,20 @@ Kristen Yeh <kristenyeh@trentu.ca>
 =======
 
 }
+<<<<<<< HEAD
 \keyword{ manip }
 \keyword{ methods }
 >>>>>>> 14c6370... Updated documentation
+=======
+\references{
+https://github.com/wesleyburr/subMaldi
+}
+\seealso{
+\code{\link{createSpecDF}},\code{\link{mapSpectrum}}
+}
+\author{
+Kristen Yeh <kristenyeh@trentu.ca>
+}
+\keyword{manip}
+\keyword{methods}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.

@@ -5,6 +5,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Subtract Blank Peaks from Sample Spectra}
 =======
 =======
@@ -19,10 +20,14 @@ This function takes the intensity values in the blank column of the mapped spect
 =======
 \title{Subtract Blank Peaks from Sample Spectra}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+\title{Subtract Blank Peaks from Sample Spectra}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \usage{
 subSpectra(dat, Blank_Var, Sample, Sub_Sample, showNeg = FALSE)
 }
 \arguments{
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -123,6 +128,17 @@ be subtracted from the sample column.}
 \item{Sample}{A character string; the name of the sample column that the
 blank data will be subtracted from.}
 
+=======
+\item{dat}{The spectral data frame, containing \code{full_mz} in the first
+column and intensity data in the subsequent columns.}
+
+\item{Blank_Var}{A character string; the name of the blank column that will
+be subtracted from the sample column.}
+
+\item{Sample}{A character string; the name of the sample column that the
+blank data will be subtracted from.}
+
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \item{Sub_Sample}{A character string; the name of the column to be filled
 with the subtracted spectrum.}
 
@@ -145,6 +161,7 @@ intensity of 0.
 }
 \examples{
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ## Load sample datasets "Master.rda"
@@ -164,6 +181,9 @@ Master <- subSpectra(dat = Master, Blank_Var = "Blank1",
 
 =======
 =======
+=======
+
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 ## Load sample datasets "Master.rda"
 data("Master")
 
@@ -215,6 +235,7 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
                       Sample = "Before1", Sub_Sample = "Subtracted")
 
+<<<<<<< HEAD
 >>>>>>> 6c09a20... Fixed documentation
 }
 <<<<<<< HEAD
@@ -226,3 +247,18 @@ Master <- subSpectra(dat = Master, Blank_Var = "Blank1",
 \keyword{ methods }
 \keyword{ manip }
 >>>>>>> 14c6370... Updated documentation
+=======
+
+}
+\references{
+https://github.com/wesleyburr/subMaldi
+}
+\seealso{
+\code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
+}
+\author{
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+}
+\keyword{manip}
+\keyword{methods}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.

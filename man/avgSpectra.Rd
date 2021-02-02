@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Average Spectral Replicates}
 \usage{
 avgSpectra(dat, method = "mean", spectra_cols)
@@ -32,6 +33,9 @@ Combines spectral replicates either by averaging (method = "mean") or summing (m
 =======
 \title{Average Spectral Replicates}
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
+=======
+\title{Average Spectral Replicates}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \usage{
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -62,6 +66,7 @@ avgSpectra(dat, method = "mean", spectra_cols)
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the
 first column.}
 
@@ -79,19 +84,34 @@ averaged intensity data.
   \item{method}{A character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
   \item{spectra_cols}{A character vector; the names of the column in \code{dat} containing the intensity data for the spectra-of-interest.}.}
 }
+=======
+\item{dat}{The mapped spectral data frame, containing \code{full_mz} in the
+first column.}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 
-\value{
-Returns a new column in the input data frame containing the averaged intensity data.
+\item{method}{A character string; the method used to combine the spectra.
+Methods include "sum" and "mean". Default = "mean."}
+
+\item{spectra_cols}{A character vector; the names of the column in
+\code{dat} containing the intensity data for the spectra-of-interest.}
 }
+<<<<<<< HEAD
 \references{
 https://github.com/wesleyburr/subMaldi
 >>>>>>> db6ced3... Updated documentation
 }
 <<<<<<< HEAD
+=======
+\value{
+Returns a new column in the input data frame containing the
+averaged intensity data.
+}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \description{
 Combines spectral replicates either by averaging (method = "mean") or
 summing (method = "sum") the intensity values across each row representing a
 mass-to-charge value in \code{full_mz}.
+<<<<<<< HEAD
 =======
 \author{
 Kristen Yeh <kristenyeh@trentu.ca>
@@ -212,7 +232,11 @@ df <- avgSpectra(dat = df, method = "mean")
 =======
 
 >>>>>>> 2931ed6... Added pre-processing vignette
+=======
+}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 \examples{
+
 ## Load sample dataset "Master.rda"
 data("Master")
 
@@ -248,8 +272,22 @@ ex <- avgSpectra(Master, method = "sum", spectra_cols = c("Blank1", "Blank2"))
 ex <- avgSpectra(Master, method = "sum", spec1 = "Blank1", spec2 = "Blank2") 
 =======
 ex <- avgSpectra(Master, method = "sum", spectra_cols = c("Blank1", "Blank2"))
+<<<<<<< HEAD
 >>>>>>> 4faa2ce... Updated documentation to reflect recent changes.
 }
 \keyword{ manip }
 \keyword{ methods }
 >>>>>>> 14c6370... Updated documentation
+=======
+
+}
+\references{
+https://github.com/wesleyburr/subMaldi
+}
+\author{
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Sophie Castel <sophie.castel@ontariotechu.net>
+}
+\keyword{manip}
+\keyword{methods}
+>>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
