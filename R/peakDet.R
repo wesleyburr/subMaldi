@@ -3,10 +3,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Peak Detection
 ##' 
 ##' Two methods for peak detection in baseline corrected spectral data. Methods
@@ -70,6 +73,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # ----------------------------------------------------------------------------
 # Last Updated: August 25, 2020
 # Author: Kristen Yeh
@@ -102,6 +106,12 @@
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 =======
 >>>>>>> 5831098... Added pre-processing vignette
+=======
+# ----------------------------------------------------------------------------
+# Last Updated: August 25, 2020
+# Author: Kristen Yeh
+# Title: subMALDI: Peak Detection 
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 # ----------------------------------------------------------------------------
 
 

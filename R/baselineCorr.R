@@ -3,10 +3,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Baseline Correction
 ##' 
 ##' Offers three different methods for baseline correction of raw spectral
@@ -75,6 +78,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # ----------------------------------------------------------------------------
 # Last Updated: February 3, 2021
 # Author: Kristen Yeh, Sophie Castel
@@ -93,6 +97,8 @@
 # Author: Kristen Yeh, Sophie Castel
 >>>>>>> c919861... Created unique .R files for each baseline correction method
 =======
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 # ----------------------------------------------------------------------------
 <<<<<<< HEAD
 # Last Updated: July 29, 2020

@@ -3,10 +3,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 =======
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Smooth Noise in Spectrum
 ##' 
 ##' Offers two different methods for smoothing noise in raw spectral data: a
@@ -58,6 +61,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # ----------------------------------------------------------------------------
 # Last Updated: July 10, 2020
 # Author: Kristen Yeh
@@ -90,6 +94,12 @@
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 =======
 >>>>>>> e43371a... Added smoothing
+=======
+# ----------------------------------------------------------------------------
+# Last Updated: July 10, 2020
+# Author: Kristen Yeh
+# Title: subMALDI: Smooth Noise in Spectrum
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 # ----------------------------------------------------------------------------
 
 
