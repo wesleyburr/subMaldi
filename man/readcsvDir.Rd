@@ -3,6 +3,7 @@
 \name{readcsvDir}
 \alias{readcsvDir}
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Import .csv Spectra from a Directory}
 =======
 \title{
@@ -12,11 +13,17 @@ Import .csv Spectra from a Directory
 Imports all \code{.csv} files in a directory, turns them into a binary data frame containing a "mass" and "Intensity" column, and outputs them as \code{.rda} files into an output directory. Allows for rapid import of many spectral datasets at once.
 }
 >>>>>>> c6a3769... Updated documentation
+=======
+\title{Import .csv Spectra from a Directory}
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \usage{
 readcsvDir(direct, massCol, intenseCol, output)
 }
 \arguments{
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \item{direct}{The path to the directory where the \code{.csv} files are
 held.}
 
@@ -25,6 +32,7 @@ held.}
 
 \item{intenseCol}{A character string; the name of the intensity column in
 the \code{.csv} files.}
+<<<<<<< HEAD
 
 \item{output}{The path to the directory where the exported \code{.rda}
 files containing the binary spectral data frames should go.}
@@ -42,6 +50,12 @@ files containing the binary spectral data frames should go.}
 =======
 
 >>>>>>> 5831098... Added pre-processing vignette
+=======
+
+\item{output}{The path to the directory where the exported \code{.rda}
+files containing the binary spectral data frames should go.}
+}
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \value{
 Returns a directory of \code{.rda} files containing binary spectral
 data frames into the \code{output} file path.
@@ -56,6 +70,7 @@ spectral datasets at once.
 https://github.com/wesleyburr/subMaldi
 }
 \author{
+<<<<<<< HEAD
 <<<<<<< HEAD
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 =======
@@ -83,3 +98,8 @@ readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = 
 
 \keyword{ methods }
 >>>>>>> c6a3769... Updated documentation
+=======
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+}
+\keyword{methods}
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.

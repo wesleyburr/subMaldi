@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Find Peak Maxima
 ##' 
 ##' Analyzes spectral data and returns a list of the most intense peak in each
@@ -27,16 +30,17 @@
 ##' ## Find maxima of four spectra
 ##' find_max(dat = Master, mass_dat = "full_mz", spectra_cols = c("Blank1", "Before1", "After1", "After2")
 ##'
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 # -----------------------------------------------------------------------
 # Last Updated: January 27, 2021
 # Author: Kristen Yeh, Sophie Castel
-# Title: subMALDI Peak Maximum Functions
+# Title: subMALDI: Find Peak Maxima
 # -----------------------------------------------------------------------
 
-# -----------------
-# FIND PEAK MAXIMA
-# -----------------
 
 # Find peak maximum and associated m/z of spectra
 find_max <- function (dat, mass_dat, spectra_cols){
@@ -72,6 +76,7 @@ find_max <- function (dat, mass_dat, spectra_cols){
 >>>>>>> 5cce370... JOSS 5 Issue: Generalized functions for any number of spectra; removed redundancies
 
 # -----------------------------------------------------------------------
+<<<<<<< HEAD
 # Last Updated: January 27, 2021
 # Author: Kristen Yeh, Sophie Castel
 # Title: subMALDI: Find Peak Maxima
@@ -146,3 +151,5 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 }
 
 # -----------------------------------------------------------------------
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.

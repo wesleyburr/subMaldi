@@ -10,13 +10,19 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 #########################################################################
 
 
 ## JOSS 11 (Closed)
+<<<<<<< HEAD
 =======
 ## JOSS 11
 >>>>>>> f435d1f... Updated issue log
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 
 ```{r}
 # loading uncompressed data files
@@ -55,12 +61,16 @@ save(Master2, file = "/home/sophie/subMaldi/data/compressed/Master2.rda", compre
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 
 #########################################################################
 
 
 
 
+<<<<<<< HEAD
 
 ## JOSS 5 (Closed)
 Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
@@ -78,9 +88,19 @@ Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for M
 ## avgSpectra.R (done)
 =======
 ## JOSS 5 
+=======
+## JOSS 5 (Closed)
+>>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
 
-## JOSS 12 - generalize and fix redundancies in code
+
+
+
+#########################################################################
+
+
+
+## JOSS 12 - generalize and fix redundancies in code (Closed)
 
 <<<<<<< HEAD
 # avgSpectra.R
@@ -1606,4 +1626,139 @@ library(testthat)
 ```
 >>>>>>> d7c9654... Updated issue log
 
+
+
+#########################################################################
+
+
+## JOSS 6: roxygen2 (Closed)
+
+```{r}
+library(Rd2roxygen)
+
+oxygnze <- function(file){
+  
+  options(roxygen.comment = "##' ")
+  str(info <- parse_file(file))
+  
+  # parse_and_save() combines these two steps
+  cat(create_roxygen(info), sep = "\n")
+  
+}
+
+```
+
+
+# avgSpectra.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/avgSpectra.Rd")
+```
+
+# baselineCorr.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/baselineCorr.Rd")
+```
+
+
+# createSpecDF.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/createSpecDF.Rd")
+```
+
+
+# find_max.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/find_max.Rd")
+```
+
+
+# find_max_set.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/find_max_set.Rd")
+```
+
+
+# mapSpectrum.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/mapSpectrum.Rd")
+```
+
+
+# normSpectra.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/normSpectra.Rd")
+```
+
+
+# peakDet.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/peakDet.Rd")
+```
+
+
+# plotgridSpectra.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/plotgridSpectra.Rd")
+```
+
+
+# plotSpectra.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/plotSpectra.Rd")
+```
+
+
+# plotSpectrum.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/plotSpectrum.Rd")
+```
+
+
+# readcsvDir.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/readcsvDir.Rd")
+```
+
+
+# readcsvSpec.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/readcsvSpec.Rd")
+```
+
+
+# rmveEmpty.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/rmveEmpty.Rd")
+```
+
+
+# smoothSpectrum.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/smoothSpectrum.Rd")
+```
+
+
+# subSpectra.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/subSpectra.Rd")
+```
+
+
+## JOSS 
 
