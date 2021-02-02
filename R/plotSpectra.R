@@ -2,17 +2,21 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ##' Plot and Compare Spectra
 ##' 
 ##' Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
 =======
 =======
 >>>>>>> 046132a... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 ##' Plot and Compare Multiple Spectra
 ##' 
 ##' Plots multiple spectra on the same \emph{x}-axis scale for easier
 ##' comparison. Allows for 2 to 6 spectra per plot, stacked on top of one
 ##' another.
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 =======
@@ -27,12 +31,15 @@
 ##' 
 ##' Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
 >>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 ##' 
 ##' 
 ##' @param dat The name of the spectral data frame, containing the \emph{m/z}
 ##' data in the first column.
 ##' @param mass_dat A character string; the name of the column in \code{dat}
 ##' containing the \emph{m/z} data.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -48,6 +55,8 @@
 =======
 =======
 >>>>>>> 046132a... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 ##' @param spec1 A character string; the name of the column in \code{dat}
 ##' containing the intensity data for the first spectrum that is to be plotted.
 ##' @param spec2 A character string; the name of the column in \code{dat}
@@ -77,6 +86,7 @@
 ##' @param thresh Single numeric value (0-100); the threshold of peak
 ##' itensities which should be labelled.
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 =======
 ##' @param spectra_cols A character string; the name(s) of the column(s) in \code{dat}
@@ -100,6 +110,8 @@
 ##' @param thresh Single numeric value (0-100); the threshold of peak
 ##' intensities which should be labeled.
 >>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 ##' @param lbls Logical. If \code{lbls = TRUE}, labels indicating the
 ##' \emph{m/z} value of each peak maxima within the indicated \code{span} will
 ##' be included in the output plot. If \code{lbls = FALSE}, labels are not
@@ -120,6 +132,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ##' @param x_ticks Single numeric value; the number of ticks on the x-axis.
 ##' @param nrows Single integer value; the number of rows in plot arrangement.
 =======
@@ -136,11 +149,15 @@
 ##' @param x_ticks Single numeric value; the number of ticks on the x-axis.
 ##' @param nrows Single integer value; the number of rows in plot arrangement.
 >>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+##' @param x_ticks Single numeric value; the space between ticks on x-axis.
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 ##' @param intensity_scale A character string; the method that should be used
 ##' for determining the y-axis scales for each spectrum. If \code{method =
 ##' "free_y"}, each spectrum will be plotted with its own intensity scale. If
 ##' \code{method = "fixed"}, each spectrum will be plotted with the y-axis of
 ##' the most intense spectrum in the set.
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -188,6 +205,10 @@
 >>>>>>> d58b4f6... Added RColorBrewer palettes to plotSpectra() function
 ##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca> Sophie Castel <sophie.castel@@ontariotechu.net>
 >>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+##' @return Returns a line plot of the input spectra.
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords methods aplot
 ##' @examples
@@ -195,6 +216,7 @@
 ##' ## Plotting using the sample dataset "Master.rda"
 ##' data("Master")
 ##' plotSpectra(dat = Master, mass_dat = "full_mz",
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -208,12 +230,15 @@
 =======
 =======
 >>>>>>> 046132a... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 ##'             spec1 = "Blank1", spec2 = "Blank2",
 ##'             intensity_scale = "free_y", lbls = TRUE)
 
 # -----------------------------------------------------------------------
 # Last Updated: July 15, 2020
 # Author: Kristen Yeh
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 =======
@@ -234,10 +259,13 @@
 # Last Updated: February 3, 2021
 # Author: Kristen Yeh, Sophie Castel
 >>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 # Title: subMALDI: Plot and Compare Multiple Spectra
 # -----------------------------------------------------------------------
 
 plotSpectra <- function(dat, mass_dat,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -250,6 +278,8 @@ plotSpectra <- function(dat, mass_dat,
 =======
 =======
 >>>>>>> 046132a... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
                         spec1, spec2 = NULL,
                         spec3 = NULL,
                         spec4 = NULL,
@@ -261,6 +291,7 @@ plotSpectra <- function(dat, mass_dat,
                         colour4 = "goldenrod1",
                         colour5 = "gold",
                         colour6 = "seagreen3",
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 =======
@@ -283,11 +314,14 @@ plotSpectra <- function(dat, mass_dat,
                         palette = "Set2",
                         colours = brewer.pal(length(spectra_cols), palette),
 >>>>>>> d58b4f6... Added RColorBrewer palettes to plotSpectra() function
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
                         span = 5,
                         thresh = 0.1,
                         lbls = FALSE, 
                         lbl.fmt = "%3.4f",
                         min_mz = 0,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -534,12 +568,134 @@ plotSpectra <- function(dat, mass_dat,
 <<<<<<< HEAD
                                         by = x_ticks)) +
 >>>>>>> 046132a... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
+=======
+                        max_mz = 10000,
+                        min_I = 0,
+                        max_I = NULL,
+                        x_ticks = 100,
+                        intensity_scale = "free_y"){   
+  options(warn=-1)
+  mass <- dat[[mass_dat]]
+  
+  if(min_mz < min(mass_dat)){
+    min_mz <- floor(min(mass)) }
+  
+  if(max_mz > max(mass_dat)){
+    max_mz <- ceiling(max(mass)) }
+  
+  spec <- list(spec1, spec2, spec3, spec4, spec5, spec6)
+  nulls <- c()
+  
+  for(i in 1:length(spec)){
+    if(is.null(spec[[i]])){
+      null <- i
+      nulls <- append(nulls, null, after = length(nulls)) } 
+  }
+  
+  n <- length(spec)-length(nulls)
+  
+  if(n == 1){
+    stop('Only one input spectrum. Please use plotSpectrum().')
+  }
+  
+  if(n == 2){
+    # ensure spec names are columns in dat
+    stopifnot(is.character(spec1), is.character(spec2),
+              spec1 %in% names(dat), spec2 %in% names(dat))
+    
+    names(dat) <- c("full_mz", spec1, spec2)
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), 
+                     factor_key= TRUE) }
+  
+  if(n == 3){
+    # ensure spec names are columns in dat
+    stopifnot(is.character(spec1), is.character(spec2),
+              is.character(spec3), spec1 %in% names(dat), 
+              spec2 %in% names(dat), spec3 %in% names(dat))
+    
+    names(dat) <- c("full_mz", spec1, spec2, spec3)
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), all_of(spec3),
+                     factor_key= TRUE) }
+  
+  if(n == 4){
+    # ensure spec names are columns in dat
+    stopifnot(is.character(spec1), is.character(spec2),
+              is.character(spec3), is.character(spec4),
+              spec1 %in% names(dat), spec2 %in% names(dat), 
+              spec3 %in% names(dat), spec4 %in% names(dat))
+    
+    names(dat) <- c("full_mz", spec1, spec2, spec3, spec4)
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), all_of(spec3),
+                     all_of(spec4), factor_key= TRUE) }
+  
+  if(n == 5){
+    # ensure spec names are columns in dat
+    stopifnot(is.character(spec1), is.character(spec2),
+              is.character(spec3), is.character(spec4),
+              is.character(spec5), spec1 %in% names(dat), 
+              spec2 %in% names(dat), spec3 %in% names(dat), 
+              spec4 %in% names(dat), spec5 %in% names(dat))
+    
+    names(dat) <- c("full_mz", spec1, spec2, spec3, spec4,
+                    spec5)
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), all_of(spec3),
+                     all_of(spec4), all_of(spec5), factor_key= TRUE) }
+  
+  if(n == 6){
+    # ensure spec names are columns in dat
+    stopifnot(is.character(spec1), is.character(spec2),
+              is.character(spec3), is.character(spec4),
+              is.character(spec5), is.character(spec6),
+              spec1 %in% names(dat), spec2 %in% names(dat), 
+              spec3 %in% names(dat), spec4 %in% names(dat), 
+              spec5 %in% names(dat), spec6 %in% names(dat))
+    
+    names(dat) <- c("full_mz", spec1, spec2, spec3, spec4,
+                    spec5, spec6)
+    
+    # reformat the data frame for easy faceting
+    sorted <- gather(dat, key = "Spectra", value = "Intensity", 
+                     all_of(spec1), all_of(spec2), all_of(spec3),
+                     all_of(spec4), all_of(spec5), all_of(spec6),
+                     factor_key= TRUE) }
+  
+  # If lbls = TRUE
+  if(lbls == TRUE & is.null(max_I)){
+    tst <- .test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
+    # Check that labels have <= decimal places as data
+    if(tst == TRUE){
+      stop('Label format indicates more decimal places 
+           than given in data.') 
+    } else{
+      # plot the sorted data
+      ggplot(sorted, 
+             aes(x = full_mz, y = Intensity, colour = Spectra)) +
+        geom_line() +
+        labs(x = expression(italic("m/z")), y = "Intensity") +
+        facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
+        scale_x_continuous(limits = c(min_mz, max_mz), 
+                           breaks = seq(min_mz, max_mz, 
+                                        by = x_ticks)) +
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
         theme_bw() + theme(panel.border = element_blank(),
                            strip.background = element_blank(),
                            strip.text.x = element_blank(),
                            legend.position = "bottom",
                            axis.line = element_line(colour = "grey85",
                                                     size = 0.5)) +
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -592,12 +748,15 @@ plotSpectra <- function(dat, mass_dat,
 =======
 =======
 >>>>>>> 046132a... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
         scale_color_manual(values = c(colour1,colour2, colour3,
                                       colour4,colour5,colour6)) +
         stat_peaks(aes(x = full_mz, y = Intensity, group = 1),
                    ignore_threshold = thresh, span = span,
                    x.label.fmt = lbl.fmt, geom = "text",
                    check_overlap = TRUE, color = "black", cex = 3.0) }
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
                                     length.out = x_ticks)) +
@@ -616,12 +775,50 @@ plotSpectra <- function(dat, mass_dat,
 =======
 
 >>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+    
+  } else if(lbls == FALSE & is.null(max_I)){
+    # plot the sorted data
+    ggplot(sorted, aes(x = full_mz, y = Intensity, 
+                       colour = Spectra)) +
+      geom_line() +
+      labs(x = expression(italic("m/z")), y = "Intensity") +
+      facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
+      scale_x_continuous(limits = c(min_mz, max_mz), 
+                         breaks = seq(min_mz, max_mz, by = x_ticks)) +
+      theme_bw() + theme(panel.border = element_blank(),
+                         strip.background = element_blank(),
+                         strip.text.x = element_blank(),
+                         legend.position = "bottom",
+                         axis.line = element_line(colour = "grey85", 
+                                                  size = 0.5)) +
+      scale_color_manual(values = c(colour1,colour2,colour3,
+                                    colour4,colour5,colour6)) 
+  } else if(lbls == TRUE){
+    tst <- .test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
+    # Check that labels have <= decimal places as data
+    if(tst == TRUE){
+      stop('Label format indicates more decimal places 
+           than given in data.') 
+    } else{
+      # plot the sorted data
+      ggplot(sorted, 
+             aes(x = full_mz, y = Intensity, colour = Spectra)) +
+        geom_line() +
+        labs(x = expression(italic("m/z")), y = "Intensity") +
+        facet_wrap(~Spectra, ncol = 1, scales = intensity_scale) +
+        scale_x_continuous(limits = c(min_mz, max_mz), 
+                           breaks = seq(min_mz, max_mz, 
+                                        by = x_ticks)) +
+        scale_y_continuous(limits = c(min_I, max_I)) +
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
         theme_bw() + theme(panel.border = element_blank(),
                            strip.background = element_blank(),
                            strip.text.x = element_blank(),
                            legend.position = "bottom",
                            axis.line = element_line(colour = "grey85",
                                                     size = 0.5)) +
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -692,6 +889,8 @@ plotSpectra <- function(dat, mass_dat,
   
 >>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
 =======
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
         scale_color_manual(values = c(colour1,colour2, colour3,
                                       colour4,colour5,colour6)) +
         stat_peaks(aes(x = full_mz, y = Intensity, group = 1),
@@ -716,6 +915,7 @@ plotSpectra <- function(dat, mass_dat,
       scale_color_manual(values = c(colour1,colour2,colour3,
                                     colour4,colour5,colour6))
   }
+<<<<<<< HEAD
 >>>>>>> 046132a... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 =======
   }
@@ -723,6 +923,8 @@ plotSpectra <- function(dat, mass_dat,
   return(p)
   
 >>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+>>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 }
 
 
