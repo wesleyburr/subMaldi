@@ -21,6 +21,7 @@ norm_TIC <- function(dat, mass_dat, spectra_cols){
     mass_dat %in% colnames(dat),
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     all(spectra_cols %in% colnames(dat))
 =======
     all(spectra_cols %in% colnames(dat)),
@@ -30,6 +31,11 @@ norm_TIC <- function(dat, mass_dat, spectra_cols){
 =======
     all(spectra_cols %in% colnames(dat))
 >>>>>>> 7b46ea1... Removed lower/upper from stopifnot()
+=======
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+>>>>>>> 5f1bb92... .normMethod_ function format deprecated ----> norm_ . Scripts and functions renamed accordingly.
   )    
   
   if(length(spectra_cols) < 2){
