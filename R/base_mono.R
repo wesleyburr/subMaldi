@@ -1,30 +1,24 @@
 # ----------------------------------------------------------------------------
 # Last Updated: July 29, 2020
 # Author: Kristen Yeh
-# Title: subMALDI - Baseline Correction Methods
+# Title: subMALDI - Monotone Minimum Baseline Correction
 # ----------------------------------------------------------------------------
-
-
-# -----------------
-# MONOTONE MINIMUM
-# -----------------
-
 
 # Compute difference between points to determine slope of each point
 # Start from leftmost point A and continue until rightmost point:
 
-      # If slope of local point A < 0, a nearest point B to the right
-      # of A whose slope > 0 is located. All points between A and B
-      # serve as baseline between A and B.
+# If slope of local point A < 0, a nearest point B to the right
+# of A whose slope > 0 is located. All points between A and B
+# serve as baseline between A and B.
 
-      # If slope of A > 0, a nearest point B to the right of A
-      # whose intensity is smaller than A is located. The intensity
-      # of every point on the result baseline between A and B equals
-      # to the intensity of A.
-      # Let A = B.
+# If slope of A > 0, a nearest point B to the right of A
+# whose intensity is smaller than A is located. The intensity
+# of every point on the result baseline between A and B equals
+# to the intensity of A.
+# Let A = B.
 
 
-.base_mono <- function(dat, mass_dat, intensity_dat){
+base_mono <- function(dat, mass_dat, intensity_dat){
   
   options(warn=-1)
   x <- dat[[mass_dat]]
@@ -139,57 +133,5 @@
     return(out)
   }
 }
-
-
-# ---------------
-# ----------------------------------------------------------------------------
-# ---------------
-
-
-# ----------------------
-# LINEAR INTERPOLATION
-# ----------------------
-
-
-# Linear interpolation takes two steps to estimate baseline:
-
-  # Divide the raw spectrum into small segments and use the mean, 
-  # the minimum or the median of the points in each segment as the 
-  # baseline point.
-
-  # Generate a baseline for the raw spectrum by linearly interpolating 
-  # baseline points across all small segments.
-
-.base_linear <- function(dat, mass_dat, intensity_dat, n){
-  
-  x <- dat[[mass_dat]]
-  y <- dat[[intensity_dat]]
-  
-  # Divide spectrum into segments and calculate the mean/min/median
-  # n = segment size
-  x_seg <- split(x, ceiling(seq_along(x)/n))
-  
-  # method = mean
-  xi <- lapply(x_seg,mean)
-  xi <- unlist(xi)
-  
-  # Generate baseline for spectrum w/ linear interpolation on points
-  bl <- interp1(x, y, xi, method = c("linear"))
-  
-  # for each window of size n
-  # subtract all intensity values by interpolated baseline in window
-  y_seg <- split(y, ceiling(seq_along(y)/n))
-  baseline <- c()
-  
-  for(b in 1:length(bl)){
-      bl_seg <- unlist(y_seg[b]) - bl[b]
-      baseline <- append(baseline, bl_seg, after = length(baseline))
-      baseline[which(baseline < 0)] <- 0
-  }
-  out <- data.frame(x, baseline)
-  names(out) <- c("mz", "baseline")
-  return(out)
-}
-
 
 # ----------------------------------------------------------------------------
