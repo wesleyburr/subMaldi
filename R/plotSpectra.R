@@ -64,6 +64,7 @@
 =======
 ##' @param spectra_cols A character string; the name(s) of the column(s) in \code{dat}
 ##' containing the intensity data for the spectra-of-interest.
+##' @param palette A character element; the RColorBrewer palette to use. See below for available palettes. 
 ##' @param colours A character string indicating the desired colour(s)
 ##' @param span Single numeric value; the span of peak maxima in between each
 ##' label. Default = 5 (ignores two peak maxima on either side of each label).
@@ -103,6 +104,9 @@
 ##' \code{method = "fixed"}, each spectrum will be plotted with the y-axis of
 ##' the most intense spectrum in the set.
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
 ##' 
 ##' @return Returns a line plot of the input spectra.
 ##' 
@@ -119,6 +123,7 @@
 ##'           }
 ##' 
 ##' 
+<<<<<<< HEAD
 ##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca> Sophie Castel <sophie.castel@@ontariotechu.net>
 =======
 ##' @return Returns a line plot of the input spectra.
@@ -126,6 +131,8 @@
 ##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
 >>>>>>> 6f77461... Each function in subMALDI now has its own .R file and documentation (if provided previously, except daughter functions).
 =======
+=======
+>>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
 ##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca> Sophie Castel <sophie.castel@@ontariotechu.net>
 >>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
 ##' @references https://github.com/wesleyburr/subMaldi
@@ -165,6 +172,7 @@
 plotSpectra <- function(dat, mass_dat,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         spectra_cols,
                         palette = "Set2",
                         colours = brewer.pal(length(spectra_cols), palette),
@@ -185,6 +193,11 @@ plotSpectra <- function(dat, mass_dat,
                         spectra_cols, 
                         colours = brewer.pal(length(spectra_cols), "Set2"),
 >>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+                        spectra_cols,
+                        palette = "Set2",
+                        colours = brewer.pal(length(spectra_cols), palette),
+>>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
                         span = 5,
                         thresh = 0.1,
                         lbls = FALSE, 
@@ -317,7 +330,9 @@ plotSpectra <- function(dat, mass_dat,
                 is.numeric(max_I), 
                 is.numeric(x_ticks),
                 is.numeric(span),
-                is.numeric(thresh))
+                is.numeric(thresh)),
+            palette %in% c("Accent", "Dark2", "Paired", "Pastel1", "Pastel2", "Set1", "Set2", "Set3")
+            
             )
   
   
