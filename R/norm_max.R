@@ -17,7 +17,7 @@
 # METHOD: MAX. OF EACH SPECTRUM
 # ------------------------------
 
-.normMethod_max <- function(dat, mass_dat, spectra_cols){
+norm_max <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
