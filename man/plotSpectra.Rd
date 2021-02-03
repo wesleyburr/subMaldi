@@ -8,7 +8,8 @@ plotSpectra(
   dat,
   mass_dat,
   spectra_cols,
-  colours = brewer.pal(length(spectra_cols), "Set2"),
+  palette = "Set2",
+  colours = brewer.pal(length(spectra_cols), palette),
   span = 5,
   thresh = 0.1,
   lbls = FALSE,
@@ -31,6 +32,8 @@ containing the \emph{m/z} data.}
 
 \item{spectra_cols}{A character string; the name(s) of the column(s) in \code{dat}
 containing the intensity data for the spectra-of-interest.}
+
+\item{palette}{A character string; the RColorBrewer palette to use. See below for available palettes.}
 
 \item{colours}{A character string indicating the desired colour(s)}
 
@@ -78,6 +81,20 @@ Returns a line plot of the input spectra.
 \description{
 Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
 }
+\section{RColorBrewer Palettes}{
+ 
+\describe{\itemize{\item{\code{"Accent"}}
+                   \item{\code{"Dark2"}} 
+                   \item{\code{"Paired"}}  
+                   \item{\code{"Pastel1"}}  
+                   \item{\code{"Pastel2"}}  
+                   \item{\code{"Set1"}}  
+                   \item{\code{"Set2"}} 
+                   \item{\code{"Set3"}}
+                   } 
+          }
+}
+
 \examples{
 
 ## Plotting using the sample dataset "Master.rda"
