@@ -299,6 +299,7 @@ plotSpectra <- function(dat, mass_dat,
                         nrows = round_any(length(spectra_cols), 2, f = ceiling)/2,
                         intensity_scale = "free_y"){   
   
+<<<<<<< HEAD
   # ----------------------------------
   # LOGICAL CHECKS
   # ----------------------------------
@@ -472,6 +473,8 @@ plotSpectra <- function(dat, mass_dat,
     return(out)
   }
   
+=======
+>>>>>>> 48ec512... Encapsulated label-checking functions in if()
   # ----------------------------------
   # LOGICAL CHECKS
   # ----------------------------------
@@ -629,6 +632,9 @@ plotSpectra <- function(dat, mass_dat,
   if(lbls){
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 48ec512... Encapsulated label-checking functions in if()
     test_lbl <- function(mass_dat, lbl.fmt){
       x <- mass_dat
       dp <- c()
@@ -655,12 +661,17 @@ plotSpectra <- function(dat, mass_dat,
     }
     
     
+<<<<<<< HEAD
     # Check that labels have <= decimal places as data
     tst <- test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
 =======
     # Check that labels have <= decimal places as data
     tst <- .test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
 >>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+    # Check that labels have <= decimal places as data
+    tst <- test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
+>>>>>>> 48ec512... Encapsulated label-checking functions in if()
     
     if(tst){
       stop("Label format indicates more decimal places 
