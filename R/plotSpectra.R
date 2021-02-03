@@ -183,10 +183,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
 =======
 >>>>>>> d58b4f6... Added RColorBrewer palettes to plotSpectra() function
+=======
+>>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
 ##' 
 ##' @return Returns a line plot of the input spectra.
 ##' 
@@ -205,6 +208,9 @@
 ##' 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
 ##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca> Sophie Castel <sophie.castel@@ontariotechu.net>
 =======
 ##' @return Returns a line plot of the input spectra.
@@ -307,6 +313,7 @@ plotSpectra <- function(dat, mass_dat,
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         spectra_cols,
                         palette = "Set2",
                         colours = brewer.pal(length(spectra_cols), palette),
@@ -355,6 +362,11 @@ plotSpectra <- function(dat, mass_dat,
                         spectra_cols, 
                         colours = brewer.pal(length(spectra_cols), "Set2"),
 >>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+                        spectra_cols,
+                        palette = "Set2",
+                        colours = brewer.pal(length(spectra_cols), palette),
+>>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
                         span = 5,
                         thresh = 0.1,
                         lbls = FALSE, 
@@ -664,7 +676,9 @@ plotSpectra <- function(dat, mass_dat,
                 is.numeric(max_I), 
                 is.numeric(x_ticks),
                 is.numeric(span),
-                is.numeric(thresh))
+                is.numeric(thresh)),
+            palette %in% c("Accent", "Dark2", "Paired", "Pastel1", "Pastel2", "Set1", "Set2", "Set3")
+            
             )
   
   

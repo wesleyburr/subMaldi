@@ -100,6 +100,7 @@ plotSpectra(
   spectra_cols,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   colours = brewer.pal(length(spectra_cols), "Set2"),
 >>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
 =======
@@ -122,6 +123,10 @@ plotSpectra(
   spectra_cols,
   colours = brewer.pal(length(spectra_cols), "Set2"),
 >>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
+=======
+  palette = "Set2",
+  colours = brewer.pal(length(spectra_cols), palette),
+>>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
   span = 5,
   thresh = 0.1,
   lbls = FALSE,
@@ -689,6 +694,8 @@ containing the \emph{m/z} data.}
 \item{spectra_cols}{A character string; the name(s) of the column(s) in \code{dat}
 containing the intensity data for the spectra-of-interest.}
 
+\item{palette}{A character string; the RColorBrewer palette to use. See below for available palettes.}
+
 \item{colours}{A character string indicating the desired colour(s)}
 
 \item{span}{Single numeric value; the span of peak maxima in between each
@@ -735,6 +742,20 @@ Returns a line plot of the input spectra.
 \description{
 Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
 }
+\section{RColorBrewer Palettes}{
+ 
+\describe{\itemize{\item{\code{"Accent"}}
+                   \item{\code{"Dark2"}} 
+                   \item{\code{"Paired"}}  
+                   \item{\code{"Pastel1"}}  
+                   \item{\code{"Pastel2"}}  
+                   \item{\code{"Set1"}}  
+                   \item{\code{"Set2"}} 
+                   \item{\code{"Set3"}}
+                   } 
+          }
+}
+
 \examples{
 
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
