@@ -12,7 +12,7 @@
   return((y - min(y)) / (custom_y - min(y))) # single value
 }
 
-.normMethod_custom <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
+norm_custom <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
   # ---------------------
   # LOGICAL CHECKS
