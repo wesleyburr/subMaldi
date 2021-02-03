@@ -165,6 +165,7 @@ There are two methods available for averaging our intensity data: sum or mean. I
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 avg_spec <- avgSpectra(spec, method = "mean", spectra_cols = c("Blank1", "Blank2"))
 =======
 avg_spec <- avgSpectra(spec, method = "mean", spec1 = "Blank1", spec2 = "Blank2")
@@ -181,6 +182,9 @@ avg_spec <- avgSpectra(spec, method = "mean", spectra_cols = c("Blank1", "Blank2
 =======
 avg_spec <- avgSpectra(spec, method = "mean", spec1 = "Blank1", spec2 = "Blank2")
 >>>>>>> de15a92... Fixed packaged structure
+=======
+avg_spec <- avgSpectra(spec, method = "mean", spectra_cols = c("Blank1", "Blank2"))
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 
 head(avg_spec)
 ```
@@ -240,6 +244,7 @@ The raw data is plotted below.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), lbl.fmt = "%3.2f")
 ```
 
@@ -273,6 +278,12 @@ Please note that while only two spectra are normalized in this vignette, `subMAL
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), lbl.fmt = "%3.2f")
+```
+
+Please note that while only two spectra are normalized in this vignette, `subMALDI` is capable of normalizing several spectral replicates at once.
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 
 ## Custom *m/z* Normalization
 
@@ -287,15 +298,19 @@ custom_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "custom",
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
             x_ticks = 10 , lbl.fmt = "%3.2f")
 
 plotSpectra(custom_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -319,6 +334,8 @@ plotSpectra(custom_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -336,14 +353,18 @@ max_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "max",
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
                       spectra_cols = c("Before1", "Before2"))
 
 plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -378,6 +399,11 @@ plotSpectra(max_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2")
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+
+plotSpectra(max_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
+            x_ticks = 10, colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -395,14 +421,18 @@ maxset_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "max_set",
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
                          spectra_cols = c("Before1","Before2"))
 
 plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -437,6 +467,11 @@ plotSpectra(maxset_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+
+plotSpectra(maxset_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
+            x_ticks = 10, intensity_scale = "fixed", colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -450,6 +485,7 @@ $RMS = \sqrt{\frac{1}{n-1}*\sum{I^2}}$
 A sample RMS normalization is performed below.
 
 ```{r warning = FALSE, fig.show = "hold"}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -485,11 +521,16 @@ RMS_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "RMS", spectra_c
 RMS_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "RMS", spectra_cols = c("Before1", "Before2"))
 
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+RMS_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "RMS", spectra_cols = c("Before1", "Before2"))
+
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
             x_ticks = 10, lbl.fmt = "%3.2f")
 
 plotSpectra(RMS_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
             x_ticks = 10, colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
@@ -498,6 +539,8 @@ plotSpectra(RMS_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2")
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -516,14 +559,18 @@ A sample normalization is performed below.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 TIC_ex <- normSpectra(norm_spec, mass_dat= "full_mz", method = "TIC", spectra_cols = c("Before1", "Before2"))
 
 plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -559,6 +606,11 @@ plotSpectra(TIC_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2")
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+
+plotSpectra(TIC_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
+            x_ticks = 10, colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -575,14 +627,18 @@ A sample normalization is performed below.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 rel_TIC_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "rel_TIC", spectra_cols = c("Before1", "Before2"))
 
 plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -617,6 +673,11 @@ plotSpectra(rel_TIC_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Befor
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+
+plotSpectra(rel_TIC_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
+            x_ticks = 10, colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left. 
@@ -657,6 +718,7 @@ median_ex <- normSpectra(dat = norm_spec, mass_dat = "full_mz", method = "median
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                          spectra_cols = c("Before1", "Before2"))
 
 plotSpectra(dat = norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
@@ -686,11 +748,16 @@ plotSpectra(dat = median_ex, mass_dat = "full_mz", spec1 = "Before1",
                          spectra_cols = c("Before1", "Before2"))
 
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+                         spectra_cols = c("Before1", "Before2"))
+
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 plotSpectra(dat = norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, lbl.fmt = "%3.2f")
 
 plotSpectra(dat = median_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
@@ -699,6 +766,8 @@ plotSpectra(dat = median_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -717,6 +786,7 @@ A plot of our raw data is shown below. Here we can see that there is a noisy reg
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 plotSpectra(norm_spec, mass_dat = "full_mz",spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, min_mz = 750, max_mz = 1100,
 =======
@@ -739,6 +809,10 @@ plotSpectra(norm_spec, mass_dat = "full_mz",spectra_cols = c("Before1", "Before2
 plotSpectra(norm_spec, mass_dat = "full_mz", spec1 = "Before1", 
             spec2 = "Before2", x_ticks = 100, min_mz = 750, max_mz = 1100,
 >>>>>>> de15a92... Fixed packaged structure
+=======
+plotSpectra(norm_spec, mass_dat = "full_mz",spectra_cols = c("Before1", "Before2"),
+            x_ticks = 10, min_mz = 750, max_mz = 1100,
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
             lbl.fmt = "%3.2f")
 ```
 
@@ -753,14 +827,18 @@ stdev_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "stdev",
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
                         lower = 900, upper = 1000, spectra_cols = c("Before1", "Before2"))
 
 plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -796,6 +874,11 @@ plotSpectra(stdev_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+
+plotSpectra(stdev_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
+            x_ticks = 10, colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -819,14 +902,18 @@ quantile_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "quantile",
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
+=======
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
                            spectra_cols = c("Before1", "Before2"))
 
 plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
             x_ticks = 10, lbl.fmt = "%3.2f")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 
@@ -861,6 +948,11 @@ plotSpectra(quantile_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Befo
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+
+plotSpectra(quantile_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
+            x_ticks = 10, colours = c("lightgreen", "cornflowerblue"), lbl.fmt = "%3.2f")
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -869,6 +961,7 @@ The original spectra are shown to the right, while the normalized spectra are di
 
 # Plotting Spectra
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -912,11 +1005,19 @@ When plotting a single spectrum with `subMALDI`, we can plot data from the origi
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 >>>>>>> de15a92... Fixed packaged structure
+=======
+Several sample plots were shown above to illustrate the different normalization methods. In this section we will work through the different usages of the `plotSpectra()` function.
+
+## Plotting a Single Spectrum
+
+When plotting a single spectrum with `subMALDI`, we can plot data from the original pairwise data frame, or from a mapped spectral data frame. An example of the former is shown below. 
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 
 In this example, we use the arguments `lbls = TRUE` and `span = 9`. This labels the peak maxima in the spectrum. The span argument determines how many maxima will be labeled. In this case, we've selected a value of 9. This means that four peaks on either side of each labeled peak are not labelled. 
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 3, fig.align = "center"}
 data("Blank1")
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -938,6 +1039,9 @@ plotSpectra(dat = Blank1, mass_dat = Blank1$mass, spectra_cols = "Intensity",
 =======
 plotSpectrum(dat = Blank1, mass_dat = Blank1$mass, intensity_dat = Blank1$Intensity, 
 >>>>>>> de15a92... Fixed packaged structure
+=======
+plotSpectra(dat = Blank1, mass_dat = Blank1$mass, spectra_cols = "Intensity", 
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
              lbls = TRUE, span = 9)
 ```
 
@@ -950,6 +1054,7 @@ data("Master")
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 plotSpectra(dat = Master, mass_dat = "full_mz", spectra_cols = "After2", 
              colours = "black", min_mz = 100, max_mz = 500)
 =======
@@ -972,6 +1077,10 @@ plotSpectra(dat = Master, mass_dat = "full_mz", spectra_cols = "After2",
 plotSpectrum(dat = Master, mass_dat = Master$full_mz, intensity_dat = Master$After2, 
              colour = "black", min_mz = 100, max_mz = 500)
 >>>>>>> de15a92... Fixed packaged structure
+=======
+plotSpectra(dat = Master, mass_dat = "full_mz", spectra_cols = "After2", 
+             colours = "black", min_mz = 100, max_mz = 500)
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 Not all spectral data has the same resolution. As such, the labels on each mass spectrum should accurately reflect the resolution of the raw data.
@@ -994,6 +1103,7 @@ Our low resolution data only has two decimal places, therefore our \code{lbl.fmt
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 plotSpectrum(Master2, mass_dat = Master2$full_mz, spectra_cols = "Before1", lbls = TRUE, lbl.fmt = "%3.2f")
 =======
 plotSpectrum(Master2, mass_dat = Master2$full_mz, intensity_dat = Master2$Before1, lbls = TRUE, lbl.fmt = "%3.2f")
@@ -1010,6 +1120,9 @@ plotSpectrum(Master2, mass_dat = Master2$full_mz, spectra_cols = "Before1", lbls
 =======
 plotSpectrum(Master2, mass_dat = Master2$full_mz, intensity_dat = Master2$Before1, lbls = TRUE, lbl.fmt = "%3.2f")
 >>>>>>> de15a92... Fixed packaged structure
+=======
+plotSpectrum(Master2, mass_dat = Master2$full_mz, spectra_cols = "Before1", lbls = TRUE, lbl.fmt = "%3.2f")
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 ## Plotting Multiple Spectra
@@ -1019,6 +1132,7 @@ plotSpectrum(Master2, mass_dat = Master2$full_mz, intensity_dat = Master2$Before
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Multiple spectra can be plotted simultaneously using the same *m/z* axis.
 
 We will plot four spectra on the same axis below by specification of the `nrows` argument.  For common axes, specify the value of this argument to be the number of spectra of interest. 
@@ -1062,13 +1176,21 @@ plotSpectra(dat = Master, mass_dat = "full_mz", spectra_cols = c("Before1", "Bef
 >>>>>>> 339b874... Updated workflow vignette to reflect recent changes
 =======
 When plotting multiple spectra on the same *m/z* axis, `plotSpectra()` should be used. This function is capable of plotting 2-6 spectra on the same *m/z* axis, stacked on top of one another.
+=======
+Multiple spectra can be plotted simultaneously using the same *m/z* axis.
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 
-We will plot four spectra on the same axis below.
+We will plot four spectra on the same axis below by specification of the `nrows` argument.  For common axes, specify the value of this argument to be the number of spectra of interest. 
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 6, fig.align = "center"}
+<<<<<<< HEAD
 plotSpectra(dat = Master, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2",
              spec3 = "After1", spec4 = "After2", lbls = TRUE, span = 15)
 >>>>>>> de15a92... Fixed packaged structure
+=======
+plotSpectra(dat = Master, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2", "After1", "After2"),
+            nrows = 4, x_ticks = 10, lbls = TRUE, span = 15)
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 ## Plotting a Grid of Spectra
@@ -1078,6 +1200,7 @@ plotSpectra(dat = Master, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Befo
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Spectra can also be plotted in a grid format. This option is available for any reasonable number of spectral replicates. The default layout makes the most efficient use of the space, but the `nrows` argument can also be explicitly specified.
 
 The code below plots four spectra in a grid format. 
@@ -1126,12 +1249,21 @@ plotSpectra(Master, mass_dat = "full_mz", spectra_cols = c("Blank1", "Blank2", "
 Spectra can also be plotted side-by-side, in a grid format. This option is available for 4 or 6 spectral replicates. An example of each will be shown below.
 
 The code below plots four spectra in a grid format.
+=======
+Spectra can also be plotted in a grid format. This option is available for any reasonable number of spectral replicates. The default layout makes the most efficient use of the space, but the `nrows` argument can also be explicitly specified.
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 
+The code below plots four spectra in a grid format. 
 ```{r warning = FALSE, fig.width = 6, fig.height = 6, fig.align = "center"}
+<<<<<<< HEAD
 plotgridSpectra(Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Blank2",
                 spec3 = "Before1", spec4 = "Before2", x_ticks = 500, lbls = TRUE,
                 span = 11)
 >>>>>>> de15a92... Fixed packaged structure
+=======
+plotSpectra(Master, mass_dat = "full_mz", spectra_cols = c("Blank1", "Blank2", "Before1", "Before2"),
+                x_ticks = 10, lbls = TRUE, span = 11)
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 The code below plots six spectra in a grid format.
@@ -1142,6 +1274,7 @@ The code below plots six spectra in a grid format.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 plotSpectra(Master, mass_dat = "full_mz", spectra_cols = c("Blank1", "Blank2", "Before1", "Before2", "After1", "After2"), 
                 x_ticks = 10, max_mz = 500, lbls = TRUE, span = 11)
 ```
@@ -1199,15 +1332,24 @@ plotSpectra(Master, mass_dat = "full_mz", spectra_cols = c("Before2", "After1"),
 plotgridSpectra(Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Blank2",
                 spec3 = "Before1", spec4 = "Before2", spec5 = "After1", spec6 = "After2", 
                 x_ticks = 500, max_mz = 500, lbls = TRUE, span = 11)
+=======
+plotSpectra(Master, mass_dat = "full_mz", spectra_cols = c("Blank1", "Blank2", "Before1", "Before2", "After1", "After2"), 
+                x_ticks = 10, max_mz = 500, lbls = TRUE, span = 11)
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
-We can also plot six spectra in three columns, as shown below.
+The code below plots two spectra side-by-side, following the specification of `nrows = 1`.
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 4, fig.align = "center"}
+<<<<<<< HEAD
 plotgridSpectra(Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Blank2",
                 spec3 = "Before1", spec4 = "Before2", spec5 = "After1", spec6 = "After2", 
                 x_ticks = 500, max_mz = 500, lbls = TRUE, columns = 3, span = 11)
 >>>>>>> de15a92... Fixed packaged structure
+=======
+plotSpectra(Master, mass_dat = "full_mz", spectra_cols = c("Before2", "After1"), 
+                x_ticks = 10, max_mz = 500, lbls = TRUE, nrows = 1, span = 11)
+>>>>>>> fe8d414... Updated workflow vignette to reflect recent changes
 ```
 
 
