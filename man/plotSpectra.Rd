@@ -7,6 +7,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 \title{Plot and Compare Spectra}
 =======
 =======
@@ -46,10 +47,14 @@ plotSpectra(
 =======
 \title{Plot and Compare Multiple Spectra}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+\title{Plot and Compare Spectra}
+>>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
 \usage{
 plotSpectra(
   dat,
   mass_dat,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -79,11 +84,16 @@ plotSpectra(
 >>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
 =======
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+  spectra_cols,
+  colours = brewer.pal(length(spectra_cols), "Set2"),
+>>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
   span = 5,
   thresh = 0.1,
   lbls = FALSE,
   lbl.fmt = "\%3.4f",
   min_mz = 0,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -367,9 +377,13 @@ label. Default = 5 (ignores two peak maxima on either side of each label).}
 intensities which should be labeled.}
 =======
   max_mz = 10000,
+=======
+  max_mz = max(dat[[mass_dat]]),
+>>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
   min_I = 0,
-  max_I = NULL,
+  max_I = max(dat[spectra_cols]),
   x_ticks = 100,
+  nrows = round_any(length(spectra_cols), 2, f = ceiling)/2,
   intensity_scale = "free_y"
 )
 }
@@ -380,48 +394,21 @@ data in the first column.}
 \item{mass_dat}{A character string; the name of the column in \code{dat}
 containing the \emph{m/z} data.}
 
-\item{spec1}{A character string; the name of the column in \code{dat}
-containing the intensity data for the first spectrum that is to be plotted.}
+\item{spectra_cols}{A character string; the name(s) of the column(s) in \code{dat}
+containing the intensity data for the spectra-of-interest.}
 
-\item{spec2}{A character string; the name of the column in \code{dat}
-containing the intensity data for the second spectrum to be plotted.}
+\item{colours}{A character string indicating the desired colour(s)}
 
-\item{spec3}{A character string; the name of the column in \code{dat}
-containing the intensity data for the third spectrum to be plotted.}
-
-\item{spec4}{A character string; the name of the column in \code{dat}
-containing the intensity data for the fourth spectrum to be plotted.}
-
-\item{spec5}{A character string; the name of the column in \code{dat}
-containing the intensity data for the fifth spectrum to be plotted.}
-
-\item{spec6}{A character string; the name of the column in \code{dat}
-containing the intensity data for the sixth spectrum to be plotted.}
-
-\item{colour1}{A character string indicating the colour the first spectrum
-should be plotted in.}
-
-\item{colour2}{A charater string indicating the colour of the second
-spectrum in the plot.}
-
-\item{colour3}{A charater string indicating the colour of the third
-spectrum in the plot.}
-
-\item{colour4}{A charater string indicating the colour of the fourth
-spectrum in the plot.}
-
-\item{colour5}{A charater string indicating the colour of the fifth
-spectrum in the plot.}
-
-\item{colour6}{A charater string indicating the colour of the sixth
-spectrum in the plot.}
-
-\item{span}{Single numeric value; the span of peak maximas in between each
+\item{span}{Single numeric value; the span of peak maxima in between each
 label. Default = 5 (ignores two peak maxima on either side of each label).}
 
 \item{thresh}{Single numeric value (0-100); the threshold of peak
+<<<<<<< HEAD
 itensities which should be labelled.}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+intensities which should be labeled.}
+>>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
 
 \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the
 \emph{m/z} value of each peak maxima within the indicated \code{span} will
@@ -446,12 +433,18 @@ range.}
 observed in spectra.}
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 \item{x_ticks}{Single numeric value; the number of ticks on the x-axis.}
 
 \item{nrows}{Single integer value; the number of rows in plot arrangement.}
 =======
 \item{x_ticks}{Single numeric value; the space between ticks on x-axis.}
 >>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
+=======
+\item{x_ticks}{Single numeric value; the number of ticks on the x-axis.}
+
+\item{nrows}{Single integer value; the number of rows in plot arrangement.}
+>>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
 
 \item{intensity_scale}{A character string; the method that should be used
 for determining the y-axis scales for each spectrum. If \code{method =
@@ -463,6 +456,7 @@ the most intense spectrum in the set.}
 Returns a line plot of the input spectra.
 }
 \description{
+<<<<<<< HEAD
 <<<<<<< HEAD
 Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
 }
@@ -537,6 +531,9 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca> Sophie Castel <
 Plots multiple spectra on the same \emph{x}-axis scale for easier
 comparison. Allows for 2 to 6 spectra per plot, stacked on top of one
 another.
+=======
+Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
+>>>>>>> 3eeaddf... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
 }
 \examples{
 
@@ -544,8 +541,8 @@ another.
 ## Plotting using the sample dataset "Master.rda"
 data("Master")
 plotSpectra(dat = Master, mass_dat = "full_mz",
-            spec1 = "Blank1", spec2 = "Blank2",
-            intensity_scale = "free_y", lbls = TRUE)
+            spectra_cols = c("Blank1", "Blank2"),
+            intensity_scale = "free_y", lbls = TRUE, nrows = 2, x_ticks = 10)
 }
 <<<<<<< HEAD
 
@@ -565,7 +562,7 @@ plotSpectra(dat = Master, mass_dat = "full_mz",
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca> Sophie Castel <sophie.castel@ontariotechu.net>
 }
 \keyword{aplot}
 \keyword{methods}
