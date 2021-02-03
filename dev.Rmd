@@ -56,6 +56,7 @@ save(Master2, file = "/home/sophie/subMaldi/data/compressed/Master2.rda", compre
 
 
 
+
 ## JOSS 5 (Closed)
 Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
 
@@ -66,9 +67,10 @@ Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for M
 
 
 
+
 ## JOSS 12 - generalize and fix redundancies in code (Closed)
 
-# avgSpectra.R (done)
+## avgSpectra.R (done)
 
 ```{r}
 avgSpectra <- function(dat, method = "mean", spectra_cols){
@@ -126,7 +128,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 
 ```
 
-# find_max.R (done)
+## find_max.R (done)
 
 ```{r}
 # -----------------
@@ -190,14 +192,14 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 }
 ```
 
-# normMethod_custimp.R (done)
+## norm_custimp.R (done)
 
 ```{r}
 # --------------------------------------
 # METHOD: CUSTOM M/Z VALUE, NOT PRECISE
 # --------------------------------------
 
-.normMethod_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
+norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -254,7 +256,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 
 ```
 
-# normMethod_custom.R (done)
+## norm_custom.R (done)
 
 ```{r}
 
@@ -318,7 +320,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 
 ```
 
-# normMethod_max.R (done)
+## norm_max.R (done)
 
 ```{r}
 # -----------------------
@@ -334,7 +336,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 # METHOD: MAX. OF EACH SPECTRUM
 # ------------------------------
 
-.normMethod_max <- function(dat, mass_dat, spectra_cols){
+norm_max <- function(dat, mass_dat, spectra_cols){
 
   # ---------------------
   # LOGICAL CHECKS
@@ -405,7 +407,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 
 ```
 
-# normMethod_median.R (done)
+## norm_median.R (done)
 
 ```{r}
 
@@ -413,7 +415,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 # METHOD: MEDIAN
 # ---------------
 
-.normMethod_med<- function(dat, mass_dat, spectra_cols){
+norm_med<- function(dat, mass_dat, spectra_cols){
 
   # ---------------------
   # LOGICAL CHECKS
@@ -469,7 +471,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 }
 ```
 
-# normMethod_quantile.R (done)
+## norm_quantile.R (done)
 
 ```{r}
 # --------------------------------------------------------------------------------------------
@@ -492,7 +494,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 # The spectra are then reverted to their unsorted order using the index.
 
 
-.nMethod_quantile <- function(dat, mass_dat, spectra_cols){
+norm_quantile <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -563,7 +565,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 
 ```
 
-# normMethod_RMS.R (done)
+## norm_RMS.R (done)
 
 ```{r}
 
@@ -582,7 +584,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
   return(y/RMS) # single value
 }
 
-.nMethod_RMS <- function(dat, mass_dat, spectra_cols){
+norm_RMS <- function(dat, mass_dat, spectra_cols){
   
   mz <- dat[[mass_dat]]
   
@@ -605,7 +607,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 
 ```
 
-# normMethod_stdev.R (done)
+## norm_stdev.R (done)
 
 ```{r}
 # ------------------------------------
@@ -618,7 +620,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 # Divide intensity of EACH PEAK IN SPEC by its st. dev.
 
 
-.normMethod_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
+norm_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -654,7 +656,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 
 ```
 
-# normMethod_TIC.R (done)
+## norm_TIC.R (done)
 
 ```{r}
 # ----------------------
@@ -666,7 +668,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 # normalization factor.
 
 
-.normMethod_TIC <- function(dat, mass_dat, spectra_cols){
+norm_TIC <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -720,8 +722,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 
 ```
 
-# normMethod_rel_TIC (done)
-
+## norm_rel_TIC (done)
 ```{r}
 # ---------------------
 # METHOD: RELATIVE TIC
@@ -737,7 +738,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
   return(y/all_y) # single value
 }
 
-.normMethod_rel_TIC <- function(dat, mass_dat, spectra_cols){
+norm_rel_TIC <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -790,7 +791,11 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 
 
 
-#########################################################################
+
+
+
+
+
 
 
 ## JOSS 6: roxygen2 (Closed)
@@ -811,95 +816,285 @@ oxygnze <- function(file){
 ```
 
 
-# avgSpectra.Rd (done)
 
+## avgSpectra.Rd (done)
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/avgSpectra.Rd")
 ```
 
-# baselineCorr.Rd (done)
+## baselineCorr.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/baselineCorr.Rd")
 ```
 
 
-# createSpecDF.Rd (done)
+## createSpecDF.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/createSpecDF.Rd")
 ```
 
 
-# find_max.Rd (done)
+## find_max.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/find_max.Rd")
 ```
 
 
-# find_max_set.Rd (done)
+## find_max_set.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/find_max_set.Rd")
 ```
 
 
-# mapSpectrum.Rd (done)
+## mapSpectrum.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/mapSpectrum.Rd")
 ```
 
 
-# normSpectra.Rd (done)
+## normSpectra.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/normSpectra.Rd")
 ```
 
 
-# peakDet.Rd (done)
+## peakDet.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/peakDet.Rd")
 ```
 
 
-# readcsvDir.Rd (done)
+## readcsvDir.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/readcsvDir.Rd")
 ```
 
 
-# readcsvSpec.Rd (done)
+## readcsvSpec.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/readcsvSpec.Rd")
 ```
 
 
-# rmveEmpty.Rd (done)
+## rmveEmpty.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/rmveEmpty.Rd")
 ```
 
 
-# smoothSpectrum.Rd (done)
+## smoothSpectrum.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/smoothSpectrum.Rd")
 ```
 
 
-# subSpectra.Rd (done)
-
+## subSpectra.Rd (done)
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/subSpectra.Rd")
 ```
 
 
-## JOSS 
+
+
+## JOSS 10: test code
+
+## baselineCorr.R
+
+```{r}
+
+```
+
+## baseMALDI.R
+
+```{r}
+
+```
+
+## avgSpectra.R
+
+```{r}
+
+```
+
+## baseline_loess.R
+
+```{r}
+
+```
+
+## baseline_sub.R
+
+```{r}
+
+```
+
+## createSpecDF.R
+
+```{r}
+
+```
+
+## find_max.R
+
+```{r}
+
+```
+
+## find_max_set.R
+
+```{r}
+
+```
+
+## mapSpectrum.R
+
+```{r}
+
+```
+
+## norm_RMS.R
+
+```{r}
+
+```
+
+## norm_TIC.R
+
+```{r}
+
+```
+
+## norm_rel_TIC.R
+
+```{r}
+
+```
+
+## norm_custimp.R
+
+```{r}
+
+```
+
+## norm_custom.R
+
+```{r}
+
+```
+
+## norm_max.R
+
+```{r}
+
+```
+
+## norm_median.R
+
+```{r}
+
+```
+
+## norm_quantile.R
+
+```{r}
+
+```
+
+## norm_stdev.R
+
+```{r}
+
+```
+
+## normSpectra.R
+
+```{r}
+
+library(testthat)
+
+test_that("Method = NULL yields error", {
+  expect_error(normSpectra(dat = Master, 
+                           mass_dat = "full_mz",
+                           method = "apple",
+                           norm_mz = NULL,
+                           upper = NULL,
+                           lower = NULL,
+                           spectra_cols = NULL,
+                           showHI = FALSE))
+})
+
+
+
+```
+
+## peakDet.R
+
+```{r}
+
+```
+
+## peak_sub.R
+
+```{r}
+
+```
+
+## plotSpectra.R
+
+```{r}
+library(testthat)
+
+
+
+
+
+```
+
+## readcsvDir.R
+
+```{r}
+
+```
+
+## readcsvSpec.R
+
+```{r}
+
+```
+
+## rmveEmpty.R
+
+```{r}
+
+```
+
+## smoothSpectrum.R
+
+```{r}
+
+```
+
+## smooth_sub.R
+
+```{r}
+
+```
+
+## subSpectra.R
+
+```{r}
+
+```
+
 
