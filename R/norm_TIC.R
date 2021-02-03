@@ -19,9 +19,7 @@ norm_TIC <- function(dat, mass_dat, spectra_cols){
     is.character(mass_dat),
     is.character(spectra_cols),
     mass_dat %in% colnames(dat),
-    all(spectra_cols %in% colnames(dat)),
-    is.numeric(lower),
-    is.numeric(upper)
+    all(spectra_cols %in% colnames(dat))
   )    
   
   if(length(spectra_cols) < 2){
