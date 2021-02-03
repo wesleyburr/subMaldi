@@ -1704,27 +1704,6 @@ oxygnze(file = "/home/sophie/subMaldi/man/peakDet.Rd")
 ```
 
 
-# plotgridSpectra.Rd (done)
-
-```{r}
-oxygnze(file = "/home/sophie/subMaldi/man/plotgridSpectra.Rd")
-```
-
-
-# plotSpectra.Rd (done)
-
-```{r}
-oxygnze(file = "/home/sophie/subMaldi/man/plotSpectra.Rd")
-```
-
-
-# plotSpectrum.Rd (done)
-
-```{r}
-oxygnze(file = "/home/sophie/subMaldi/man/plotSpectrum.Rd")
-```
-
-
 # readcsvDir.Rd (done)
 
 ```{r}
