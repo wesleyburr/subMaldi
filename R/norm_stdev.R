@@ -14,7 +14,7 @@
 # Divide intensity of EACH PEAK IN SPEC by its st. dev.
 
 
-.normMethod_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
+norm_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS

@@ -18,7 +18,7 @@
 # The spectra are then reverted to their unsorted order using the index.
 
 
-.normMethod_quantile <- function(dat, mass_dat, spectra_cols){
+norm_quantile <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS

@@ -4,7 +4,7 @@
 # Title: subMALDI: Normalization Method - Custom m/z, imprecise
 # -----------------------------------------------------------------------
 
-.normMethod_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
+norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
   # ---------------------
   # LOGICAL CHECKS

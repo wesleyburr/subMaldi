@@ -19,7 +19,7 @@
   return(y/RMS) # single value
 }
 
-.nMethod_RMS <- function(dat, mass_dat, spectra_cols){
+norm_RMS <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
