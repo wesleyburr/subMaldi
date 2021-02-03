@@ -87,34 +87,6 @@ plotSpectra <- function(dat, mass_dat,
                         nrows = round_any(length(spectra_cols), 2, f = ceiling)/2,
                         intensity_scale = "free_y"){   
   
-  
-  # Functions to check that labels have less than or equal to decimal places as data
-  
-  .deci <- function(x) {
-    if ((x %% 1) != 0) {
-      nchar(strsplit(sub('0+$', '', as.character(x)), ".", fixed=TRUE)[[1]][[2]])
-    } else {
-      return(0)
-    }
-  }
-  
-  .test_lbl <- function(mass_dat, lbl.fmt){
-    x <- mass_dat
-    dp <- c()
-    out <- c()
-    
-    lbl.dec <- strsplit(lbl.fmt, "[.]")[[1]][2]
-    lbl.dec <- as.numeric(gsub("[a-zA-Z ]", "", lbl.dec))
-    
-    for(i in 1:length(x)){
-      dp[i] <- .deci(x[i])
-    }
-    
-    dp <- max(dp)
-    out <- isTRUE(dp < lbl.dec) 
-    return(out)
-  }
-  
   # ----------------------------------
   # LOGICAL CHECKS
   # ----------------------------------
@@ -186,8 +158,34 @@ plotSpectra <- function(dat, mass_dat,
   
   if(lbls){
     
+    test_lbl <- function(mass_dat, lbl.fmt){
+      x <- mass_dat
+      dp <- c()
+      out <- c()
+      
+      lbl.dec <- strsplit(lbl.fmt, "[.]")[[1]][2]
+      lbl.dec <- as.numeric(gsub("[a-zA-Z ]", "", lbl.dec))
+      
+      deci <- function(x) {
+        if ((x %% 1) != 0) {
+          nchar(strsplit(sub('0+$', '', as.character(x)), ".", fixed=TRUE)[[1]][[2]])
+        } else {
+          return(0)
+        }
+      }
+      
+      for(i in 1:length(x)){
+        dp[i] <- .deci(x[i])
+      }
+      
+      dp <- max(dp)
+      out <- isTRUE(dp < lbl.dec) 
+      return(out)
+    }
+    
+    
     # Check that labels have <= decimal places as data
-    tst <- .test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
+    tst <- test_lbl(mass_dat = mass, lbl.fmt = lbl.fmt)
     
     if(tst){
       stop("Label format indicates more decimal places 
