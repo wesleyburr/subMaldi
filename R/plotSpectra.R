@@ -289,6 +289,8 @@ plotSpectra <- function(dat, mass_dat,
   # LOGICAL CHECKS
   # ----------------------------------
   
+  colours <- colours[1:length(spectra_cols)]
+  
   
   stopifnot(spectra_cols %in% colnames(dat),
             mass_dat %in% colnames(dat),
