@@ -8,7 +8,7 @@
 # METHOD: MEDIAN
 # ---------------
   
-.normMethod_median <- function(dat, mass_dat, spectra_cols){
+norm_median <- function(dat, mass_dat, spectra_cols){
     
     # ---------------------
     # LOGICAL CHECKS
