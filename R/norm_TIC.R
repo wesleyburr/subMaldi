@@ -19,7 +19,13 @@ norm_TIC <- function(dat, mass_dat, spectra_cols){
     is.character(mass_dat),
     is.character(spectra_cols),
     mass_dat %in% colnames(dat),
+<<<<<<< HEAD
     all(spectra_cols %in% colnames(dat))
+=======
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+>>>>>>> b2e89cf... .normMethod_ function format deprecated ----> norm_ . Scripts and functions renamed accordingly.
   )    
   
   if(length(spectra_cols) < 2){
