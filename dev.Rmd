@@ -103,6 +103,7 @@ save(Master2, file = "/home/sophie/subMaldi/data/compressed/Master2.rda", compre
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 ## JOSS 5 (Closed)
 Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
@@ -181,6 +182,9 @@ Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for M
 =======
 ## JOSS 5 
 =======
+=======
+
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 ## JOSS 5 (Closed)
 >>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
@@ -192,14 +196,19 @@ Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for M
 
 
 
+
 ## JOSS 12 - generalize and fix redundancies in code (Closed)
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 # avgSpectra.R
 >>>>>>> f435d1f... Updated issue log
 =======
 # avgSpectra.R (done)
 >>>>>>> d7c9654... Updated issue log
+=======
+## avgSpectra.R (done)
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 
 ```{r}
 avgSpectra <- function(dat, method = "mean", spectra_cols){
@@ -265,6 +274,7 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## find_max.R (done)
 =======
 # find_max.R
@@ -290,6 +300,9 @@ avgSpectra <- function(dat, method = "mean", spectra_cols){
 =======
 # find_max.R (done)
 >>>>>>> d7c9654... Updated issue log
+=======
+## find_max.R (done)
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 
 ```{r}
 # -----------------
@@ -361,6 +374,7 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 3753a1b... JOSS 10 (Issue): Fixed formatting of test files
 ## norm_custimp.R (done)
@@ -512,13 +526,16 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 =======
 # normMethod_custimp.R (done)
 >>>>>>> 6db06a2... Updating issue log
+=======
+## norm_custimp.R (done)
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 
 ```{r}
 # --------------------------------------
 # METHOD: CUSTOM M/Z VALUE, NOT PRECISE
 # --------------------------------------
 
-.normMethod_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
+norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -575,7 +592,7 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 
 ```
 
-# normMethod_custom.R (done)
+## norm_custom.R (done)
 
 ```{r}
 
@@ -640,11 +657,15 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 ```
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # normMethod_max.R
 >>>>>>> f435d1f... Updated issue log
 =======
 # normMethod_max.R (done)
 >>>>>>> d7c9654... Updated issue log
+=======
+## norm_max.R (done)
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 
 ```{r}
 # -----------------------
@@ -661,6 +682,7 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 # ------------------------------
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 norm_max <- function(dat, mass_dat, spectra_cols){
 >>>>>>> 3753a1b... JOSS 10 (Issue): Fixed formatting of test files
 
@@ -668,6 +690,9 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
 =======
 .normMethod_max <- function(dat, mass_dat, spectra_cols){
+=======
+norm_max <- function(dat, mass_dat, spectra_cols){
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 
 >>>>>>> f435d1f... Updated issue log
   # ---------------------
@@ -807,6 +832,7 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
     stop(c("The selected value norm_mz = ", norm_mz, " not found in '", mass_dat,"'. Please try another value."))
   }
   
+<<<<<<< HEAD
   logic <- i_cust == 0 
     
   if(any(logic)){
@@ -835,10 +861,14 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
   return(dat)
 >>>>>>> f435d1f... Updated issue log
+=======
+  return(dat)
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 }
 
 ```
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -879,16 +909,26 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
 ```{r}
 
 >>>>>>> f435d1f... Updated issue log
+=======
+## norm_median.R (done)
+
+```{r}
+
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 # ---------------
 # METHOD: MEDIAN
 # ---------------
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 norm_med<- function(dat, mass_dat, spectra_cols){
 
 >>>>>>> 3753a1b... JOSS 10 (Issue): Fixed formatting of test files
 =======
 .normMethod_med<- function(dat, mass_dat, spectra_cols){
+=======
+norm_med<- function(dat, mass_dat, spectra_cols){
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 
 >>>>>>> f435d1f... Updated issue log
   # ---------------------
@@ -3168,7 +3208,7 @@ library(testthat)
 }
 ```
 
-# normMethod_quantile.R (done)
+## norm_quantile.R (done)
 
 ```{r}
 # --------------------------------------------------------------------------------------------
@@ -3191,7 +3231,7 @@ library(testthat)
 # The spectra are then reverted to their unsorted order using the index.
 
 
-.nMethod_quantile <- function(dat, mass_dat, spectra_cols){
+norm_quantile <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -3262,7 +3302,7 @@ library(testthat)
 
 ```
 
-# normMethod_RMS.R (done)
+## norm_RMS.R (done)
 
 ```{r}
 
@@ -3281,7 +3321,7 @@ library(testthat)
   return(y/RMS) # single value
 }
 
-.nMethod_RMS <- function(dat, mass_dat, spectra_cols){
+norm_RMS <- function(dat, mass_dat, spectra_cols){
   
   mz <- dat[[mass_dat]]
   
@@ -3304,7 +3344,7 @@ library(testthat)
 
 ```
 
-# normMethod_stdev.R (done)
+## norm_stdev.R (done)
 
 ```{r}
 # ------------------------------------
@@ -3317,7 +3357,7 @@ library(testthat)
 # Divide intensity of EACH PEAK IN SPEC by its st. dev.
 
 
-.normMethod_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
+norm_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -3353,7 +3393,7 @@ library(testthat)
 
 ```
 
-# normMethod_TIC.R (done)
+## norm_TIC.R (done)
 
 ```{r}
 # ----------------------
@@ -3365,7 +3405,7 @@ library(testthat)
 # normalization factor.
 
 
-.normMethod_TIC <- function(dat, mass_dat, spectra_cols){
+norm_TIC <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -3419,11 +3459,15 @@ library(testthat)
 
 ```
 
+<<<<<<< HEAD
 # normMethod_rel_TIC (done)
 
 <<<<<<< HEAD
 >>>>>>> f435d1f... Updated issue log
 =======
+=======
+## norm_rel_TIC (done)
+>>>>>>> 0aa2619... JOSS 10 (Issue): Fixed formatting of test files
 ```{r}
 # ---------------------
 # METHOD: RELATIVE TIC
@@ -3439,7 +3483,7 @@ library(testthat)
   return(y/all_y) # single value
 }
 
-.normMethod_rel_TIC <- function(dat, mass_dat, spectra_cols){
+norm_rel_TIC <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -3493,7 +3537,11 @@ library(testthat)
 
 
 
-#########################################################################
+
+
+
+
+
 
 
 ## JOSS 6: roxygen2 (Closed)
@@ -3514,95 +3562,285 @@ oxygnze <- function(file){
 ```
 
 
-# avgSpectra.Rd (done)
 
+## avgSpectra.Rd (done)
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/avgSpectra.Rd")
 ```
 
-# baselineCorr.Rd (done)
+## baselineCorr.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/baselineCorr.Rd")
 ```
 
 
-# createSpecDF.Rd (done)
+## createSpecDF.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/createSpecDF.Rd")
 ```
 
 
-# find_max.Rd (done)
+## find_max.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/find_max.Rd")
 ```
 
 
-# find_max_set.Rd (done)
+## find_max_set.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/find_max_set.Rd")
 ```
 
 
-# mapSpectrum.Rd (done)
+## mapSpectrum.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/mapSpectrum.Rd")
 ```
 
 
-# normSpectra.Rd (done)
+## normSpectra.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/normSpectra.Rd")
 ```
 
 
-# peakDet.Rd (done)
+## peakDet.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/peakDet.Rd")
 ```
 
 
-# readcsvDir.Rd (done)
+## readcsvDir.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/readcsvDir.Rd")
 ```
 
 
-# readcsvSpec.Rd (done)
+## readcsvSpec.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/readcsvSpec.Rd")
 ```
 
 
-# rmveEmpty.Rd (done)
+## rmveEmpty.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/rmveEmpty.Rd")
 ```
 
 
-# smoothSpectrum.Rd (done)
+## smoothSpectrum.Rd (done)
 
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/smoothSpectrum.Rd")
 ```
 
 
-# subSpectra.Rd (done)
-
+## subSpectra.Rd (done)
 ```{r}
 oxygnze(file = "/home/sophie/subMaldi/man/subSpectra.Rd")
 ```
 
 
-## JOSS 
+
+
+## JOSS 10: test code
+
+## baselineCorr.R
+
+```{r}
+
+```
+
+## baseMALDI.R
+
+```{r}
+
+```
+
+## avgSpectra.R
+
+```{r}
+
+```
+
+## baseline_loess.R
+
+```{r}
+
+```
+
+## baseline_sub.R
+
+```{r}
+
+```
+
+## createSpecDF.R
+
+```{r}
+
+```
+
+## find_max.R
+
+```{r}
+
+```
+
+## find_max_set.R
+
+```{r}
+
+```
+
+## mapSpectrum.R
+
+```{r}
+
+```
+
+## norm_RMS.R
+
+```{r}
+
+```
+
+## norm_TIC.R
+
+```{r}
+
+```
+
+## norm_rel_TIC.R
+
+```{r}
+
+```
+
+## norm_custimp.R
+
+```{r}
+
+```
+
+## norm_custom.R
+
+```{r}
+
+```
+
+## norm_max.R
+
+```{r}
+
+```
+
+## norm_median.R
+
+```{r}
+
+```
+
+## norm_quantile.R
+
+```{r}
+
+```
+
+## norm_stdev.R
+
+```{r}
+
+```
+
+## normSpectra.R
+
+```{r}
+
+library(testthat)
+
+test_that("Method = NULL yields error", {
+  expect_error(normSpectra(dat = Master, 
+                           mass_dat = "full_mz",
+                           method = "apple",
+                           norm_mz = NULL,
+                           upper = NULL,
+                           lower = NULL,
+                           spectra_cols = NULL,
+                           showHI = FALSE))
+})
+
+
+
+```
+
+## peakDet.R
+
+```{r}
+
+```
+
+## peak_sub.R
+
+```{r}
+
+```
+
+## plotSpectra.R
+
+```{r}
+library(testthat)
+
+
+
+
+
+```
+
+## readcsvDir.R
+
+```{r}
+
+```
+
+## readcsvSpec.R
+
+```{r}
+
+```
+
+## rmveEmpty.R
+
+```{r}
+
+```
+
+## smoothSpectrum.R
+
+```{r}
+
+```
+
+## smooth_sub.R
+
+```{r}
+
+```
+
+## subSpectra.R
+
+```{r}
+
+```
+
 
