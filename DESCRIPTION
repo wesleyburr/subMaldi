@@ -72,6 +72,7 @@ Description: subMALDI is an open framework tool that permits organization,
     user-defined functions are easier to implement and test.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -111,6 +112,9 @@ Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.54.0)
 >>>>>>> fb110b9... Fixed packaged structure - removed .tar.gz
 =======
 Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3)
+=======
+Depends: R (>= 3.5.0), dplyr (>= 0.8.0), tidyr (>= 1.1.0), ggplot2 (>= 3.3.0), ggpmisc (>= 0.3.3), reshape2 (>= 1.4.4), RColorBrewer (>= 1.1-2)
+>>>>>>> 24787bc... Added RColorBrewer dependency
 Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0)
 >>>>>>> 27b29da... Updated docs
 License: GPL (>= 3) + file LICENSE
