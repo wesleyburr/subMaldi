@@ -252,45 +252,50 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL, upper = NU
   
   
   if(method == "max"){ 
-    norm_max(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
+    r <- norm_max(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
   }
   
   if(method == "custom"){ 
-    norm_custom(dat = dat, mass_dat = mass_dat, norm_mz = norm_mz, spectra_cols = spectra_cols, showHI = showHI) 
+    r <- norm_custom(dat = dat, mass_dat = mass_dat, norm_mz = norm_mz, spectra_cols = spectra_cols, showHI = showHI) 
   } 
     
   if(method == "custom_imprecise"){ 
-    norm_custimp(dat = dat, mass_dat = mass_dat, norm_mz = norm_mz, spectra_cols = spectra_cols, showHI = showHI) 
+    r <- norm_custimp(dat = dat, mass_dat = mass_dat, norm_mz = norm_mz, spectra_cols = spectra_cols, showHI = showHI) 
   } 
     
   if(method == "max_set"){ 
-    norm_max_set(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
+    r <- norm_max_set(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
   }
     
   if( method == "TIC"){
-    norm_TIC(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
+    r <- norm_TIC(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
   } 
     
   if(method == "RMS"){
-    norm_RMS(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
+    r <- norm_RMS(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
   }
     
   if(method == "rel_TIC"){
-    norm_rel_TIC(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
+    r <- norm_rel_TIC(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
   }
     
   if(method == "median"){
-    norm_median(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols)
+    r <- norm_median(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols)
   }
       
   if(method == "stdev"){
-    norm_stdev(dat = dat, mass_dat = mass_dat, lower = lower, upper = upper, spectra_cols = spectra_cols) 
+    r <- norm_stdev(dat = dat, mass_dat = mass_dat, lower = lower, upper = upper, spectra_cols = spectra_cols) 
   }
     
   if(method == "quantile"){
-    norm_quantile(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
+    r <- norm_quantile(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
   }
+<<<<<<< HEAD
 >>>>>>> af5047e... TIC norm added- removed .tar.gz
+=======
+  
+  return(r)
+>>>>>>> 0c7b870... Fixed object return bug
 }  
 
 
