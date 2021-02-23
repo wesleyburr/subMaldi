@@ -7,12 +7,20 @@
 rmveEmpty(dat)
 }
 \arguments{
+<<<<<<< HEAD
 \item{dat}{The spectral data frame, containing \code{full_mz} in the first
 column, to be trimmed of all-zero rows.}
+=======
+  \item{dat}{The spectral data frame, containing \code{full_mz} in the first column, to be trimmed of all-zero rows.}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+>>>>>>> 270485a... Updated documentation
 }
 \value{
 Returns the input data frame without its all-zero rows.
 }
+<<<<<<< HEAD
 \description{
 Data frames created using createSpecDF can have thousands to millions of
 rows, especially when dealing with high resolution mass spectrometry data.
@@ -33,6 +41,32 @@ data("Master")
 
 ## Select only the spectra "Before1" and "Before2"
 ex <- select(Master, "full_mz", "Before1", "Before2")
+=======
+\references{
+https://github.com/wesleyburr/subMaldi
+}
+\author{
+Kristen Yeh <kristenyeh@trentu.ca>
+}
+\note{
+Avoid truncating a dataframe until all samples to be compared have been mapped. 
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+\code{\link{createSpecDF}},\code{\link{mapSpectrum}}
+}
+\examples{
+## Load sample dataset "After2.rda"
+data("After2")
+
+## Create empty spectral data frame to map to
+spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
+
+## Map binary spectral data to empty spectral data frame
+spec_df <- mapSpectrum(dat = After2, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
+>>>>>>> 270485a... Updated documentation
 
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages

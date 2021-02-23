@@ -7,6 +7,7 @@
 avgSpectra(dat, method = "mean", spectra_cols)
 }
 \arguments{
+<<<<<<< HEAD
 \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the
 first column.}
 
@@ -26,6 +27,35 @@ summing (method = "sum") the intensity values across each row representing a
 mass-to-charge value in \code{full_mz}.
 }
 \examples{
+=======
+  \item{dat}{The mapped spectral data frame, containing \code{full_mz} in the first column.}
+  \item{method}{A character string; the method used to combine the spectra. Methods include "sum" and "mean". Default = "mean."}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+}
+\value{
+Returns a vector of intensity values that are printed to the "Average" column in the corresponding rows of the \code{full_mz} vector in the mapped spectral data frame.
+}
+\references{
+https://github.com/wesleyburr/subMaldi
+}
+\author{
+Kristen Yeh <kristenyeh@trentu.ca>
+}
+\note{
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+\code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
+}
+\examples{
+## Load sample datasets
+data("Before1")
+data("After1")
+>>>>>>> 270485a... Updated documentation
 
 ## Load sample dataset "Master.rda"
 data("Master")

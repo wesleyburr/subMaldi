@@ -7,6 +7,7 @@
 subSpectra(dat, Blank_Var, Sample, Sub_Sample, showNeg = FALSE)
 }
 \arguments{
+<<<<<<< HEAD
 \item{dat}{The spectral data frame, containing \code{full_mz} in the first
 column and intensity data in the subsequent columns.}
 
@@ -28,6 +29,28 @@ output dataset.}
 Returns a vector of intensity values that are filled into the
 \code{Sub_Sample} column of the mapped data frame at the corresponding rows
 of \code{full_mz}.
+=======
+  \item{dat}{The spectral data frame, containing \code{full_mz} in the first column and intensity data in the subsequent columns.}
+  \item{Blank_Var}{A character string; the name of the blank column that will be subtracted from the sample column.}
+  \item{Sample}{A character string; the name of the sample column that the blank data will be subtracted from.}
+  \item{Sub_Sample}{A character string; the name of the column to be filled with the subtracted spectrum.}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+}
+\value{
+Returns a vector of intensity values that are filled into the \code{Sub_Sample} column of the mapped data frame at the corresponding rows of \code{full_mz}.
+}
+\references{
+https://github.com/wesleyburr/subMaldi
+}
+\author{
+Kristen Yeh <kristenyeh@trentu.ca>
+Wesley Burr <wburr@trentu.ca>
+}
+\note{
+%%  ~~further notes~~
+>>>>>>> 270485a... Updated documentation
 }
 \description{
 This function takes the intensity values in the blank column of the mapped
@@ -37,18 +60,30 @@ that in the sample spectrum, the intensity of the sample peak is given an
 intensity of 0.
 }
 \examples{
+<<<<<<< HEAD
 
 ## Load sample datasets "Master.rda"
 data("Master")
 
+=======
+## Load sample datasets "Master.rda"
+data("Master")
+
+>>>>>>> 270485a... Updated documentation
 ## Make subtraction column for new data
 Master <- transform(Master, "Subtracted" = 0)
 
 ## Subtract Blank1 from Before1
+<<<<<<< HEAD
 Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
                       Sample = "Before1", Sub_Sample = "Subtracted")
 
 
+=======
+Master <- subSpectra(dat = Master, Blank_Var = "Blank1", Sample = "Before1", Sub_Sample = "Subtracted")
+{
+  }
+>>>>>>> 270485a... Updated documentation
 }
 \references{
 https://github.com/wesleyburr/subMaldi

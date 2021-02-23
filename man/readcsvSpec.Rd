@@ -7,6 +7,7 @@
 readcsvSpec(spec_file, massCol, intenseCol)
 }
 \arguments{
+<<<<<<< HEAD
 \item{spec_file}{A character string; the file path to the \code{.csv}
 spectrum that is to be imported.}
 
@@ -15,6 +16,15 @@ spectrum's \code{.csv} file.}
 
 \item{intenseCol}{A character string; the name of the intensity column in
 the spectrum's \code{.csv} file.}
+=======
+  \item{spec_file}{A character string; the file path to the \code{.csv} spectrum that is to be imported.}
+  \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
+  \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
+  \item{spec_name}{A character string; the name of the new, binary data frame containing imported the \emph{m/z} and intensity data.}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+>>>>>>> 270485a... Updated documentation
 }
 \value{
 Returns a binary data frame containing the imported data in a
@@ -29,6 +39,25 @@ frame containing a "mass" and "Intensity" column.
 https://github.com/wesleyburr/subMaldi
 }
 \author{
+<<<<<<< HEAD
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+=======
+Kristen Yeh <kristenyeh@trentu.ca>
+Wesley Burr <wburr@trentu.ca>
+}
+\note{
+%%  ~~further notes~~
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+%% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+\examples{
+## Read the sample file "Blank1.csv"
+Blank1 <- readcsvSpec(spec_file = "/subMALDI/data/Blank.csv", massCol = "m.z", intenseCol = "I")
+
+>>>>>>> 270485a... Updated documentation
 }
 \keyword{methods}
