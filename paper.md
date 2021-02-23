@@ -9,11 +9,17 @@ authors:
     orcid: 0000-0002-3411-6816
     affiliation: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
   - name: Sophie Castel
     orcid: 0000-0001-9086-0917
     affiliation: 3
 =======
 >>>>>>> 71a3e1b... Updated paper
+=======
+  - name: Sophie Castel
+    orcid: ???
+    affiliation: 3
+>>>>>>> def169a... Added ref to FrsChem paper, Sophie as author
   - name: Naomi L. Stock
     orcid: 0000-0002-3472-9284
     affiliation: 2
@@ -29,10 +35,14 @@ affiliations:
   - name: Water Quality Center, Trent University
     index: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
   - name: Faculty of Science, Forensic Science & Applied Bioscience, Ontario Tech University
 =======
   - name: Faculty of Science, Forensic Science, Ontario Tech University
 >>>>>>> 71a3e1b... Updated paper
+=======
+  - name: Faculty of Science, Forensic Science & Applied Bioscience, Ontario Tech University
+>>>>>>> def169a... Added ref to FrsChem paper, Sophie as author
     index: 3
   - name: Faculty of Science, Mathematics, Trent University
     index: 4
@@ -216,7 +226,7 @@ data of each spectral replicate in adjacent columns.
 `subMALDI` was designed for use by researchers who wish to organize,
 process, and analyze single spectra data, particularly MS data, while still being able to access their raw
 data throughout the process. It has been utilized in a scientific article
-accepted into the *Journal of Forensic Chemistry* (FORC-D-20-00095) and
+in the *Journal of Forensic Chemistry* [@Yeh:2020] and
 in our laboratory for analysis of MALDI-MS and electrospray-ionization
 (ESI) MS data. The open framework format of `subMALDI` creates a more
 transparent pipeline for processing of MS data, where users can easily
