@@ -1,30 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^.Rhistory$
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 ^subMALDI_1.0-0.tar.gz$
 ^paper.Rmd$
 ^paper.bib$
 ^doc$
 ^Meta$
-=======
-^subMALDI_0.1-2.tar.gz$
-<<<<<<< HEAD
->>>>>>> 6b09f74... Fixed documentation
-=======
-=======
-^subMALDI_1.0.0.tar.gz$
->>>>>>> 18741fa... Updated build version
-=======
-^subMALDI_1.0-0.tar.gz$
->>>>>>> 4734bec... Updated version
-^paper.Rmd$
-^paper.bib$
-<<<<<<< HEAD
->>>>>>> 3c0f9e7... Fixing package structure
-=======
-^doc$
-^Meta$
->>>>>>> de15a92... Fixed packaged structure

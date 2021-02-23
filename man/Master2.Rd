@@ -5,15 +5,7 @@
 Master Data Frame (Low Resolution)
 }
 \description{
-<<<<<<< HEAD
-<<<<<<< HEAD
 A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the baseline corrected (by linear interpolation) intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
-=======
-A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
->>>>>>> 3c63485... Added data documentation
-=======
-A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSpectrum()}. Contains the baseline corrected (by linear interpolation) intensity data for 6 spectra, with \emph{m/z} data recorded up to 2 decimal places. 
->>>>>>> a20b013... Corrected master datasets & custom normalization
 }
 \usage{data("Master2")}
 \format{
@@ -28,21 +20,8 @@ A mapped spectral data frame created using \code{createSpecDF()} and \code{mapSp
     \item{\code{After2}}{A numeric vector; the intensity data for the sixth spectrum in the dataset. Spectrum obtained after chemical intervention.}
   }
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
 \source{
 Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent fingerprints recovered from underneath bloodstains using Matrix-Assisted Laser Desportion/Ionization Fourier-Transform Ion Cyclotron Resonance Mass Spectrometry Imaging (MALDI FT-ICR MSI). Forensic Chemistry (2020). In press.
-=======
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
-\source{
-%%  ~~ reference to a publication or URL from which the data were obtained ~~
->>>>>>> 3c63485... Added data documentation
-=======
-\source{
-Yeh, K., Stock N. L., Burr, W. & Stotesbury, T. Preliminary analysis of latent fingerprints recovered from underneath bloodstains using Matrix-Assisted Laser Desportion/Ionization Fourier-Transform Ion Cyclotron Resonance Mass Spectrometry Imaging (MALDI FT-ICR MSI). Forensic Chemistry (2020). In press.
->>>>>>> 5831098... Added pre-processing vignette
 }
 \references{
 https://github.com/wesleyburr/subMaldi

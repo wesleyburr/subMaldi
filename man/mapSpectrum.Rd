@@ -2,24 +2,8 @@
 % Please edit documentation in R/mapSpectrum.R
 \name{mapSpectrum}
 \alias{mapSpectrum}
-<<<<<<< HEAD
-<<<<<<< HEAD
-\title{Map Spectrum to \emph{m/z} Vector}
-=======
-\title{
-Map Spectrum to \emph{m/z} Vector
-}
-\description{
-Fills in the columns of the empty data frame created using \code{createSpecDF}. Mass to charge values from pairwise spectral data are compared to the \code{full_mz} vector. All peaks within the \code{thresh} of one another are binned, and only the maximum intensity of that bin is filled into the mapped spectrum.
-}
->>>>>>> c6a3769... Updated documentation
-\usage{
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 \title{Map Spectrum to \emph{m/z} Vector}
 \usage{
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 mapSpectrum(
   dat,
   massCol,
@@ -29,20 +13,8 @@ mapSpectrum(
   spec_df,
   colName
 )
-<<<<<<< HEAD
-=======
-mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 5e-5 spec_df, colName)
->>>>>>> 270485a... Updated documentation
-=======
-mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 1e-04, spec_df, colName)
->>>>>>> 6b09f74... Fixed documentation
 }
 \arguments{
-<<<<<<< HEAD
-=======
-}
-\arguments{
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \item{dat}{A pairwise data frame containing your spectral data. Should
 contain two columns: one for \emph{m/z} and one for intensity.}
 
@@ -59,27 +31,6 @@ to fill. Default = 4.}
 \item{thresh}{Single numeric value; all \emph{m/z} values within
 \code{thresh} of each other are binned under that with the maximum
 intensity. Default = 5e-5.}
-<<<<<<< HEAD
-
-\item{spec_df}{An empty data frame created using \code{createSpecDF}.}
-
-\item{colName}{A character string; the name of the column that should be
-filled with the spectral data.}
-}
-\value{
-Returns a vector that is used to fill in the \code{colName} column
-of the mapped spectral data frame.
-=======
-  \item{dat}{A pairwise data frame containing your spectral data. Should contain two columns: one for \emph{m/z} and one for intensity.}
-  \item{massCol}{A character string; the name of the \emph{m/z} column in \code{dat}.}
-  \item{intenseCol}{A character string; the name of the intensity column in \code{dat}.}
-  \item{dig}{Number of decimal places to round the \emph{m/z} data to; must match the same value used in \code{createSpecDF} in order for the columns to fill. Default = 4.}
-  \item{thresh}{Single numeric value; all \emph{m/z} values within \code{thresh} of each other are binned under that with the maximum intensity. Default = 5e-5.}
-  \item{spec_df}{An empty data frame created using \code{createSpecDF}.}
-  \item{colName}{A character string; the name of the column that should be filled with the spectral data.}
-}
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 
 \item{spec_df}{An empty data frame created using \code{createSpecDF}.}
 
@@ -90,18 +41,6 @@ filled with the spectral data.}
 Returns a vector that is used to fill in the \code{colName} column
 of the mapped spectral data frame.
 }
-<<<<<<< HEAD
-\references{
-https://github.com/wesleyburr/subMaldi
->>>>>>> 270485a... Updated documentation
-}
-\description{
-Fills in the columns of the empty data frame created using
-\code{createSpecDF}. Mass to charge values from pairwise spectral data are
-compared to the \code{full_mz} vector. All peaks within the \code{thresh}
-of one another are binned, and only the maximum intensity of that bin is
-filled into the mapped spectrum.
-=======
 \description{
 Fills in the columns of the empty data frame created using
 \code{createSpecDF}. Mass to charge values from pairwise spectral data are
@@ -113,25 +52,9 @@ filled into the mapped spectrum.
  It is important that the values for \code{thresh} and
 \code{dig} are equal to that of \code{res} and \code{dig} used in
 \code{createSpecDF()}. Otherwise the data will fail to map.
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 }
-<<<<<<< HEAD
-\section{Warning}{
- It is important that the values for \code{thresh} and
-\code{dig} are equal to that of \code{res} and \code{dig} used in
-\code{createSpecDF()}. Otherwise the data will fail to map.
-}
-=======
 
-<<<<<<< HEAD
->>>>>>> 5831098... Added pre-processing vignette
-
-<<<<<<< HEAD
 \examples{
-<<<<<<< HEAD
-=======
-\section{Warning}{It is important that the values for \code{thresh} and \code{dig} are equal to that of \code{res} and \code{dig} used in \code{createSpecDF()}. Otherwise the data will fail to map.}
->>>>>>> c6a3769... Updated documentation
 
 ## Load sample dataset "Blank1.rda"
 data("lank1")
@@ -151,56 +74,8 @@ https://github.com/wesleyburr/subMaldi
 \seealso{
 \code{\link{createSpecDF}}
 }
-<<<<<<< HEAD
 \author{
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{array}
 \keyword{methods}
-=======
-## Load sample dataset "Before1.rda"
-data("Before1")
-=======
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-\examples{
-
-## Load sample dataset "Blank1.rda"
-data("lank1")
->>>>>>> 6b09f74... Fixed documentation
-
-## Create empty spectral data frame to map to
-spec_df <- createSpecDF(min_mz = 53.76, max_mz = 1100, res = 0.0001, dig = 4)
-
-## Map binary spectral data to empty spectral data frame
-spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", 
-            spec_df = spec_df, colName = "Sample", thresh = 1e-04, dig = 4)
-
-<<<<<<< HEAD
-}
-<<<<<<< HEAD
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
->>>>>>> 270485a... Updated documentation
-=======
-
-\keyword{ methods }
-\keyword{ array }
->>>>>>> c6a3769... Updated documentation
-=======
-
-}
-\references{
-https://github.com/wesleyburr/subMaldi
-}
-\seealso{
-\code{\link{createSpecDF}}
-}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-}
-\keyword{array}
-\keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.

@@ -2,231 +2,20 @@
 % Please edit documentation in R/plotSpectra.R
 \name{plotSpectra}
 \alias{plotSpectra}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 \title{Plot and Compare Spectra}
-=======
-\title{
-Plot and Compare Multiple Spectra
-}
-\description{
-Plots multiple spectra on the same \emph{x}-axis scale for easier comparison. Allows for 2 to 6 spectra per plot, stacked on top of one another.
-}
->>>>>>> c6a3769... Updated documentation
 \usage{
-<<<<<<< HEAD
-<<<<<<< HEAD
 plotSpectra(
   dat,
   mass_dat,
   spectra_cols,
   palette = "Set2",
   colours = brewer.pal(length(spectra_cols), palette),
-=======
-\title{Plot and Compare Multiple Spectra}
-=======
-\title{Plot and Compare Spectra}
->>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
-\usage{
-plotSpectra(
-  dat,
-  mass_dat,
-<<<<<<< HEAD
-  spec1,
-  spec2 = NULL,
-  spec3 = NULL,
-  spec4 = NULL,
-  spec5 = NULL,
-  spec6 = NULL,
-  colour1 = "steelblue1",
-  colour2 = "lightpink1",
-  colour3 = "coral",
-  colour4 = "goldenrod1",
-  colour5 = "gold",
-  colour6 = "seagreen3",
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-  spectra_cols,
-<<<<<<< HEAD
-  colours = brewer.pal(length(spectra_cols), "Set2"),
->>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
-=======
-  palette = "Set2",
-  colours = brewer.pal(length(spectra_cols), palette),
->>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
   span = 5,
   thresh = 0.1,
   lbls = FALSE,
   lbl.fmt = "\%3.4f",
   min_mz = 0,
-<<<<<<< HEAD
-<<<<<<< HEAD
   max_mz = max(dat[[mass_dat]]),
-  min_I = 0,
-  max_I = max(dat[spectra_cols]),
-  x_ticks = 100,
-  nrows = round_any(length(spectra_cols), 2, f = ceiling)/2,
-  intensity_scale = "free_y"
-)
-=======
-plotSpectra(dat, mass_dat, spec1, spec2, spec3 = NULL, spec4 = NULL, 
-            colour1 = "steelblue1", colour2 = "lightpink1",
-            colour3 = "seagreen3", colour4 = "mediumpurple1",
-            span = 5, thresh = 0.1, lbls = FALSE, lbl.fmt = "\%3.4f", min_mz = 0, 
-<<<<<<< HEAD
-<<<<<<< HEAD
-            max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
->>>>>>> 6b09f74... Fixed documentation
-=======
-            max_mz = 1000, min_I = 0, max_I = max(dat), x_ticks = 100,   
-            intensity_scale = "free_y")
->>>>>>> 4bbf2ad... Baseline correction added
-=======
-            max_mz = 1000, x_ticks = 100, intensity_scale = "free_y")
->>>>>>> eae6033... Fixed bug in plotting functions
-=======
-plotSpectra(dat, mass_dat, spec1, spec2 = NULL, 
-            spec3 = NULL, spec4 = NULL, spec5 = NULL, 
-            spec6 = NULL, colour1 = "steelblue1",
-            colour2 = "lightpink1", colour3 = "coral", 
-            colour4 = "goldenrod1", colour5 = "gold", 
-            colour6 = "seagreen3", span = 5, thresh = 0.1,
-            lbls = FALSE, lbl.fmt = "\%3.4f", min_mz = 0, 
-            max_mz = 10000, min_I = 0, max_I = NULL, 
-            x_ticks = 100, intensity_scale = "free_y")
->>>>>>> 604e5e6... Added custom intensity for plots
-}
-\arguments{
-<<<<<<< HEAD
-\item{dat}{The name of the spectral data frame, containing the \emph{m/z}
-data in the first column.}
-
-\item{mass_dat}{A character string; the name of the column in \code{dat}
-containing the \emph{m/z} data.}
-
-\item{spectra_cols}{A character string; the name(s) of the column(s) in \code{dat}
-containing the intensity data for the spectra-of-interest.}
-
-\item{palette}{A character string; the RColorBrewer palette to use. See below for available palettes.}
-
-\item{colours}{A character string indicating the desired colour(s)}
-
-\item{span}{Single numeric value; the span of peak maxima in between each
-label. Default = 5 (ignores two peak maxima on either side of each label).}
-
-\item{thresh}{Single numeric value (0-100); the threshold of peak
-intensities which should be labeled.}
-
-\item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the
-\emph{m/z} value of each peak maxima within the indicated \code{span} will
-be included in the output plot. If \code{lbls = FALSE}, labels are not
-shown.}
-
-\item{lbl.fmt}{Character string in the format "\%a.bf", where \emph{a} is
-the number of figures displayed to the left of decimal places in labels,
-and \emph{b} is the number of figures displayed to the right of decimal
-places in labels.  Default = "\%3.4f".}
-
-\item{min_mz}{Single numeric value; minimum \emph{m/z} value of the
-observed range.}
-
-\item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed
-in spectra.}
-
-\item{min_I}{Single numeric value; minimum intensity value of the observed
-range.}
-
-\item{max_I}{Single numeric value; upper end of the intensity range
-observed in spectra.}
-
-\item{x_ticks}{Single numeric value; the number of ticks on the x-axis.}
-
-\item{nrows}{Single integer value; the number of rows in plot arrangement.}
-
-\item{intensity_scale}{A character string; the method that should be used
-for determining the y-axis scales for each spectrum. If \code{method =
-"free_y"}, each spectrum will be plotted with its own intensity scale. If
-\code{method = "fixed"}, each spectrum will be plotted with the y-axis of
-the most intense spectrum in the set.}
-=======
-  \item{dat}{The name of the spectral data frame, containing the \emph{m/z} data in the first column.}
-  \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data.}
-  \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the first spectrum that is to be plotted.}
-  \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be plotted.}
-  \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be plotted.}
-  \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be plotted.}
-  \item{spec5}{A character string; the name of the column in \code{dat} containing the intensity data for the fifth spectrum to be plotted.}
-  \item{spec6}{A character string; the name of the column in \code{dat} containing the intensity data for the sixth spectrum to be plotted.}
-  \item{colour1}{A character string indicating the colour the first spectrum should be plotted in.}
-  \item{colour2}{A charater string indicating the colour of the second spectrum in the plot.}
-  \item{colour3}{A charater string indicating the colour of the third spectrum in the plot.}
-  \item{colour4}{A charater string indicating the colour of the fourth spectrum in the plot.}
-  \item{colour5}{A charater string indicating the colour of the fifth spectrum in the plot.}
-  \item{colour6}{A charater string indicating the colour of the sixth spectrum in the plot.}
-  \item{span}{Single numeric value; the span of peak maximas in between each label. Default = 5 (ignores two peak maxima on either side of each label).}
-  \item{thresh}{Single numeric value (0-100); the threshold of peak itensities which should be labelled.}
-  \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the \emph{m/z} value of each peak maxima within the indicated \code{span} will be included in the output plot. If \code{lbls = FALSE}, labels are not shown.}
-  \item{lbl.fmt}{Character string in the format "\%a.bf", where \emph{a} is the number of figures displayed to the left of decimal places in labels, and \emph{b} is the number of figures displayed to the right of decimal places in labels.  Default = "\%3.4f".}
-  \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range.}
-  \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra.}
-  \item{min_I}{Single numeric value; minimum intensity value of the observed range.}
-  \item{max_I}{Single numeric value; upper end of the intensity range observed in spectra.}
-  \item{x_ticks}{Single numeric value; the space between ticks on x-axis.}
-  \item{intensity_scale}{A character string; the method that should be used for determining the y-axis scales for each spectrum. If \code{method = "free_y"}, each spectrum will be plotted with its own intensity scale. If \code{method = "fixed"}, each spectrum will be plotted with the y-axis of the most intense spectrum in the set.}
-}
-<<<<<<< HEAD
-\details{
-%%  ~~ If necessary, more details than the description above ~~
->>>>>>> 2a95699... Updated documentation
-}
-<<<<<<< HEAD
-\value{
-Returns a line plot of the input spectra.
-}
-\description{
-Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
-=======
-=======
-
->>>>>>> 5831098... Added pre-processing vignette
-\value{Returns a line plot of the input spectra.}
-\references{
-https://github.com/wesleyburr/subMaldi}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca>
-Wesley Burr <wburr@trentu.ca>
->>>>>>> 270485a... Updated documentation
-}
-<<<<<<< HEAD
-\section{RColorBrewer Palettes}{
- 
-\describe{\itemize{\item{\code{"Accent"}}
-                   \item{\code{"Dark2"}} 
-                   \item{\code{"Paired"}}  
-                   \item{\code{"Pastel1"}}  
-                   \item{\code{"Pastel2"}}  
-                   \item{\code{"Set1"}}  
-                   \item{\code{"Set2"}} 
-                   \item{\code{"Set3"}}
-                   } 
-          }
-}
-
-<<<<<<< HEAD
-=======
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
->>>>>>> c6a3769... Updated documentation
-=======
-
->>>>>>> 5831098... Added pre-processing vignette
-=======
-  max_mz = 10000,
-=======
-  max_mz = max(dat[[mass_dat]]),
->>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
   min_I = 0,
   max_I = max(dat[spectra_cols]),
   x_ticks = 100,
@@ -292,9 +81,6 @@ Returns a line plot of the input spectra.
 \description{
 Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
 }
-<<<<<<< HEAD
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
 \section{RColorBrewer Palettes}{
  
 \describe{\itemize{\item{\code{"Accent"}}
@@ -309,42 +95,14 @@ Plot single or multiple spectra. For multiple spectra, a grid layout can be call
           }
 }
 
->>>>>>> 3488b06... Added RColorBrewer palettes to plotSpectra() function
 \examples{
 
 ## Plotting using the sample dataset "Master.rda"
 data("Master")
 plotSpectra(dat = Master, mass_dat = "full_mz",
-<<<<<<< HEAD
-<<<<<<< HEAD
             spectra_cols = c("Blank1", "Blank2"),
             intensity_scale = "free_y", lbls = TRUE, nrows = 2, x_ticks = 10)
 }
-<<<<<<< HEAD
-\references{
-https://github.com/wesleyburr/subMaldi
-}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca> Sophie Castel <sophie.castel@ontariotechu.net>
-=======
-            spec1 = "Blank1", spec2 = "Blank2",
-            intensity_scale = "free_y", lbls = TRUE)
->>>>>>> 4bbf2ad... Baseline correction added
-=======
-            spectra_cols = c("Blank1", "Blank2"),
-            intensity_scale = "free_y", lbls = TRUE, nrows = 2, x_ticks = 10)
->>>>>>> cd09eca... Combined legacy plotting functions (plotSpectrum(), plotSpectra(), plotgridSpectra()) into a single function; plotSpectra(). Included parameter 'nrows' to allow user to construct a grid layout.
-}
-<<<<<<< HEAD
-\keyword{aplot}
-\keyword{methods}
-=======
-
-
-\keyword{methods }
-\keyword{ aplot }
->>>>>>> c6a3769... Updated documentation
-=======
 \references{
 https://github.com/wesleyburr/subMaldi
 }
@@ -353,4 +111,3 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca> Sophie Castel <
 }
 \keyword{aplot}
 \keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.

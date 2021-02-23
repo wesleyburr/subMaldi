@@ -2,51 +2,17 @@
 % Please edit documentation in R/rmveEmpty.R
 \name{rmveEmpty}
 \alias{rmveEmpty}
-<<<<<<< HEAD
-<<<<<<< HEAD
 \title{Remove Empty Rows}
-=======
-\title{
-Remove Empty Rows
-}
-\description{
-Data frames created using createSpecDF can have thousands to millions of rows, especially when dealing with high resolution mass spectrometry data. This can be quite taxing to the speed of executing certain functions, especially when it comes to visualizing data. This function removes empty rows to reduce the computational load and increase the ease of use of functions on the data frame. Any row where all elements (but the first, which is \code{full_mz}) equal 0 are removed from the data frame.
-}
->>>>>>> c6a3769... Updated documentation
-=======
-\title{Remove Empty Rows}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \usage{
 rmveEmpty(dat)
 }
 \arguments{
-<<<<<<< HEAD
-<<<<<<< HEAD
-\item{dat}{The spectral data frame, containing \code{full_mz} in the first
-column, to be trimmed of all-zero rows.}
-=======
-  \item{dat}{The spectral data frame, containing \code{full_mz} in the first column, to be trimmed of all-zero rows.}
-}
-<<<<<<< HEAD
-\details{
-%%  ~~ If necessary, more details than the description above ~~
->>>>>>> 270485a... Updated documentation
-}
-=======
-
->>>>>>> 5831098... Added pre-processing vignette
-\value{
-Returns the input data frame without its all-zero rows.
-}
-<<<<<<< HEAD
-=======
 \item{dat}{The spectral data frame, containing \code{full_mz} in the first
 column, to be trimmed of all-zero rows.}
 }
 \value{
 Returns the input data frame without its all-zero rows.
 }
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \description{
 Data frames created using createSpecDF can have thousands to millions of
 rows, especially when dealing with high resolution mass spectrometry data.
@@ -55,7 +21,6 @@ especially when it comes to visualizing data. This function removes empty
 rows to reduce the computational load and increase the ease of use of
 functions on the data frame. Any row where all elements (but the first,
 which is \code{full_mz}) equal 0 are removed from the data frame.
-<<<<<<< HEAD
 }
 \note{
 Avoid truncating a dataframe until all samples to be compared have
@@ -68,41 +33,10 @@ data("Master")
 
 ## Select only the spectra "Before1" and "Before2"
 ex <- select(Master, "full_mz", "Before1", "Before2")
-=======
-\references{
-https://github.com/wesleyburr/subMaldi
-}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca>
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-}
-\note{
-Avoid truncating a dataframe until all samples to be compared have
-been mapped.
-}
-\examples{
-
-## Load sample dataset "Mastre.rda"
-data("Master")
-
-<<<<<<< HEAD
-## Create empty spectral data frame to map to
-spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
-
-## Map binary spectral data to empty spectral data frame
-spec_df <- mapSpectrum(dat = After2, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
->>>>>>> 270485a... Updated documentation
-=======
-## Select only the spectra "Before1" and "Before2"
-ex <- select(Master, "full_mz", "Before1", "Before2")
->>>>>>> 6b09f74... Fixed documentation
 
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages
 ex <- rmveEmpty(dat = ex)
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 }
 \references{
@@ -116,32 +50,3 @@ Kristen Yeh <kristenyeh@trentu.ca>
 }
 \keyword{manip}
 \keyword{methods}
-=======
-{
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
->>>>>>> 6b09f74... Fixed documentation
-=======
-
-}
-<<<<<<< HEAD
-\keyword{ manip }
-\keyword{ methods }
->>>>>>> c6a3769... Updated documentation
-=======
-\references{
-https://github.com/wesleyburr/subMaldi
-}
-\seealso{
-\code{\link{createSpecDF}},\code{\link{mapSpectrum}}
-}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca>
-}
-\keyword{manip}
-\keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
