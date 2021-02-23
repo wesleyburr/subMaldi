@@ -9,7 +9,7 @@ authors:
     orcid: 0000-0002-3411-6816
     affiliation: 1
   - name: Sophie Castel
-    orcid: ???
+    orcid: 0000-0001-9086-0917
     affiliation: 3
   - name: Naomi L. Stock
     orcid: 0000-0002-3472-9284
