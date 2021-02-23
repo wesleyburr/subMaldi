@@ -2,146 +2,11 @@
 % Please edit documentation in R/subSpectra.R
 \name{subSpectra}
 \alias{subSpectra}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 \title{Subtract Blank Peaks from Sample Spectra}
-=======
-=======
->>>>>>> 14c6370... Updated documentation
-=======
->>>>>>> c6a3769... Updated documentation
-\title{
-Subtract Blank Peaks from Sample Spectra
-}
-\description{
-This function takes the intensity values in the blank column of the mapped spectral data frame and subtracts them from the intensity values in the sample column. If the intensity value in the blank spectrum is greater than that in the sample spectrum, the intensity of the sample peak is given an intensity of 0.
-}
->>>>>>> c6a3769... Updated documentation
-=======
-\title{Subtract Blank Peaks from Sample Spectra}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-\title{Subtract Blank Peaks from Sample Spectra}
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
-\title{Subtract Blank Peaks from Sample Spectra}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \usage{
 subSpectra(dat, Blank_Var, Sample, Sub_Sample, showNeg = FALSE)
 }
 \arguments{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-\item{dat}{The spectral data frame, containing \code{full_mz} in the first
-column and intensity data in the subsequent columns.}
-
-\item{Blank_Var}{A character string; the name of the blank column that will
-be subtracted from the sample column.}
-
-\item{Sample}{A character string; the name of the sample column that the
-blank data will be subtracted from.}
-
-\item{Sub_Sample}{A character string; the name of the column to be filled
-with the subtracted spectrum.}
-
-\item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values
-produced by the subtraction will be kept in the dataset. If \code{showNeg =
-FALSE}, then negative values created by the subtraction are set to 0 in the
-output dataset.}
-=======
-=======
->>>>>>> 270485a... Updated documentation
-  \item{dat}{The spectral data frame, containing \code{full_mz} in the first column and intensity data in the subsequent columns.}
-  \item{Blank_Var}{A character string; the name of the blank column that will be subtracted from the sample column.}
-  \item{Sample}{A character string; the name of the sample column that the blank data will be subtracted from.}
-  \item{Sub_Sample}{A character string; the name of the column to be filled with the subtracted spectrum.}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> db6ced3... Updated documentation
-=======
-  \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
->>>>>>> 6c09a20... Fixed documentation
-=======
->>>>>>> 270485a... Updated documentation
-=======
-  \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
->>>>>>> 6b09f74... Fixed documentation
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-\value{
-Returns a vector of intensity values that are filled into the
-\code{Sub_Sample} column of the mapped data frame at the corresponding rows
-of \code{full_mz}.
-=======
-  \item{dat}{The spectral data frame, containing \code{full_mz} in the first column and intensity data in the subsequent columns.}
-  \item{Blank_Var}{A character string; the name of the blank column that will be subtracted from the sample column.}
-  \item{Sample}{A character string; the name of the sample column that the blank data will be subtracted from.}
-  \item{Sub_Sample}{A character string; the name of the column to be filled with the subtracted spectrum.}
-  \item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values produced by the subtraction will be kept in the dataset. If \code{showNeg = FALSE}, then negative values created by the subtraction are set to 0 in the output dataset.}
-}
-=======
->>>>>>> 2931ed6... Added pre-processing vignette
-=======
->>>>>>> 5831098... Added pre-processing vignette
-
-\value{
-Returns a vector of intensity values that are filled into the \code{Sub_Sample} column of the mapped data frame at the corresponding rows of \code{full_mz}.
-}
-\references{
-https://github.com/wesleyburr/subMaldi
-}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca>
-Wesley Burr <wburr@trentu.ca>
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-\note{
-%%  ~~further notes~~
->>>>>>> 270485a... Updated documentation
-}
-<<<<<<< HEAD
-\description{
-This function takes the intensity values in the blank column of the mapped
-spectral data frame and subtracts them from the intensity values in the
-sample column. If the intensity value in the blank spectrum is greater than
-that in the sample spectrum, the intensity of the sample peak is given an
-intensity of 0.
-=======
-=======
-=======
-
->>>>>>> 2931ed6... Added pre-processing vignette
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 5831098... Added pre-processing vignette
-=======
-
->>>>>>> 5831098... Added pre-processing vignette
-
-=======
->>>>>>> 14c6370... Updated documentation
-=======
->>>>>>> c6a3769... Updated documentation
-\seealso{
-\code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
->>>>>>> c6a3769... Updated documentation
-}
-\examples{
-<<<<<<< HEAD
-=======
 \item{dat}{The spectral data frame, containing \code{full_mz} in the first
 column and intensity data in the subsequent columns.}
 
@@ -172,79 +37,7 @@ that in the sample spectrum, the intensity of the sample peak is given an
 intensity of 0.
 }
 \examples{
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 
-## Load sample datasets "Master.rda"
-data("Master")
-
-=======
-=======
-\item{dat}{The spectral data frame, containing \code{full_mz} in the first
-column and intensity data in the subsequent columns.}
-
-\item{Blank_Var}{A character string; the name of the blank column that will
-be subtracted from the sample column.}
-
-\item{Sample}{A character string; the name of the sample column that the
-blank data will be subtracted from.}
-
-=======
-\item{dat}{The spectral data frame, containing \code{full_mz} in the first
-column and intensity data in the subsequent columns.}
-
-\item{Blank_Var}{A character string; the name of the blank column that will
-be subtracted from the sample column.}
-
-\item{Sample}{A character string; the name of the sample column that the
-blank data will be subtracted from.}
-
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-\item{Sub_Sample}{A character string; the name of the column to be filled
-with the subtracted spectrum.}
-
-\item{showNeg}{Logical; if \code{showNeg = TRUE}, then negative values
-produced by the subtraction will be kept in the dataset. If \code{showNeg =
-FALSE}, then negative values created by the subtraction are set to 0 in the
-output dataset.}
-}
-\value{
-Returns a vector of intensity values that are filled into the
-\code{Sub_Sample} column of the mapped data frame at the corresponding rows
-of \code{full_mz}.
-}
-\description{
-This function takes the intensity values in the blank column of the mapped
-spectral data frame and subtracts them from the intensity values in the
-sample column. If the intensity value in the blank spectrum is greater than
-that in the sample spectrum, the intensity of the sample peak is given an
-intensity of 0.
-}
-\examples{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-## Load sample datasets "Master.rda"
-data("Master")
-
->>>>>>> 270485a... Updated documentation
-## Make subtraction column for new data
-Master <- transform(Master, "Subtracted" = 0)
-
-## Subtract Blank1 from Before1
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
-                      Sample = "Before1", Sub_Sample = "Subtracted")
-
-
-=======
-=======
-=======
-
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 ## Load sample datasets "Master.rda"
 data("Master")
 
@@ -252,100 +45,9 @@ data("Master")
 Master <- transform(Master, "Subtracted" = 0)
 
 ## Subtract Blank1 from Before1
-<<<<<<< HEAD
->>>>>>> db6ced3... Updated documentation
-=======
-## Load sample datasets "Master.rda"
-data("Master")
-
-## Make subtraction column for new data
-Master <- transform(Master, "Subtracted" = 0)
-
-## Subtract Blank1 from Before1
->>>>>>> 270485a... Updated documentation
-Master <- subSpectra(dat = Master, Blank_Var = "Blank1", Sample = "Before1", Sub_Sample = "Subtracted")
-{
-  }
->>>>>>> 270485a... Updated documentation
-}
-\references{
-https://github.com/wesleyburr/subMaldi
-}
-\seealso{
-\code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
-}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-=======
 Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
                       Sample = "Before1", Sub_Sample = "Subtracted")
 
-<<<<<<< HEAD
->>>>>>> 6b09f74... Fixed documentation
-}
-<<<<<<< HEAD
-\keyword{manip}
-\keyword{methods}
-=======
-
-\keyword{ methods }
-\keyword{ manip }
->>>>>>> c6a3769... Updated documentation
-=======
-
-}
-\references{
-https://github.com/wesleyburr/subMaldi
-}
-\seealso{
-\code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
-}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-=======
-Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
-                      Sample = "Before1", Sub_Sample = "Subtracted")
-
-<<<<<<< HEAD
->>>>>>> 6c09a20... Fixed documentation
-}
-<<<<<<< HEAD
-\keyword{manip}
-\keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-
-\keyword{ methods }
-\keyword{ manip }
->>>>>>> 14c6370... Updated documentation
-=======
-
-}
-\references{
-https://github.com/wesleyburr/subMaldi
-}
-\seealso{
-\code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
-}
-\author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-=======
-Master <- subSpectra(dat = Master, Blank_Var = "Blank1", 
-                      Sample = "Before1", Sub_Sample = "Subtracted")
-
-<<<<<<< HEAD
->>>>>>> 6b09f74... Fixed documentation
-}
-<<<<<<< HEAD
-\keyword{manip}
-\keyword{methods}
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
-
-\keyword{ methods }
-\keyword{ manip }
->>>>>>> c6a3769... Updated documentation
-=======
 
 }
 \references{
@@ -359,4 +61,3 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{manip}
 \keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.

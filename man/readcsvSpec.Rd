@@ -2,117 +2,20 @@
 % Please edit documentation in R/readcsvSpec.R
 \name{readcsvSpec}
 \alias{readcsvSpec}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 \title{Import a Single .csv Spectrum}
-=======
-=======
->>>>>>> 14c6370... Updated documentation
-=======
->>>>>>> c6a3769... Updated documentation
-\title{
-Import a Single .csv Spectrum
-}
-\description{
-Imports a single spectrum in .csv format and turns it into a binary data frame containing a "mass" and "Intensity" column.
-}
->>>>>>> c6a3769... Updated documentation
-=======
-\title{Import a Single .csv Spectrum}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-\title{Import a Single .csv Spectrum}
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
-\title{Import a Single .csv Spectrum}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \usage{
 readcsvSpec(spec_file, massCol, intenseCol)
 }
 \arguments{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \item{spec_file}{A character string; the file path to the \code{.csv}
 spectrum that is to be imported.}
 
 \item{massCol}{A character string; the name of the mass column in the
 spectrum's \code{.csv} file.}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-\item{intenseCol}{A character string; the name of the intensity column in
-the spectrum's \code{.csv} file.}
-=======
-  \item{spec_file}{A character string; the file path to the \code{.csv} spectrum that is to be imported.}
-  \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
-  \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
-=======
-  \item{spec_file}{A character string; the file path to the \code{.csv} spectrum that is to be imported.}
-  \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
-  \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
-<<<<<<< HEAD
-<<<<<<< HEAD
-  \item{spec_name}{A character string; the name of the new, binary data frame containing imported the \emph{m/z} and intensity data.}
->>>>>>> db6ced3... Updated documentation
-=======
->>>>>>> 6c09a20... Fixed documentation
-=======
-  \item{spec_file}{A character string; the file path to the \code{.csv} spectrum that is to be imported.}
-  \item{massCol}{A character string; the name of the mass column in the spectrum's \code{.csv} file.}
-  \item{intenseCol}{A character string; the name of the intensity column in the spectrum's \code{.csv} file.}
-  \item{spec_name}{A character string; the name of the new, binary data frame containing imported the \emph{m/z} and intensity data.}
->>>>>>> 270485a... Updated documentation
-=======
->>>>>>> 6b09f74... Fixed documentation
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-\details{
-%%  ~~ If necessary, more details than the description above ~~
->>>>>>> 270485a... Updated documentation
-}
-=======
-
->>>>>>> 5831098... Added pre-processing vignette
-=======
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 
 \item{intenseCol}{A character string; the name of the intensity column in
 the spectrum's \code{.csv} file.}
 }
-<<<<<<< HEAD
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-
->>>>>>> 2931ed6... Added pre-processing vignette
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
-
->>>>>>> 5831098... Added pre-processing vignette
-=======
-
-\item{intenseCol}{A character string; the name of the intensity column in
-the spectrum's \code{.csv} file.}
-}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \value{
 Returns a binary data frame containing the imported data in a
 \emph{m/z} column denoted "mass", and an intensity column denoted
@@ -126,83 +29,6 @@ frame containing a "mass" and "Intensity" column.
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-=======
-Kristen Yeh <kristenyeh@trentu.ca>
-Wesley Burr <wburr@trentu.ca>
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-\note{
-%%  ~~further notes~~
-}
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-\examples{
-## Read the sample file "Blank1.csv"
-Blank1 <- readcsvSpec(spec_file = "/subMALDI/data/Blank.csv", massCol = "m.z", intenseCol = "I")
-<<<<<<< HEAD
->>>>>>> db6ced3... Updated documentation
-=======
->>>>>>> 270485a... Updated documentation
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 270485a... Updated documentation
-}
-\keyword{methods}
-=======
-=======
-=======
->>>>>>> 2931ed6... Added pre-processing vignette
-
-<<<<<<< HEAD
->>>>>>> 6c09a20... Fixed documentation
-=======
-
->>>>>>> 6b09f74... Fixed documentation
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
->>>>>>> 6b09f74... Fixed documentation
-=======
-=======
->>>>>>> 5831098... Added pre-processing vignette
-
-\keyword{ methods }
->>>>>>> c6a3769... Updated documentation
-=======
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-
-\keyword{ methods }
->>>>>>> 14c6370... Updated documentation
-=======
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-}
-\keyword{methods}
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
-
-\keyword{ methods }
->>>>>>> c6a3769... Updated documentation
-=======
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-}
-\keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
