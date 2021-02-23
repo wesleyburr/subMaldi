@@ -14,6 +14,7 @@ authors:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - name: Sophie Castel
     orcid: 0000-0001-9086-0917
     affiliation: 3
@@ -38,6 +39,11 @@ authors:
     orcid: 0000-0001-9086-0917
     affiliation: 3
 >>>>>>> def169a... Added ref to FrsChem paper, Sophie as author
+=======
+  - name: Sophie Castel
+    orcid: 0000-0001-9086-0917
+    affiliation: 3
+>>>>>>> 58ad81726f76fd764fe64cde020f1f91f4e6bbbf
   - name: Naomi L. Stock
     orcid: 0000-0002-3472-9284
     affiliation: 2
@@ -58,6 +64,7 @@ affiliations:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - name: Faculty of Science, Forensic Science & Applied Bioscience, Ontario Tech University
 =======
   - name: Faculty of Science, Forensic Science, Ontario Tech University
@@ -77,6 +84,9 @@ affiliations:
 =======
   - name: Faculty of Science, Forensic Science & Applied Bioscience, Ontario Tech University
 >>>>>>> def169a... Added ref to FrsChem paper, Sophie as author
+=======
+  - name: Faculty of Science, Forensic Science & Applied Bioscience, Ontario Tech University
+>>>>>>> 58ad81726f76fd764fe64cde020f1f91f4e6bbbf
     index: 3
   - name: Faculty of Science, Mathematics, Trent University
     index: 4
@@ -85,6 +95,7 @@ bibliography: paper.bib
 output: pdf_document
 ---
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -192,6 +203,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 =======
 >>>>>>> 34910f2... Updated paper
+=======
+>>>>>>> 58ad81726f76fd764fe64cde020f1f91f4e6bbbf
 
 # Summary
 
@@ -282,15 +295,12 @@ Water Quality Centre at Trent University.
 
 # Funding
 
-<<<<<<< HEAD
-This work was supported by a Natural Sciences and Engineering Research Council (NSERC) Discovery Grant to W. Burr (2017-04741) and a Vice President Research Fund to T. Stotesbury (2019). Author K. Yeh was supported by two NSERC Undergraduate Student Research Awards (USRA), 2019 and 2020.
->>>>>>> 71a3e1b... Updated paper
-=======
 This work was supported by a Natural Sciences and Engineering Research
 Council (NSERC) Discovery Grant to W. Burr (2017-04741) and a Vice
 President Research Fund to T. Stotesbury (2019). Author K. Yeh was
 supported by two NSERC Undergraduate Student Research Awards (USRA),
 2019 and 2020.
+<<<<<<< HEAD
 >>>>>>> 6f23547... Modified paper.md, added notes about single spectra
 =======
 ```{r setup, include=FALSE}
@@ -504,5 +514,7 @@ President Research Fund to T. Stotesbury (2019). Author K. Yeh was
 supported by two NSERC Undergraduate Student Research Awards (USRA),
 2019 and 2020.
 >>>>>>> 6f23547... Modified paper.md, added notes about single spectra
+=======
+>>>>>>> 58ad81726f76fd764fe64cde020f1f91f4e6bbbf
 
 # References

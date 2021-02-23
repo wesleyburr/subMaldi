@@ -10,11 +10,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 58ad81726f76fd764fe64cde020f1f91f4e6bbbf
 ^subMALDI_1.0-0.tar.gz$
 ^paper.Rmd$
 ^paper.bib$
 ^doc$
 ^Meta$
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> 6c09a20... Fixed documentation
@@ -70,3 +74,5 @@
 ^doc$
 ^Meta$
 >>>>>>> de15a92... Fixed packaged structure
+=======
+>>>>>>> 58ad81726f76fd764fe64cde020f1f91f4e6bbbf

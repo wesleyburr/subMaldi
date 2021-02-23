@@ -2,50 +2,11 @@
 % Please edit documentation in R/readcsvDir.R
 \name{readcsvDir}
 \alias{readcsvDir}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 \title{Import .csv Spectra from a Directory}
-=======
-=======
->>>>>>> 14c6370... Updated documentation
-=======
->>>>>>> c6a3769... Updated documentation
-\title{
-Import .csv Spectra from a Directory
-}
-\description{
-Imports all \code{.csv} files in a directory, turns them into a binary data frame containing a "mass" and "Intensity" column, and outputs them as \code{.rda} files into an output directory. Allows for rapid import of many spectral datasets at once.
-}
->>>>>>> c6a3769... Updated documentation
-=======
-\title{Import .csv Spectra from a Directory}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-\title{Import .csv Spectra from a Directory}
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
-\title{Import .csv Spectra from a Directory}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \usage{
 readcsvDir(direct, massCol, intenseCol, output)
 }
 \arguments{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \item{direct}{The path to the directory where the \code{.csv} files are
 held.}
 
@@ -54,55 +15,10 @@ held.}
 
 \item{intenseCol}{A character string; the name of the intensity column in
 the \code{.csv} files.}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-\item{output}{The path to the directory where the exported \code{.rda}
-files containing the binary spectral data frames should go.}
-=======
-=======
->>>>>>> db6ced3... Updated documentation
-=======
->>>>>>> 270485a... Updated documentation
-  \item{direct}{The path to the directory where the \code{.csv} files are held.}
-  \item{massCol}{A character string; the name of the mass column in the \code{.csv} files.}
-  \item{intenseCol}{A character string; the name of the intensity column in the \code{.csv} files.}
-  \item{output}{The path to the directory where the exported \code{.rda} files containing the binary spectral data frames should go.}
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-\details{
-%%  ~~ If necessary, more details than the description above ~~
->>>>>>> 270485a... Updated documentation
-}
-=======
-
->>>>>>> 5831098... Added pre-processing vignette
-=======
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
 
 \item{output}{The path to the directory where the exported \code{.rda}
 files containing the binary spectral data frames should go.}
 }
-<<<<<<< HEAD
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-
->>>>>>> 2931ed6... Added pre-processing vignette
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
-
->>>>>>> 5831098... Added pre-processing vignette
-=======
-
-\item{output}{The path to the directory where the exported \code{.rda}
-files containing the binary spectral data frames should go.}
-}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 \value{
 Returns a directory of \code{.rda} files containing binary spectral
 data frames into the \code{output} file path.
@@ -117,86 +33,6 @@ spectral datasets at once.
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-=======
-Kristen Yeh <kristenyeh@trentu.ca>
-Wesley Burr <wburr@trentu.ca>
-}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> db6ced3... Updated documentation
-## Read all .csv files from /MyFolder and export them as .rda's to /ExportFolder
-readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = "./ExportFolder/")
-
-
->>>>>>> 270485a... Updated documentation
-}
-\keyword{methods}
-=======
-=======
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 2931ed6... Added pre-processing vignette
-=======
-\examples{
-
-## Read all .csv files from /MyFolder and export them as .rda's to /ExportFolder
-readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = "./ExportFolder/")
-
->>>>>>> 270485a... Updated documentation
-
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 6c09a20... Fixed documentation
-=======
-
->>>>>>> 6b09f74... Fixed documentation
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
->>>>>>> 6b09f74... Fixed documentation
-=======
-=======
->>>>>>> 5831098... Added pre-processing vignette
-
-\keyword{ methods }
->>>>>>> c6a3769... Updated documentation
-=======
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
-
-\keyword{ methods }
->>>>>>> 14c6370... Updated documentation
-=======
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-}
-\keyword{methods}
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
-
-\keyword{ methods }
->>>>>>> c6a3769... Updated documentation
-=======
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
-}
-\keyword{methods}
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.

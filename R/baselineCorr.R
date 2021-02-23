@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Baseline Correction
 ##' 
 ##' Offers three different methods for baseline correction of raw spectral
@@ -76,48 +64,9 @@
 ##' 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 # ----------------------------------------------------------------------------
 # Last Updated: February 3, 2021
 # Author: Kristen Yeh, Sophie Castel
-=======
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-# ----------------------------------------------------------------------------
-<<<<<<< HEAD
-# Last Updated: July 29, 2020
-# Author: Kristen Yeh
->>>>>>> 4bbf2ad... Baseline correction added
-=======
-# Last Updated: February 3, 2021
-# Author: Kristen Yeh, Sophie Castel
->>>>>>> c919861... Created unique .R files for each baseline correction method
-=======
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-# ----------------------------------------------------------------------------
-<<<<<<< HEAD
-# Last Updated: July 29, 2020
-# Author: Kristen Yeh
->>>>>>> 8cb7c44... Baseline correction added
-=======
-# Last Updated: February 3, 2021
-# Author: Kristen Yeh, Sophie Castel
->>>>>>> 7f2152d... Created unique .R files for each baseline correction method
-=======
-# ----------------------------------------------------------------------------
-<<<<<<< HEAD
-# Last Updated: July 29, 2020
-# Author: Kristen Yeh
->>>>>>> 4bbf2ad... Baseline correction added
-=======
-# Last Updated: February 3, 2021
-# Author: Kristen Yeh, Sophie Castel
->>>>>>> c919861... Created unique .R files for each baseline correction method
 # Title: subMALDI - Baseline Correction Parent Function
 # ----------------------------------------------------------------------------
 
@@ -125,18 +74,6 @@
 
 baselineCorr <- function(dat, mass_dat, intensity_dat, method = NULL, 
                            n = NULL){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c919861... Created unique .R files for each baseline correction method
-=======
->>>>>>> 7f2152d... Created unique .R files for each baseline correction method
-=======
->>>>>>> c919861... Created unique .R files for each baseline correction method
   
   if(is.null(method)){
     stop('Please select a valid baseline correction method. See ?baselineCorr for list of methods.')
@@ -157,57 +94,10 @@ baselineCorr <- function(dat, mass_dat, intensity_dat, method = NULL,
   else if(method == "loess"){ 
     
     r <- base_loess(dat = dat, mass_dat = mass_dat, intensity_dat = intensity_dat) 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
     
   }
   
   return(r)
-=======
-=======
->>>>>>> 8cb7c44... Baseline correction added
-=======
->>>>>>> 4bbf2ad... Baseline correction added
-  if(is.null(method)){ stop('Please select a valid baseline correction method. 
-                            See ?baselineCorr for list of methods.') } 
-  else { 
-    if(method == "monotone_min"){ .base_mono(dat = dat, mass_dat = mass_dat, 
-                                       intensity_dat = intensity_dat) }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c919861... Created unique .R files for each baseline correction method
-    
-  }
-<<<<<<< HEAD
->>>>>>> 4bbf2ad... Baseline correction added
-=======
-  
-  return(r)
->>>>>>> c919861... Created unique .R files for each baseline correction method
-=======
-=======
->>>>>>> 7f2152d... Created unique .R files for each baseline correction method
-    
-  }
-<<<<<<< HEAD
->>>>>>> 8cb7c44... Baseline correction added
-=======
-  
-  return(r)
->>>>>>> 7f2152d... Created unique .R files for each baseline correction method
-=======
-=======
->>>>>>> c919861... Created unique .R files for each baseline correction method
-    
-  }
-<<<<<<< HEAD
->>>>>>> 4bbf2ad... Baseline correction added
-=======
-  
-  return(r)
->>>>>>> c919861... Created unique .R files for each baseline correction method
 }
 
 

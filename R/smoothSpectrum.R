@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 ##' Smooth Noise in Spectrum
 ##' 
 ##' Offers two different methods for smoothing noise in raw spectral data: a
@@ -59,90 +47,17 @@
 ##' 
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 # ----------------------------------------------------------------------------
 # Last Updated: July 10, 2020
 # Author: Kristen Yeh
 # Title: subMALDI: Smooth Noise in Spectrum
-=======
-=======
->>>>>>> c29c117... Added smoothing
-=======
->>>>>>> e43371a... Added smoothing
-# ----------------------------------------------------------------------------
-# Last Updated: July 10, 2020
-# Author: Kristen Yeh
-# Title: subMALDI - Smoothing Parent Function
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e43371a... Added smoothing
-=======
-# ----------------------------------------------------------------------------
-# Last Updated: July 10, 2020
-# Author: Kristen Yeh
-# Title: subMALDI: Smooth Noise in Spectrum
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> c29c117... Added smoothing
-=======
-# ----------------------------------------------------------------------------
-# Last Updated: July 10, 2020
-# Author: Kristen Yeh
-# Title: subMALDI: Smooth Noise in Spectrum
->>>>>>> ae03a50... Rendered new documentation using package 'roxygen2'.
-=======
->>>>>>> e43371a... Added smoothing
-=======
-# ----------------------------------------------------------------------------
-# Last Updated: July 10, 2020
-# Author: Kristen Yeh
-# Title: subMALDI: Smooth Noise in Spectrum
->>>>>>> 191e6b7... Rendered new documentation using package 'roxygen2'.
 # ----------------------------------------------------------------------------
 
 
 smoothSpectrum <- function(dat, mass_dat, intensity_dat, method = NULL, 
                            p = NULL, n = NULL, m = 0, ts = 1){
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   
   if(is.null(method)){ stop('Please select a valid smoothing method. 
-=======
-  if(is.null(method)){ stop('Please select a valid normalization method. 
->>>>>>> e43371a... Added smoothing
-=======
-=======
-  
->>>>>>> 5831098... Added pre-processing vignette
-  if(is.null(method)){ stop('Please select a valid smoothing method. 
->>>>>>> 4bbf2ad... Baseline correction added
-=======
-  if(is.null(method)){ stop('Please select a valid normalization method. 
->>>>>>> c29c117... Added smoothing
-=======
-=======
-  
->>>>>>> 2931ed6... Added pre-processing vignette
-  if(is.null(method)){ stop('Please select a valid smoothing method. 
->>>>>>> 8cb7c44... Baseline correction added
-=======
-  if(is.null(method)){ stop('Please select a valid normalization method. 
->>>>>>> e43371a... Added smoothing
-=======
-=======
-  
->>>>>>> 5831098... Added pre-processing vignette
-  if(is.null(method)){ stop('Please select a valid smoothing method. 
->>>>>>> 4bbf2ad... Baseline correction added
                             See ?smoothSpectrum for list of methods.') } 
   else { 
     if(method == "sgolay"){ .smooth_sg(dat = dat, mass_dat = mass_dat, 
