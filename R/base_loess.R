@@ -4,11 +4,6 @@
 # Title: subMALDI - LOESS Baseline Correction
 # ----------------------------------------------------------------------------
 
-
-# ------
-# LOESS
-# ------
-
 # First, Divide the raw spectrum into small segments. Then, in each 
 # small segment, it computes the quantile. After that, it estimates
 # a predictor in every small segment for baseline estimation. 
@@ -26,7 +21,7 @@
 # Baseline is obtained by applying local polynomial regression 
 # fitting to the predictor.
 
-.base_loess <- function(dat, mass_dat, intensity_dat){
+base_loess <- function(dat, mass_dat, intensity_dat){
   
   x <- dat[[mass_dat]]
   y <- dat[[intensity_dat]]
@@ -44,3 +39,5 @@
   names(output) <- c("mz", "baseline")
   return(output)
 }
+
+# ----------------------------------------------------------------------------
