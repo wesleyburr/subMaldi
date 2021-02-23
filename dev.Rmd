@@ -1,0 +1,1100 @@
+---
+title: "dev"
+author: "Sophie Castel"
+date: "1/27/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#########################################################################
+
+
+## JOSS 11 (Closed)
+
+```{r}
+# loading uncompressed data files
+
+load(file = "/home/sophie/subMaldi/data/After1.rda")
+load(file = "/home/sophie/subMaldi/data/After2.rda")
+load(file = "/home/sophie/subMaldi/data/Before1.rda")
+load(file = "/home/sophie/subMaldi/data/Before2.rda")
+load(file = "/home/sophie/subMaldi/data/Blank1.rda")
+load(file = "/home/sophie/subMaldi/data/Blank2.rda")
+load(file = "/home/sophie/subMaldi/data/bsline.rda")
+load(file = "/home/sophie/subMaldi/data/Master.rda")
+load(file = "/home/sophie/subMaldi/data/Master2.rda")
+
+# test compress, comparing methods
+save(Master, file = "/home/sophie/subMaldi/data/compressed/Master_T.rda", compress = TRUE)
+save(Master, file = "/home/sophie/subMaldi/data/compressed/Master_xz.rda", compress = "xz")
+
+file.info("/home/sophie/subMaldi/data/compressed/Master_T.rda")
+file.info("/home/sophie/subMaldi/data/compressed/Master_xz.rda")
+
+# opening test compress
+load("/home/sophie/subMaldi/data/compressed/Master_xz.rda")
+
+# saving else compressed files
+save(After1, file = "/home/sophie/subMaldi/data/compressed/After1.rda", compress = "xz")
+save(After2, file = "/home/sophie/subMaldi/data/compressed/After2.rda", compress = "xz")
+save(Before1, file = "/home/sophie/subMaldi/data/compressed/Before1.rda", compress = "xz")
+save(Before2, file = "/home/sophie/subMaldi/data/compressed/Before2.rda", compress = "xz")
+save(Blank1, file = "/home/sophie/subMaldi/data/compressed/Blank1.rda", compress = "xz")
+save(Blank2, file = "/home/sophie/subMaldi/data/compressed/Blank2.rda", compress = "xz")
+save(bsline, file = "/home/sophie/subMaldi/data/compressed/bsline.rda", compress = "xz")
+save(Master, file = "/home/sophie/subMaldi/data/compressed/Master.rda", compress = "xz")
+save(Master2, file = "/home/sophie/subMaldi/data/compressed/Master2.rda", compress = "xz")
+
+```
+
+
+#########################################################################
+
+
+
+
+
+## JOSS 5 (Closed)
+Wrote biocViews: into DESCRIPTION install_github() can search BioConductor for MassSpecWavelet
+
+
+
+
+#########################################################################
+
+
+
+
+## JOSS 12 - generalize and fix redundancies in code (Closed)
+
+## avgSpectra.R (done)
+
+```{r}
+avgSpectra <- function(dat, method = "mean", spectra_cols){
+  
+  # --------------
+  # LOGICAL CHECKS
+  # --------------
+  
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra for averaging.")
+  }
+  
+  if(!all(spectra_cols %in% colnames(dat))){
+    logic <- which(!(spectra_cols %in% colnames(dat)))
+    stop(c("Columns '",paste0(as.character(spectra_cols[logic]), sep = "', "), " not found in specified dataframe."))
+  }
+  
+  if(method == "sum"){
+    .avg_sum(dat = dat, spectra_cols) } 
+  else if(method == "mean"){
+    .avg_mean(dat = dat, spectra_cols) }
+}
+
+# --------------
+# METHOD = SUM
+# --------------
+
+.avg_sum <- function(dat, spectra_cols){
+  
+  mz <- dat$full_mz
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  dat <- cbind(mz, dat, Sum = apply(i, 1, sum, na.rm = TRUE))
+  
+  return(dat)
+}
+
+# --------------
+# METHOD = MEAN
+# --------------
+
+.avg_mean <- function(dat, spectra_cols){
+  
+  mz <- dat$full_mz
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  dat <- cbind(mz, dat, Average = apply(i, 1, mean, na.rm = TRUE))
+  
+  return(dat)
+}
+
+```
+
+## find_max.R (done)
+
+```{r}
+# -----------------
+# FIND PEAK MAXIMA
+# -----------------
+
+# Find peak maximum and associated m/z of spectra
+find_max <- function (dat, mass_dat, spectra_cols){
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  rownames(i) <- mz
+  
+  max_i <- apply(i, 2, max)
+  which_max <- apply(i, 2, which.max)
+  max_mz <- mz[which_max]
+  
+  max_spec <- cbind(max_i, max_mz)
+  colnames(max_spec) <- c("Intensity (Max)", "Mass")
+  
+  return(max_spec)
+}
+
+# -----------------------------------------------------------------------
+
+# ------------------------
+# FIND PEAK MAXIMA OF SET
+# ------------------------
+
+find_max_set <- function(dat, mass_dat, spectra_cols){
+
+  # --------------
+  # LOGICAL CHECKS
+  # --------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
+  
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  rownames(i) <- mz
+  
+  which_max <- which(i == max(i), arr.ind = TRUE)
+  
+  max_spec <- data.frame(Intensity = as.numeric(i[which_max[1], which_max[2]]), Mass = as.numeric(rownames(which_max)))
+  
+  colnames(max_spec) <- c("Intensity (Max)", "Mass")
+  rownames(max_spec) <- colnames(i)[which_max[2]]
+  
+  return(max_spec)
+  
+}
+```
+
+## norm_custimp.R (done)
+
+```{r}
+# --------------------------------------
+# METHOD: CUSTOM M/Z VALUE, NOT PRECISE
+# --------------------------------------
+
+norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
+  
+  if(is.null(norm_mz)){
+    stop('Please select a m/z value. norm_mz is NULL.')
+  }   
+  
+  
+  mz <- dat[[mass_dat]]
+  
+  logic_i <- which(startsWith(as.character(mz), as.character(norm_mz)))
+  
+  if(length(logic_i) == 0){
+    stop(c("The selected value norm_mz = ", norm_mz, " not found in '", mass_dat,"'. Please try another value."))
+  }
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  i_cust <- i[logic_i,]
+  
+  if(nrow(i_cust) > 1){
+    stop("More than one peak per spectra for the given norm_mz value. Please be more precise.")    
+  }
+  
+  i_cust <- as.numeric(i_cust)
+  
+  logic <- i_cust == 0 
+  
+  if(any(logic)){
+    stop(c("The selected maximum intensity is 0 in spectra labeled: ", paste0(colnames(i)[logic], sep = " ")))
+  }
+  
+  i_norm <- t(t( i - min(i) )* ( i_cust - min(i) )^-1) # (i-min(i))/(i_cust-min(i)) Matrix multiplication
+  
+  if(!showHI){
+    i_norm[i_norm > 1] <- 1
+  }
+  
+  dat <- data.frame(mz, i_norm)
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
+  return(dat)
+}
+
+```
+
+## norm_custom.R (done)
+
+```{r}
+
+# -------------------------
+# METHOD: CUSTOM M/Z VALUE
+# -------------------------
+
+.norm_custom <- function(y, custom_y){
+  return((y - min(y)) / (custom_y - min(y))) # single value
+}
+
+.normMethod_custom <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+    
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
+    
+
+    
+  if(is.null(norm_mz)){
+    stop('Please select a m/z value. norm_mz is NULL.')
+  } 
+  
+    
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+    
+  i_cust <- as.numeric(i[which(mz == norm_mz),])
+  
+  if(all(is.na(i_cust))){
+    stop(c("The selected value norm_mz = ", norm_mz, " not found in '", mass_dat,"'. Please try another value."))
+  }
+  
+  logic <- i_cust == 0 
+    
+  if(any(logic)){
+    stop(c("The selected maximum intensity is 0 in spectra labeled: ", paste0(colnames(i[logic]), sep = " ")))
+  }
+    
+  i_norm <- t(t( i - min(i) )* ( i_cust - min(i) )^-1) # (i-min(i))/(i_cust-min(i)) Matrix multiplication
+    
+  if(!showHI){
+    i_norm[i_norm > 1] <- 1
+  }
+    
+  dat <- data.frame(mz, i_norm)
+  colnames(dat) <- c("full_mz", spectra_cols)
+    
+  return(dat)
+    
+}
+
+```
+
+## norm_max.R (done)
+
+```{r}
+# -----------------------
+# NORMALIZATION FUNCTION
+# -----------------------
+
+# Function rescales intensity to 0,1
+.normalize <- function(x) {
+  return((x - min(x)) / (max(x) - min(x)))
+}
+
+# ------------------------------
+# METHOD: MAX. OF EACH SPECTRUM
+# ------------------------------
+
+norm_max <- function(dat, mass_dat, spectra_cols){
+
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
+  
+  
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  i_n <- apply(i, 2, FUN = .normalize)
+  dat <- cbind(mz, i_n)
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
+  return(dat)
+}
+  
+# ---------------------
+# METHOD: MAX. OF SET
+# ---------------------
+
+# Normalization function specific to custom max_y
+.normalize_set <- function(y, max_y){
+  return((y - min(y)) / (max_y - min(y)))
+}
+
+.normMethod_max_set <- function(dat, mass_dat, spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
+
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra.")
+  }
+  
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  which_max <- which(i == max(i), arr.ind = TRUE)
+  max_i <- i[which_max[1], which_max[2]]
+  
+  i_n <- apply(i, 2, FUN = function(x) {.normalize_set(y = x, max_y = max_i)} )
+  dat <- cbind(mz, i_n)
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
+  return(dat)
+}
+
+```
+
+## norm_median.R (done)
+
+```{r}
+
+# ---------------
+# METHOD: MEDIAN
+# ---------------
+
+norm_med<- function(dat, mass_dat, spectra_cols){
+
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat))
+  )
+
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra.")
+  }
+  
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  i[i == 0 ] <- NA
+  
+  i_med <- apply(i,2, FUN = median, na.rm = TRUE)
+  max_med <- max(i_med)
+  
+  for(j in 1:length(spectra_cols)){
+    
+    # multiplicative factors
+    factors <- c()
+    
+      if(i_med[j] == max_med){
+        
+        other <- i_med[-j]
+        other_index <- which(i_med %in% other)
+          
+        factors <- rep(1,length(spectra_cols))
+        
+        factors[other_index] = i_med[j]/i_med[other_index]
+        
+      }
+    }
+    
+  #i_mult <- i*factors
+  
+  i_mult <- t(t(i)*factors)
+  
+  dat <- cbind(mz, i_mult)
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
+  return(dat)
+  
+}
+```
+
+## norm_quantile.R (done)
+
+```{r}
+# --------------------------------------------------------------------------------------------
+# Date: January 28, 2021
+# Author: Kristen Yeh, Sophie Castel
+# Title: Normalization Method - Quantile
+# --------------------------------------------------------------------------------------------
+
+
+# Quantile normalization consists of two steps:
+    # 1. Create a mapping between ranks and values. For rank 1, find the n values,
+       # one per spectrum, that are the smallest value on the spectrum, and save their
+       # averages. Similarly for rank 2 and the second smallest values, and on up to
+       # the n largest values, one per spectrum.
+    # 2. For each spectrum, replace the actual values with these averages.
+
+# Basically, index each intensity value in each spectrum then sort
+# by intensity (value). Probably need 2 truncate. Average spectrum for the sorted spectra
+# is calculated. The averages are then inserted into the sorted spectra.
+# The spectra are then reverted to their unsorted order using the index.
+
+
+norm_quantile <- function(dat, mass_dat, spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+  )    
+  
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra for comparison.")
+    }
+ 
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  i <- data.frame(mz, i)
+  colnames(i) <- c("full_mz", spectra_cols)
+  
+  i_melt <- melt(i, id.vars = "full_mz")
+  colnames(i_melt) <- c("full_mz","Spectrum","Intensity")
+  
+  i_melt <- dplyr::filter(i_melt, Intensity != 0)
+  
+  i_melt <- i_melt %>% group_by(Spectrum)  %>% mutate(id = row_number())
+  ordr <- i_melt[order(i_melt$Intensity, decreasing = TRUE),]
+  
+  r <- rep(NA, length(spectra_cols))
+  
+  for(j in 1:length(spectra_cols)){
+    r[j] <- max(as.numeric(i_melt$id[which(i_melt$Spectrum == spectra_cols[j])]))
+  }
+  
+  r_min <- min(r)
+  
+  logic <-which(r == r_min)
+  
+  trunc <- ordr[(which(ordr$id <= r[logic])),]
+  
+  i_trunc <- data.frame(matrix(ncol = length(unique(trunc$Spectrum)), nrow = max(trunc$id)))
+  
+  for(j in 1:length(unique(trunc$Spectrum))){
+    
+    i_trunc[j] <- trunc$Intensity[which(trunc$Spectrum == spectra_cols[j])]
+    colnames(i_trunc)[j] <- spectra_cols[j]
+    
+  }
+  
+  i_trunc <- data.frame(i_trunc, avg = apply(i_trunc, 1, FUN = mean, na.rm = TRUE))
+  
+  for(j in 1:length(unique(trunc$Spectrum))){
+    trunc$Intensity[which(trunc$Spectrum == colnames(i_trunc)[j])] <- i_trunc$avg
+  }
+  
+  dat <- trunc[order(trunc[mass_dat], decreasing = FALSE), ] %>% spread(Spectrum, Intensity)
+  
+  dat[is.na(dat)] <- 0
+  dat <- dat[-2]
+  return(as.data.frame(dat))
+}
+
+```
+
+## norm_RMS.R (done)
+
+```{r}
+
+# -------------------------
+# METHOD: ROOT MEAN SQUARE
+# -------------------------
+
+.RMS <- function(y, n){
+  right <- 1 / (n - 1)
+  left <- sum(y^2)
+  prod <- prod(left, right)
+  sqrt(prod)
+}
+  
+.norm_RMS <- function(y, RMS){
+  return(y/RMS) # single value
+}
+
+norm_RMS <- function(dat, mass_dat, spectra_cols){
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  n <- nrow(dat)
+  
+  rms <- apply(i, 2, FUN = function(x) { .RMS(y = x, n = n)})
+  
+  i_rms <- t(t(i)*rms^-1)  # i / rms matrix multiplication
+  
+  dat <- data.frame(mz, i_rms)
+  
+  colnames(dat) <- c("full_mz", spectra_cols)
+
+  return(dat)
+  
+}
+
+```
+
+## norm_stdev.R (done)
+
+```{r}
+# ------------------------------------
+# METHOD: STANDARD DEVIATION OF NOISE
+# ------------------------------------
+
+# Find a region of the spectrum with only noise and minimal peaks
+# (Should be same region for all spectra)
+# Evaluate standard deviation of intensity in that region for each spec
+# Divide intensity of EACH PEAK IN SPEC by its st. dev.
+
+
+norm_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+  )
+  
+  mz <- dat[[mass_dat]]
+  
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+  
+  noise <- i[which(mz > lower & upper > mz),]
+  noise[noise == 0] <- NA
+  
+  std_dev <- apply(noise, 2, FUN = sd, na.rm = TRUE)
+  
+  i_sd <- t(t(i)*std_dev^-1) # i / st_dev matrix multiplication
+      
+  dat <- data.frame(mz, i_sd)
+  
+  colnames(dat) <- c("full_mz", spectra_cols)
+  
+  return(dat)
+}
+
+```
+
+## norm_TIC.R (done)
+
+```{r}
+# ----------------------
+# METHOD: NORMALIZE TIC
+# ----------------------
+
+# This method evaluates the sum of all intensities of each spectrum in a set.
+# If the sum is not equivalent between spectra, multiplies the spectra by
+# normalization factor.
+
+
+norm_TIC <- function(dat, mass_dat, spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+  )    
+  
+  if(length(spectra_cols) < 2){
+    stop("Only one spectrum input. Please enter two spectra for comparison.")
+    }
+  
+  
+    mz <- dat[[mass_dat]]
+    
+    spectra <- lapply(spectra_cols, function(x){dat[x]})
+    i <- do.call(what = data.frame, args = c(spectra))
+
+    i_sum <- apply(i, 2, FUN = sum)
+  
+    max_sum <- max(i_sum)
+    
+    for(j in 1:length(spectra_cols)){
+      
+      if(i_sum[j] == max_sum){
+      
+        other <- i_sum[-j]
+        other_index <- which(i_sum %in% other)
+        
+        factors <- rep(1,length(spectra_cols))
+        
+        factors[other_index] = i_sum[j]/i_sum[other_index]
+        
+      }
+    }
+    
+    i_mult <- t(t(i)*factors)
+    
+    dat <- data.frame(mz, i_mult)
+    colnames(dat) <- c("full_mz", spectra_cols)
+    
+    return(dat)
+    
+  }
+
+```
+
+## norm_rel_TIC (done)
+```{r}
+# ---------------------
+# METHOD: RELATIVE TIC
+# ---------------------
+
+# This method evaluates the sum of all intensities of each spectrum in a set.
+# If the sum is not equivalent between spectra, multiplies the spectra by
+# normalization factor.
+# Each peak in each spectrum is then divided by the normalized TIC.
+
+# Divide intensity of each peak in spectrum by sum of all intensities
+.norm_TIC <- function(y, all_y){
+  return(y/all_y) # single value
+}
+
+norm_rel_TIC <- function(dat, mass_dat, spectra_cols){
+  
+  # ---------------------
+  # LOGICAL CHECKS
+  # ---------------------
+  
+  stopifnot(
+    is.character(mass_dat),
+    is.character(spectra_cols),
+    mass_dat %in% colnames(dat),
+    all(spectra_cols %in% colnames(dat)),
+    is.numeric(lower),
+    is.numeric(upper)
+  )    
+  
+  
+  mz <- dat[[mass_dat]]
+    
+  spectra <- lapply(spectra_cols, function(x){dat[x]})
+  i <- do.call(what = data.frame, args = c(spectra))
+
+  i_sum <- apply(i, 2, FUN = sum)
+  
+  max_sum <- max(i_sum)
+  
+  for(j in 1:length(spectra_cols)){
+      
+    if(i_sum[j] == max_sum){
+      
+      other <- i_sum[-j]
+      other_index <- which(i_sum %in% other)
+        
+      factors <- rep(1,length(spectra_cols))
+        
+      factors[other_index] = i_sum[j]/i_sum[other_index]
+        
+      }
+    }
+  
+    i_mult <- t(t(i)*factors)
+    
+    i_rel_TIC<- t(t(i_mult)*max_sum^-1) # i_mult / max_sum matrix multiplication
+    
+    dat <- data.frame(mz, i_rel_TIC)
+    colnames(dat) <- c("full_mz", spectra_cols)
+    
+    return(dat)
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+## JOSS 6: roxygen2 (Closed)
+
+```{r}
+library(Rd2roxygen)
+
+oxygnze <- function(file){
+  
+  options(roxygen.comment = "##' ")
+  str(info <- parse_file(file))
+  
+  # parse_and_save() combines these two steps
+  cat(create_roxygen(info), sep = "\n")
+  
+}
+
+```
+
+
+
+## avgSpectra.Rd (done)
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/avgSpectra.Rd")
+```
+
+## baselineCorr.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/baselineCorr.Rd")
+```
+
+
+## createSpecDF.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/createSpecDF.Rd")
+```
+
+
+## find_max.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/find_max.Rd")
+```
+
+
+## find_max_set.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/find_max_set.Rd")
+```
+
+
+## mapSpectrum.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/mapSpectrum.Rd")
+```
+
+
+## normSpectra.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/normSpectra.Rd")
+```
+
+
+## peakDet.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/peakDet.Rd")
+```
+
+
+## readcsvDir.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/readcsvDir.Rd")
+```
+
+
+## readcsvSpec.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/readcsvSpec.Rd")
+```
+
+
+## rmveEmpty.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/rmveEmpty.Rd")
+```
+
+
+## smoothSpectrum.Rd (done)
+
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/smoothSpectrum.Rd")
+```
+
+
+## subSpectra.Rd (done)
+```{r}
+oxygnze(file = "/home/sophie/subMaldi/man/subSpectra.Rd")
+```
+
+
+
+
+## JOSS 10: test code
+
+## baselineCorr.R
+
+```{r}
+
+```
+
+## baseMALDI.R
+
+```{r}
+
+```
+
+## avgSpectra.R
+
+```{r}
+
+```
+
+## baseline_loess.R
+
+```{r}
+
+```
+
+## baseline_sub.R
+
+```{r}
+
+```
+
+## createSpecDF.R
+
+```{r}
+
+```
+
+## find_max.R
+
+```{r}
+
+```
+
+## find_max_set.R
+
+```{r}
+
+```
+
+## mapSpectrum.R
+
+```{r}
+
+```
+
+## norm_RMS.R
+
+```{r}
+
+```
+
+## norm_TIC.R
+
+```{r}
+
+```
+
+## norm_rel_TIC.R
+
+```{r}
+
+```
+
+## norm_custimp.R
+
+```{r}
+
+```
+
+## norm_custom.R
+
+```{r}
+
+```
+
+## norm_max.R
+
+```{r}
+
+```
+
+## norm_median.R
+
+```{r}
+
+```
+
+## norm_quantile.R
+
+```{r}
+
+```
+
+## norm_stdev.R
+
+```{r}
+
+```
+
+## normSpectra.R
+
+```{r}
+
+library(testthat)
+
+test_that("Method = NULL yields error", {
+  expect_error(normSpectra(dat = Master, 
+                           mass_dat = "full_mz",
+                           method = "apple",
+                           norm_mz = NULL,
+                           upper = NULL,
+                           lower = NULL,
+                           spectra_cols = NULL,
+                           showHI = FALSE))
+})
+
+
+
+```
+
+## peakDet.R
+
+```{r}
+
+```
+
+## peak_sub.R
+
+```{r}
+
+```
+
+## plotSpectra.R
+
+```{r}
+library(testthat)
+
+
+
+
+
+```
+
+## readcsvDir.R
+
+```{r}
+
+```
+
+## readcsvSpec.R
+
+```{r}
+
+```
+
+## rmveEmpty.R
+
+```{r}
+
+```
+
+## smoothSpectrum.R
+
+```{r}
+
+```
+
+## smooth_sub.R
+
+```{r}
+
+```
+
+## subSpectra.R
+
+```{r}
+
+```
+
+

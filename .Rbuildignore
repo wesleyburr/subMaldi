@@ -1,8 +1,78 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^.Rhistory$
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 58ad81726f76fd764fe64cde020f1f91f4e6bbbf
 ^subMALDI_1.0-0.tar.gz$
 ^paper.Rmd$
 ^paper.bib$
 ^doc$
 ^Meta$
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 6c09a20... Fixed documentation
+=======
+>>>>>>> 6b09f74... Fixed documentation
+^subMALDI_0.1-2.tar.gz$
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 6b09f74... Fixed documentation
+=======
+=======
+^subMALDI_1.0.0.tar.gz$
+>>>>>>> 18741fa... Updated build version
+=======
+^subMALDI_1.0-0.tar.gz$
+>>>>>>> 4734bec... Updated version
+^paper.Rmd$
+^paper.bib$
+<<<<<<< HEAD
+>>>>>>> 3c0f9e7... Fixing package structure
+=======
+^doc$
+^Meta$
+>>>>>>> de15a92... Fixed packaged structure
+=======
+=======
+^subMALDI_1.0.0.tar.gz$
+>>>>>>> 1818f52... Updated build version
+=======
+^subMALDI_1.0-0.tar.gz$
+>>>>>>> ad5eb11... Updated version
+^paper.Rmd$
+^paper.bib$
+<<<<<<< HEAD
+>>>>>>> 105654b... Fixing package structure - removed .tar.gz
+=======
+^doc$
+^Meta$
+>>>>>>> fb110b9... Fixed packaged structure - removed .tar.gz
+=======
+=======
+^subMALDI_1.0.0.tar.gz$
+>>>>>>> 18741fa... Updated build version
+=======
+^subMALDI_1.0-0.tar.gz$
+>>>>>>> 4734bec... Updated version
+^paper.Rmd$
+^paper.bib$
+<<<<<<< HEAD
+>>>>>>> 3c0f9e7... Fixing package structure
+=======
+^doc$
+^Meta$
+>>>>>>> de15a92... Fixed packaged structure
+=======
+>>>>>>> 58ad81726f76fd764fe64cde020f1f91f4e6bbbf
