@@ -35,7 +35,7 @@ authors:
 >>>>>>> 71a3e1b... Updated paper
 =======
   - name: Sophie Castel
-    orcid: ???
+    orcid: 0000-0001-9086-0917
     affiliation: 3
 >>>>>>> def169a... Added ref to FrsChem paper, Sophie as author
   - name: Naomi L. Stock
