@@ -24,6 +24,7 @@ plotSpectra(
 )
 }
 \arguments{
+<<<<<<< HEAD
 \item{dat}{The name of the spectral data frame, containing the \emph{m/z}
 data in the first column.}
 
@@ -74,12 +75,43 @@ for determining the y-axis scales for each spectrum. If \code{method =
 "free_y"}, each spectrum will be plotted with its own intensity scale. If
 \code{method = "fixed"}, each spectrum will be plotted with the y-axis of
 the most intense spectrum in the set.}
+=======
+  \item{dat}{The name of the spectral data frame, containing the \emph{m/z} data in the first column.}
+  \item{mass_dat}{A character string; the name of the column in \code{dat} containing the \emph{m/z} data.}
+  \item{spec1}{A character string; the name of the column in \code{dat} containing the intensity data for the first spectrum that is to be plotted.}
+  \item{spec2}{A character string; the name of the column in \code{dat} containing the intensity data for the second spectrum to be plotted.}
+  \item{spec3}{A character string; the name of the column in \code{dat} containing the intensity data for the third spectrum to be plotted. Default = NULL.}
+  \item{spec4}{A character string; the name of the column in \code{dat} containing the intensity data for the fourth spectrum to be plotted. Default = NULL.}
+  \item{colour1}{A character string indicating the colour the first spectrum should be plotted in. Default = wes_palette(n=1, name = "GrandBudapest2").}
+  \item{colour2}{A charater string indicating the colour of the second spectrum in the plot. Default = wes_palette(n=1, name = "GrandBudapest1").}
+  \item{colour3}{A charater string indicating the colour of the third spectrum in the plot. Default = wes_palette(n=1, name = "Moonrise1").}
+  \item{colour4}{A charater string indicating the colour of the fourth spectrum in the plot. Default = wes_palette(n=1, name = "Moonrise3").}
+  \item{span}{Single numeric value; the span of peak maximas in between each label. Default = 5 (ignores two peak maxima on either side of each label).}
+  \item{thresh}{Single numeric value (0-100); the threshold of peak itensities which should be labelled. Default = 0.1.}
+  \item{lbls}{Logical. If \code{lbls = TRUE}, labels indicating the \emph{m/z} value of each peak maxima within the indicated \code{span} will be included in the output plot. If \code{lbls = FALSE}, labels are not shown. Default = FALSE.}
+  \item{min_mz}{Single numeric value; minimum \emph{m/z} value of the observed range. Default = 0.}
+  \item{max_mz}{Single numeric value; upper end of \emph{m/z} range observed in spectra. Default = 1000.}
+  \item{x_ticks}{Single numeric value; the space between ticks on x-axis. Default = 100.}
+  \item{intensity_scale}{A character string; the method that should be used for determining the y-axis scales for each spectrum. If \code{method = "free_y"}, each spectrum will be plotted with its own intensity scale. If \code{method = "fixed"}, each spectrum will be plotted with the y-axis of the most intense spectrum in the set.}
 }
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+>>>>>>> 2a95699... Updated documentation
+}
+<<<<<<< HEAD
 \value{
 Returns a line plot of the input spectra.
 }
 \description{
 Plot single or multiple spectra. For multiple spectra, a grid layout can be called using 'nrows'.
+=======
+\value{Returns a line plot of the input spectra.}
+\references{
+https://github.com/wesleyburr/subMaldi}
+\author{
+Kristen Yeh <kristenyeh@trentu.ca>
+Wesley Burr <wburr@trentu.ca>
+>>>>>>> 270485a... Updated documentation
 }
 \section{RColorBrewer Palettes}{
  

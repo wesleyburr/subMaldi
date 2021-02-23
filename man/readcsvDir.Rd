@@ -7,6 +7,7 @@
 readcsvDir(direct, massCol, intenseCol, output)
 }
 \arguments{
+<<<<<<< HEAD
 \item{direct}{The path to the directory where the \code{.csv} files are
 held.}
 
@@ -18,6 +19,15 @@ the \code{.csv} files.}
 
 \item{output}{The path to the directory where the exported \code{.rda}
 files containing the binary spectral data frames should go.}
+=======
+  \item{direct}{The path to the directory where the \code{.csv} files are held.}
+  \item{massCol}{A character string; the name of the mass column in the \code{.csv} files.}
+  \item{intenseCol}{A character string; the name of the intensity column in the \code{.csv} files.}
+  \item{output}{The path to the directory where the exported \code{.rda} files containing the binary spectral data frames should go.}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+>>>>>>> 270485a... Updated documentation
 }
 \value{
 Returns a directory of \code{.rda} files containing binary spectral
@@ -33,6 +43,27 @@ spectral datasets at once.
 https://github.com/wesleyburr/subMaldi
 }
 \author{
+<<<<<<< HEAD
 Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+=======
+Kristen Yeh <kristenyeh@trentu.ca>
+Wesley Burr <wburr@trentu.ca>
+}
+\note{
+%%  ~~further notes~~
+}
+
+%% ~Make other sections like Warning with \section{Warning }{....} ~
+
+\seealso{
+%% ~~objects to See Also as \code{\link{help}}, ~~~
+}
+\examples{
+
+## Read all .csv files from /MyFolder and export them as .rda's to /ExportFolder
+readcsvDir(direct = "./My Folder/", massCol = "m.z", intenseCol = "I", output = "./ExportFolder/")
+
+
+>>>>>>> 270485a... Updated documentation
 }
 \keyword{methods}

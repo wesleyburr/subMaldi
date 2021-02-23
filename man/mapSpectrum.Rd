@@ -4,6 +4,7 @@
 \alias{mapSpectrum}
 \title{Map Spectrum to \emph{m/z} Vector}
 \usage{
+<<<<<<< HEAD
 mapSpectrum(
   dat,
   massCol,
@@ -13,8 +14,12 @@ mapSpectrum(
   spec_df,
   colName
 )
+=======
+mapSpectrum(dat, massCol, intenseCol, dig = 4, thresh = 5e-5 spec_df, colName)
+>>>>>>> 270485a... Updated documentation
 }
 \arguments{
+<<<<<<< HEAD
 \item{dat}{A pairwise data frame containing your spectral data. Should
 contain two columns: one for \emph{m/z} and one for intensity.}
 
@@ -40,6 +45,24 @@ filled with the spectral data.}
 \value{
 Returns a vector that is used to fill in the \code{colName} column
 of the mapped spectral data frame.
+=======
+  \item{dat}{A pairwise data frame containing your spectral data. Should contain two columns: one for \emph{m/z} and one for intensity.}
+  \item{massCol}{A character string; the name of the \emph{m/z} column in \code{dat}.}
+  \item{intenseCol}{A character string; the name of the intensity column in \code{dat}.}
+  \item{dig}{Number of decimal places to round the \emph{m/z} data to; must match the same value used in \code{createSpecDF} in order for the columns to fill. Default = 4.}
+  \item{thresh}{Single numeric value; all \emph{m/z} values within \code{thresh} of each other are binned under that with the maximum intensity. Default = 5e-5.}
+  \item{spec_df}{An empty data frame created using \code{createSpecDF}.}
+  \item{colName}{A character string; the name of the column that should be filled with the spectral data.}
+}
+\details{
+%%  ~~ If necessary, more details than the description above ~~
+}
+\value{
+Returns a vector that is used to fill in the \code{colName} column of the mapped spectral data frame.
+}
+\references{
+https://github.com/wesleyburr/subMaldi
+>>>>>>> 270485a... Updated documentation
 }
 \description{
 Fills in the columns of the empty data frame created using
@@ -55,6 +78,7 @@ filled into the mapped spectrum.
 }
 
 \examples{
+<<<<<<< HEAD
 
 ## Load sample dataset "Blank1.rda"
 data("lank1")
@@ -79,3 +103,20 @@ Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
 }
 \keyword{array}
 \keyword{methods}
+=======
+## Load sample dataset "Before1.rda"
+data("Before1")
+
+## Create empty spectral data frame to map to
+spec_df <- createSpecDF(min_mz = 100, max_mz = 1000, res = 0.0001, dig = 4)
+
+## Map binary spectral data to empty spectral data frame
+spec_df <- mapSpectrum(dat = Blank1, massCol = "mass", intenseCol = "Intensity", spec_df = spec_df, colName = "Sample")
+{
+  }
+}
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory.
+\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
+\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line
+>>>>>>> 270485a... Updated documentation
