@@ -21,7 +21,6 @@ Authors:
 \itemize{
   \item Kristen Yeh (\href{https://orcid.org/0000-0002-3411-6816}{ORCID})
   \item Wesley Burr (\href{https://orcid.org/0000-0002-2058-1899}{ORCID})
-  \item Sophie Castel (\href{https://orcid.org/0000-0001-9086-0917}{ORCID})
 }
 }
 
