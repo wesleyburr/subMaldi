@@ -16,6 +16,6 @@ Then install the CRAN-supported packages required:
 Once the packages are all installed, download the source copy of the package from the releases folder, and 
 install it using type = "source":
 
-   install.packages("subMALDI-1.0.0.tar.gz", type = "source")
+    install.packages("subMALDI-1.0.0.tar.gz", type = "source")
    
 Update the file name as necessary.
