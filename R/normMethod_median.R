@@ -33,7 +33,7 @@
     
     int <- gather(dat, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), factor_key = TRUE)
-    int <- dplyr::filter(int, Intensity != 0)
+    int <- filter(int, Intensity != 0)
     
     s1 <- int[int$Spectra == spec1,] %>% select("full_mz", "Intensity")
     m1 <- median(s1$Intensity)
@@ -63,7 +63,7 @@
     
     int <- gather(dat, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), all_of(spec3), factor_key = TRUE)
-    int <- dplyr::filter(int, Intensity != 0)
+    int <- filter(int, Intensity != 0)
     
     s1 <- int[int$Spectra == spec1,] %>% select("full_mz", "Intensity")
     s2 <- int[int$Spectra == spec2,] %>% select("full_mz", "Intensity")
@@ -114,7 +114,7 @@
     int <- gather(dat, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), all_of(spec3),
                   all_of(spec4), factor_key = TRUE)
-    int <- dplyr::filter(int, Intensity != 0) 
+    int <- filter(int, Intensity != 0) 
     
     s1 <- int[int$Spectra == spec1,] %>% select("full_mz", "Intensity")
     s2 <- int[int$Spectra == spec2,] %>% select("full_mz", "Intensity")
@@ -185,7 +185,7 @@
     int <- gather(dat, key = "Spectra", value = "Intensity",
                   all_of(spec1), all_of(spec2), all_of(spec3),
                   all_of(spec4), all_of(spec5), factor_key = TRUE)
-    int <- dplyr::filter(int, Intensity != 0) 
+    int <- filter(int, Intensity != 0) 
     
     s1 <- int[int$Spectra == spec1,] %>% select("full_mz", "Intensity")
     s2 <- int[int$Spectra == spec2,] %>% select("full_mz", "Intensity")
@@ -281,7 +281,7 @@
                   all_of(spec1), all_of(spec2), all_of(spec3),
                   all_of(spec4), all_of(spec5), all_of(spec6),
                   factor_key = TRUE)
-    int <- dplyr::filter(int, Intensity != 0) 
+    int <- filter(int, Intensity != 0) 
     
     s1 <- int[int$Spectra == spec1,] %>% select("full_mz", "Intensity")
     s2 <- int[int$Spectra == spec2,] %>% select("full_mz", "Intensity")
