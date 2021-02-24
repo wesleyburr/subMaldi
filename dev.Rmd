@@ -904,6 +904,36 @@ oxygnze(file = "/home/sophie/subMaldi/man/smoothSpectrum.Rd")
 oxygnze(file = "/home/sophie/subMaldi/man/subSpectra.Rd")
 ```
 
+## JOSS 2: Reading-in raw ASCII data
+```{r}
+read_ascii <- function(filename){
+  
+  ################
+  # LOGICAL CHECKS
+  ################
+  
+  stopifnot(is.character(filename))
+  
+  # Read in ASCII file as a character string
+  txt <- unlist(read.table(file = filename))
+ 
+  # Add newline character every two commas
+  regex <- gsub(pattern = "[^,]*,[^,]*\\K", replacement = ",\n", x = txt, perl = TRUE)
+
+  # Replace commas with space delimiter
+  regex <- gsub(pattern = ",", replacement = " ", x = regex, perl = TRUE)
+
+  # Convert to data.frame object
+  tbl <- read.table(text = regex, header = FALSE, col.names = c("m/z", "intensity"), fill = TRUE, row.names = NULL)
+ 
+  # Remove first four rows of metadata
+  tbl <- tbl[-(1:4),]
+  
+  return(tbl)
+}
+```
+
+
 
 
 
