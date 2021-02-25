@@ -53,7 +53,7 @@ norm_max <- function(dat, mass_dat, spectra_cols){
   return((y - min(y)) / (max_y - min(y)))
 }
 
-.normMethod_max_set <- function(dat, mass_dat, spectra_cols){
+.norm_max_set <- function(dat, mass_dat, spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
