@@ -49,8 +49,8 @@ Our data set `bsline` is an example of this scenario. A plot of the raw spectrum
 
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 3, fig.align = "center"}
-plotSpectrum(dat = bsline, mass_dat = bsline$mass, intensity_dat = bsline$raw,
-             colour = "black", min_mz = 200, max_mz = 5000, x_ticks = 500)
+plotSpectra(dat = bsline, mass_dat = "mass", spectra_cols = "raw",
+             colours = "black", min_mz = 200, max_mz = 5000, x_ticks = 7)
 ```
 
 
@@ -96,9 +96,8 @@ We'll now compare our smoothed version of `bsline` to the raw spectrum by mergin
 test <- data.frame(bsline$mass, bsline$raw, sgolay$sg)
 names(test) <- c("mass", "Raw Spectrum", "Savitzky-Golay Smooth")
 
-plotSpectra(dat = test, mass_dat = "mass", spec1 = "Raw Spectrum", 
-            spec2 = "Savitzky-Golay Smooth", min_mz = 200, max_mz = 5000,
-            x_ticks = 500)
+plotSpectra(dat = test, mass_dat = "mass", spectra_cols = c("Raw Spectrum", "Savitzky-Golay Smooth"), min_mz = 200, max_mz = 5000,
+            x_ticks = 7)
 ```
 
 
@@ -140,9 +139,8 @@ The raw and smoothed spectra are plotted below.
 
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 4, fig.align = "center"}
-plotSpectra(dat = test, mass_dat = "full_mz", spec1 = "RawSpectrum", 
-            spec2 = "MovingAverage", min_mz = 200, max_mz = 5000,
-            x_ticks = 500)
+plotSpectra(dat = test, mass_dat = "full_mz", spectra_cols = c("RawSpectrum", "MovingAverage"), min_mz = 200, max_mz = 5000,
+            x_ticks = 7)
 ```
 
 
@@ -172,8 +170,8 @@ Use of monotone minimum method of baseline correction is demonstrated below, on 
 
 
 ```{r}
-monotone_min <- baselineCorr(dat = sgolay, mass_dat = "mass", 
-                             intensity_dat = "sg", method = "monotone_min")
+mono_min <- baselineCorr(dat = sgolay, mass_dat = "mass", 
+                        intensity_dat = "sg", method = "monotone_min")
 ```
 
 
@@ -181,12 +179,11 @@ The smoothed and baseline corrected intensities are merged into a single data fr
 
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 4, fig.align = "center"}
-test <- data.frame(sgolay$mass, sgolay$sg, monotone_min$baseline)
+test <- data.frame(sgolay$mass, sgolay$sg, mono_min$baseline)
 names(test) <- c("mz", "Smoothed", "BaselineCorrected")
 
-plotSpectra(dat = test, mass_dat = "mz", spec1 = "Smoothed", 
-            spec2 = "BaselineCorrected", min_mz = 200, max_mz = 5000,
-            x_ticks = 500)
+plotSpectra(dat = test, mass_dat = "mz", spectra_cols = c("Smoothed", "BaselineCorrected"), min_mz = 200, max_mz = 5000,
+            x_ticks = 7)
 ```
 
 
@@ -216,9 +213,8 @@ In order to compare the smoothed and baseline-corrected spectra, we will once ag
 test <- data.frame(mov_avg$mass, mov_avg$mov_avg, linear_int$baseline)
 names(test) <- c("mz", "Smoothed", "BaselineCorrected")
 
-plotSpectra(dat = test, mass_dat = "mz", spec1 = "Smoothed", 
-            spec2 = "BaselineCorrected", min_mz = 200, max_mz = 5000,
-            x_ticks = 500)
+plotSpectra(dat = test, mass_dat = "mz", spectra_cols = c("Smoothed", "BaselineCorrected"), min_mz = 200, max_mz = 5000,
+            x_ticks = 7)
 ```
 
 
@@ -249,9 +245,8 @@ The raw and baseline corrected spectra are merged into a single data frame and p
 test <- data.frame(bsline$mass, bsline$raw, loess$baseline)
 names(test) <- c("mz", "RawSpectrum", "BaselineCorrected")
 
-plotSpectra(dat = test, mass_dat = "mz", spec1 = "RawSpectrum", 
-            spec2 = "BaselineCorrected", min_mz = 200, max_mz = 5000,
-            x_ticks = 500)
+plotSpectra(dat = test, mass_dat = "mz", spectra_cols = c("RawSpectrum", "BaselineCorrected"), min_mz = 200, max_mz = 5000,
+            x_ticks = 7)
 ```
 
 
@@ -278,7 +273,7 @@ We will perform SNR peak detection on our monotone minimum baseline corrected da
 
 
 ```{r}
-snr <- peakDet(monotone_min, "mz", "baseline", method = "snr", 
+snr <- peakDet(mono_min, "mz", "baseline", method = "snr", 
                   n = 7, SNR_thresh = 3)
 ```
 
@@ -287,12 +282,11 @@ As performed previously, we will merge the intensity data from the baseline corr
 
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 4, fig.align = "center"}
-test <- data.frame(monotone_min$mz, monotone_min$baseline, snr$peaks)
+test <- data.frame(mono_min$mz, mono_min$baseline, snr$peaks)
 names(test) <- c("mz", "Baseline", "Peaks")
 
-plotSpectra(dat = test, mass_dat = "mz", spec1 = "Baseline", 
-            spec2 = "Peaks", min_mz = 200, max_mz = 5000,
-            x_ticks = 500)
+plotSpectra(dat = test, mass_dat = "mz", spectra_cols = c("Baseline", "Peaks"), min_mz = 200, max_mz = 5000,
+            x_ticks = 7)
 ```
 
 
@@ -321,9 +315,8 @@ The filtered peaks and baseline-corrected intensities are merged and plotted bel
 test <- data.frame(linear_int$mz, linear_int$baseline, slopes$peaks)
 names(test) <- c("mz", "Baseline", "Peaks")
 
-plotSpectra(dat = test, mass_dat = "mz", spec1 = "Baseline", 
-            spec2 = "Peaks", min_mz = 200, max_mz = 5000,
-            x_ticks = 500)
+plotSpectra(dat = test, mass_dat = "mz", spectra_cols = c("Baseline", "Peaks"), min_mz = 200, max_mz = 5000,
+            x_ticks = 7)
 ```
 
 
@@ -448,9 +441,8 @@ Finally, we will merge the raw and CWT-processed data for comparison by plotting
 test <- data.frame(bsline$mass, bsline$raw, cwt$y)
 names(test) <- c("mz", "RawSpectrum", "CWT")
 
-plotSpectra(dat = test, mass_dat = "mz", spec1 = "RawSpectrum", 
-            spec2 = "CWT", min_mz = 200, max_mz = 5000,
-            x_ticks = 500)
+plotSpectra(dat = test, mass_dat = "mz", spectra_cols = c("RawSpectrum", "CWT"), min_mz = 200, max_mz = 5000,
+            x_ticks = 7)
 ```
 
 
