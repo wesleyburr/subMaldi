@@ -39,9 +39,7 @@ norm_stdev <- function(dat, mass_dat, lower = 900, upper = 1100 , spectra_cols){
   
   if(length(spectra_cols) == 1){
     std_dev <- sd(noise, na.rm = TRUE)
-  }
-  
-  else{
+  } else{
     std_dev <- apply(noise, 2, FUN = sd, na.rm = TRUE)
   }
   

@@ -32,7 +32,12 @@ norm_median <- function(dat, mass_dat, spectra_cols){
     i <- do.call(what = data.frame, args = c(spectra))
     i[i == 0 ] <- NA
     
-    i_med <- apply(i,2, FUN = median, na.rm = TRUE)
+    if(length(spectra_cols) == 1){
+      i_med <- median(i, na.rm = TRUE)
+    } else{
+      i_med <- apply(i,2, FUN = median, na.rm = TRUE)
+    }
+    
     max_med <- max(i_med)
     
     for(j in 1:length(spectra_cols)){

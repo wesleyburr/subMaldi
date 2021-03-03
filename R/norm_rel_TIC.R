@@ -35,7 +35,11 @@ norm_rel_TIC <- function(dat, mass_dat, spectra_cols){
   spectra <- lapply(spectra_cols, function(x){dat[x]})
   i <- do.call(what = data.frame, args = c(spectra))
   
-  i_sum <- apply(i, 2, FUN = sum)
+  if(length(spectra_cols) == 1){
+    i_sum <- sum(i)
+  } else{
+    i_sum <- apply(i, 2, FUN = sum)
+  }
   
   max_sum <- max(i_sum)
   

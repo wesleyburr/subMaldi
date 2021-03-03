@@ -39,7 +39,11 @@ norm_RMS <- function(dat, mass_dat, spectra_cols){
   
   n <- nrow(dat)
   
-  rms <- apply(i, 2, FUN = function(x) { .RMS(y = x, n = n)})
+  if(length(spectra_cols) == 1){
+    rms <- .RMS(y = i, n = n)
+  } else{
+    rms <- apply(i, 2, FUN = function(x) { .RMS(y = x, n = n)})
+  }
   
   i_rms <- t(t(i)*rms^-1)  # i / rms matrix multiplication
   
