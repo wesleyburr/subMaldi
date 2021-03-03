@@ -1,4 +1,8 @@
-
+# -----------------------------------------------------------------------
+# Last Updated: March 3, 2021
+# Author: Kristen Yeh, Sophie Castel
+# Title: testthat: normSpectra()
+# -----------------------------------------------------------------------
 
 context("Miscellaneous Normalization")
 # Covers methods: St.dev, RMS, median, quantile
@@ -12,32 +16,36 @@ data("Master2")
 # --------------
 
 
-out <- normSpectra(Master2, mass_dat = "full_mz", method = "stdev", 
-                   lower = 900, upper = 1100, spec1 = "Before1")
+out <- normSpectra(Master2,
+  mass_dat = "full_mz", method = "stdev",
+  lower = 900, upper = 1100, spec1 = "Before1"
+)
 noise <- out$Before1[which(out$full_mz > 900 & 1100 > out$full_mz)]
-noise <- noise[ noise != 0 ] 
+noise <- noise[noise != 0]
 
 test_that("St.Dev of output in noise region = 1", {
   expect_equal(sd(noise), 1)
 })
 
-
 # -------
 # Median
 # -------
 
+med <- normSpectra(Master2,
+  mass_dat = "full_mz", method = "median",
+  spec1 = "Before1", spec2 = "Before2"
+)
 
-med <- normSpectra(Master2, mass_dat = "full_mz", method = "median", 
-            spec1 = "Before1", spec2 = "Before2") 
-
-med <- gather(med, key = "Spectra", value = "Intensity", 
-              Before1, Before2, factor_key = TRUE)
+med <- gather(med,
+  key = "Spectra", value = "Intensity",
+  Before1, Before2, factor_key = TRUE
+)
 med <- dplyr::filter(med, Intensity != 0)
 
-Before1 <- med[med$Spectra == "Before1",] %>% select("full_mz", "Intensity")
+Before1 <- med[med$Spectra == "Before1", ] %>% select("full_mz", "Intensity")
 m1 <- median(Before1$Intensity)
 
-Before2 <- med[med$Spectra == "Before2",] %>% select("full_mz", "Intensity")
+Before2 <- med[med$Spectra == "Before2", ] %>% select("full_mz", "Intensity")
 m2 <- median(Before2$Intensity)
 
 test_that("Median of output intensities are equal in all spec", {
@@ -48,21 +56,17 @@ test_that("One input spectrum yields error", {
   expect_error(normSpectra(Master2, "full_mz", "median", spec1 = "Before1"))
 })
 
-
 # ---------
 # Quantile
 # ---------
-
 
 test_that("One input spectrum yields error", {
   expect_error(normSpectra(Master2, "full_mz", "quantile", spec1 = "Before1"))
 })
 
-
 # ----
 # RMS
 # ----
-
 
 test_rms <- .RMS(y = Master2$Before1, n = length(Master2$Before1))
 
@@ -79,14 +83,15 @@ test_that(".RMS calculates RMS correct", {
 
 raw5 <- Master2$Before1[5]
 
-norm <- normSpectra(dat = Master2, mass_dat = "full_mz", method = "RMS", 
-                            spec1 = "Before1")
-norm5 <- norm[5,2]
+norm <- normSpectra(
+  dat = Master2, mass_dat = "full_mz", method = "RMS",
+  spec1 = "Before1"
+)
+norm5 <- norm[5, 2]
 
-div <- raw5/norm5
+div <- raw5 / norm5
 res <- .RMS(Master2$Before1, length(Master2$Before1))
 
 test_that("Diff b/w raw and norm = RMS", {
   expect_equal(div, res)
 })
-
