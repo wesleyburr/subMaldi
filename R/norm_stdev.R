@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------
-# Last Updated: January 28, 2021
+# Last Updated: March 3, 2021
 # Author: Kristen Yeh, Sophie Castel
 # Title: subMALDI: Normalization Method - Standard Deviation of Noise
 # -----------------------------------------------------------------------
@@ -14,7 +14,7 @@
 # Divide intensity of EACH PEAK IN SPEC by its st. dev.
 
 
-norm_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
+norm_stdev <- function(dat, mass_dat, lower = 900, upper = 1100 , spectra_cols){
   
   # ---------------------
   # LOGICAL CHECKS
@@ -37,7 +37,13 @@ norm_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
   noise <- i[which(mz > lower & upper > mz),]
   noise[noise == 0] <- NA
   
-  std_dev <- apply(noise, 2, FUN = sd, na.rm = TRUE)
+  if(length(spectra_cols == 1)){
+    std_dev <- sd(noise, na.rm = TRUE)
+  }
+  
+  else{
+    std_dev <- apply(noise, 2, FUN = sd, na.rm = TRUE)
+  }
   
   i_sd <- t(t(i)*std_dev^-1) # i / std_dev matrix multiplication
   
@@ -47,11 +53,6 @@ norm_stdev <- function(dat, mass_dat, lower = 900, upper= 1100 , spectra_cols){
   
   return(dat)
 }
-
-
-
-
-
 
 
 
