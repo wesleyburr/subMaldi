@@ -1,6 +1,6 @@
 ---
 title: "subMALDI: Sample Workflow"
-author: Kristen Yeh^1^ and Wesley Burr ^2^
+author: Kristen Yeh^1^ and Wesley Burr ^2^ and Sophie Castel ^3^
 output: 
   rmarkdown::html_vignette:
     toc: true
