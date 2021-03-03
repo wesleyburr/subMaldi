@@ -15,7 +15,7 @@ subMALDI is an open source project, maintained by people who care. We are not di
 
 ## Code of conduct
 
-Please note that this project is released using a [Contributor Code of Conduct][code_of_conduct.md], via [Contributor Convenant](https://www.contributor-covenant.org/). By participating in this project you agree to abide by its terms.
+Please note that this project is released using a [Contributor Code of Conduct](code_of_conduct.md), via [Contributor Convenant](https://www.contributor-covenant.org/). By participating in this project you agree to abide by its terms.
 
 ## How you can contribute
 
@@ -31,7 +31,7 @@ Using subMALDI for a paper you are writing? Consider [citing it][citation].
 
 Using subMALDI and got stuck? Browse the [documentation][website] to see if you can find a solution. Still stuck? Post your question as an [issue on GitHub][new_issue]. While we cannot offer user support, we'll try to do our best to address it, as questions often lead to better documentation or the discovery of bugs.
 
-Want to ask a question in private? Contact the package maintainer by [email][mailto:email].
+Want to ask a question in private? Contact the package maintainer by [email][mailto:sophie.castel@ontariotechu.net].
 
 ### Propose an idea 💡
 
