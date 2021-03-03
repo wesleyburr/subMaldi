@@ -12,7 +12,7 @@ library(subMALDI)
 # ----
 
 test_that("One input spectrum yields error", {
-  expect_error(normSpectra(dat = Master2, mass_dat = "full_mz", method = "TIC", spectra_cols = "Before1"))
+  expect_error(normSpectra(dat = Master2, mass_dat = "full_mz", method = "TIC", spectra_cols = c("Before1")))
 })
 
 test_that("Correct TIC chosen for norm", {
@@ -44,8 +44,7 @@ test_that("Difference between raw and norm intensities = TIC", {
 
   norm <- normSpectra(
     dat = Master2, mass_dat = "full_mz", method = "rel_TIC",
-    spec1 = "Before1"
-  )
+    spectra_cols = c("Before1"))
   norm8 <- norm[8, 2]
 
   div <- raw8 / norm8
