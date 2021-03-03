@@ -6,35 +6,34 @@
 
 context("Base subMALDI functions")
 library(subMALDI)
-data("Master2")
 
 # -----------
 # avgSpectra
 # -----------
 
-r5 <- as.numeric(Master2[5, -1])
-sum <- sum(r5)
-mean <- mean(r5)
-
-avg <- avgSpectra(Master2,
-  method = "mean", spec1 = "Blank1",
-  spec2 = "Blank2", spec3 = "Before1", spec4 = "Before2",
-  spec5 = "After1", spec6 = "After2"
-)
-avg <- avg[5, 8]
-
 test_that("Averaging works (m/z not included)", {
+  data("Master2")
+
+  r5 <- as.numeric(Master2[5, -1])
+  sum <- sum(r5)
+  mean <- mean(r5)
+
+  avg <- avgSpectra(Master2,
+    method = "mean", spectra_cols = c("Blank1", "Blank2", "Before1", "Before2", "After1", "After2")
+  )
+  avg <- avg[5, 8]
+
   expect_equal(avg, mean)
 })
 
-avg_sum <- avgSpectra(Master2,
-  method = "sum", spec1 = "Blank1",
-  spec2 = "Blank2", spec3 = "Before1", spec4 = "Before2",
-  spec5 = "After1", spec6 = "After2"
-)
-avg_sum <- avg_sum[5, 8]
-
 test_that("Sum works (m/z not included)", {
+  data("Master2")
+
+  avg_sum <- avgSpectra(Master2,
+    method = "sum", spectra_cols = c("Blank1", "Blank2", "Before1", "Before2", "After1", "After2")
+  )
+  avg_sum <- avg_sum[5, 8]
+
   expect_equal(avg_sum, sum)
 })
 
@@ -42,32 +41,33 @@ test_that("Sum works (m/z not included)", {
 # subSpectra
 # -----------
 
-r10 <- as.numeric(Master2[10, 4:5])
-sub <- as.numeric(r10[2] - r10[1])
-
-bef <- select(Master2, "full_mz", "Before1", "Before2")
-bef <- transform(bef, "Subtracted" = 0)
-
-subSp <- subSpectra(bef,
-  Blank_Var = "Before1", Sample = "Before2",
-  Sub_Sample = "Subtracted"
-)
-subSp <- subSp[10, 4]
-
 test_that("Subtraction yields right value", {
+  data("Master2")
+  r10 <- as.numeric(Master2[10, 4:5])
+  sub <- as.numeric(r10[2] - r10[1])
+
+  bef <- select(Master2, "full_mz", "Before1", "Before2")
+  bef <- transform(bef, "Subtracted" = 0)
+
+  subSp <- subSpectra(bef,
+  Blank_Var = "Before1", Sample = "Before2",
+    Sub_Sample = "Subtracted"
+  )
+  subSp <- subSp[10, 4]
+    
   expect_equal(subSp, sub)
 })
-
-r3 <- as.numeric(Master2[3, 4:5])
-neg <- as.numeric(r3[2] - r3[1])
-
-sneg <- subSpectra(bef,
-  Blank_Var = "Before1", Sample = "Before2",
-  Sub_Sample = "Subtracted", showNeg = TRUE
-)
-sneg <- sneg[3, 4]
-
+  
 test_that("showNeg = TRUE actually shows negative values", {
+  r3 <- as.numeric(Master2[3, 4:5])
+  neg <- as.numeric(r3[2] - r3[1])
+    
+  sneg <- subSpectra(bef,
+  Blank_Var = "Before1", Sample = "Before2",
+	  Sub_Sample = "Subtracted", showNeg = TRUE
+  )
+  sneg <- sneg[3, 4]
+
   expect_equal(sneg, neg)
 })
 

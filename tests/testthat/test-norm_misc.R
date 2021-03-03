@@ -13,7 +13,7 @@ data("Master2")
 test_that("St.Dev of output in noise region = 1", {
   out <- normSpectra(Master2,
     mass_dat = "full_mz", method = "stdev",
-    lower = 900, upper = 1100, spec1 = "Before1"
+    lower = 900, upper = 1100, spectra_cols = "Before1"
   )
   noise <- out$Before1[which(out$full_mz > 900 & 1100 > out$full_mz)]
   noise <- noise[noise != 0]
@@ -30,7 +30,7 @@ test_that("St.Dev of output in noise region = 1", {
 test_that("Median of output intensities are equal in all spec", {
   med <- normSpectra(Master2,
     mass_dat = "full_mz", method = "median",
-    spec1 = "Before1", spec2 = "Before2"
+    spectra_cols = c("Before1", "Before2")
   )
 
   med <- gather(med,
@@ -49,7 +49,7 @@ test_that("Median of output intensities are equal in all spec", {
 })
 
 test_that("One input spectrum yields error", {
-  expect_error(normSpectra(Master2, "full_mz", "median", spec1 = "Before1"))
+  expect_error(normSpectra(Master2, "full_mz", "median", spectra_cols = "Before1"))
 })
 
 
@@ -57,7 +57,7 @@ test_that("One input spectrum yields error", {
 # Quantile
 # ---------
 test_that("One input spectrum yields error", {
-  expect_error(normSpectra(Master2, "full_mz", "quantile", spec1 = "Before1"))
+  expect_error(normSpectra(Master2, "full_mz", "quantile", spectra_cols = "Before1"))
 })
 
 
@@ -82,7 +82,7 @@ test_that("Diff b/w raw and norm = RMS", {
 
   norm <- normSpectra(
     dat = Master2, mass_dat = "full_mz", method = "RMS",
-    spec1 = "Before1"
+    spectra_cols = "Before1"
   )
   norm5 <- norm[5, 2]
 
