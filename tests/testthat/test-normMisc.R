@@ -15,15 +15,14 @@ data("Master2")
 # St. Deviation
 # --------------
 
-
-out <- normSpectra(Master2,
-  mass_dat = "full_mz", method = "stdev",
-  lower = 900, upper = 1100, spec1 = "Before1"
-)
-noise <- out$Before1[which(out$full_mz > 900 & 1100 > out$full_mz)]
-noise <- noise[noise != 0]
-
 test_that("St.Dev of output in noise region = 1", {
+  out <- normSpectra(Master2,
+    mass_dat = "full_mz", method = "stdev",
+    lower = 900, upper = 1100, spec1 = "Before1"
+  )
+  noise <- out$Before1[which(out$full_mz > 900 & 1100 > out$full_mz)]
+  noise <- noise[noise != 0]
+
   expect_equal(sd(noise), 1)
 })
 
@@ -31,6 +30,7 @@ test_that("St.Dev of output in noise region = 1", {
 # Median
 # -------
 
+test_that("Median of output intensities are equal in all spec", {
 med <- normSpectra(Master2,
   mass_dat = "full_mz", method = "median",
   spec1 = "Before1", spec2 = "Before2"
@@ -48,12 +48,7 @@ m1 <- median(Before1$Intensity)
 Before2 <- med[med$Spectra == "Before2", ] %>% select("full_mz", "Intensity")
 m2 <- median(Before2$Intensity)
 
-test_that("Median of output intensities are equal in all spec", {
   expect_equal(m1, m2)
-})
-
-test_that("One input spectrum yields error", {
-  expect_error(normSpectra(Master2, "full_mz", "median", spec1 = "Before1"))
 })
 
 # ---------

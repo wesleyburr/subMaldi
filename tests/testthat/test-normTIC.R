@@ -12,13 +12,12 @@ library(subMALDI)
 # ----
 
 test_that("One input spectrum yields error", {
-  expect_error(normSpectra(Master2, "full_mz", "TIC", spec1 = "Before1"))
+  expect_error(normSpectra(dat = Master2, mass_dat = "full_mz", method = "TIC", spectra_cols = "Before1"))
 })
 
 test_that("Correct TIC chosen for norm", {
-  med_tic <- normSpectra(Master2, "full_mz", "TIC",
-    spec1 = "Before1",
-    spec2 = "Before2", spec3 = "After1"
+  med_tic <- normSpectra(dat = Master2, mass_dat = "full_mz", method = "TIC",
+    spectra_cols = c("Before1", "Before2", "After1")
   )
 
   i1 <- sum(Master2$Before1)

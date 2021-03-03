@@ -1,6 +1,6 @@
 ---
 title: "subMALDI Workflow"
-author: Kristen Yeh^1^ and Wesley Burr^2^
+author: Kristen Yeh^1^, Sophie Castel^3^ and Wesley Burr^2^
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -23,6 +23,8 @@ knitr::opts_chunk$set(
 ^1^ Forensic Science Program, Trent University, Peterborough, ON, Canada
 
 ^2^ Faculty of Science, Mathematics, Trent University, Peterborough, ON, Canada
+
+^3^ Faculty of Science, Applied Bioscience, Ontario Tech University, Oshawa, ON, Canada
 
 # Introduction
 
