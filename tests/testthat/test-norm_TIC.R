@@ -14,7 +14,7 @@ med_tic <- normSpectra(Master2, mass_dat = "full_mz", method = "TIC", spectra_co
 i1 <- sum(Master2$Before1)
 i2 <- sum(Master2$Before2)
 i3 <- sum(Master2$After1)
-i <- c(i1,i2,i3)
+i <- c(i1, i2, i3)
 max <- max(i)
 
 o1 <- med_tic$Before1
@@ -26,7 +26,3 @@ test_that("Correct TIC chosen for norm", {
   expect_equal(sum(o2), max)
   expect_equal(sum(o3), max)
 })
-
-
-
-
