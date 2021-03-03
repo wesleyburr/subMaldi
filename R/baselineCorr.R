@@ -72,8 +72,7 @@
 
 
 
-baselineCorr <- function(dat, mass_dat, intensity_dat, method = NULL, 
-                           n = NULL){
+baselineCorr <- function(dat, mass_dat, intensity_dat, method = NULL, n = NULL){
   
   if(is.null(method)){
     stop('Please select a valid baseline correction method. See ?baselineCorr for list of methods.')
