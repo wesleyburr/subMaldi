@@ -1,21 +1,21 @@
-# Contributing to our_package
+# Contributing to subMALDI
 
 <!-- This CONTRIBUTING.md is adapted from https://gist.github.com/peterdesmet/e90a1b0dc17af6c12daf6e8b2f044e7c -->
 
-First of all, thanks for considering contributing to subMALDI! 👍 It's people like you that make it rewarding for us - the project maintainers - to work on our_package. 😊
+First of all, thanks for considering contributing to subMALDI! 👍 It's people like you that make it rewarding for us - the project maintainers - to work on subMALDI. 😊
 
 subMALDI is an open source project, maintained by people who care. We are not directly funded to do so.
 
 [repo]: https://github.com/wesleyburr/subMaldi
 [issues]: https://github.com/wesleyburr/subMaldi/issues
 [new_issue]: https://github.com/wesleyburr/subMaldi/issues/new
+[email]: mailto:sophie.castel@ontariotechu.net
 [website]: https://wesleyburr.github.io/subMaldi  (need to create)
 [citation]: (replace with link to JOSS paper once accepted)
-[email]: mailto:sophie.castel@ontariotechu.net
 
 ## Code of conduct
 
-Please note that this project is released using a [Contributor Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md), via [Contributor Convenant](https://www.contributor-covenant.org/). By participating in this project you agree to abide by its terms.
+Please note that this project is released using a [Contributor Code of Conduct][code_of_conduct.md], via [Contributor Convenant](https://www.contributor-covenant.org/). By participating in this project you agree to abide by its terms.
 
 ## How you can contribute
 
@@ -29,13 +29,13 @@ Using subMALDI for a paper you are writing? Consider [citing it][citation].
 
 ### Ask a question ⁉️
 
-Using our_package and got stuck? Browse the [documentation][website] to see if you can find a solution. Still stuck? Post your question as an [issue on GitHub][new_issue]. While we cannot offer user support, we'll try to do our best to address it, as questions often lead to better documentation or the discovery of bugs.
+Using subMALDI and got stuck? Browse the [documentation][website] to see if you can find a solution. Still stuck? Post your question as an [issue on GitHub][new_issue]. While we cannot offer user support, we'll try to do our best to address it, as questions often lead to better documentation or the discovery of bugs.
 
 Want to ask a question in private? Contact the package maintainer by [email][mailto:email].
 
 ### Propose an idea 💡
 
-Have an idea for a new our_package feature? Take a look at the [documentation][website] and [issue list][issues] to see if it isn't included or suggested yet. If not, suggest your idea as an [issue on GitHub][new_issue]. While we can't promise to implement your idea, it helps to:
+Have an idea for a new subMALDI feature? Take a look at the [documentation][website] and [issue list][issues] to see if it isn't included or suggested yet. If not, suggest your idea as an [issue on GitHub][new_issue]. While we can't promise to implement your idea, it helps to:
 
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible.
@@ -44,7 +44,7 @@ See below if you want to contribute code for your idea as well.
 
 ### Report a bug 🐛
 
-Using our_package and discovered a bug? That's annoying! Don't let others have the same experience and report it as an [issue on GitHub][new_issue] so we can fix it. A good bug report makes it easier for us to do so, so please include:
+Using subMALDI and discovered a bug? That's annoying! Don't let others have the same experience and report it as an [issue on GitHub][new_issue] so we can fix it. A good bug report makes it easier for us to do so, so please include:
 
 * Your operating system name and version (e.g., Mac OS 10.13.6).
 * Your version of R, RStudio, and subMALDI
@@ -69,7 +69,7 @@ Functions are described as comments near their code and translated to documentat
 
 ### Contribute code 📝
 
-Care to fix bugs or implement new functionality for our_package? Awesome! 👏 Have a look at the [issue list][issues] and leave a comment on the things you want to work on. See also the development guidelines below.
+Care to fix bugs or implement new functionality for subMALDI? Awesome! 👏 Have a look at the [issue list][issues] and leave a comment on the things you want to work on. See also the development guidelines below.
 
 ## Development guidelines
 
