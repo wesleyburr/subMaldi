@@ -44,7 +44,7 @@ library(subMALDI)
 ## Import
 Two import functions are included in the package. Both read .CSV files which contain spectral data from a single spectrum per file. While `readcsvSpec()` imports one spectrum at a time and turns them into a pairwise data frame of *m/z* and intensity data, `readcsvDir()` is capable of reading all the .CSV files in a folder. The pairwise data frames generated for all of these spectra are then output as .rda files into a designated output folder.
 
-For example, let's say we have a set of 5 spectral replicates in our working directory. These are stored as .CSV files in a folder called "my_spec". In the original file, mass data is stored in a column called "m.z", while intensity data is stored in a column called "I". If we wanted to import only one of the spectra, specifically "Sample1.csv", then we wound run the following code. 
+For example, let's say we have a set of 5 spectral replicates in our working directory. These are stored as .CSV files in a folder called "my_spec". In the original file, mass data is stored in a column called "m.z", while intensity data is stored in a column called "I". If we wanted to import only one of the spectra, specifically "Sample1.csv", then we would run the following code. 
 
 ```{r eval = FALSE}
 my_spec1 <- readcsvSpec(spec_file = "~/my_spec/Sample1.csv", massCol = "m.z", intenseCol = "I")
@@ -156,7 +156,7 @@ To distinguish between peaks originating from the matrix and peaks originating f
 There are two methods available for averaging our intensity data: sum or mean. In this example we will use the method "mean" on the matrix blanks "Blank1" and "Blank2". This is performed using the code below.
 
 ```{r }
-avg_spec <- avgSpectra(spec, method = "mean", spec1 = "Blank1", spec2 = "Blank2")
+avg_spec <- avgSpectra(spec, method = "mean", spectra_cols = c("Blank1", "Blank2"))
 
 head(avg_spec)
 ```
@@ -211,11 +211,10 @@ head(norm_spec)
 The raw data is plotted below.
 
 ```{r warning = FALSE, fig.align = "center", fig.width = 6, fig.height = 3}
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2")
+plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
 ```
 
-Please note that while only two spectra are normalized in this vignette, __*subMALDI*__ is capable of normalizing up to 6 spectral replicates at once.
+Please note that while only two spectra are normalized in this vignette, __*subMALDI*__ is capable of normalizing several spectral replicates at once, the resulting plots of which can be arranged using the __*nrows*__ argument.
 
 ## Custom *m/z* Normalization
 
@@ -223,13 +222,10 @@ Custom *m/z* normalization is one of the simpler methods included with __*subMAL
 
 ```{r warning = FALSE, fig.show = "hold"}
 custom_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "custom", 
-                         norm_mz = 255.23, spec1 = "Before1", spec2 = "Before2")
+                         norm_mz = 255.23, spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(custom_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2", 
-            x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(custom_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -242,13 +238,10 @@ A sample normalization is performed below.
 
 ```{r warning = FALSE, fig.show = "hold"}
 max_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "max", 
-                      spec1 = "Before1", spec2 = "Before2")
+                      spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(max_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2", 
-            x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(max_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -261,13 +254,11 @@ In this case, 1 represents the same value for all spectra in a data set, whereas
 
 ```{r warning = FALSE, fig.show = "hold"}
 maxset_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "max_set", 
-                         spec1 = "Before1", spec2 = "Before2")
+                         spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(maxset_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2", 
-            x_ticks = 250, intensity_scale = "fixed", colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(maxset_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
+            x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -281,14 +272,11 @@ $RMS = \sqrt{\frac{1}{n-1}*\sum{I^2}}$
 A sample RMS normalization is performed below.
 
 ```{r warning = FALSE, fig.show = "hold"}
-RMS_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "RMS", spec1 = "Before1", 
-                      spec2 = "Before2")
+RMS_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "RMS", spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(RMS_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2", 
-            x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(RMS_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
+            x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -302,14 +290,11 @@ In this method, the total intensity of each spectrum in a data set is evaluated.
 A sample normalization is performed below.
 
 ```{r warning = FALSE, fig.show = "hold"}
-TIC_ex <- normSpectra(norm_spec, mass_dat= "full_mz", method = "TIC", spec1 = "Before1",
-                      spec2 = "Before2")
+TIC_ex <- normSpectra(norm_spec, mass_dat= "full_mz", method = "TIC", spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(TIC_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2",
-            x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(TIC_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
+            x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -321,14 +306,11 @@ __*subMALDI*__ also includes a TIC normalization method which re-scales the inte
 A sample normalization is performed below.
 
 ```{r warning = FALSE, fig.show = "hold"}
-rel_TIC_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "rel_TIC", spec1 = "Before1",
-                          spec2 = "Before2")
+rel_TIC_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "rel_TIC", spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(rel_TIC_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2",
-            x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(rel_TIC_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"),
+            x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left. 
@@ -362,14 +344,11 @@ Once the spectra have been corrected to contain the same number of data points, 
 A sample median normalization is performed below.
 
 ```{r warning = FALSE, fig.show = "hold"}
-median_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "median", spec1 = "Before1",
-                         spec2 = "Before2")
+median_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "median", spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(median_ex, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2", 
-            x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(median_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
+            x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -383,8 +362,8 @@ In order to use this method, a large region of the spectra must be identified wh
 A plot of our raw data is shown below. Here we can see that there is a noisy region from *m/z* 900 to 1000. We will use this region for our sample normalization.
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 3, fig.align = "center"}
-plotSpectra(norm_spec, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2", 
-            x_ticks = 100, min_mz = 750, max_mz = 1100)
+plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
+            x_ticks = 5, min_mz = 750, max_mz = 1100)
 ```
 
 Once a spectral region of noise has been identified, the standard deviation of the intensities in this region is evaluated. The intensity of each peak in a spectrum is then divided by that spectrum's standard deviation of noise. The output spectra should have a standard deviation of 1 in the selected noise region^1^.
@@ -393,14 +372,10 @@ A sample standard deviation of noise normalization is performed below, using a l
 
 ```{r warning = FALSE, fig.show = "hold"}
 stdev_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "stdev", 
-                        lower = 900, upper = 1000, spec1 = "Before1", 
-                        spec2 = "Before2")
+                        lower = 900, upper = 1000, spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(stdev_ex, mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(stdev_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -418,14 +393,10 @@ Quantile normalization consists of two steps^2^:
 This makes the distributions of the values equal in all spectra^1^. The quantile normalization technique is demonstrated below.
 
 ```{r warning = FALSE, fig.show = "hold"}
-quantile_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "quantile", 
-                           spec1 = "Before1", spec2 = "Before2")
+quantile_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "quantile", spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250)
-plotSpectra(quantile_ex, mass_dat = "full_mz", spec1 = "Before1", 
-            spec2 = "Before2", x_ticks = 250, colour1 = "lightgreen",
-            colour2 = "cornflowerblue")
+plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
+plotSpectra(quantile_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.
@@ -434,11 +405,7 @@ The original spectra are shown to the right, while the normalized spectra are di
 
 # Plotting Spectra
 
-Several sample plots were shown above to illustrate the different normalization methods. In this section we will work through the different plotting functions included with __*subMALDI*__ and demonstrate their capabilities.
-
-## Plotting a Single Spectrum
-
-When plotting a single spectrum with __*subMALDI*__, `plotSpectrum()` is the function to use.
+Several sample plots were shown above to illustrate the different normalization methods. In this section we will show the features of the \code{plotSpectra()} function, and demonstrate its capabilities.
 
 We can plot data from the original pairwise data frame, or from a mapped spectral data frame. An example of the former is shown below. 
 
@@ -446,16 +413,16 @@ In this example, we use the arguments `lbls = TRUE` and `span = 9`. This labels 
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 3, fig.align = "center"}
 data("Blank1")
-plotSpectrum(dat = Blank1, mass_dat = Blank1$mass, intensity_dat = Blank1$Intensity, 
-             lbls = TRUE, span = 9)
+plotSpectra(dat = Blank1, mass_dat = "mass", spectra_cols = "Intensity", 
+             lbls = TRUE, span = 9, x_ticks = 6)
 ```
 
 We can also customize the color and the *m/z* range of the plot. In this example we will plot a single spectrum from a mapped spectral data frame without labels. We will change the color of the spectrum to `"black"` and zoom in on the *m/z* region from *m/z* 100 to 500.
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 3, fig.align = "center"}
 data("Master")
-plotSpectrum(dat = Master, mass_dat = Master$full_mz, intensity_dat = Master$After2, 
-             colour = "black", min_mz = 100, max_mz = 500)
+plotSpectra(dat = Master, mass_dat = "full_mz", spectra_cols = "After2", 
+             colours = "black", min_mz = 100, max_mz = 500, x_ticks = 7)
 ```
 
 Not all spectral data has the same resolution. As such, the labels on each mass spectrum should accurately reflect the resolution of the raw data.
@@ -473,48 +440,19 @@ We will customize our label output using the argument \code{lbl.fmt}. The defaul
 Our low resolution data only has two decimal places, therefore our \code{lbl.fmt} argument will be "%3.2f".
 
 ```{r  warning = FALSE, fig.width = 6, fig.height = 3, fig.align = "center"}
-plotSpectrum(Master2, mass_dat = Master2$full_mz, intensity_dat = Master2$Before1, lbls = TRUE, lbl.fmt = "%3.2f")
+plotSpectra(dat = Master2, mass_dat = "full_mz", spectra_cols = "Before1", lbls = TRUE, lbl.fmt = "%3.2f", x_ticks = 7)
 ```
 
 ## Plotting Multiple Spectra
 
-When plotting multiple spectra on the same *m/z* axis, `plotSpectra()` should be used. This function is capable of plotting 2-4 spectra on the same *m/z* axis, stacked on top of one another.
-
-We will plot four spectra on the same axis below.
+When plotting multiple spectra on the same *m/z* axis, the `nrows` argument should be used. Here, we set `nrows = 1` such that the four plots are stacked on top of one another, and sharing the same *m/z* axis. 
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 6, fig.align = "center"}
-plotSpectra(dat = Master, mass_dat = "full_mz", spec1 = "Before1", spec2 = "Before2",
-             spec3 = "After1", spec4 = "After2", lbls = TRUE, span = 15)
+plotSpectra(dat = Master, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2", "After1", "After2"), 
+            lbls = TRUE, span = 15, nrows = 4, x_ticks = 7)
 ```
 
-## Plotting a Grid of Spectra
-
-Spectra can also be plotted side-by-side, in a grid format. This option is available for 4 or 6 spectral replicates. An example of each will be shown below.
-
-The code below plots four spectra in a grid format.
-
-```{r warning = FALSE, fig.width = 6, fig.height = 6, fig.align = "center"}
-plotgridSpectra(Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Blank2",
-                spec3 = "Before1", spec4 = "Before2", x_ticks = 500, lbls = TRUE,
-                span = 11)
-```
-
-The code below plots six spectra in a grid format.
-
-```{r warning = FALSE, fig.width = 6, fig.height = 8, fig.align = "center"}
-plotgridSpectra(Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Blank2",
-                spec3 = "Before1", spec4 = "Before2", spec5 = "After1", spec6 = "After2", 
-                x_ticks = 500, max_mz = 500, lbls = TRUE, span = 11)
-```
-
-We can also plot six spectra in three columns, as shown below.
-
-```{r warning = FALSE, fig.width = 6, fig.height = 4, fig.align = "center"}
-plotgridSpectra(Master, mass_dat = "full_mz", spec1 = "Blank1", spec2 = "Blank2",
-                spec3 = "Before1", spec4 = "Before2", spec5 = "After1", spec6 = "After2", 
-                x_ticks = 500, max_mz = 500, lbls = TRUE, columns = 3, span = 11)
-```
-
+If a grid format is preferred, the `nrows` argument can be adjusted and will produce the best-fitting layout.
 
 ---
 
