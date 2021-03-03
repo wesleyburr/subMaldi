@@ -2,7 +2,7 @@
 
 <!-- This CONTRIBUTING.md is adapted from https://gist.github.com/peterdesmet/e90a1b0dc17af6c12daf6e8b2f044e7c -->
 
-First of all, thanks for considering contributing to our_package! 👍 It's people like you that make it rewarding for us - the project maintainers - to work on our_package. 😊
+First of all, thanks for considering contributing to subMALDI! 👍 It's people like you that make it rewarding for us - the project maintainers - to work on our_package. 😊
 
 subMALDI is an open source project, maintained by people who care. We are not directly funded to do so.
 
@@ -15,7 +15,7 @@ subMALDI is an open source project, maintained by people who care. We are not di
 
 ## Code of conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
+Please note that this project is released using a [Contributor Code of Conduct](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md), via [Contributor Convenant](https://www.contributor-covenant.org/). By participating in this project you agree to abide by its terms.
 
 ## How you can contribute
 
@@ -49,7 +49,7 @@ Using our_package and discovered a bug? That's annoying! Don't let others have t
 * Your operating system name and version (e.g., Mac OS 10.13.6).
 * Your version of R, RStudio, and subMALDI
 * Any details about your local setup that might be helpful in troubleshooting.
-* Detailed steps to reproduce the bug. A [reprex][https://rstudio.com/resources/webinars/help-me-help-you-creating-reproducible-examples/] would be lovely!
+* Detailed steps to reproduce the bug. A [reprex](https://rstudio.com/resources/webinars/help-me-help-you-creating-reproducible-examples/) would be lovely!
 
 ### Improve the documentation 📖
 
