@@ -68,30 +68,30 @@ test_that("One input spectrum yields error", {
 # RMS
 # ----
 
-test_rms <- .RMS(y = Master2$Before1, n = length(Master2$Before1))
-
-n <- length(Master2$Before1)
-y <- Master2$Before1
-right <- 1 / (n - 1)
-left <- sum(y^2)
-prod <- prod(left, right)
-rms <- sqrt(prod)
-
 test_that(".RMS calculates RMS correct", {
+  test_rms <- .RMS(y = Master2$Before1, n = length(Master2$Before1))
+
+  n <- length(Master2$Before1)
+  y <- Master2$Before1
+  right <- 1 / (n - 1)
+  left <- sum(y^2)
+  prod <- prod(left, right)
+  rms <- sqrt(prod)
+
   expect_equal(test_rms, rms)
 })
 
-raw5 <- Master2$Before1[5]
-
-norm <- normSpectra(
-  dat = Master2, mass_dat = "full_mz", method = "RMS",
-  spec1 = "Before1"
-)
-norm5 <- norm[5, 2]
-
-div <- raw5 / norm5
-res <- .RMS(Master2$Before1, length(Master2$Before1))
-
 test_that("Diff b/w raw and norm = RMS", {
+  raw5 <- Master2$Before1[5]
+
+  norm <- normSpectra(
+    dat = Master2, mass_dat = "full_mz", method = "RMS",
+    spec1 = "Before1"
+  )
+  norm5 <- norm[5, 2]
+
+  div <- raw5 / norm5
+  res <- .RMS(Master2$Before1, length(Master2$Before1))
+
   expect_equal(div, res)
 })
