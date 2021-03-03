@@ -1,6 +1,6 @@
 ---
 title: "Processing with subMALDI"
-author: Kristen Yeh^1^ and Wesley Burr ^2^ and Sophie Castel ^3^
+author: Kristen Yeh^1^, Sophie Castel^2^ and Wesley Burr ^3^
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -22,7 +22,9 @@ knitr::opts_chunk$set(
 
 ^1^ Forensic Science Program, Trent University, Peterborough, ON, Canada
 
-^2^ Faculty of Science, Mathematics, Trent University, Peterborough, ON, Canada
+^2^ Faculty of Science, Applied Bioscience, Ontario Tech University, Oshawa, ON, Canada
+
+^3^ Faculty of Science, Mathematics, Trent University, Peterborough, ON, Canada
 
 # Introduction
 
