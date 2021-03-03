@@ -30,14 +30,18 @@ norm_max <- function(dat, mass_dat, spectra_cols){
     all(spectra_cols %in% colnames(dat))
   )
   
-  
-  
   mz <- dat[[mass_dat]]
   
   spectra <- lapply(spectra_cols, function(x){dat[x]})
   i <- do.call(what = data.frame, args = c(spectra))
   
-  i_n <- apply(i, 2, FUN = .normalize)
+  if(length(spectra_cols) == 1) {  
+    i_n <- .normalize(y = i)
+  } else {
+    i_n <- apply(i, 2, FUN = .normalize)
+  }
+ 
+
   dat <- data.frame(cbind(mz, i_n))
   colnames(dat) <- c("full_mz", spectra_cols)
   
@@ -78,8 +82,14 @@ norm_max_set <- function(dat, mass_dat, spectra_cols){
   
   which_max <- which(i == max(i), arr.ind = TRUE)
   max_i <- i[which_max[1], which_max[2]]
-  
-  i_n <- apply(i, 2, FUN = function(x) {.normalize_set(y = x, max_y = max_i)} )
+ 
+  if(length(spectra_cols) == 1) {  
+    i_n <- .normalize_set(y = i, max_y = max_i)
+  } else {
+    i_n <- apply(i, 2, FUN = function(x) {
+  		 .normalize_set(y = x, max_y = max_i)} 
+                )
+  }
   dat <- data.frame(mz, i_n)
   colnames(dat) <- c("full_mz", spectra_cols)
   
