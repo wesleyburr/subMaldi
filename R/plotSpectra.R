@@ -73,8 +73,8 @@
 
 plotSpectra <- function(dat, mass_dat,
                         spectra_cols,
-                        palette = "Set2",
-                        colours = brewer.pal(length(spectra_cols), palette),
+                        palette = NULL,
+                        colours = colorRampPalette(c("#cc6600", "#33ccff"))(length(spectra_cols)),
                         span = 5,
                         thresh = 0.1,
                         lbls = FALSE, 
@@ -84,15 +84,19 @@ plotSpectra <- function(dat, mass_dat,
                         min_I = 0,
                         max_I = max(dat[spectra_cols]),
                         x_ticks = 100,
-                        nrows = round_any(length(spectra_cols), 2, f = ceiling)/2,
+                        nrows = ceiling(length(spectra_cols)/2),
                         intensity_scale = "free_y"){   
   
   # ----------------------------------
   # LOGICAL CHECKS
   # ----------------------------------
   
-  colours <- colours[1:length(spectra_cols)]
-  
+  if(!is.null(palette)){
+    stopifnot(palette %in% c("Accent", "Dark2", "Paired", "Pastel1", "Pastel2", "Set1", "Set2", "Set3"))
+    
+    colours <- brewer.pal(length(spectra_cols), palette)
+    colours <- colours[1:length(spectra_cols)]
+  }
   
   stopifnot(spectra_cols %in% colnames(dat),
             mass_dat %in% colnames(dat),
@@ -106,8 +110,7 @@ plotSpectra <- function(dat, mass_dat,
                 is.numeric(max_I), 
                 is.numeric(x_ticks),
                 is.numeric(span),
-                is.numeric(thresh)),
-            palette %in% c("Accent", "Dark2", "Paired", "Pastel1", "Pastel2", "Set1", "Set2", "Set3")
+                is.numeric(thresh))
             
             )
   
@@ -177,7 +180,7 @@ plotSpectra <- function(dat, mass_dat,
       }
       
       for(i in 1:length(x)){
-        dp[i] <- .deci(x[i])
+        dp[i] <- deci(x[i])
       }
       
       dp <- max(dp)
