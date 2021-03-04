@@ -142,7 +142,7 @@ The raw and smoothed spectra are plotted below.
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 4, fig.align = "center"}
 plotSpectra(dat = test, mass_dat = "full_mz", spectra_cols = c("RawSpectrum", "MovingAverage"), min_mz = 200, max_mz = 5000,
-            x_ticks = 7)
+            x_ticks = 5, intensity_scale = "fixed")
 ```
 
 
@@ -185,7 +185,7 @@ test <- data.frame(sgolay$mass, sgolay$sg, mono_min$baseline)
 names(test) <- c("mz", "Smoothed", "BaselineCorrected")
 
 plotSpectra(dat = test, mass_dat = "mz", spectra_cols = c("Smoothed", "BaselineCorrected"), min_mz = 200, max_mz = 5000,
-            x_ticks = 7)
+            x_ticks = 5, intensity_scale = "fixed")
 ```
 
 
