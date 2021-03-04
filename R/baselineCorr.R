@@ -74,26 +74,16 @@
 
 baselineCorr <- function(dat, mass_dat, intensity_dat, method = NULL, n = NULL){
   
-  if(is.null(method)){
+  if( is.null(method) | !(method %in% c("monotone_min", "linear", "loess")) ){
     stop('Please select a valid baseline correction method. See ?baselineCorr for list of methods.')
   }
   
   if(method == "monotone_min"){
-      
-    r <- base_mono(dat = dat, mass_dat = mass_dat, intensity_dat = intensity_dat) 
-    
-    }
-    
-  else if(method == "linear"){
-    
-    r <- base_linear(dat = dat, mass_dat = mass_dat, intensity_dat = intensity_dat, n = n) 
-    
-  }
-  
-  else if(method == "loess"){ 
-    
-    r <- base_loess(dat = dat, mass_dat = mass_dat, intensity_dat = intensity_dat) 
-    
+    r <- .base_mono(dat = dat, mass_dat = mass_dat, intensity_dat = intensity_dat) 
+  } else if(method == "linear"){
+    r <- .base_linear(dat = dat, mass_dat = mass_dat, intensity_dat = intensity_dat, n = n) 
+  } else if(method == "loess"){ 
+    r <- .base_loess(dat = dat, mass_dat = mass_dat, intensity_dat = intensity_dat) 
   }
   
   return(r)

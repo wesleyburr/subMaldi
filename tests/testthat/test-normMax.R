@@ -21,13 +21,15 @@ test_that("Spec2 = NULL when normMethod_max_set yields error", {
     method = "max_set", spec1 = "Before1"
   ))
 })
+
 test_that("Maximum intensity of all spec = max of set", {
 
-  max <- normSpectra(Master2, "full_mz", "max", spectra_cols = c("Blank1","Blank2", "Before1","Before2","After1", "After2"))
+  max <- normSpectra(Master2, "full_mz", "max", 
+		     spectra_cols = c("Blank1","Blank2", "Before1","Before2","After1", "After2"))
                      
   max_list <- as.character(which(max[, -1] == 1))
 
   max_set <- as.character(which(Master2[, -1] == max(Master2[, -1])))
 
   expect_match(max_list[1], max_set)
-}))
+})

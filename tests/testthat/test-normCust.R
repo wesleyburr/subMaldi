@@ -16,7 +16,7 @@ test_that("No norm_mz selected when normMethod_custom yields error", {
 })
 
 test_that("Intensity of output at norm_mz == 1 == max", {
-  out <- normSpectra(Master2, "full_mz",
+  out <- normSpectra(Master2, mass_dat = "full_mz",
     method = "custom",
     norm_mz = 255.23, spectra_cols = "Before1", showHI = FALSE
   )
@@ -34,7 +34,7 @@ test_that("Intensity of output at norm_mz == 1 == max", {
 test_that("Intensity of output at norm_mz == 1", {
   data("Master")
 
-  out <- normSpectra(Master, "full_mz",
+  out <- normSpectra(Master, mass_dat = "full_mz",
     method = "custom_imprecise",
     norm_mz = "112.959", spectra_cols = "Before1"
   )
@@ -46,7 +46,7 @@ test_that("Intensity of output at norm_mz == 1", {
 test_that("More than one peak for given m/z", {
   data("Master")
 
-  out <- normSpectra(Master, "full_mz",
+  out <- normSpectra(Master, mass_dat = "full_mz",
   method = "custom_imprecise",
     norm_mz = "112.959", spectra_cols = "Before1"
   )
@@ -57,3 +57,5 @@ test_that("More than one peak for given m/z", {
     norm_mz = "255.23", spectra_cols = "Before1"
   ))
 })
+
+

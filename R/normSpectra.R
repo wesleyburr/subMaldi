@@ -101,45 +101,25 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL, upper = NU
     stop(c("Invalid selection: method = '", method, "'.  Please make your selection from the following options: ", paste0(methods, sep = ", "),"."))
   }
   
-  
-  
   if(method == "max"){ 
     r <- norm_max(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
-  }
-  
-  if(method == "custom"){ 
+  } else if(method == "custom"){ 
     r <- norm_custom(dat = dat, mass_dat = mass_dat, norm_mz = norm_mz, spectra_cols = spectra_cols, showHI = showHI) 
-  } 
-    
-  if(method == "custom_imprecise"){ 
-    r <- norm_custimp(dat = dat, mass_dat = mass_dat, norm_mz = norm_mz, spectra_cols = spectra_cols, showHI = showHI) 
-  } 
-    
-  if(method == "max_set"){ 
+  } else if(method == "custom_imprecise"){ 
+    r <- norm_custimp(dat = dat, mass_dat = mass_dat, norm_mz = norm_mz, spectra_cols = spectra_cols, showHI = showHI)
+  } else if(method == "max_set"){ 
     r <- norm_max_set(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
-  }
-    
-  if( method == "TIC"){
+  } else if( method == "TIC"){
     r <- norm_TIC(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
-  } 
-    
-  if(method == "RMS"){
+  } else if(method == "RMS"){
     r <- norm_RMS(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
-  }
-    
-  if(method == "rel_TIC"){
+  } else if(method == "rel_TIC"){
     r <- norm_rel_TIC(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
-  }
-    
-  if(method == "median"){
+  } else if(method == "median"){
     r <- norm_median(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols)
-  }
-      
-  if(method == "stdev"){
+  } else if(method == "stdev"){
     r <- norm_stdev(dat = dat, mass_dat = mass_dat, lower = lower, upper = upper, spectra_cols = spectra_cols) 
-  }
-    
-  if(method == "quantile"){
+  } else if(method == "quantile"){
     r <- norm_quantile(dat = dat, mass_dat = mass_dat, spectra_cols = spectra_cols) 
   }
   
