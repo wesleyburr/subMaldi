@@ -52,7 +52,6 @@ find_max_set <- function(dat, mass_dat, spectra_cols){
     stop("Only one spectrum input. Please enter two spectra.")
   }
   
-  
   mz <- dat[[mass_dat]]
   
   spectra <- lapply(spectra_cols, function(x){dat[x]})

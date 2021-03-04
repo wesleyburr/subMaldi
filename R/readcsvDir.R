@@ -1,11 +1,13 @@
-##' Import .csv Spectra from a Directory
+##' Import .csv Spectra from a Directory and Export
 ##' 
 ##' Imports all \code{.csv} files in a directory, turns them into a binary data
 ##' frame containing a "mass" and "Intensity" column, and outputs them as
 ##' \code{.rda} files into an output directory. Allows for rapid import of many
 ##' spectral datasets at once.
 ##' 
-##' 
+##' Assumes that the \code{.csv} files are organized in tidy format, i.e.,
+##' columns are variables and rows are individual m/z observations.
+##'
 ##' @param direct The path to the directory where the \code{.csv} files are
 ##' held.
 ##' @param massCol A character string; the name of the mass column in the
@@ -32,16 +34,24 @@
 
 readcsvDir <- function(direct, massCol, intenseCol, output){
   all_files <- list.files(path = direct, pattern = ".csv")
+  stopifnot(length(all_files) > 0)
+
   for(j in 1:length(all_files)) {
-    temp <- read.csv(  paste0(direct, all_files[ j ]) )
+    cat(paste0("Reading: ", paste0(direct, all_files[ j ]), "\n"))
+    temp <- read.csv( paste0(direct, all_files[ j ]) )
+
     mass <- select(temp, massCol)
     Intensity <- select(temp, intenseCol)
+
+
     mass <- unlist(cbind(mass))
     Intensity <- unlist(cbind(Intensity))
     spec <- data.frame(mass, Intensity)
-    
-    new_name <- strsplit(all_files[ j ], "\\.")[[1]][1]
+     
+    new_name <- strsplit(all_files[ j ], "\\.")[[1]][1]  # grab the file name without CSV
     assign(x = new_name, spec)
+
+    cat(paste0("Writing: ", paste0(output, new_name, ".rda"), "\n"))
     save(file = paste0(output, new_name, ".rda"), list = new_name)
   }
 }

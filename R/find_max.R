@@ -40,16 +40,12 @@ find_max <- function (dat, mass_dat, spectra_cols){
   # --------------
   # LOGICAL CHECKS
   # --------------
-  
   stopifnot(
     is.character(mass_dat),
     is.character(spectra_cols),
     mass_dat %in% colnames(dat),
     all(spectra_cols %in% colnames(dat))
   )
-  
-  
-  
   mz <- dat[[mass_dat]]
   
   spectra <- lapply(spectra_cols, function(x){dat[x]})
