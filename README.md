@@ -26,7 +26,7 @@ Once the packages are all installed, you can then install the package:
    
 Update the file name as necessary to whatever the copy you downloaded was set to for versioning.
 
-Note: if you install from source, and set \code{dependencies = TRUE}, this should all be moot. This
+Note: if you install from source, and set **dependencies = TRUE**, this should all be moot. This
 assumes you run the commands exactly as given, in which case, the BioConductor sequence doesn't always
 seem to work. For example,
 
@@ -34,9 +34,9 @@ seem to work. For example,
 
 # Getting Started
 
-Refer to the [vignette on workflow](docs/articles/subMALDI_workflow.html)
+Refer to the [vignette on workflow](https://wesleyburr.github.io/subMaldi/articles/subMALDI_workflow.html)
 for a brief summary of the package functionality, and the 
-[vignette on processing](docs/articles/subMALDIprocessing.html) for a simple example.
+[vignette on processing](https://wesleyburr.github.io/subMaldi/articles/subMALDIprocessing.html) for a simple example.
 
 # Contributing?
 
