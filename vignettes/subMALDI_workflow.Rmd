@@ -70,6 +70,18 @@ head(Blank1)
 
 ---
 
+## Reading in an ASCII File
+The mass spectrometer may produce raw output data in \code{.ascii} format. In this case, the \code{read_ascii()} function can be used to read in the data file and convert it to a \code{data.frame} object.  Simply specify the filepath, as shown below:
+
+```{r}
+# spec_data <- read_ascii(filename = "~/filename.ascii")
+```
+
+Once loaded into the global environment, the object can be saved to the local directory as a \code{.csv} file using the \code{save()} function:
+
+```{r}
+# write.csv(spec_data, file = "~/filename.csv")
+```
 
 # Creating a Mapped Data Frame
 
