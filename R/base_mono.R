@@ -17,8 +17,7 @@
 # to the intensity of A.
 # Let A = B.
 
-
-base_mono <- function(dat, mass_dat, intensity_dat){
+.base_mono <- function(dat, mass_dat, intensity_dat){
   
   options(warn=-1)
   x <- dat[[mass_dat]]
@@ -26,8 +25,9 @@ base_mono <- function(dat, mass_dat, intensity_dat){
   
   slopes <- diff(y)/diff(x)
   # account for NaN in slopes (in case diff(x) = 0)
-  if(any(diff(x)) == 0){ stop('Xi - Xi+1 = 0. Please remove duplicated m/z value.')
-  } else{
+  if(any(diff(x)) == 0) {  
+     stop('Xi - Xi+1 = 0. Please remove duplicated m/z value.')
+  } else {
     
     slopes <- sign(slopes)
     slopes <- as.numeric(stats::filter(slopes, rep(1 / 2, 2)))
@@ -111,14 +111,13 @@ base_mono <- function(dat, mass_dat, intensity_dat){
     out <- data.frame(x,y)
     names(out) <- c("mz", "baseline")
     
-    
     for(n in 1:nrow(out)){
       if(out$mz[n] %in% valleys){
         # if m/z is in valleys,
         # subtract the intensity of n by valley intensity
         base <- out$baseline[n]
         out$baseline[n] <- out$baseline[n] - base
-      }else{
+      } else {
         # find nearest valley 
         v <- which(out$mz %in% valleys)
         # to the right of n

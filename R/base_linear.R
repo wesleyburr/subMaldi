@@ -13,8 +13,10 @@
   # Generate a baseline for the raw spectrum by linearly interpolating 
   # baseline points across all small segments.
 
-base_linear <- function(dat, mass_dat, intensity_dat, n){
-  
+.base_linear <- function(dat, mass_dat, intensity_dat, n){
+ 
+  stopifnot(!is.null(n))
+
   x <- dat[[mass_dat]]
   y <- dat[[intensity_dat]]
   
@@ -27,7 +29,7 @@ base_linear <- function(dat, mass_dat, intensity_dat, n){
   xi <- unlist(xi)
   
   # Generate baseline for spectrum w/ linear interpolation on points
-  bl <- interp1(x, y, xi, method = c("linear"))
+  bl <- interp1(x, y, xi, method = "linear")
   
   # for each window of size n
   # subtract all intensity values by interpolated baseline in window

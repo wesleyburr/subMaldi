@@ -35,13 +35,13 @@ norm_custimp <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   
   i_cust <- i[logic_i,]
   
-  if(nrow(i_cust) > 1){
+  if(length(logic_i) > 1){
     stop("More than one peak per spectra for the given norm_mz value. Please be more precise.")    
   }
   
   i_cust <- as.numeric(i_cust)
   
-  logic <- i_cust == 0 
+  logic <- (i_cust == 0)
   
   if(any(logic)){
     stop(c("The selected maximum intensity is 0 in spectra labeled: ", paste0(colnames(i)[logic], sep = " ")))

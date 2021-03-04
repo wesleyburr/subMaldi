@@ -14,27 +14,28 @@ library(subMALDI)
 test_that("Averaging works (m/z not included)", {
   data("Master2")
 
-  r5 <- as.numeric(Master2[5, -1])
-  sum <- sum(r5)
-  mean <- mean(r5)
+  r5 <- as.numeric(Master2[5, c("Blank1", "Blank2", "Before1", "Before2", "After1", "After2")])
+  mean_up <- mean(r5)
 
   avg <- avgSpectra(Master2,
     method = "mean", spectra_cols = c("Blank1", "Blank2", "Before1", "Before2", "After1", "After2")
   )
-  avg <- avg[5, 8]
+  avg <- avg[5, "Average"]
 
-  expect_equal(avg, mean)
+  expect_equal(avg, mean_up)
 })
 
 test_that("Sum works (m/z not included)", {
   data("Master2")
+  r5 <- as.numeric(Master2[5, c("Blank1", "Blank2", "Before1", "Before2", "After1", "After2")])
+  sum_up <- sum(r5)
 
   avg_sum <- avgSpectra(Master2,
     method = "sum", spectra_cols = c("Blank1", "Blank2", "Before1", "Before2", "After1", "After2")
   )
-  avg_sum <- avg_sum[5, 8]
+  avg_sum <- avg_sum[5, "Sum"]
 
-  expect_equal(avg_sum, sum)
+  expect_equal(avg_sum, sum_up)
 })
 
 # -----------
@@ -59,14 +60,17 @@ test_that("Subtraction yields right value", {
 })
   
 test_that("showNeg = TRUE actually shows negative values", {
-  r3 <- as.numeric(Master2[3, 4:5])
+  data("Master2")
+  bef <- select(Master2, "full_mz", "Before1", "Before2")
+  bef <- transform(bef, "Subtracted" = 0)
+
+  r3 <- as.numeric(Master2[3, c("Before1", "Before2")])
   neg <- as.numeric(r3[2] - r3[1])
     
   sneg <- subSpectra(bef,
-  Blank_Var = "Before1", Sample = "Before2",
-	  Sub_Sample = "Subtracted", showNeg = TRUE
-  )
-  sneg <- sneg[3, 4]
+                    Blank_Var = "Before1", Sample = "Before2",
+                    Sub_Sample = "Subtracted", showNeg = TRUE)
+  sneg <- sneg[3, "Subtracted"]
 
   expect_equal(sneg, neg)
 })
