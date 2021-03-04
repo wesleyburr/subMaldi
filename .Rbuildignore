@@ -5,5 +5,9 @@
 ^paper.Rmd$
 ^paper.bib$
 ^doc$
+^docs$
 ^Meta$
 png$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

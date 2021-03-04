@@ -34,7 +34,9 @@ seem to work. For example,
 
 # Getting Started
 
-Refer to the [vignette on workflow](vignettes/subMALDI_workflow.Rmd) for a brief summary of the package functionality, and the [vignette on processing](vignettes/subMALDIprocessing.Rmd) for a simple example.
+Refer to the [vignette on workflow](docs/articles/subMALDI_workflow.html)
+for a brief summary of the package functionality, and the 
+[vignette on processing](docs/articles/subMALDIprocessing.html) for a simple example.
 
 # Contributing?
 
