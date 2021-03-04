@@ -29,6 +29,6 @@ test_that("Quantile normalization works", {
   quant_df <- normSpectra(dat = Master2, mass_dat = "full_mz", method = "quantile",
     spectra_cols = c("Blank1", "After1")
   )
-  expect_equal(as.character(round(quant_df[10, ], 2)), c("53.82", "14814.935", "0"))
+  expect_equal(as.character(round(quant_df[10, ], 2)), c("53.82", "14814.93", "0"))
 })
 
