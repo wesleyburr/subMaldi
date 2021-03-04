@@ -12,13 +12,23 @@
 # Noise is estimated as the median of the absolute deviation (MAD) 
 # of points within a window.
 
-.peak_snr <- function(dat, mass_dat, intensity_dat, n, SNR_thresh){
+.peak_snr <- function(dat, mass_dat, intensity_dat, n, SNR_thresh = 0.1){
+  
+  stopifnot(mass_dat %in% colnames(dat),
+            intensity_dat %in% colnames(dat),
+            !(is.null(n)),
+            SNR_thresh >= 0) 
+  
   
   x <- dat[[mass_dat]]
   y <- dat[[intensity_dat]]
   
   # Separate into windows of size n
   y_seg <- split(y, ceiling(seq_along(x)/n))
+  
+  if(length(y_seg) == 1){
+    stop(paste0("Chosen window covers entire spectrum. To avoid this, please select a value of n much less than ", length(x),"."))
+  }
   
   noise <- c()
   # Calculate MAD within each window
@@ -31,8 +41,8 @@
   # Calculate signal-to-noise ratio for all peaks in window
   for(j in 1:length(noise)){
     if(noise[j] == 0){
-      snr_seg <- unlist(y_seg[j]) / noise[j]
-      snr_seg[is.na(snr_seg)] <- 0
+      snr_seg <- unlist(y_seg[j]) / noise[j] # Values will be SNR = Inf since there is no noise present
+      snr_seg[is.na(snr_seg)] <- 0 # Replacing NAs with zero (arising from 0/0)
       snr <- append(snr, snr_seg, after = length(snr))
     } else{
       snr_seg <- unlist(y_seg[j]) / noise[j]
@@ -41,15 +51,25 @@
   
   
   idx <- data.frame(x,y,snr)
+  removed <- logical(nrow(idx))
   # Remove all signals below input SNR 
   for(k in 1:nrow(idx)){
     if(idx[k, "snr"] < SNR_thresh){
       idx[k, "y"] <- 0
+      removed[k] <- TRUE
     } else{
       idx[k, "y"] <- idx[k, "y"]
     }
   }
+  
   out <- idx[1:2]
+  
+  if(sum(removed) == 0){
+    stop(paste0("No signals detected below specified SNR. Minimum SNR in this spectrum is ", min(idx$snr),"."))
+  } else{
+    message(paste0(sum(removed), " peaks removed below SNR_thresh = ", SNR_thresh))
+  }
+  
   names(out) <- c("mz", "peaks")
   return(out)
 }
@@ -69,6 +89,10 @@
 .peak_slope <- function(dat, mass_dat, intensity_dat, n){
   
   options(warn = -1)
+  
+  stopifnot(mass_dat %in% colnames(dat),
+            intensity_dat %in% colnames(dat),
+            !(is.null(n))) 
   
   x <- dat[[mass_dat]]
   y <- dat[[intensity_dat]]
@@ -167,6 +191,10 @@
     # Separate into windows of size n
     y_seg <- split(y, ceiling(seq_along(x)/n))
     
+    if(length(y_seg) == 1){
+      stop(paste0("Chosen window covers entire spectrum. To avoid this, please select a value of n much less than ", length(x),"."))
+    }
+    
     noise <- c()
     # Calculate noise within each window
     for(k in 1:length(y_seg)){
@@ -218,6 +246,7 @@
           peaks[l, "R_thresh"] <- FALSE
         }
       }
+
     }
       
     # if any thresh in row = TRUE
