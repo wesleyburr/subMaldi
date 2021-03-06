@@ -34,15 +34,27 @@
 
 readcsvDir <- function(direct, massCol, intenseCol, output){
   all_files <- list.files(path = direct, pattern = ".csv")
-  stopifnot(length(all_files) > 0)
+  
+  if(!length(all_files) > 0){
+    stop(paste0("No .csv files found in directory: ", direct, ".  Please double check filepath and directory contents."))
+  }
 
   for(j in 1:length(all_files)) {
     cat(paste0("Reading: ", paste0(direct, all_files[ j ]), "\n"))
     temp <- read.csv( paste0(direct, all_files[ j ]) )
 
+    if(!massCol %in% temp){
+      stop(c("Mass column specified in massCol not found in file #", j, ". Column names: ", paste0(colnames(temp), sep = " ")))
+    }
+    
+    if(!intenseCol %in% temp){
+      stop(c("Intensity column specified in intenseCol not found in file #", j, ". Column names: ", paste0(colnames(temp), sep = " ")))
+    }
+    
     mass <- select(temp, massCol)
+    
     Intensity <- select(temp, intenseCol)
-
+    
 
     mass <- unlist(cbind(mass))
     Intensity <- unlist(cbind(Intensity))

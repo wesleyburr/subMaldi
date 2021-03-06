@@ -58,7 +58,13 @@ smoothSpectrum <- function(dat, mass_dat, intensity_dat, method = NULL,
                            p = NULL, n = NULL, m = 0, ts = 1){
   
   if(is.null(method)){ stop('Please select a valid smoothing method. 
-                            See ?smoothSpectrum for list of methods.') } 
+                            See ?smoothSpectrum for list of methods.') }
+  
+  if(!mass_dat %in% dat){ stop(c("Specified mass column: ", mass_dat," not found. Column names: ", paste0(colnames(dat), sep = " "),".")) }
+  
+  if(!intensity_dat %in% dat){ stop(c("Specified intensity column: ", intensity_dat," not found. Column names: ", paste0(colnames(dat), sep = " "),".")) }
+  
+  
   else { 
     if(method == "sgolay"){ .smooth_sg(dat = dat, mass_dat = mass_dat, 
                                        intensity_dat = intensity_dat, p = p, 
