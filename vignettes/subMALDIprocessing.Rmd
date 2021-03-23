@@ -115,7 +115,7 @@ We will use the `"mov_avg"` smoothing filter on our sample data set below. When 
 
 
 ```{r}
-mov_avg <- smoothSpectrum(dat = bsline, mass_dat = bsline$mass, intensity_dat = bsline$raw,
+mov_avg <- smoothSpectrum(dat = bsline, mass_dat = "mass", intensity_dat = "raw",
                        method = "mov_avg", n = 7)
 ```
 
