@@ -24,6 +24,7 @@
   }
   
   intense <- dat[[intensity_dat]]
+  x <- dat[[mass_dat]]
   
   if(n > length(intense)){
     stop(paste0("Chosen window covers entire spectrum. To avoid this, please select a value of n much less than ", length(intense),"."))
@@ -31,7 +32,11 @@
   
   sg <- sgolay(p = p, n = n, m = m, ts = ts)
   dat$sg <- signal::filter(sg, intense)
-  out <- select(dat, all_of(mass_dat), sg)
+  
+  out <- data.frame(x, dat$sg)
+  colnames(out) <- c("mass", "sg")
+  
+  #out <- select(dat, all_of(mass_dat), sg)
   return(out)
   
 }
@@ -71,7 +76,7 @@
   }
   
   out_i <- stats::filter(i, rep(1 / n, n), sides = 2)
-  out<- data.frame(mass_dat, out_i)
+  out<- data.frame(x, out_i)
   names(out) <- c("mass", "mov_avg")
   out <- na.omit(out)
   return(out)
