@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Import .csv Spectra from a Directory — readcsvDir • subMALDI</title>
+<title>Import .csv Spectra from a Directory and Export — readcsvDir • subMALDI</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,7 @@
 
 
 
-<meta property="og:title" content="Import .csv Spectra from a Directory — readcsvDir" />
+<meta property="og:title" content="Import .csv Spectra from a Directory and Export — readcsvDir" />
 <meta property="og:description" content="Imports all .csv files in a directory, turns them into a binary data
 frame containing a &quot;mass&quot; and &quot;Intensity&quot; column, and outputs them as
 .rda files into an output directory. Allows for rapid import of many
@@ -123,7 +123,7 @@ spectral datasets at once." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Import .csv Spectra from a Directory</h1>
+    <h1>Import .csv Spectra from a Directory and Export</h1>
     
     <div class="hidden name"><code>readcsvDir.Rd</code></div>
     </div>
@@ -166,6 +166,10 @@ files containing the binary spectral data frames should go.</p></td>
 
     <p>Returns a directory of <code>.rda</code> files containing binary spectral
 data frames into the <code>output</code> file path.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Assumes that the <code>.csv</code> files are organized in tidy format, i.e.,
+columns are variables and rows are individual m/z observations.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>https://github.com/wesleyburr/subMaldi</p>

@@ -8,8 +8,8 @@ plotSpectra(
   dat,
   mass_dat,
   spectra_cols,
-  palette = "Set2",
-  colours = brewer.pal(length(spectra_cols), palette),
+  palette = NULL,
+  colours = colorRampPalette(c("#cc6600", "#33ccff"))(length(spectra_cols)),
   span = 5,
   thresh = 0.1,
   lbls = FALSE,
@@ -19,7 +19,7 @@ plotSpectra(
   min_I = 0,
   max_I = max(dat[spectra_cols]),
   x_ticks = 100,
-  nrows = round_any(length(spectra_cols), 2, f = ceiling)/2,
+  nrows = ceiling(length(spectra_cols)/2),
   intensity_scale = "free_y"
 )
 }
@@ -33,7 +33,7 @@ containing the \emph{m/z} data.}
 \item{spectra_cols}{A character string; the name(s) of the column(s) in \code{dat}
 containing the intensity data for the spectra-of-interest.}
 
-\item{palette}{A character string; the RColorBrewer palette to use. See below for available palettes.}
+\item{palette}{A character element; the RColorBrewer palette to use. See below for available palettes.}
 
 \item{colours}{A character string indicating the desired colour(s)}
 
@@ -89,7 +89,7 @@ Plot single or multiple spectra. For multiple spectra, a grid layout can be call
                    \item{\code{"Pastel1"}}  
                    \item{\code{"Pastel2"}}  
                    \item{\code{"Set1"}}  
-                   \item{\code{"Set2"}} 
+                   \item{\code{"Set2"} (default)} 
                    \item{\code{"Set3"}}
                    } 
           }

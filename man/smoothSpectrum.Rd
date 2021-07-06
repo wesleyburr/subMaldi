@@ -55,16 +55,16 @@ moving average filter and the Savitzky-Golay filter (1).
 data("Before1")
 
 ## Testing method "sgolay"
-test <- smoothSpectrum(dat = Before1, mass_dat = "mass",
-                        intensity_dat = "Intensity", 
-                        method = "sgolay", p = 4, 
-                        n = 25, m = 0)
+# test <- smoothSpectrum(dat = Before1, mass_dat = "mass",
+#                       intensity_dat = "Intensity", 
+#                       method = "sgolay", p = 4, 
+#                       n = 25, m = 0)
 
 ## Testing method "mov_avg"                        
-test <- smoothSpectrum(dat = Before1, mass_dat = Before1$mass,
-                        intensity_dat = Before1$Intensity,
-                        method = "mov_avg", n = 25)
-                   
+# test <- smoothSpectrum(dat = Before1, mass_dat = Before1$mass,
+#                       intensity_dat = Before1$Intensity,
+#                       method = "mov_avg", n = 25)
+#                  
 
 }
 \references{

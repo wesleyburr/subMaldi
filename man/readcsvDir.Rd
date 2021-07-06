@@ -2,7 +2,7 @@
 % Please edit documentation in R/readcsvDir.R
 \name{readcsvDir}
 \alias{readcsvDir}
-\title{Import .csv Spectra from a Directory}
+\title{Import .csv Spectra from a Directory and Export}
 \usage{
 readcsvDir(direct, massCol, intenseCol, output)
 }
@@ -28,6 +28,10 @@ Imports all \code{.csv} files in a directory, turns them into a binary data
 frame containing a "mass" and "Intensity" column, and outputs them as
 \code{.rda} files into an output directory. Allows for rapid import of many
 spectral datasets at once.
+}
+\details{
+Assumes that the \code{.csv} files are organized in tidy format, i.e.,
+columns are variables and rows are individual m/z observations.
 }
 \references{
 https://github.com/wesleyburr/subMaldi

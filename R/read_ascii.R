@@ -14,7 +14,7 @@
 ##' ## Converting sample ASCII file 'raw_ascii.ascii' to 'data.frame'
 ##' data("raw_ascii")
 ##' 
-##' converted <- read_ascii(filename = "~/raw_ascii.ascii)
+##' converted <- read_ascii(filename = "~/raw_ascii.ascii")
 ##' 
 
 

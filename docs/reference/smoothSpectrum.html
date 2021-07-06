@@ -207,16 +207,16 @@ procedures, Anal. Chem. 36 (8) (1964) 1627-1639.</p>
 <span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='st'>"Before1"</span><span class='op'>)</span>
 
 <span class='co'>## Testing method "sgolay"</span>
-<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='fu'>smoothSpectrum</span><span class='op'>(</span>dat <span class='op'>=</span> <span class='va'>Before1</span>, mass_dat <span class='op'>=</span> <span class='st'>"mass"</span>,
-                        intensity_dat <span class='op'>=</span> <span class='st'>"Intensity"</span>, 
-                        method <span class='op'>=</span> <span class='st'>"sgolay"</span>, p <span class='op'>=</span> <span class='fl'>4</span>, 
-                        n <span class='op'>=</span> <span class='fl'>25</span>, m <span class='op'>=</span> <span class='fl'>0</span><span class='op'>)</span>
+<span class='co'># test &lt;- smoothSpectrum(dat = Before1, mass_dat = "mass",</span>
+<span class='co'>#                       intensity_dat = "Intensity", </span>
+<span class='co'>#                       method = "sgolay", p = 4, </span>
+<span class='co'>#                       n = 25, m = 0)</span>
 
 <span class='co'>## Testing method "mov_avg"                        </span>
-<span class='va'>test</span> <span class='op'>&lt;-</span> <span class='fu'>smoothSpectrum</span><span class='op'>(</span>dat <span class='op'>=</span> <span class='va'>Before1</span>, mass_dat <span class='op'>=</span> <span class='va'>Before1</span><span class='op'>$</span><span class='va'>mass</span>,
-                        intensity_dat <span class='op'>=</span> <span class='va'>Before1</span><span class='op'>$</span><span class='va'>Intensity</span>,
-                        method <span class='op'>=</span> <span class='st'>"mov_avg"</span>, n <span class='op'>=</span> <span class='fl'>25</span><span class='op'>)</span>
-                   
+<span class='co'># test &lt;- smoothSpectrum(dat = Before1, mass_dat = Before1$mass,</span>
+<span class='co'>#                       intensity_dat = Before1$Intensity,</span>
+<span class='co'>#                       method = "mov_avg", n = 25)</span>
+<span class='co'>#                  </span>
 
 </div></pre>
   </div>

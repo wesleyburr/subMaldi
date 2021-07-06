@@ -7,13 +7,21 @@
 read_ascii(filename)
 }
 \arguments{
-\item{file}{character; The filepath to the local \code{.ascii} data that is to be converted.}
+\item{filename}{character; The filepath to the local \code{.ascii} data that is to be converted.}
 }
 \value{
-Returns an object of class \code{data.frame} with two numeric columns: \code{"intensity"} and \code{"m/z"}
+Returns an object of class \code{data.frame} with two numeric columns: \code{"mass"} and \code{"intensity"}
 }
 \description{
 A function to convert raw ASCII files obtained from the Bruker SolariX XR (eXtreme Resolution) FT-ICR Mass Spectrometer.
+}
+\examples{
+
+## Converting sample ASCII file 'raw_ascii.ascii' to 'data.frame'
+data("raw_ascii")
+
+converted <- read_ascii(filename = "~/raw_ascii.ascii")
+
 }
 \references{
 https://github.com/wesleyburr/subMaldi
