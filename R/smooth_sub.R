@@ -4,11 +4,9 @@
 # Title: subMALDI - Smoothing: Savitzky-Golay, Moving Average
 # ----------------------------------------------------------------------------
 
-
 # ---------------
 # SAVITZKY-GOLAY
 # ---------------
-
 
 .smooth_sg <- function(dat, mass_dat, intensity_dat, p, n, m = 0, ts = 1){
   
@@ -66,10 +64,10 @@
             !(is.null(n))
             )
   
-  
-  
   x <- dat[[mass_dat]]
   i <- dat[[intensity_dat]]
+  
+  stopifnot(is.vector(x), is.vector(i))
   
   if(n > length(i)){
     stop(paste0("Chosen window covers entire spectrum. To avoid this, please select a value of n much less than ", length(i),"."))

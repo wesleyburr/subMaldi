@@ -1,6 +1,6 @@
 ---
 title: "Processing with subMALDI"
-author: Kristen Yeh^1^, Sophie Castel^2^ and Wesley Burr ^3^
+author: Kristen Yeh^1^, Sophie Castel^2^ and Wesley Burr ^2^
 output: 
   rmarkdown::html_vignette:
     toc: true
@@ -22,9 +22,7 @@ knitr::opts_chunk$set(
 
 ^1^ Forensic Science Program, Trent University, Peterborough, ON, Canada
 
-^2^ Faculty of Science, Applied Bioscience, Ontario Tech University, Oshawa, ON, Canada
-
-^3^ Faculty of Science, Mathematics, Trent University, Peterborough, ON, Canada
+^2^ Faculty of Science, Mathematics, Trent University, Peterborough, ON, Canada
 
 # Introduction
 
@@ -37,18 +35,14 @@ It is recommended that users first read through the *"`subMALDI` Workflow"* vign
 We'll begin this vignette by installing the package and loading a sample data set included with the package, called `"bsline.rda"`.
 
 
-```{r}
+```{r, warning = FALSE, error = FALSE, message = FALSE}
 library("subMALDI")
-
-
 data("bsline")
 ```
-
 
 Although most modern-day high resolution mass spectrometry instruments come with their own spectral processing software which are capable of automatic baseline correction, this software can fail, producing a spectrum with an uneven baseline. 
 
 Our data set `bsline` is an example of this scenario. A plot of the raw spectrum is shown below.
-
 
 ```{r warning = FALSE, fig.width = 6, fig.height = 3, fig.align = "center"}
 plotSpectra(dat = bsline, mass_dat = "mass", spectra_cols = "raw",
@@ -98,8 +92,8 @@ We'll now compare our smoothed version of `bsline` to the raw spectrum by mergin
 test <- data.frame(bsline$mass, bsline$raw, sgolay$sg)
 names(test) <- c("mass", "Raw Spectrum", "Savitzky-Golay Smooth")
 
-plotSpectra(dat = test, mass_dat = "mass", spectra_cols = c("Raw Spectrum", "Savitzky-Golay Smooth"), min_mz = 200, max_mz = 5000,
-            x_ticks = 7)
+plotSpectra(dat = test, mass_dat = "mass", spectra_cols = c("Raw Spectrum", "Savitzky-Golay Smooth"), 
+            min_mz = 200, max_mz = 5000, x_ticks = 7)
 ```
 
 
@@ -116,7 +110,7 @@ We will use the `"mov_avg"` smoothing filter on our sample data set below. When 
 
 ```{r}
 mov_avg <- smoothSpectrum(dat = bsline, mass_dat = "mass", intensity_dat = "raw",
-                       method = "mov_avg", n = 7)
+                          method = "mov_avg", n = 7)
 ```
 
 

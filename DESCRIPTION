@@ -1,7 +1,7 @@
 Package: subMALDI
 Type: Package
 Title: Organization and Processing of MALDI-MS Datasets
-Version: 1.0-1-rc
+Version: 1.0-1
 Date: July 6, 2021
 Author: Kristen Yeh [aut, cre],
   Wesley Burr [aut, ctb],
