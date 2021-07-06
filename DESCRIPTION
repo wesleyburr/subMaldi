@@ -1,12 +1,12 @@
 Package: subMALDI
 Type: Package
 Title: Organization and Processing of MALDI-MS Datasets
-Version: 1.0-0
-Date: August 27, 2020
+Version: 1.0-1-rc
+Date: July 6, 2021
 Author: Kristen Yeh [aut, cre],
-  Wesley Burr [aut],
-  Sophie Castel [ctb]
-Maintainer: Sophie Castel <sophie.castel@ontariotechu.net>
+  Wesley Burr [aut, ctb],
+  Sophie Castel [aut]
+Maintainer: Wesley Burr <wesleyburr@trentu.ca>
 Description: subMALDI is an open framework tool that permits organization, 
     pre-processing (smoothing, baseline correction, peak detection), and normalization 
     of spectral data sets. As a result of the package's open framework, subMALDI data 
