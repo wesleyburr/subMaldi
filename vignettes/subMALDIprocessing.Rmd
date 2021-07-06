@@ -142,7 +142,6 @@ plotSpectra(dat = test, mass_dat = "full_mz", spectra_cols = c("RawSpectrum", "M
 
 The noise in the smoothed spectrum is now noticeably reduced relative to the raw spectrum.
 
-
 ---
 
 # Baseline Correction Tools

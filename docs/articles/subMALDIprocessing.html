@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">subMALDI</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-1</span>
       </span>
     </div>
 
@@ -72,7 +72,7 @@
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Processing with subMALDI</h1>
-                        <h4 data-toc-skip class="author">Kristen Yeh<sup>1</sup>, Sophie Castel<sup>2</sup> and Wesley Burr <sup>3</sup>
+                        <h4 data-toc-skip class="author">Kristen Yeh<sup>1</sup>, Sophie Castel<sup>2</sup> and Wesley Burr <sup>2</sup>
 </h4>
             
       
@@ -84,8 +84,7 @@
     
     
 <p><sup>1</sup> Forensic Science Program, Trent University, Peterborough, ON, Canada</p>
-<p><sup>2</sup> Faculty of Science, Applied Bioscience, Ontario Tech University, Oshawa, ON, Canada</p>
-<p><sup>3</sup> Faculty of Science, Mathematics, Trent University, Peterborough, ON, Canada</p>
+<p><sup>2</sup> Faculty of Science, Mathematics, Trent University, Peterborough, ON, Canada</p>
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
@@ -97,36 +96,6 @@
 <p>We’ll begin this vignette by installing the package and loading a sample data set included with the package, called <code>"bsline.rda"</code>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="st">"subMALDI"</span><span class="op">)</span>
-<span class="co">#&gt; Loading required package: dplyr</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'dplyr'</span>
-<span class="co">#&gt; The following objects are masked from 'package:stats':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     filter, lag</span>
-<span class="co">#&gt; The following objects are masked from 'package:base':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     intersect, setdiff, setequal, union</span>
-<span class="co">#&gt; Loading required package: tidyr</span>
-<span class="co">#&gt; Loading required package: ggplot2</span>
-<span class="co">#&gt; Loading required package: ggpmisc</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'ggpmisc'</span>
-<span class="co">#&gt; The following object is masked from 'package:ggplot2':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     annotate</span>
-<span class="co">#&gt; Loading required package: reshape2</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; Attaching package: 'reshape2'</span>
-<span class="co">#&gt; The following object is masked from 'package:tidyr':</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt;     smiths</span>
-<span class="co">#&gt; Loading required package: RColorBrewer</span>
-<span class="co">#&gt; Warning: replacing previous import 'ggplot2::annotate' by 'ggpmisc::annotate'</span>
-<span class="co">#&gt; when loading 'subMALDI'</span>
-<span class="co">#&gt; Warning: replacing previous import 'dplyr::filter' by 'signal::filter' when</span>
-<span class="co">#&gt; loading 'subMALDI'</span>
-
-
 <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"bsline"</span><span class="op">)</span></code></pre></div>
 <p>Although most modern-day high resolution mass spectrometry instruments come with their own spectral processing software which are capable of automatic baseline correction, this software can fail, producing a spectrum with an uneven baseline.</p>
 <p>Our data set <code>bsline</code> is an example of this scenario. A plot of the raw spectrum is shown below.</p>
@@ -169,8 +138,8 @@
 <code class="sourceCode R"><span class="va">test</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="va">bsline</span><span class="op">$</span><span class="va">mass</span>, <span class="va">bsline</span><span class="op">$</span><span class="va">raw</span>, <span class="va">sgolay</span><span class="op">$</span><span class="va">sg</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">test</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"mass"</span>, <span class="st">"Raw Spectrum"</span>, <span class="st">"Savitzky-Golay Smooth"</span><span class="op">)</span>
 
-<span class="fu"><a href="../reference/plotSpectra.html">plotSpectra</a></span><span class="op">(</span>dat <span class="op">=</span> <span class="va">test</span>, mass_dat <span class="op">=</span> <span class="st">"mass"</span>, spectra_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Raw Spectrum"</span>, <span class="st">"Savitzky-Golay Smooth"</span><span class="op">)</span>, min_mz <span class="op">=</span> <span class="fl">200</span>, max_mz <span class="op">=</span> <span class="fl">5000</span>,
-            x_ticks <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></code></pre></div>
+<span class="fu"><a href="../reference/plotSpectra.html">plotSpectra</a></span><span class="op">(</span>dat <span class="op">=</span> <span class="va">test</span>, mass_dat <span class="op">=</span> <span class="st">"mass"</span>, spectra_cols <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Raw Spectrum"</span>, <span class="st">"Savitzky-Golay Smooth"</span><span class="op">)</span>, 
+            min_mz <span class="op">=</span> <span class="fl">200</span>, max_mz <span class="op">=</span> <span class="fl">5000</span>, x_ticks <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></code></pre></div>
 <p><img src="subMALDIprocessing_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>The noise of the raw spectrum has now been reduced.</p>
 </div>
@@ -182,7 +151,7 @@
 <p>We will use the <code>"mov_avg"</code> smoothing filter on our sample data set below. When using <code>smoothSpectrum(method = "sgolay"</code>, the <code>n</code> argument, window size/filter width, is required. Since <code>bsline</code> is only extraneously noisy in the first portion of the spectrum, the value of <code>n</code> should not be too large (&lt; 10), as this will risk distorting the shape of peaks at higher <em>m/z</em> values. We will use <code>n = 7</code> in this example.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">mov_avg</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/smoothSpectrum.html">smoothSpectrum</a></span><span class="op">(</span>dat <span class="op">=</span> <span class="va">bsline</span>, mass_dat <span class="op">=</span> <span class="st">"mass"</span>, intensity_dat <span class="op">=</span> <span class="st">"raw"</span>,
-                       method <span class="op">=</span> <span class="st">"mov_avg"</span>, n <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></code></pre></div>
+                          method <span class="op">=</span> <span class="st">"mov_avg"</span>, n <span class="op">=</span> <span class="fl">7</span><span class="op">)</span></code></pre></div>
 <p>We’ll now compare our smoothed version of <code>bsline</code> to the raw spectrum by mapping the raw and smoothed intensities to a spectral data frame called <code>test</code>. The code that follows is explained in depth in the vignette <em>“<code>subMALDI</code> Workflow”.</em></p>
 <p>Once our raw and smoothed spectra have been mapped to the data frame, we can remove <em>m/z</em> rows that do not correspond to any intensities in either spectra with <code><a href="../reference/rmveEmpty.html">rmveEmpty()</a></code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
@@ -419,7 +388,7 @@
 
       <footer><div class="copyright">
   <p></p>
-<p>Developed by Sophie Castel.</p>
+<p>Developed by Wesley Burr.</p>
 </div>
 
 <div class="pkgdown">
