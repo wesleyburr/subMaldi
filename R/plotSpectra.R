@@ -113,22 +113,18 @@ plotSpectra <- function(dat, mass_dat,
                 is.numeric(thresh))
             
             )
-  
-  
+
   mass <- dat[[mass_dat]]
   
-  if(min_mz < min(mass)){
-    warning("Specified value of 'min_mz' is beyond the mass range in 'dat'. Defaulting to the minimum mass.")
+  if(min_mz < min(mass)) {
+    print("Specified value of 'min_mz' is below the mass range in 'dat'. Defaulting to the minimum mass.")
     min_mz <- floor(min(mass)) 
     }
   
-  if(max_mz > max(mass)){
-    warning("Specified value of 'max_mz' is beyond the mass range in 'dat'. Defaulting to the maximum mass.")
+  if(max_mz > max(mass)) {
+    cat("Specified value of 'max_mz' is higher than the mass range in 'dat'. Defaulting to the maximum mass.")
     max_mz <- ceiling(max(mass)) 
   }
-  
-
-  
   
   spectra <- lapply(X = spectra_cols, FUN = function(x){ dat[x] })
   
@@ -139,19 +135,15 @@ plotSpectra <- function(dat, mass_dat,
   
   dat_melt <- melt(dat, id.vars = "full_mz")
   colnames(dat_melt) <- c("full_mz","Spectrum","Intensity")
-  
+  # add data subsetting to hopefully eliminate ggplot message
+  dat_melt <- subset(dat_melt, full_mz >= min_mz & full_mz <= max_mz)
   p <- ggplot(data = dat_melt) + geom_line(aes(x = full_mz, y = Intensity, colour = Spectrum)) + 
-
         labs(x = expression(italic("m/z")), y = "Intensity") +
-
         facet_wrap(~Spectrum, nrow = nrows, scales = intensity_scale) +
-
         scale_x_continuous(limits = c(min_mz, max_mz), 
                            breaks = seq(min_mz, max_mz, 
                                     length.out = x_ticks)) +
-    
         scale_y_continuous(limits = c(min_I, max_I)) +
-
         theme_bw() + theme(panel.border = element_blank(),
                            strip.background = element_blank(),
                            strip.text.x = element_blank(),
