@@ -35,7 +35,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">subMALDI</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-3</span>
       </span>
     </div>
 
@@ -91,16 +91,16 @@
 <h1 class="hasAnchor">
 <a href="#installing-in-r" class="anchor"></a>Installing in R</h1>
 <p>To install this package in R, begin by downloading the source copy of the package from the <a href="https://github.com/wesleyburr/subMaldi/releases">releases folder</a> and install it using type = “source”. But, before you do this, a dependency from the BioConductor project is required. Begin by installing the BioConductor Manager:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"BiocManager"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">install.packages</span>(<span class="st">"BiocManager"</span>)</a></code></pre></div>
 <p>and then install the package MassSpecWavelet:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>BiocManager<span class="sc">::</span><span class="fu">install</span>(<span class="st">"MassSpecWavelet"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">BiocManager<span class="op">::</span><span class="kw">install</span>(<span class="st">"MassSpecWavelet"</span>)</a></code></pre></div>
 <p>Then install the CRAN-supported packages required:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"ggpmisc"</span>, <span class="st">"reshape2"</span>, <span class="st">"RColorBrewer"</span>, <span class="st">"signal"</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">install.packages</span>(<span class="kw">c</span>(<span class="st">"tidyr"</span>, <span class="st">"ggplot2"</span>, <span class="st">"ggpmisc"</span>, <span class="st">"reshape2"</span>, <span class="st">"RColorBrewer"</span>, <span class="st">"signal"</span>))</a></code></pre></div>
 <p>Once the packages are all installed, you can then install the package:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"subMALDI-1.0.2.tar.gz"</span>, <span class="at">type =</span> <span class="st">"source"</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">install.packages</span>(<span class="st">"subMALDI-1.0-2.tar.gz"</span>, <span class="dt">type =</span> <span class="st">"source"</span>)</a></code></pre></div>
 <p>Update the file name as necessary to whatever the copy you downloaded was set to for versioning.</p>
 <p>Note: if you install from source, and set <strong>dependencies = TRUE</strong>, this should all be moot. This assumes you run the commands exactly as given, in which case, the BioConductor sequence doesn’t always seem to work. For example,</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"subMALDI-1.0.0.tar.gz"</span>, <span class="at">type =</span> <span class="st">"source"</span>, <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="kw">install.packages</span>(<span class="st">"subMALDI-1.0-2.tar.gz"</span>, <span class="dt">type =</span> <span class="st">"source"</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 </div>
 <div id="getting-started" class="section level1">
 <h1 class="hasAnchor">
