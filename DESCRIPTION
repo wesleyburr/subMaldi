@@ -17,7 +17,6 @@ Imports: signal (>= 0.7-6), MassSpecWavelet (>= 1.48.0), dplyr (>= 0.8.0), tidyr
 License: GPL (>= 3) + file LICENSE
 Encoding: UTF-8
 LazyData: true
-LazyDataCompression: xz
 Suggests: knitr, rmarkdown, testthat
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1
