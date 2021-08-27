@@ -22,7 +22,7 @@ Then install the CRAN-supported packages required:
     
 Once the packages are all installed, you can then install the package:
 
-    install.packages("subMALDI-1.0.2.tar.gz", type = "source")
+    install.packages("subMALDI-1.0-2.tar.gz", type = "source")
    
 Update the file name as necessary to whatever the copy you downloaded was set to for versioning.
 
@@ -30,7 +30,7 @@ Note: if you install from source, and set **dependencies = TRUE**, this should a
 assumes you run the commands exactly as given, in which case, the BioConductor sequence doesn't always
 seem to work. For example,
 
-    install.packages("subMALDI-1.0.0.tar.gz", type = "source", dependencies = TRUE)
+    install.packages("subMALDI-1.0-2.tar.gz", type = "source", dependencies = TRUE)
 
 # Getting Started
 
