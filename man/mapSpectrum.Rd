@@ -75,7 +75,7 @@ https://github.com/wesleyburr/subMaldi
 \code{\link{createSpecDF}}
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 }
 \keyword{array}
 \keyword{methods}

@@ -83,7 +83,7 @@ https://doi.org/10.1186/1471-2105-10-4
 \code{\link{smoothSpectrum}}, \code{\link{peakDet}}
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 }
 \keyword{manip}
 \keyword{methods}

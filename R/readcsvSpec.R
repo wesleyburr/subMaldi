@@ -13,7 +13,7 @@
 ##' @return Returns a binary data frame containing the imported data in a
 ##' \emph{m/z} column denoted "mass", and an intensity column denoted
 ##' "Intensity".
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords methods
 ##' 

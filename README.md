@@ -6,7 +6,7 @@ subMALDI is an open framework package for the R programming environment that per
 
 # Installing in R
 
-To install this package in R, begin by downloading the source copy of the package from the releases folder, and 
+To install this package in R, begin by downloading the source copy of the package from the [releases folder](https://github.com/wesleyburr/subMaldi/releases) and 
 install it using type = "source". But, before you do this, a dependency from the BioConductor project is required. 
 Begin by installing the BioConductor Manager:
 
@@ -22,7 +22,7 @@ Then install the CRAN-supported packages required:
     
 Once the packages are all installed, you can then install the package:
 
-    install.packages("subMALDI-1.0.0.tar.gz", type = "source")
+    install.packages("subMALDI-1.0.2.tar.gz", type = "source")
    
 Update the file name as necessary to whatever the copy you downloaded was set to for versioning.
 

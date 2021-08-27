@@ -44,8 +44,6 @@
 
 
 
-
-
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -57,15 +55,9 @@
 
 
 
-  
-
-  
-
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -79,13 +71,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">subMALDI</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -123,10 +121,26 @@
     </div>
 
 
+<hr>
+<p>title: “subMALDI: an open framework R package for processing irregularly-spaced mass spectrometry data” tags:</p>
+<ul>
+<li>mass spectrometry</li>
+<li>spectral processing</li>
+<li>MALDI-MS authors:</li>
+<li>name: Kristen Yeh orcid: 0000-0002-3411-6816 affiliation: 1</li>
+<li>name: Sophie Castel orcid: 0000-0001-9086-0917 affiliation: 4</li>
+<li>name: Naomi L. Stock orcid: 0000-0002-3472-9284 affiliation: 2</li>
+<li>name: Theresa Stotesbury orcid: 0000-0001-6452-4389 affiliation: 3</li>
+<li>name: Wesley Burr orcid: 0000-0002-2058-1899 affiliation: 4 affiliations:</li>
+<li>name: Forensic Science Program, Trent University index: 1</li>
+<li>name: Water Quality Center, Trent University index: 2</li>
+<li>name: Faculty of Science, Forensic Science &amp; Applied Bioscience, Ontario Tech University index: 3</li>
+<li>name: Faculty of Science, Mathematics, Trent University index: 4 date: August 4, 2020 bibliography: paper.bib output: pdf_document —</li>
+</ul>
 <div id="summary" class="section level1">
 
 <p>Mass spectrometry (MS) is an essential analytical technique used in many fields of science, including chemistry, biology, medicine, and more [@Gross:2011]. Mass spectrometry (MS) has been used in biotechnology studies to sequence biomolecules [@Maux:2001], genotype human DNA for individual identification [@Null:2001], explore single cells [@Jones:2003], and examine objects from outer space [@Fenselau:2003]. The diversity and breadth of applications using MS often yields a wealth of complex data, which requires significant processing before meaningful results can be interpreted. Fortunately, an extensive catalogue of software for analysis of MS data is available to researchers, at varying levels of accessibility [@Gibb:2016].</p>
-<p>Modern instrumentation often include proprietary software for spectral processing and analysis (e.g. Bruker Daltonics’ Data Analysis). These tools, though convenient, often fail to provide sufficient documentation of the algorithms employed in the software and have limited analytical capabilities. Other commercial tools are available to supplement these programs (e.g. Agilent Technologies’ MassHunter Profinder and Thermo Scientific’s SIEVE<sup>TM</sup>), however, they come at a cost. Open source software for analysis of MS data is also available online. These applications are often implemented in a variety of statistical computing languages, including Python (e.g. pyOpenMS) [@Rost:2014], Matlab (e.g. LIMPIC) [@Mantini:2007], C++ (e.g. ProteoWizard) [@Chambers:2012] and R (e.g. MSnbase, MALDIquant) [@Gatto:2012; @Gibb:2012]. While more accessible and well-documented than proprietary software, these available open source applications often utilize compressive data structures (e.g. S3 and S4 class objects in R), which can make it difficult for researchers to access their raw spectral data. In order to simplify the organization and processing of mass spectrometry data, we propose the R package <code>subMALDI</code>.</p>
+<p>Modern instrumentation often include proprietary software for spectral processing and analysis (e.g. Bruker Daltonics’ Data Analysis). These tools, though convenient, often fail to provide sufficient documentation of the algorithms employed in the software and have limited analytical capabilities. Other commercial tools are available to supplement these programs (e.g. Agilent Technologies’ MassHunter Profinder and Thermo Scientific’s SIEVE^TM^), however, they come at a cost. Open source software for analysis of MS data is also available online. These applications are often implemented in a variety of statistical computing languages, including Python (e.g. pyOpenMS) [@Rost:2014], Matlab (e.g. LIMPIC) [@Mantini:2007], C++ (e.g. ProteoWizard) [@Chambers:2012] and R (e.g. MSnbase, MALDIquant) [@Gatto:2012; @Gibb:2012]. While more accessible and well-documented than proprietary software, these available open source applications often utilize compressive data structures (e.g. S3 and S4 class objects in R), which can make it difficult for researchers to access their raw spectral data. In order to simplify the organization and processing of mass spectrometry data, we propose the R package <code>subMALDI</code>.</p>
 <p><code>subMALDI</code> is an open framework tool that permits organization, pre-processing (smoothing, baseline correction, peak detection), and normalization of spectral data sets without masking into S3 or S4 class objects. After every step of processing, the <em>m/z</em> and intensity data of each spectrum is readily accessible, providing researchers with a more thorough understanding of the data manipulation that occurs during analysis. As a result of the package’s open framework, subMALDI data sets are compatible with functions from a wide variety of other R packages, and user-defined functions are easier to implement and test.</p>
 </div>
 <div id="statement-of-need" class="section level1">
@@ -166,11 +180,11 @@
 
       <footer>
       <div class="copyright">
-  <p><p>Developed by Wesley Burr.</p></p>
+  <p>Developed by Wesley Burr.</p>
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -178,8 +192,6 @@
 
   
 
-
-  
 
   </body>
 </html>

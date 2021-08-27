@@ -20,6 +20,7 @@
 
 norm_quantile <- function(dat, mass_dat, spectra_cols){
   
+  full_mz <- Intensity <- Spectrum <- NULL
   # ---------------------
   # LOGICAL CHECKS
   # ---------------------
@@ -43,12 +44,12 @@ norm_quantile <- function(dat, mass_dat, spectra_cols){
   i <- data.frame(mz, i)
   colnames(i) <- c("full_mz", spectra_cols)
   
-  i_melt <- melt(i, id.vars = "full_mz")
-  colnames(i_melt) <- c("full_mz","Spectrum","Intensity")
+  i_melt <- reshape2::melt(i, id.vars = "full_mz")
+  colnames(i_melt) <- c("full_mz", "Spectrum", "Intensity")
   
   i_melt <- dplyr::filter(i_melt, Intensity != 0)
   
-  i_melt <- i_melt %>% group_by(Spectrum)  %>% mutate(id = row_number())
+  i_melt <- i_melt %>% dplyr::group_by(Spectrum)  %>% dplyr::mutate(id = dplyr::row_number())
   ordr <- i_melt[order(i_melt$Intensity, decreasing = TRUE),]
   
   r <- rep(NA, length(spectra_cols))

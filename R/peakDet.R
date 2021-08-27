@@ -33,7 +33,7 @@
 ##' than a defined threshold, the peak candidate is discarded [1]. The
 ##' threshold is defined as half of the local noise level, or half of the
 ##' median absolute deviation in a window of size \code{n}.} }
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' @seealso \code{\link{smoothSpectrum}}, \code{\link{baselineCorr}}
 ##' @references https://github.com/wesleyburr/subMaldi (1) Yang, C., He, Z. &
 ##' Yu, W. Comparison of public peak detection algorithms for MALDI mass

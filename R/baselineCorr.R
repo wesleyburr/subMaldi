@@ -41,7 +41,7 @@
 ##' baseline predictor for that point. Local polynomial regression fitting is
 ##' applied to the predictor points. The baseline is then subtracted from the
 ##' raw spectral signal.  } }
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' @seealso \code{\link{smoothSpectrum}}, \code{\link{peakDet}}
 ##' @references https://github.com/wesleyburr/subMaldi (1) Yang, C., He, Z. &
 ##' Yu, W. Comparison of public peak detection algorithms for MALDI mass

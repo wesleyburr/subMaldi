@@ -23,7 +23,7 @@
 ##' @param ts Single numeric value. If \code{method = "sgolay"}, the time
 ##' scaling factor. Default = 1.
 ##' @return Returns a new data frame containing the smoothed spectral data.
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' @references https://github.com/wesleyburr/subMaldi (1) A. Savitzky, M.J.E.
 ##' Golay, Smoothing and differentiation of data by simplified least-squares
 ##' procedures, Anal. Chem. 36 (8) (1964) 1627-1639.

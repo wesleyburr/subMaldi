@@ -33,14 +33,14 @@ data("Master")
 
 ## Find the most intense peak of six spectra
 find_max_set(dat = Master, mass_dat = "full_mz", spectra_cols = c("After1", "Blank2", 
-            "Before1", "Blank1", "After2", "Before2")
+            "Before1", "Blank1", "After2", "Before2"))
 
 }
 \references{
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 Sophie Castel <sophie.castel@ontariotechu.net>
 }
 \keyword{methods}

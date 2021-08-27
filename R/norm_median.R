@@ -13,7 +13,8 @@ norm_median <- function(dat, mass_dat, spectra_cols){
     # ---------------------
     # LOGICAL CHECKS
     # ---------------------
-    
+   full_mz <- Intensity <- Spectrum <- NULL
+  
     stopifnot(
       is.character(mass_dat),
       is.character(spectra_cols),

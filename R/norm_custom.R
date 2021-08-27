@@ -17,6 +17,7 @@ norm_custom <- function(dat, mass_dat, norm_mz, spectra_cols, showHI = FALSE){
   # ---------------------
   # LOGICAL CHECKS
   # ---------------------
+  full_mz <- Intensity <- Spectrum <- NULL
   
   stopifnot(
     is.character(mass_dat),

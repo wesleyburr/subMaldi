@@ -37,6 +37,6 @@ columns are variables and rows are individual m/z observations.
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 }
 \keyword{methods}

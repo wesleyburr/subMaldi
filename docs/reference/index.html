@@ -44,8 +44,6 @@
 
 
 
-
-
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -57,15 +55,9 @@
 
 
 
-  
-
-  
-
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-index">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -79,13 +71,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">subMALDI</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -235,55 +233,61 @@
       </tr><tr>
         
         <td>
-          <p><code><a href="normMethod_RMS.html">.normMethod_RMS()</a></code> </p>
+          <p><code><a href="normMethod_RMS.html">norm_RMS()</a></code> </p>
         </td>
         <td><p>Normalize Spectral Intensity by Root Mean Square</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="normMethod_TIC.html">.normMethod_TIC()</a></code> </p>
+          <p><code><a href="normMethod_TIC.html">norm_TIC()</a></code> </p>
         </td>
         <td><p>Normalize Peak Intensity by Total Ion Current</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="normMethod_custom.html">.normMethod_custom()</a></code> </p>
-        </td>
-        <td><p>Normalize Peak Intensity to Custom <em>m/z</em></p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="normMethod_max.html">.normMethod_max()</a></code> </p>
-        </td>
-        <td><p>Normalization Method: Maximum Intensity</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="normMethod_max_set.html">.normMethod_max_set()</a></code> </p>
+          <p><code><a href="normMethod_custimp.html">norm_custimp()</a></code> </p>
         </td>
         <td><p>Normalization Method: Maximum Intensity of Set</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="normMethod_median.html">.normMethod_median()</a></code> </p>
+          <p><code><a href="normMethod_custom.html">norm_custom()</a></code> </p>
+        </td>
+        <td><p>Normalize Peak Intensity to Custom <em>m/z</em></p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="normMethod_max.html">norm_max()</a></code> </p>
+        </td>
+        <td><p>Normalization Method: Maximum Intensity</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="normMethod_max_set.html">norm_max_set()</a></code> </p>
+        </td>
+        <td><p>Normalization Method: Maximum Intensity of Set</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="normMethod_median.html">norm_median()</a></code> </p>
         </td>
         <td><p>Normalize a Spectral Dataset to its Median Intensity</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="normMethod_quantile.html">.normMethod_quantile()</a></code> </p>
+          <p><code><a href="normMethod_quantile.html">norm_quantile()</a></code> </p>
         </td>
         <td><p>Normalize Distribution of Intensities</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="normMethod_rel_TIC.html">.normMethod_rel_TIC()</a></code> </p>
+          <p><code><a href="normMethod_rel_TIC.html">norm_rel_TIC()</a></code> </p>
         </td>
         <td><p>Normalize Relative Peak Intensity by Total Ion Current</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="normMethod_stdev.html">.normMethod_stdev()</a></code> </p>
+          <p><code><a href="normMethod_stdev.html">norm_stdev()</a></code> </p>
         </td>
         <td><p>Normalize Spectrum to Standard Deviation of Noise</p></td>
       </tr><tr>
@@ -304,18 +308,6 @@
           <p><code><a href="plotSpectra.html">plotSpectra()</a></code> </p>
         </td>
         <td><p>Plot and Compare Spectra</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotSpectrum.html">plotSpectrum()</a></code> </p>
-        </td>
-        <td><p>Plot a Single Spectrum</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="plotgridSpectra.html">plotgridSpectra()</a></code> </p>
-        </td>
-        <td><p>Plot and Compare Multiple Spectra in a Grid</p></td>
       </tr><tr>
         
         <td>
@@ -373,11 +365,11 @@
 
       <footer>
       <div class="copyright">
-  <p><p>Developed by Wesley Burr.</p></p>
+  <p>Developed by Wesley Burr.</p>
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -385,8 +377,6 @@
 
   
 
-
-  
 
   </body>
 </html>

@@ -1,7 +1,8 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^.Rhistory$
-^subMALDI_1.0-0.tar.gz$
+^subMALDI_1.0-2.tar.gz$
+^subMALDI*$
 ^paper.Rmd$
 ^paper.bib$
 ^doc$
@@ -11,3 +12,8 @@ png$
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^vignettes\.gitignore$
+^.git$
+^.github$
+^.gitignore$
+^dev.Rmd

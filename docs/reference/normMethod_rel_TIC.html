@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Normalize Relative Peak Intensity by Total Ion Current — .normMethod_rel_TIC • subMALDI</title>
+<title>Normalize Relative Peak Intensity by Total Ion Current — norm_rel_TIC • subMALDI</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,8 @@
 
 
 
-<meta property="og:title" content="Normalize Relative Peak Intensity by Total Ion Current — .normMethod_rel_TIC" />
+<meta property="og:title" content="Normalize Relative Peak Intensity by Total Ion Current — norm_rel_TIC" />
 <meta property="og:description" content="Called internally by normSpectra. Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Once the TIC of each spectrum has been standardized, the intensity of each peak in all spectra are divided by the normalized TIC. The resulting spectra will have individual TICs of 1. Capable of normalizing 1-6 spectra at once." />
-
-
 
 
 
@@ -58,15 +56,9 @@
 
 
 
-  
-
-  
-
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -80,13 +72,19 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">subMALDI</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -129,8 +127,7 @@
     <p>Called internally by <code>normSpectra</code>. Evaluates the sum of all intensities (TIC) of each spectrum in a dataset. If the TIC of all spectra are not equal, their intensities are multiplied by a normalization factor. Once the TIC of each spectrum has been standardized, the intensity of each peak in all spectra are divided by the normalized TIC. The resulting spectra will have individual TICs of 1. Capable of normalizing 1-6 spectra at once.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>.normMethod_rel_TIC</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>mass_dat</span>, <span class='va'>spec1</span>, spec2 <span class='op'>=</span> <span class='cn'>NULL</span>, 
-                    spec3 <span class='op'>=</span> <span class='cn'>NULL</span>, spec4 <span class='op'>=</span> <span class='cn'>NULL</span>, spec5 <span class='op'>=</span> <span class='cn'>NULL</span>, spec6 <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>norm_rel_TIC</span><span class='op'>(</span><span class='va'>dat</span>, <span class='va'>mass_dat</span>, <span class='va'>spectra_cols</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -144,34 +141,11 @@
       <td><p>A character string; the name of the column in <code>dat</code> containing the <em>m/z</em> data for the spectrum.</p></td>
     </tr>
     <tr>
-      <th>spec1</th>
-      <td><p>A character string; the name of the column in <code>dat</code> containing the intensity data for the spectrum to be analyzed.</p></td>
-    </tr>
-    <tr>
-      <th>spec2</th>
-      <td><p>A character string; the name of the column in <code>dat</code> containing the intensity data for the second spectrum to be normalized. Default = NULL.</p></td>
-    </tr>
-    <tr>
-      <th>spec3</th>
-      <td><p>A character string; the name of the column in <code>dat</code> containing the intensity data for the third spectrum to be normalized. Default = NULL.</p></td>
-    </tr>
-    <tr>
-      <th>spec4</th>
-      <td><p>A character string; the name of the column in <code>dat</code> containing the intensity data for the fourth spectrum to be normalized. Default = NULL.</p></td>
-    </tr>
-    <tr>
-      <th>spec5</th>
-      <td><p>A character string; the name of the column in <code>dat</code> containing the intensity data for the fifth spectrum to be normalized. Default = NULL.</p></td>
-    </tr>
-    <tr>
-      <th>spec6</th>
-      <td><p>A character string; the name of the column in <code>dat</code> containing the intensity data for the sixth spectrum to be normalized. Default = NULL.</p></td>
+      <th>spectra_cols</th>
+      <td><p>A character string; the names of the column in <code>dat</code> containing the intensity data for the spectrs to be analyzed.</p></td>
     </tr>
     </table>
 
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p><!-- %%  ~~ If necessary, more details than the description above ~~ --></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>Returns a new data frame including the original <em>m/z</em> data and normalized intensity data.</p>
@@ -181,13 +155,10 @@
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Kristen Yeh &lt;kristenyeh@trentu.ca&gt;
-Wesley Burr &lt;wburr@trentu.ca&gt;</p>
+Wesley Burr &lt;wesleyburr@trentu.ca&gt;</p>
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
     <p><code><a href='normSpectra.html'>normSpectra</a></code></p>
-    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
-
-    <div class='dont-index'><p><!-- %% ~~objects to See Also as \code{\link{help}}, ~~~ --></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'>## Load sample dataset "Master2.rda"</span>
@@ -195,8 +166,8 @@ Wesley Burr &lt;wburr@trentu.ca&gt;</p>
 
 <span class='co'># Normalize the TIC of "Before1" and "Before2"</span>
 <span class='va'>ex</span> <span class='op'>&lt;-</span> <span class='fu'><a href='normSpectra.html'>normSpectra</a></span><span class='op'>(</span>dat <span class='op'>=</span> <span class='va'>Master2</span>, mass_dat <span class='op'>=</span> <span class='st'>"full_mz"</span>, 
-            method <span class='op'>=</span> <span class='st'>"rel_TIC"</span>, spec1 <span class='op'>=</span> <span class='st'>"Before1"</span>, spec2 <span class='op'>=</span> <span class='st'>"Before2"</span><span class='op'>)</span> 
-</div><div class='output co'>#&gt; <span class='error'>Error in normSpectra(dat = Master2, mass_dat = "full_mz", method = "rel_TIC",     spec1 = "Before1", spec2 = "Before2"): unused arguments (spec1 = "Before1", spec2 = "Before2")</span></div><div class='input'>
+            method <span class='op'>=</span> <span class='st'>"rel_TIC"</span>, spectra_cols <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Before1"</span>, <span class='st'>"Before2"</span><span class='op'>)</span><span class='op'>)</span>
+
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -209,11 +180,11 @@ Wesley Burr &lt;wburr@trentu.ca&gt;</p>
 
       <footer>
       <div class="copyright">
-  <p><p>Developed by Wesley Burr.</p></p>
+  <p>Developed by Wesley Burr.</p>
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -221,8 +192,6 @@ Wesley Burr &lt;wburr@trentu.ca&gt;</p>
 
   
 
-
-  
 
   </body>
 </html>

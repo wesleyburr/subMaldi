@@ -18,9 +18,8 @@ A function to convert raw ASCII files obtained from the Bruker SolariX XR (eXtre
 \examples{
 
 ## Converting sample ASCII file 'raw_ascii.ascii' to 'data.frame'
-data("raw_ascii")
-
-converted <- read_ascii(filename = "~/raw_ascii.ascii")
+file_loc <- system.file("extdata", "raw_ascii.ascii", package = "subMALDI")
+converted <- read_ascii(filename = file_loc)
 
 }
 \references{

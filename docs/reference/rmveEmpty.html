@@ -51,8 +51,6 @@ which is full_mz) equal 0 are removed from the data frame." />
 
 
 
-
-
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -64,15 +62,9 @@ which is full_mz) equal 0 are removed from the data frame." />
 
 
 
-  
-
-  
-
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    
-
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -86,13 +78,19 @@ which is full_mz) equal 0 are removed from the data frame." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">subMALDI</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0-2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
+  <a href="../index.html">
+    <span class="fas fa-home fa-lg"></span>
+     
+  </a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
@@ -177,11 +175,11 @@ been mapped.</p>
 
 <span class='co'>## Select only the spectra "Before1" and "Before2"</span>
 <span class='va'>ex</span> <span class='op'>&lt;-</span> <span class='fu'>select</span><span class='op'>(</span><span class='va'>Master</span>, <span class='st'>"full_mz"</span>, <span class='st'>"Before1"</span>, <span class='st'>"Before2"</span><span class='op'>)</span>
-
+</div><div class='output co'>#&gt; <span class='error'>Error in select(Master, "full_mz", "Before1", "Before2"): could not find function "select"</span></div><div class='input'>
 <span class='co'>## Use rmveEmpty(x) on those data frames to reduce computational load for use with</span>
 <span class='co'># other functions and packages</span>
 <span class='va'>ex</span> <span class='op'>&lt;-</span> <span class='fu'>rmveEmpty</span><span class='op'>(</span>dat <span class='op'>=</span> <span class='va'>ex</span><span class='op'>)</span>
-
+</div><div class='output co'>#&gt; <span class='error'>Error in rmveEmpty(dat = ex): object 'ex' not found</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -194,11 +192,11 @@ been mapped.</p>
 
       <footer>
       <div class="copyright">
-  <p><p>Developed by Wesley Burr.</p></p>
+  <p>Developed by Wesley Burr.</p>
 </div>
 
 <div class="pkgdown">
-  <p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 1.6.1.9000.</p></p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
@@ -206,8 +204,6 @@ been mapped.</p>
 
   
 
-
-  
 
   </body>
 </html>

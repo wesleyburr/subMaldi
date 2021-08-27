@@ -73,7 +73,7 @@ Golay, Smoothing and differentiation of data by simplified least-squares
 procedures, Anal. Chem. 36 (8) (1964) 1627-1639.
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 }
 \keyword{manip}
 \keyword{methods}

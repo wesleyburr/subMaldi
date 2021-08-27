@@ -41,7 +41,7 @@ ex <- avgSpectra(Master, method = "sum", spectra_cols = c("Blank1", "Blank2"))
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 Sophie Castel <sophie.castel@ontariotechu.net>
 }
 \keyword{manip}

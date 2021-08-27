@@ -31,8 +31,8 @@ data(Master2)
 data(Master)
 
 ## Separate samples
-blanks <- select(Master2, "full_mz", "Blank1", "Blank2")
-precon <- select(Master2, "full_mz", "Before1", "Before2")
-postcon <- select(Master2, "full_mz", "After1", "After2")
+blanks <- dplyr::select(Master2, "full_mz", "Blank1", "Blank2")
+precon <- dplyr::select(Master2, "full_mz", "Before1", "Before2")
+postcon <- dplyr::select(Master2, "full_mz", "After1", "After2")
 }
 \keyword{datasets}

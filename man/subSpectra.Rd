@@ -57,7 +57,7 @@ https://github.com/wesleyburr/subMaldi
 \code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 }
 \keyword{manip}
 \keyword{methods}

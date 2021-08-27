@@ -13,7 +13,7 @@
 ##' @return Returns a data frame indidcating the most intense peaks of each
 ##' input spectrum. Indicates the spectrum the data is from, the \emph{m/z}
 ##' value associated with the peak, and the intensity of the maxima.
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' Sophie Castel <sophie.castel@@ontariotechu.net>
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords methods
@@ -24,7 +24,7 @@
 ##' 
 ##' 
 ##' ## Find maxima of four spectra
-##' find_max(dat = Master, mass_dat = "full_mz", spectra_cols = c("Blank1", "Before1", "After1", "After2")
+##' find_max(dat = Master, mass_dat = "full_mz", spectra_cols = c("Blank1", "Before1", "After1", "After2"))
 ##'
 
 # -----------------------------------------------------------------------

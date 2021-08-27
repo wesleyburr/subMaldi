@@ -29,6 +29,6 @@ frame containing a "mass" and "Intensity" column.
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 }
 \keyword{methods}

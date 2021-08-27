@@ -19,6 +19,7 @@ norm_stdev <- function(dat, mass_dat, lower = 900, upper = 1100 , spectra_cols){
   # ---------------------
   # LOGICAL CHECKS
   # ---------------------
+  full_mz <- Intensity <- Spectrum <- NULL
   
   stopifnot(
     is.character(mass_dat),

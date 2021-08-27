@@ -18,7 +18,7 @@
 ##' files containing the binary spectral data frames should go.
 ##' @return Returns a directory of \code{.rda} files containing binary spectral
 ##' data frames into the \code{output} file path.
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords methods
 ##' 

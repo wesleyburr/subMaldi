@@ -9,12 +9,13 @@ plotSpectra(
   mass_dat,
   spectra_cols,
   palette = NULL,
-  colours = colorRampPalette(c("#cc6600", "#33ccff"))(length(spectra_cols)),
+  colours = (grDevices::colorRampPalette(c("#cc6600",
+    "#33ccff")))(length(spectra_cols)),
   span = 5,
   thresh = 0.1,
   lbls = FALSE,
   lbl.fmt = "\%3.4f",
-  min_mz = 0,
+  min_mz = min(dat[[mass_dat]]),
   max_mz = max(dat[[mass_dat]]),
   min_I = 0,
   max_I = max(dat[spectra_cols]),
@@ -107,7 +108,7 @@ plotSpectra(dat = Master, mass_dat = "full_mz",
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca> Sophie Castel <sophie.castel@ontariotechu.net>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca> Sophie Castel <sophie.castel@ontariotechu.net>
 }
 \keyword{aplot}
 \keyword{methods}

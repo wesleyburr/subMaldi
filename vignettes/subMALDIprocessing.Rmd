@@ -121,7 +121,7 @@ Once our raw and smoothed spectra have been mapped to the data frame, we can rem
 
 ```{r}
 test <- createSpecDF(min_mz = 200, max_mz = 5000)
-test <- select(test, full_mz)
+test <- dplyr::select(test, full_mz)
 test <- transform(test, "RawSpectrum" = 0, "MovingAverage" = 0)
 test <- mapSpectrum(bsline, massCol = "mass", intenseCol = "raw", 
                  colName = "RawSpectrum", spec_df = test)
@@ -426,7 +426,7 @@ We can now remove the "Peaks" column, as our data has already been manipulated. 
 
 
 ```{r}
-cwt <- select(peaks, x, y)
+cwt <- dplyr::select(peaks, x, y)
 ```
 
 

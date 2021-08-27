@@ -97,7 +97,7 @@ ex <- normSpectra(dat = Master2, mass_dat = "full_mz",
 
 ## Normalize the spectra "Before1" and "Before2" to the TIC
 ex <- normSpectra(dat = Master2, mass_dat = "full_mz",
-            method = "TIC", spectra_cols = c("Before1", "Before2")
+            method = "TIC", spectra_cols = c("Before1", "Before2"))
 
 ## Normalize spectrum "After1" to the intensity of the peak at m/z 253.22
 ex <- normSpectra(dat = Master2, mass_dat = "full_mz", 
@@ -109,7 +109,7 @@ ex <- normSpectra(dat = Master2, mass_dat = "full_mz",
 https://github.com/wesleyburr/subMaldi
 }
 \author{
-Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wburr@trentu.ca>
+Kristen Yeh <kristenyeh@trentu.ca> Wesley Burr <wesleyburr@trentu.ca>
 Sophie Castel <sophie.castel@ontariotechu.net>
 }
 \keyword{manip}

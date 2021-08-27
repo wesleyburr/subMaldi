@@ -27,7 +27,7 @@
 ##' @section Warning: It is important that the values for \code{thresh} and
 ##' \code{dig} are equal to that of \code{res} and \code{dig} used in
 ##' \code{createSpecDF()}. Otherwise the data will fail to map.
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' @seealso \code{\link{createSpecDF}}
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords methods array

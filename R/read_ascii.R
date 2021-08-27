@@ -12,15 +12,14 @@
 ##' @examples
 ##' 
 ##' ## Converting sample ASCII file 'raw_ascii.ascii' to 'data.frame'
-##' data("raw_ascii")
-##' 
-##' converted <- read_ascii(filename = "~/raw_ascii.ascii")
+##' file_loc <- system.file("extdata", "raw_ascii.ascii", package = "subMALDI")
+##' converted <- read_ascii(filename = file_loc)
 ##' 
 
 
 # -----------------------------------------------------------------------
-# Last Updated: February 24, 2021
-# Author: Sophie Castel
+# Last Updated: August 27, 2021
+# Authors: Sophie Castel, Wesley Burr
 # Title: subMALDI: Read Raw ASCII Files
 # -----------------------------------------------------------------------
 
@@ -42,7 +41,8 @@ read_ascii <- function(filename){
   regex <- gsub(pattern = ",", replacement = " ", x = regex, perl = TRUE)
   
   # Convert to data.frame object
-  tbl <- read.table(text = regex, header = FALSE, col.names = c("m/z", "intensity"), fill = TRUE, row.names = NULL)
+  tbl <- utils::read.table(text = regex, header = FALSE, col.names = c("m/z", "intensity"), 
+                           fill = TRUE, row.names = NULL)
   
   # Remove first four rows of metadata
   tbl <- tbl[-(1:4),]

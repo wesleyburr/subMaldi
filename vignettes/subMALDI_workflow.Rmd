@@ -102,7 +102,7 @@ We have created a long data frame containing *m/z* data in the first column. Thi
 We will add 4 columns of sample data, corresponding to 2 matrix blanks and 2 sample spectra.
 
 ```{r }
-spec_df <- select(spec_df, "full_mz")
+spec_df <- dplyr::select(spec_df, "full_mz")
 spec_df <- transform(spec_df, "Blank1" = 0, "Blank2" = 0, "Before1" = 0, "Before2" = 0)
 
 head(spec_df)
@@ -180,7 +180,7 @@ A new column has now been added to our original data frame, containing the avera
 We will subtract our averaged matrix blank from samples "Before1" and "Before2" below. First, we will restructure our data frame to remove the matrix blank columns, whose intensity data is now contained in the "Average" column. Next, we will add new columns to the data frame for the new subtracted intensity data.
 
 ```{r}
-spec <- select(avg_spec, "full_mz", "Before1", "Before2", "Average")
+spec <- dplyr::select(avg_spec, "full_mz", "Before1", "Before2", "Average")
 sub_spec <- transform(spec, "Sub_Before1" = 0, "Sub_Before2" = 0)
 ```
 
@@ -194,7 +194,6 @@ sub_spec <- subSpectra(dat = sub_spec, Blank_Var = "Average",
 
 head(sub_spec)
 ```
-
 
 ---
 
@@ -211,14 +210,18 @@ In addition to simple subtraction and averaging functions, __*subMALDI*__ also o
 1. Standard Deviation of Noise
 1. Quantile
 
-A sample normalization for each method will be shown in order, below. We will begin by loading a smaller sample data set to work with.
+A sample normalization for each method will be shown in order, below. We will begin by loading a smaller sample data set to work with, and subsetting it even further.
 
 ```{r }
 data("Master2")
-norm_spec <- select(Master2, "full_mz", "Before1", "Before2")
-
+norm_spec <- dplyr::select(Master2, "full_mz", "Before1", "Before2")
 head(norm_spec)
 ```
+
+```{r}
+norm_spec <- subset(norm_spec, full_mz >= 53.76 & full_mz <= 800)
+```
+
 
 The raw data is plotted below.
 
@@ -236,8 +239,10 @@ Custom *m/z* normalization is one of the simpler methods included with __*subMAL
 custom_ex <- normSpectra(norm_spec, mass_dat = "full_mz", method = "custom", 
                          norm_mz = 255.23, spectra_cols = c("Before1", "Before2"))
 
-plotSpectra(norm_spec,mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5)
-plotSpectra(custom_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), x_ticks = 5, palette = "Accent")
+plotSpectra(norm_spec, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
+            x_ticks = 5)
+plotSpectra(custom_ex, mass_dat = "full_mz", spectra_cols = c("Before1", "Before2"), 
+            x_ticks = 5, palette = "Accent")
 ```
 
 The original spectra are shown to the right, while the normalized spectra are displayed on the left.

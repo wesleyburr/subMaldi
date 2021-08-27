@@ -54,7 +54,7 @@
 ##'           }
 ##' 
 ##' 
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca> Sophie Castel <sophie.castel@@ontariotechu.net>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca> Sophie Castel <sophie.castel@@ontariotechu.net>
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords methods aplot
 ##' @examples
@@ -74,12 +74,12 @@
 plotSpectra <- function(dat, mass_dat,
                         spectra_cols,
                         palette = NULL,
-                        colours = colorRampPalette(c("#cc6600", "#33ccff"))(length(spectra_cols)),
+                        colours = grDevices::colorRampPalette(c("#cc6600", "#33ccff"))(length(spectra_cols)),
                         span = 5,
                         thresh = 0.1,
                         lbls = FALSE, 
                         lbl.fmt = "%3.4f",
-                        min_mz = min(dat[spectra_cols]),
+                        min_mz = min(dat[[mass_dat]]),
                         max_mz = max(dat[[mass_dat]]),
                         min_I = 0,
                         max_I = max(dat[spectra_cols]),
@@ -90,11 +90,13 @@ plotSpectra <- function(dat, mass_dat,
   # ----------------------------------
   # LOGICAL CHECKS
   # ----------------------------------
+  full_mz <- Intensity <- Spectrum <- NULL
   
   if(!is.null(palette)){
     stopifnot(palette %in% c("Accent", "Dark2", "Paired", "Pastel1", "Pastel2", "Set1", "Set2", "Set3"))
     
-    colours <- brewer.pal(length(spectra_cols), palette)
+    ncols <- if(length(spectra_cols) < 3) { 3 } else { length(spectra_cols) }
+    colours <- brewer.pal(ncols, palette)
     colours <- colours[1:length(spectra_cols)]
   }
   

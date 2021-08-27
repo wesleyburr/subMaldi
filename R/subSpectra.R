@@ -22,7 +22,7 @@
 ##' @return Returns a vector of intensity values that are filled into the
 ##' \code{Sub_Sample} column of the mapped data frame at the corresponding rows
 ##' of \code{full_mz}.
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' @seealso \code{\link{createSpecDF}}, \code{\link{mapSpectrum}}
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords methods manip

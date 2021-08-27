@@ -57,7 +57,7 @@
 ##' data of each spectrum and evaluates the average intensity for each rank.
 ##' The intensity values are then replaces with the averaged intensities,
 ##' rearranged in their original order. } }
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' Sophie Castel <sophie.castel@@ontariotechu.net>
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords methods manip
@@ -72,7 +72,7 @@
 ##' 
 ##' ## Normalize the spectra "Before1" and "Before2" to the TIC
 ##' ex <- normSpectra(dat = Master2, mass_dat = "full_mz",
-##'             method = "TIC", spectra_cols = c("Before1", "Before2")
+##'             method = "TIC", spectra_cols = c("Before1", "Before2"))
 ##' 
 ##' ## Normalize spectrum "After1" to the intensity of the peak at m/z 253.22
 ##' ex <- normSpectra(dat = Master2, mass_dat = "full_mz", 
@@ -81,8 +81,8 @@
 ##' 
 
 # -----------------------------------------------------------------------
-# Last Updated: January 28, 2021
-# Author: Kristen Yeh, Sophie Castel
+# Last Updated: August 27, 2021
+# Author: Kristen Yeh, Sophie Castel, Wesley Burr
 # Title: subMALDI: Normalize Spectral Data
 # -----------------------------------------------------------------------
 
@@ -90,7 +90,8 @@ normSpectra <- function(dat, mass_dat, method = NULL, norm_mz = NULL, upper = NU
                         spectra_cols = NULL, showHI = FALSE){
   
   methods <- c("max", "max_set", "custom", "custom_imprecise", "TIC", "rel_TIC", "RMS", "median", "stdev", "quantile")
-    
+  full_mz <- Intensity <- Spectrum <- NULL
+  
   # ---------------------
   # LOGICAL CHECKS
   # ---------------------

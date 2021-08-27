@@ -14,6 +14,7 @@ norm_TIC <- function(dat, mass_dat, spectra_cols){
   # ---------------------
   # LOGICAL CHECKS
   # ---------------------
+  full_mz <- Intensity <- Spectrum <- NULL
   
   stopifnot(
     is.character(mass_dat),

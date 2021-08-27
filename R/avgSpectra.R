@@ -13,7 +13,7 @@
 ##' \code{dat} containing the intensity data for the spectra-of-interest.
 ##' @return Returns a new column in the input data frame containing the
 ##' averaged intensity data.
-##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wburr@@trentu.ca>
+##' @author Kristen Yeh <kristenyeh@@trentu.ca> Wesley Burr <wesleyburr@@trentu.ca>
 ##' Sophie Castel <sophie.castel@@ontariotechu.net>
 ##' @references https://github.com/wesleyburr/subMaldi
 ##' @keywords manip methods
