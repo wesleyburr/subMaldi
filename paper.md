@@ -42,7 +42,7 @@ fields of science, including chemistry, biology, medicine, and more
 [@Gross:2011]. Its uses are varied, from biotechnology studies of
 biomolecular sequencing [@Maux:2001], genetic analysis of human DNA
 [@Null:2001], exploration of the structure of single cells [@Jones:2003]
-and even examination of extraterrestrial objects [@Feneslau:2003]. 
+and even examination of extraterrestrial objects [@Fenselau:2003]. 
 This incredible breadth of applications using MS results in highly complex
 data, which often requires significant processing in order to obtain
 actionable insights.
@@ -60,7 +60,7 @@ languages, including Python (e.g. pyOpenMS) [@Rost:2014], Matlab
 (e.g. LIMPIC) [@Mantini:2007], C++ (e.g. ProteoWizard) [@Chambers:2012]
 and R (e.g. MSnbase, MALDIquant) [@Gatto:2012; @Gibb:2012]. While more
 accessible and well-documented than proprietary software, these available
-open source applications [@Gibbs:2016] often utilize complex data structures (e.g. S3 and
+open source applications [@Gibb:2016] often utilize complex data structures (e.g. S3 and
 S4 class objects in R), which can make it difficult for researchers without
 strong coding backgrounds to access their raw spectral data. In order to 
 simplify the organization and processing of mass spectrometry data, we propose 
