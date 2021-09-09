@@ -32,7 +32,7 @@ been mapped.
 data("Master")
 
 ## Select only the spectra "Before1" and "Before2"
-ex <- select(Master, "full_mz", "Before1", "Before2")
+ex <- dplyr::select(Master, "full_mz", "Before1", "Before2")
 
 ## Use rmveEmpty(x) on those data frames to reduce computational load for use with
 # other functions and packages
