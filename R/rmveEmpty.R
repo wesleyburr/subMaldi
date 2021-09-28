@@ -11,6 +11,7 @@
 ##' 
 ##' @param dat The spectral data frame, containing \code{full_mz} in the first
 ##' column, to be trimmed of all-zero rows.
+##' @param mass The name of the mass column. Defaults to \code{full_mz}.
 ##' @return Returns the input data frame without its all-zero rows.
 ##' @note Avoid truncating a dataframe until all samples to be compared have
 ##' been mapped.
@@ -33,8 +34,8 @@
 
 
 # -----------------------------------------------------------------------
-# Last Updated: May 25, 2020
-# Author: Kristen Yeh
+# Last Updated: September 28, 2021
+# Author: Kristen Yeh, Wesley Burr
 # Title: subMALDI: Remove Empty Rows
 # -----------------------------------------------------------------------
 
@@ -42,8 +43,9 @@
 # Throw out every all-zero row to lessen the computational load and get rid of empty values
 # Wouldn't recommend using this unless you've already made a master frame with all of the samples you
 # want to compare as your data will, once again, become irregularly spaced!
-rmveEmpty <- function(dat){
-  dat <- dat[rowSums(dat[, -1]) > 0, ]
+rmveEmpty <- function(dat, mass = "full_mz"){
+  mass_col <- which(names(dat) == mass)
+  dat <- dat[rowSums(dat[, -mass_col]) > 0, ]
   return(dat)
 }
 
