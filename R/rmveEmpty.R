@@ -44,6 +44,7 @@
 # Wouldn't recommend using this unless you've already made a master frame with all of the samples you
 # want to compare as your data will, once again, become irregularly spaced!
 rmveEmpty <- function(dat, mass = "full_mz"){
+  stopifnot(is.character(mass), mass %in% names(dat))
   mass_col <- which(names(dat) == mass)
   dat <- dat[rowSums(dat[, -mass_col]) > 0, ]
   return(dat)
