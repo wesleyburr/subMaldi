@@ -47,51 +47,38 @@
 
 
 # -----------------------------------------------------------------------
-# Last Updated: February 2, 2021
-# Author: Kristen Yeh, Sophie Castel
+# Last Updated: September 28, 2021
+# Author: Wesley Burr, Kristen Yeh, Sophie Castel
 # Title: subMALDI: Map Spectrum to m/z Vector
 # -----------------------------------------------------------------------
-
 
 mapSpectrum <- function(dat, massCol, intenseCol, dig = 4, thresh = 1e-4, spec_df, colName) {
   # Sanity checks
   stopifnot( is.character(massCol), is.character(intenseCol),
              massCol %in% names(dat), intenseCol %in% names(dat) )
   stopifnot(colName %in% names(spec_df)) 
+  if(thresh != 1e-4) { warning("The 'thresh' argument has been deprecated, and no longer does anything.") }
+  if(10^(-1*dig) < thresh) { warning("Function may crash: digit rounding does not match threshold.") }
   
-  # Round m/z data from dat to match full_mz
+  # Round m/z data from dat to match full_mz in spec_df
   dat <- round(dat, digits = dig)
   
   # Clean code by subsetting to vectors
   mass <- dat[[massCol]]
   intense <- dat[[intenseCol]]
-  
-  # Quantify the spaces between m/z values, make vector of all differences greater than threshold
-  diffs <- mass[-1] - mass[-length(mass)]
-  too_close <- which(diffs < thresh)
-  throw_away <- c()
-  
-  if(length(too_close) > 0) { # not only isolated peaks
-    # fix the 'too close together' problem: identify local maximums
-    dupes <- which(duplicated(mass))  # identifies the duplicates, but not
-    # the points they're duplicates _of_
-    if(length(dupes) > 0) { # found some ...
-      for(j in 1:length(dupes)) { # cycle through
-        mz.val <- mass[dupes[j]]  # grab the mz that's duplicated
-        all_dupes_tmp <- which(mass == mz.val)  # find all mz's that match
-        which_max <- which(intense[all_dupes_tmp] ==
-                             max(intense[all_dupes_tmp]))  # find the peak with the biggest intensity
-        throw_away <- c(throw_away, all_dupes_tmp[-which_max]) # put the rest in throw-away
-      }
+
+  # uses the rounding from line 9 to split; this determines the mapping.  
+  tmp <- dat %>% group_by(mass) %>% group_split()
+  tmp <- lapply(tmp, FUN = function(x) { 
+    if(nrow(x) > 1) {
+      y <- c(x[1, massCol], max(x[, intenseCol]))
+    } else {
+      y <- x
     }
-  }
-  
-  throw_away <- unique(throw_away) # could get duplicates in throw away
-  
-  # I think this is the part that needs to be fixed - original data frame isn't getting trimmed
-  if(length(throw_away) > 0) {
-    dat <- dat[-throw_away, ]
-  } 
+    names(y) <- c(massCol, intenseCol)
+    y
+  })
+  dat <- do.call("rbind", tmp)
   
   # last minute sanity check
   if(length(which(duplicated(dat[[massCol]])) > 0)) {
@@ -101,8 +88,5 @@ mapSpectrum <- function(dat, massCol, intenseCol, dig = 4, thresh = 1e-4, spec_d
   # Fill in the data frame with the rounded, unique data
   spec_df[spec_df$full_mz %in% dat[[massCol]], colName] <- dat[[intenseCol]]
   return(spec_df)
-  
 }
 
-
-# -----------------------------------------------------------------------
