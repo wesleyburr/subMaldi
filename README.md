@@ -1,5 +1,7 @@
 # subMaldi
 
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.02694/status.svg)](https://doi.org/10.21105/joss.02694)
+
 subMALDI is an open framework package for the R programming environment that permits organization,  pre-processing (smoothing, baseline correction, peak detection), and normalization of spectral data sets. As a result of the package's design, subMALDI data objects are compatible with functions from a wide variety of other R packages, and user-defined functions are easier to implement and test.
 
 <center><img src="subMALDIprocessing.png" width="650"></center>
